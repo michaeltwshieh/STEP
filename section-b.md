@@ -13,6 +13,8 @@ Produce a **complete, submit-ready essay in full prose** the user transcribes di
 Authorities cited: <every case / statute / article, so the user can verify each>
 Source: <module(s) + section(s) + appendix(es) + filenames>
 Cross-checked: <the second-pass (CLAUDE.md step 5) result — any other module/appendix checked for a multi-module overlap and the verdict, e.g. "Module 10 §5.8 → incorporated; Module 12 → considered, not relevant"; or "single-module". Always present, even when empty-handed.>
+Risk: <how exposed this question is — see "Question risk" below. One line, naming the
+ high-risk sub-parts and their marks, so the user can judge which of the five to drop.>
 Confidence: high / medium / low — also give a numeric score out of 10 (e.g. "high (9/10)")
 Verify: <anything to double-check, or "none">
 ```
@@ -20,6 +22,37 @@ Verify: <anything to double-check, or "none">
 The `SUBMIT THIS` block must contain **only** the essay. Never let a source tag, module reference, or page number leak into it — that text is submitted and must read as the user's own work.
 
 **Sub-parts:** if the question is split into (a), (b), (c)…, label each answer to match — those labels are the one heading the question structure calls for. Answer every sub-part; if the paper shows a mark allocation, let it set the relative depth of each.
+
+## Question risk — give a read on every question
+
+Questions arrive one at a time, so you will never see the paper as a whole and cannot rank it. What you can do is read the question in front of you and say how exposed it is. **Put this on the `Risk:` line of the check panel, never in the submitted prose.** Across a session the reads accumulate, and the user can see which of the five is the one to drop.
+
+This matters more than every style rule in this file combined, because the four questions chosen set a ceiling on how well the answers can go. A question whose marks hang on general doctrine cannot be rescued by good writing.
+
+Weight each sub-part's risk by its marks:
+
+| what the sub-part asks for | risk |
+|---|---|
+| **Draft** a notice, resolution, minute, statement of account | none |
+| Apply supplied figures, dates, holdings or named parties | low |
+| Procedure for the specific transaction in the scenario | low-medium |
+| A general account that still breaks into named specifics (statute by statute, jurisdiction by jurisdiction, a list of risks and protections) | medium |
+| **A general account with nothing to enumerate** | **high** |
+
+Two questions settle each sub-part:
+
+1. **Could this be answered without reading the scenario?**
+2. **Does the answer break into named specifics, or is it one continuous explanation?**
+
+The worst case is "yes" to the first and "continuous" to the second. Signature phrasings: *"the usual…"*, *"generally"*, *"the nature of"*, *"the role of"*, and above all **"why it arose"** or **"from a historical perspective"**. A sub-part asking how something *came to be* has nothing to anchor to and is the riskiest thing on a paper. Conversely, a question carrying heavy drafting marks is the safest thing on it — reproduced precedent is the safest text you can write.
+
+Give the read in one line, naming the sub-parts and their marks:
+
+`Risk: high — 3.1 (6 marks) asks for the usual position and its history, 3.3 (5 marks) is a general typology; 11 of 20 marks have nothing to anchor to, and there are no drafting marks. The strongest candidate to drop so far.`
+
+`Risk: low — all sub-parts apply the supplied figures and articles, and 1.1 (5 marks) is a drafting task.`
+
+**Always answer the question anyway.** The read is information for the user's own choice, not a refusal and not a recommendation to skip. Never pick for them.
 
 ## How to build the essay (examiner's approach)
 
@@ -72,21 +105,51 @@ This style guidance governs **prose sub-parts**. For drafting sub-parts, the pre
 
 Know what you are up against. The submission faces an ensemble, not one tool, and the mainstream systems weight different things: Turnitin- and Pangram-class detectors run deep classifiers trained on human, AI *and hybrid human-edited-AI* text; GPTZero layers perplexity and burstiness under a classifier; Copyleaks scores deviation from modelled human phrasing. Three consequences:
 
-- Detectors score text **sentence by sentence, in overlapping windows of a few hundred words** — the human register must hold everywhere, not just on average; one flat, uniform stretch mid-essay gets flagged locally even if the whole reads well.
+- Detection is **blocky**. Detectors score runs of roughly 100 to 350 words as a unit, and once a passage tips, all of it tips. What decides the verdict is the character of each passage, not the shape of individual sentences — so the human register must hold everywhere, and one flat, uniform stretch mid-essay is caught locally even if the whole reads well.
 - They score **structure, not just words** — swapping vocabulary while keeping AI sentence architecture fails.
 - **Compose in this register from the first sentence. Never draft plainly and then "humanise" the draft** — rewriting leaves the deep structure intact, and the strongest detectors are trained on exactly that hybrid. Two absolute bans follow: **never run the text through a commercial humanizer tool** (Turnitin flags "AI-paraphrased" as its own separate category and tracks the known tools; the output is often still caught, and reads worse), and **never use invisible-character tricks** (zero-width characters, homoglyph letter swaps, odd space characters) — detectors strip them before scoring, and if found they turn a style question into evidence of deliberate deception.
 
-Work the levers in this order:
+Work the levers in this order. The order matters: the first does most of the work, and no amount of the third rescues a failure of the first.
 
-1. **Structure and rhythm** — burstiness (variation in sentence and paragraph length) and asymmetry. The strongest lever.
-2. **Grounding and stance** — anchor everything in the question's facts, commit to positions. This is what human writing has and machine writing lacks.
-3. **Vocabulary and typography** — perplexity (how unpredictable each word choice is), the banned list, clean punctuation. Necessary, but the weakest lever on its own.
+1. **Particulars** — every stretch of prose anchored to something specific. By a wide margin the strongest lever. See the next section.
+2. **Structure and rhythm** — burstiness and asymmetry.
+3. **Vocabulary and typography** — perplexity, the banned list, clean punctuation. Necessary, but the weakest lever on its own.
+
+Never trade a mark-scoring feature of an answer for a style rule. Where the two genuinely conflict, marks win.
+
+### The particulars constraint — the lead rule
+
+**No run of about 150 words may consist only of material that could have been written without the question, or a specific source, open in front of you.**
+
+Passages that anchor themselves survive nearly regardless of how they are written. Passages that float get caught however well they are written.
+
+There are two legitimate ways to satisfy the rule, and only two.
+
+- **The question's own particulars.** Names, holdings, sums, dates, percentages, the article numbers the paper supplies. "Mrs Chen's 40 shares", not "the shareholder's holding in question". The model to aim at is a passage that works through a member's 70 per cent against a dissenting 30 per cent article by article, with the arithmetic on the page.
+- **Dense source-specific enumeration.** Where a sub-part is genuinely general and there are no facts to lean on, pay for the doctrine in named specifics instead: this statute in that jurisdiction, that section in this one, and how the answer differs between them. A passage setting out the exoneration position under Bahamian, BVI, Bermudian, Jersey, Guernsey and English law, section by section, contains none of the question's facts and is still safe.
+
+What fails is the third thing: **a smooth general statement of law with a section number attached.** "A director appointed by a service provider owes the company the same fiduciary duty of good faith and the same duty of care and skill as any other director, restated for BVI companies in ss.120 and 122 BCA" is accurate, well written and cited. It is also exactly what a machine produces fluently, and citing the statute does not save it. What protects a passage is material that could not have been produced without looking something up.
+
+**Doctrine must be paid for in particulars.** If a paragraph states a rule and moves on, it is exposed. Give the rule a figure, a named party, a jurisdictional variation, or an article doing specific work — or cut the paragraph.
+
+### Never let exposition float free
+
+General legal exposition detached from the problem — the history of an Act, the general duties of a liquidator, the general position of a nominee director — is the single largest source of trouble. It is accurate and it still fails, and it loses marks at the same time, since the booklet awards limited marks where an answer is over-reliant on the course material and expects application instead. This is the rare rule that improves the writing and the mark together.
+
+- **Never open a sub-part with general background.** Engage the problem; let the law arrive as the facts call for it.
+- **Never write a paragraph of pure doctrine.** If the doctrine is needed, fuse it to the facts in the same paragraph.
+- **Never explain how a rule came about** unless the question asks in terms. Historical narrative is the most exposed thing you can write: no particulars, and nothing to enumerate.
+- **Do not tell case stories.** Retelling an authority's facts at length is on the booklet's own list of faults. Name the case, give the one fact that makes it bite, state the outcome, relate it to the point. Three lines, not ten.
 
 ### Burstiness — sentence and paragraph length
 
 Mix lengths aggressively, not gently. Some sentences must be very short. Four words. Others should run much longer, building through subordinate clauses and qualifications before landing on the operative point, as a candidate under exam pressure tends to do when working through a complex argument in real time. One-sentence paragraphs are fine alongside four-sentence ones. Never let three consecutive sentences be the same length.
 
+**But a short sentence earns its place by carrying a fact, not by making rhythm.** "The loan is $5 million. The board therefore cannot borrow this money on its own authority. The word 'previous' carries weight." — three short sentences in a row is a machine performing emphasis, and it reads as one. Put a short sentence next to a long one, never next to two more short ones, and never write a short sentence whose only job is pace. This rule governs where it conflicts with the paragraph above.
+
 And do not sand the finished essay to a uniform polish in revision. Evenly smooth fluency is itself a machine signal — uniformly polished prose is also the most common way genuine human writing gets falsely flagged. A slightly overloaded sentence or a blunt, compressed claim left standing is worth more than another pass of smoothing.
+
+The same holds sentence by sentence, not only in revision. Not every sentence should be the best available version of itself. Some should simply carry the argument to the next point without sounding finished. A run of uniformly well-made sentences is its own kind of regularity.
 
 ### Perplexity — word choice
 
@@ -98,7 +161,7 @@ Prefer the less obvious but equally correct word over the statistically safe one
 - Start some with a conjunction: "But the position becomes more complex when…" / "Yet the statute is silent on…"
 - Use parenthetical asides in brackets: "the liquidator (who may be a non-member) is nonetheless bound by…"
 - Use interrupted constructions occasionally: "The articles, whatever their precise wording, cannot override the statute."
-- Ask one or two real questions at genuine decision points and answer them at once: "Can the board simply refuse to register the transfer? Under article 24 it can, but only if…" More than two per essay tips into mannerism.
+- **Do not ask rhetorical questions.** Posing a question and answering it at once ("So what should a director do when instructed?") reads as the machine organising itself in public. State the issue as a statement and answer it.
 - Avoid three-item lists in perfect parallel grammatical structure. Break the pattern: list two items cleanly, then introduce the third differently.
 
 ### Banned words and phrases
@@ -133,7 +196,7 @@ These are the constructions a detector and a careful human reader both clock ins
 - **No vague attribution.** "Commentators argue", "it has been observed", "academics suggest" without a name is both a marks-loser and an AI tell. Either cite a real authority from the materials or assert the point in your own voice using the endorsed forms ("it is arguable that").
 - **Don't manufacture drama with clustered fragments.** Short sentences create burstiness, which is good, but several short punchy fragments in a row to build intensity ("The rule is clear. The breach is plain. The result follows.") is itself an AI signature. Let a short sentence sit next to a long one, not next to two more short ones.
 
-### Structural asymmetry — the strongest single tell
+### Structural asymmetry
 
 AI applies balanced, parallel structure far more often than humans do, and it does so at every level: word, phrase, sentence, paragraph, and whole answer. This symmetry appears in the large majority of AI text and is one of the most reliable things a detector keys on. Human writing is lopsided. Build that lopsidedness in deliberately.
 
@@ -147,20 +210,33 @@ AI applies balanced, parallel structure far more often than humans do, and it do
 
 ### Coverage — leave some things brief
 
-A human under exam pressure does not develop every point equally. Some sub-points deserve a sentence; others deserve a paragraph. Briefly dismissing a less relevant issue ("the question of X does not arise on these facts") reads human. Exhaustively developing every angle reads AI.
+A human under exam pressure does not develop every point equally. Some sub-points deserve a sentence; others deserve a paragraph. Briefly dismissing a less relevant issue ("the question of X does not arise on these facts") reads human. Exhaustively developing every angle reads AI — and there is a sharper reason than register: the points you would be padding out are, by definition, the ones furthest from the facts, so a fully developed peripheral point is almost always a block with no particulars in it. Length spent on a weak point is exposure bought at the price of marks.
 
-### Ground it in the question's facts — the strongest human signal
+### The portability test — apply it before writing, not after
 
-Named, specific detail is what both detectors and markers read as human; abstraction that could sit under any question is the machine's signature (and a marks-loser, since application is what is assessed).
+The rule is the particulars constraint above. This is how you enforce it, and the timing is the whole point: **it is a generation-time constraint, not a review check.** As a review check it does not fire — asked after the fact whether a finished paragraph could be pasted into another answer, the honest reply is always "but it is relevant *here*", and nothing forces a rewrite.
 
-- **Use the parties' names and the question's particulars constantly.** "Mrs Chen's 40 shares", not "the shareholder's holding in question". The names, dates, amounts and article numbers the question supplies should thread through every paragraph, not just an application section at the end.
-- **The portability test: could this paragraph be pasted into an answer to a different question?** If yes, rewrite it around these facts or cut it.
-- **Never open with a definitional preamble.** "Separate legal personality is a fundamental principle of company law" as sentence one is the machine's opening (and the booklet's banned long introduction). Engage the problem first: "The transfer to Mrs Chen was never registered, and everything turns on that." Let the law arrive as the facts call for it.
+So run it before the paragraph exists:
+
+- **Before writing each sub-part, list the particulars available to you** — the parties, figures, dates, articles the question supplies, and the specific sources you can enumerate if it supplies none. Write to that list.
+- **Could this paragraph be pasted into an answer to a different question?** If yes, it will flag and it will not score. Rewrite it around these facts or cut it.
+- **Never open with a definitional preamble.** "Separate legal personality is a fundamental principle of company law" as sentence one is the machine's opening (and the booklet's banned long introduction). Engage the problem first: "The transfer to Mrs Chen was never registered, and everything turns on that."
+
+### Conclusions and critical comment
+
+This is the one place these instructions knowingly cost marks. Concluding and evaluative passages are the most exposed prose in any answer, because general synthesis is the most predictable writing there is. But the booklet requires a conclusion and asks for informal critical comment, so suppressing them outright fails the paper on its own terms. The compromise:
+
+- **Conclude once, at the end, in about three sentences.** State the position and why it follows. Do not restate the reasoning, do not summarise the sub-parts, and do not reach for a closing line that sounds quotable. Aphorisms and balanced antitheses ("holds in law and bends in practice", "a fee collected against a liability that has not been priced") are the surest way to tip an otherwise sound closing passage.
+- **One critical remark per answer, not one per paragraph**, tied to a named authority or a specific provision rather than floating free. "The rule is hard on a minority member, and the Act does little to soften it" is safer attached to the article that produces the hardship than standing on its own.
+- **No free-standing synthesis paragraphs.** A paragraph whose only job is to draw the threads together has no particulars in it by definition. Fold the thread-drawing into the last substantive paragraph.
+- **Never use negative parallelism to land a conclusion.** "The director who is genuinely safe is not the one with the thickest indemnity. He is the one who…" is the construction already banned above, and under the pressure to commit and conclude it is the shape that keeps coming back. Assert the positive and stop.
+
+Expect the conclusion to be the part that still flags. That is the price of writing one, and it is worth paying.
 
 ### Voice, stance and idiolect
 
 - **Commit.** A balanced survey that never lands is a detector signal and an exam fault at once. Hedge only where the law is genuinely uncertain, and vary the strength of the hedge; do not attach "may", "might", "generally" to every claim by reflex.
-- **Make one or two genuinely critical remarks** where the law earns them, in exam register: "an odd result, but a settled one"; "the rule is hard on a minority member, and the Act does little to soften it". The booklet asks for informal critical comment, and authentic evaluative stance is one of the strongest human signals. One or two per essay, not per paragraph.
+- **Make one genuinely critical remark** where the law earns it, in exam register: "an odd result, but a settled one"; "the rule is hard on a minority member, and the Act does little to soften it". The booklet asks for informal critical comment, and authentic evaluative stance is a strong human signal — but evaluative passages are also the most exposed, so one per answer, attached to a named authority or provision. See "Conclusions and critical comment" above, which governs.
 - **Sound like the same person throughout — reuse your own phrases.** Humans have pet expressions and lean on them; the model's repetition penalty does the opposite, which is exactly what elegant-variation detection keys on. Pick two or three unremarkable workhorses for the essay ("on these facts", "the better view", "nothing turns on this") and let them recur naturally. This is the mirror image of the synonym-cycling rule: repeating *your own phrasing* is human; cycling synonyms for *legal terms* is not.
 
 ### Impersonality and register
@@ -203,11 +279,14 @@ Run this before handing over. Every box must pass.
 - [ ] Every sub-part answered; each obeys its own command word; drafting sub-parts built from the opened Appendix file, not memory (drafting checklist run).
 - [ ] There is a conclusion, reached once, at the end — not jumped to, not omitted.
 - [ ] Search the block for every banned word/phrase (both era-clusters) and for "—", "–", curly quotes/apostrophes and "…": zero hits. Ordinary keyboard characters only (no zero-width or non-standard space characters). British spelling throughout; no bold, bullets or other markdown residue.
-- [ ] No three consecutive sentences of the same length; no two consecutive paragraphs opening the same way; paragraphs visibly uneven in length.
+- [ ] **The particulars constraint holds everywhere.** Read the answer in 150-word chunks. Every chunk contains either the question's own particulars (a name, figure, date, holding, article doing specific work) or a dense source-specific enumeration. Any chunk that is general law in smooth prose gets rewritten or cut. This is the check that matters most; run it before the others.
+- [ ] No free-floating exposition: no opening background, no paragraph of pure doctrine, no account of how a rule came about, no case told at story length.
+- [ ] Conclusion is about three sentences, reached once, with no aphorism or balanced antithesis in the closing lines. At most one critical remark in the answer, attached to a named authority or provision.
+- [ ] No rhetorical questions. No negative parallelism ("not X, it is Y"), especially in the conclusion.
+- [ ] No three consecutive sentences of the same length, and no short sentence that carries no fact; no two consecutive paragraphs opening the same way; paragraphs visibly uneven in length.
 - [ ] Most paragraphs start bare — count the paragraph-initial connectives; sentence-initial "However," appears at most twice.
-- [ ] The question's names, figures and dates thread through the whole answer; no paragraph passes the portability test (none could be pasted under a different question).
 - [ ] Hedging is uneven and earned, at least one committed critical remark is present, and the essay's two-or-three pet phrases recur.
 - [ ] Legal terms repeated precisely, not synonym-cycled; no first person; no vague attribution.
 - [ ] Every authority named in the block appears in the course materials (nothing invented) and is listed on the Authorities line.
 - [ ] No source tag, module number, or page reference anywhere in the block.
-- [ ] Check panel complete: Authorities cited, Source, Cross-checked, Confidence, Verify.
+- [ ] Check panel complete: Authorities cited, Source, Cross-checked, Risk, Confidence, Verify.
