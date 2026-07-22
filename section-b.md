@@ -10,6 +10,16 @@ Produce a **complete, submit-ready essay in full prose** the user transcribes di
  unless the question structure calls for them]
 
 ──── DO NOT SUBMIT — for your check ────
+Coverage — <the completeness list: every point the answer had to contain, sub-part by
+ sub-part, ticked against the essay. Built after the essay from the question and the
+ materials, never read back off the draft. See "Coverage check" below.>
+(a) <sub-part> - <n> marks
+  [x] <rule or point>
+      -> <the particular from the question it bites on>
+  [ ] <point left out> - <one-line reason>
+(b) <sub-part> - <n> marks
+  [x] ...
+
 Authorities cited: <every case / statute / article, so the user can verify each>
 Source: <module(s) + section(s) + appendix(es) + filenames>
 Cross-checked: <the second-pass (CLAUDE.md step 5) result — any other module/appendix checked for a multi-module overlap and the verdict, e.g. "Module 10 §5.8 → incorporated; Module 12 → considered, not relevant"; or "single-module". Always present, even when empty-handed.>
@@ -22,6 +32,61 @@ Verify: <anything to double-check, or "none">
 The `SUBMIT THIS` block must contain **only** the essay. Never let a source tag, module reference, or page number leak into it — that text is submitted and must read as the user's own work.
 
 **Sub-parts:** if the question is split into (a), (b), (c)…, label each answer to match — those labels are the one heading the question structure calls for. Answer every sub-part; if the paper shows a mark allocation, let it set the relative depth of each.
+
+## Coverage check — what the answer had to contain
+
+The `Coverage` block heads the check panel. It is a **standard the answer is measured against**, not a summary of what the answer says: the points a full-marks answer needs, sub-part by sub-part, each ticked against the essay or left unticked with a reason. Its whole value is that a gap between the list and the essay becomes visible instead of staying invisible.
+
+**Build it once the essay is drafted, from the question and the materials — never from the draft.** The temptation is to read back what you wrote and list that. A list produced that way ticks every box and is worth nothing. Derive it in this order:
+
+1. Take the sub-part's **command word and its marks.** They fix what kind of point counts and how many the sub-part can carry.
+2. **Re-open the governing module section** (via `Content.md`) and list the rules, procedures and authorities it holds on that issue — whether or not the essay used them. A bullet earns its place from the materials, not from the fact that you wrote about it.
+3. **Only then** turn to the essay and tick.
+
+Where the paper shows no mark allocation, keep the sub-part label and drop the figure.
+
+### What a bullet looks like
+
+The point, and under it the particular it bites on:
+
+```
+(a) Whether the transfer passed title - 8 marks
+  [x] Registration, not execution, is what passes title
+      -> Mrs Chen was never entered on the register
+  [x] Pre-emption under Art 24, 21-day offer period
+      -> offer made 3 March, expired 24 March
+  [x] Directors' power to refuse, and the two-month limit on it
+      -> the board did not meet until 19 May
+  [ ] Estoppel - arguable, but nothing in the paper anchors it, and
+      2 marks does not buy an unparticularised paragraph
+```
+
+The arrow line does double duty. A bullet with nothing to put after the arrow is a warning that the passage answering it may be floating general law, which is the failure the particulars constraint exists to catch.
+
+### How many
+
+Roughly **one bullet per two marks**, at least two per sub-part, no more than about six. A 4-mark sub-part gets two or three; a 10-mark sub-part gets five or six. A long list of mostly-ticked boxes stops being read by the third question of the paper.
+
+**Drafting sub-parts are exempt from the cap**, and their bullets are a different thing: the named precedent's operative parts, one per resolution or clause, plus the execution block. The precedent's clause count is what it is, and a dropped clause is precisely the error this list exists to catch — so here the list makes the drafting checklist concrete for this question instead of generic.
+
+```
+(c) Draft the notice - 6 marks   [from Appendix 25D, Notice of AGM]
+  [x] Heading and company name
+  [x] Addressed to all members and to the auditors
+  [x] Date, time and place - 14 clear days from 1 June on these facts
+  [x] Ordinary business, each item numbered
+  [x] The special resolution set out in full
+  [x] Proxy note
+  [x] By order of the board, secretary, date
+```
+
+For a letter sub-part, bullet the layout elements (addressee block, salutation, matching sign-off, placeholder signature) alongside the substance.
+
+### Unticked bullets
+
+Every unticked bullet is either written into the essay before you hand over, or carries a one-line reason. **Silent omission is not permitted.** "Deliberately brief" is a legitimate reason and often the right one: "Coverage — leave some things brief" below still governs, and a peripheral point padded out to fill a box is a block with no particulars in it, bought at the price of marks.
+
+One kind of gap does not stay in the block. Where a bullet is unticked **because the course materials do not deal with the point**, that is a real limitation rather than a stylistic choice — name it on the `Verify:` line as well and let it pull `Confidence:` down. Deliberate omissions stay in the Coverage block alone; repeating those on `Verify:` dilutes the one signal that needs to be seen.
 
 ## Question risk — give a read on every question
 
@@ -274,12 +339,20 @@ Run this before handing over. Every box must pass.
 - [ ] Have I applied the law to the facts of the problem in this question?
 - [ ] Have I dealt with all possible interpretations of the facts?
 
+**Then the coverage check — run it before the style sweep, because closing a gap adds text the sweep has not read:**
+
+- [ ] Coverage list derived from the command word, the marks and a re-scan of the governing module section — not read back off the draft.
+- [ ] Every bullet ticked, or unticked with a one-line reason. No silent omissions.
+- [ ] Drafting sub-parts: one bullet per operative part of the named precedent, execution block included.
+- [ ] Any bullet unticked because the materials do not cover the point also appears on `Verify:`, and `Confidence:` reflects it.
+- [ ] Gaps repaired. Prose written to close one is now part of the text the sweep below reads.
+
 **Then the mechanical sweep of the SUBMIT block:**
 
 - [ ] Every sub-part answered; each obeys its own command word; drafting sub-parts built from the opened Appendix file, not memory (drafting checklist run).
 - [ ] There is a conclusion, reached once, at the end — not jumped to, not omitted.
 - [ ] Search the block for every banned word/phrase (both era-clusters) and for "—", "–", curly quotes/apostrophes and "…": zero hits. Ordinary keyboard characters only (no zero-width or non-standard space characters). British spelling throughout; no bold, bullets or other markdown residue.
-- [ ] **The particulars constraint holds everywhere.** Read the answer in 150-word chunks. Every chunk contains either the question's own particulars (a name, figure, date, holding, article doing specific work) or a dense source-specific enumeration. Any chunk that is general law in smooth prose gets rewritten or cut. This is the check that matters most; run it before the others.
+- [ ] **The particulars constraint holds everywhere.** Read the answer in 150-word chunks, including anything just added to close a coverage gap — prose written under time pressure to fill a box is the most exposed text in the answer. Every chunk contains either the question's own particulars (a name, figure, date, holding, article doing specific work) or a dense source-specific enumeration. Any chunk that is general law in smooth prose gets rewritten or cut. This is the check that matters most in this sweep; run it before the others.
 - [ ] No free-floating exposition: no opening background, no paragraph of pure doctrine, no account of how a rule came about, no case told at story length.
 - [ ] Conclusion is about three sentences, reached once, with no aphorism or balanced antithesis in the closing lines. At most one critical remark in the answer, attached to a named authority or provision.
 - [ ] No rhetorical questions. No negative parallelism ("not X, it is Y"), especially in the conclusion.
@@ -289,4 +362,4 @@ Run this before handing over. Every box must pass.
 - [ ] Legal terms repeated precisely, not synonym-cycled; no first person; no vague attribution.
 - [ ] Every authority named in the block appears in the course materials (nothing invented) and is listed on the Authorities line.
 - [ ] No source tag, module number, or page reference anywhere in the block.
-- [ ] Check panel complete: Authorities cited, Source, Cross-checked, Risk, Confidence, Verify.
+- [ ] Check panel complete: Coverage, Authorities cited, Source, Cross-checked, Risk, Confidence, Verify.
