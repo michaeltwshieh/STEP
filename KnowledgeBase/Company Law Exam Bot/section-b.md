@@ -168,7 +168,7 @@ A letter is a **prose task in formal letter dress** — the style rules below ap
 
 This style guidance governs **prose sub-parts**. For drafting sub-parts, the precedent's wording governs instead.
 
-Know what you are up against. The submission faces an ensemble, not one tool, and the mainstream systems weight different things: Turnitin- and Pangram-class detectors run deep classifiers trained on human, AI *and hybrid human-edited-AI* text; GPTZero layers perplexity and burstiness under a classifier; Copyleaks scores deviation from modelled human phrasing. Three consequences:
+The submission faces an ensemble of detectors (Turnitin, Pangram, GPTZero, Copyleaks), trained on human, AI *and hybrid human-edited-AI* text. Three consequences:
 
 - Detection is **blocky**. Detectors score runs of roughly 100 to 350 words as a unit, and once a passage tips, all of it tips. What decides the verdict is the character of each passage, not the shape of individual sentences — so the human register must hold everywhere, and one flat, uniform stretch mid-essay is caught locally even if the whole reads well.
 - They score **structure, not just words** — swapping vocabulary while keeping AI sentence architecture fails.
@@ -208,34 +208,15 @@ General legal exposition detached from the problem — the history of an Act, th
 
 ### Burstiness — sentence and paragraph length
 
-Mix lengths aggressively, not gently. Some sentences must be very short. Four words. Others should run much longer, building through subordinate clauses and qualifications before landing on the operative point, as a candidate under exam pressure tends to do when working through a complex argument in real time. One-sentence paragraphs are fine alongside four-sentence ones. Never let three consecutive sentences be the same length.
-
-**But a short sentence earns its place by carrying a fact, not by making rhythm.** "The loan is $5 million. The board therefore cannot borrow this money on its own authority. The word 'previous' carries weight." — three short sentences in a row is a machine performing emphasis, and it reads as one. Put a short sentence next to a long one, never next to two more short ones, and never write a short sentence whose only job is pace. This rule governs where it conflicts with the paragraph above.
-
-And do not sand the finished essay to a uniform polish in revision. Evenly smooth fluency is itself a machine signal — uniformly polished prose is also the most common way genuine human writing gets falsely flagged. A slightly overloaded sentence or a blunt, compressed claim left standing is worth more than another pass of smoothing.
-
-The same holds sentence by sentence, not only in revision. Not every sentence should be the best available version of itself. Some should simply carry the argument to the next point without sounding finished. A run of uniformly well-made sentences is its own kind of regularity.
+Mix lengths aggressively. Some sentences very short. Four words. Others run long, building through subordinate clauses before landing on the point. Never let three consecutive sentences be the same length, and don't sand the essay to a uniform polish, evenly smooth fluency is itself a machine signal. But a short sentence earns its place by carrying a fact, not by making rhythm: three in a row is a machine performing emphasis. Put a short sentence next to a long one, never next to two more short ones.
 
 ### Perplexity — word choice
 
-Prefer the less obvious but equally correct word over the statistically safe one. "The rule cuts both ways" over "This principle establishes a dual obligation." "There is no real dispute that" over "It is clear that." Compressed, direct phrasing over the most predictable formulation. Vary between slightly more formal and slightly more compressed register across paragraphs — not inconsistently, but not uniformly either.
-
-### Syntactic variety
-
-- Start some sentences with a subordinate clause: "Where a member has not been given notice…"
-- Start some with a conjunction: "But the position becomes more complex when…" / "Yet the statute is silent on…"
-- Use parenthetical asides in brackets: "the liquidator (who may be a non-member) is nonetheless bound by…"
-- Use interrupted constructions occasionally: "The articles, whatever their precise wording, cannot override the statute."
-- **Do not ask rhetorical questions.** Posing a question and answering it at once ("So what should a director do when instructed?") reads as the machine organising itself in public. State the issue as a statement and answer it.
-- Avoid three-item lists in perfect parallel grammatical structure. Break the pattern: list two items cleanly, then introduce the third differently.
+Prefer the less obvious but equally correct word over the statistically safe one: "the rule cuts both ways" over "this principle establishes a dual obligation", "there is no real dispute that" over "it is clear that". Compressed, direct phrasing over the predictable formulation.
 
 ### Banned words and phrases
 
-Never use: "crucial", "significant", "essential", "examine", "delve", "it is worth noting", "it bears mentioning", "it is important to note", "navigate", "robust", "nuanced", "comprehensive", "shed light on", "in conclusion", "to summarise", "furthermore", "moreover", "firstly/secondly/thirdly", "in addition", "additionally". Also avoid the AI vocabulary cluster: "landscape", "tapestry", "interplay", "foster", "underscore", "testament", "pivotal", "realm", "multifaceted", "leverage", "utilise", "facilitate", "vital", "that being said", "ultimately". Avoid speculative filler ("only time will tell", "at a rapid pace") and dated openers ("in today's world").
-
-The tell-list drifts as models are updated; the newer cluster (2024 onwards) is just as convicting: "highlighting", "showcasing", "emphasising", "align with", "enhance", "ensure" (state the consequence instead), "seamlessly", "streamline", "holistic", "unlock", "empower", "transformative", "embark", "journey", "boasts", "key" as an adjective, and sentence-initial "Notably,", "Importantly,", "Indeed,", "Overall,". Ban the **false range** too ("from incorporation to winding-up, the Act…") unless the range is literal and genuinely spans something.
-
-**Density convicts, not single hits.** One stray listed word survives; several across one answer is diagnostic. Write freely, then purge in the final sweep.
+Never use: "crucial", "significant", "essential", "examine", "delve", "it is worth noting", "it bears mentioning", "it is important to note", "navigate", "robust", "nuanced", "comprehensive", "shed light on", "in conclusion", "to summarise", "furthermore", "moreover", "firstly/secondly/thirdly", "in addition", "additionally", "landscape", "tapestry", "interplay", "foster", "underscore", "testament", "pivotal", "realm", "multifaceted", "leverage", "utilise", "facilitate", "vital", "that being said", "ultimately", "highlighting", "showcasing", "emphasising", "align with", "enhance", "ensure" (state the consequence instead), "seamlessly", "streamline", "holistic", "unlock", "empower", "transformative", "embark", "journey", "boasts", "key" as an adjective, and sentence-initial "Notably,", "Importantly,", "Indeed,", "Overall,". Also speculative filler ("only time will tell", "at a rapid pace"), dated openers ("in today's world"), and the **false range** ("from incorporation to winding-up, the Act…") unless it genuinely spans something. **Density convicts, not single hits** — one stray word survives, several is diagnostic. Write freely, then purge in the final sweep.
 
 ### Typography and mechanics — the SUBMIT block must look typed by a person
 
@@ -249,29 +230,23 @@ All of these govern the submitted essay; these instruction files break them free
 
 ### Sentence construction — AI tells to strip out
 
-These are the constructions a detector and a careful human reader both clock instantly. They matter more than vocabulary.
+These matter more than vocabulary.
 
-- **Use plain "is / are / has".** AI dresses up the verb: "serves as", "stands as", "operates as", "boasts", "represents". A director *is* a fiduciary; he does not "serve as" one. The doctrine *is* settled; it does not "stands as settled".
-- **Cut "-ing" tails.** AI bolts a present participle onto the end of a sentence to fake depth: "...the articles are binding, reflecting the contractual nature of membership" or "...highlighting the importance of notice". Stop the sentence at the point. If the trailing clause carries real content, make it its own sentence.
-- **No negative parallelism.** "It is not X, it is Y", "not only X but also Y", and "This is less about X than about Y" are strong tells. State the positive directly. Not "The duty is not merely procedural, it is substantive" but "The duty is substantive, not just a procedural box to tick" only if you must, and better still just assert the substantive point.
-- **No "This + applauding verb" openers.** "This ensures…", "This highlights…", "This demonstrates…", "This reflects…" as sentence-starts are the machine summarising itself. Say what actually follows: not "This ensures creditors are protected" but "Creditors get their protection from the solvency test, not the resolution."
-- **Refer back like a person.** Once a party or event is introduced, use pronouns and short handles ("the loan", "she", "that first meeting") so a referential chain runs through the answer. AI re-introduces the full formal noun phrase every time ("the aforementioned shareholder loan agreement") and glues paragraphs with connectives instead of reference.
-- **Repeat the precise term; do not cycle synonyms.** AI varies wording to avoid repetition ("the company", then "the entity", then "the corporate body"). Legal writing wants the opposite. Pick the correct term and reuse it. A "member" stays a "member", not a "shareholder" then a "stakeholder".
-- **Replace filler stems.** "in order to" → "to"; "due to the fact that" → "because"; "has the ability to" → "can"; "at this point in time" → "now" / "here".
-- **No vague attribution.** "Commentators argue", "it has been observed", "academics suggest" without a name is both a marks-loser and an AI tell. Either cite a real authority from the materials or assert the point in your own voice using the endorsed forms ("it is arguable that").
-- **Don't manufacture drama with clustered fragments.** Short sentences create burstiness, which is good, but several short punchy fragments in a row to build intensity ("The rule is clear. The breach is plain. The result follows.") is itself an AI signature. Let a short sentence sit next to a long one, not next to two more short ones.
+- **Use plain "is / are / has".** AI dresses up the verb: "serves as", "stands as", "operates as", "represents". A director *is* a fiduciary; he does not "serve as" one.
+- **Cut "-ing" tails.** AI bolts a present participle onto the end to fake depth: "...the articles are binding, reflecting the contractual nature of membership". Stop at the point; if the tail carries real content, make it its own sentence.
+- **No negative parallelism.** "It is not X, it is Y", "not only X but also Y", "less about X than about Y" are strong tells. State the positive directly.
+- **No "This + applauding verb" openers.** "This ensures…", "This highlights…", "This demonstrates…" are the machine summarising itself. Say what actually follows.
+- **Repeat the precise term; do not cycle synonyms.** AI varies wording to avoid repetition ("the company", then "the entity", then "the corporate body"). Pick the correct term and reuse it. A "member" stays a "member".
+- **Do not ask rhetorical questions.** Posing a question and answering it at once ("So what should a director do when instructed?") reads as the machine organising itself in public. State it as a statement.
 
 ### Structural asymmetry
 
-AI applies balanced, parallel structure far more often than humans do, and it does so at every level: word, phrase, sentence, paragraph, and whole answer. This symmetry appears in the large majority of AI text and is one of the most reliable things a detector keys on. Human writing is lopsided. Build that lopsidedness in deliberately.
+AI applies balanced, parallel structure far more than humans, at every level, and it is one of the most reliable things a detector keys on. Human writing is lopsided. Build that in deliberately.
 
-- **Uneven paragraphs.** Do not make paragraphs roughly the same length. One issue might take a long, worked-through paragraph; the next disposes of a weaker point in two sentences. The variance is the signal.
-- **Let one side win.** When you weigh two views, do not give them equal column inches and a tidy balance. A real candidate finds one argument stronger and spends more on it, conceding the other briefly. "There is an argument that X, but it does not survive contact with the statute" is more human than two perfectly matched paragraphs.
-- **Start most paragraphs bare.** Detectors literally measure transition density. Most paragraphs need no connective at all: just start on the next point. When you do link, prefer a small word (But, So, Still, Even so) over an adverb, and ration sentence-initial "However," to at most twice an essay.
-- **Vary how paragraphs open.** Do not start consecutive paragraphs the same way (e.g. every one with "The..." or every one naming the rule first). Mix: lead one with the facts, the next with the authority, the next with a question or a concession.
-- **Break the rule-case-application template.** AI tends to structure every paragraph identically (state rule, cite case, apply). Vary the order. Sometimes apply first and bring the authority in to confirm; sometimes open on the difficulty.
-- **Don't over-resolve.** AI ties a neat bow on every paragraph. You still need a clear overall conclusion (the exam demands it), but individual paragraphs can end on an unresolved tension or a concession rather than a mini-summary. Reach your position once, at the end, not five times along the way.
-- **No tricolons by reflex.** The three-parallel-item list ("the duty of care, the duty of loyalty, and the duty of good faith") is a heavy tell when forced. If there genuinely are three, fine, but break the parallel grammar or give one of them an extra clause so the rhythm is uneven.
+- **Uneven paragraphs.** One issue takes a long, worked-through paragraph; the next disposes of a weaker point in two sentences. The variance is the signal.
+- **Let one side win.** When you weigh two views, do not give them equal column inches. "There is an argument that X, but it does not survive contact with the statute" is more human than two perfectly matched paragraphs.
+- **Start most paragraphs bare.** Detectors measure transition density. Most paragraphs need no connective; just start on the next point. Ration sentence-initial "However," to at most twice an essay.
+- **No tricolons by reflex.** The three-parallel-item list ("the duty of care, the duty of loyalty, and the duty of good faith") is a heavy tell when forced. Break the parallel grammar or give one item an extra clause so the rhythm is uneven.
 
 ### Coverage — leave some things brief
 
@@ -301,7 +276,6 @@ Expect the conclusion to be the part that still flags. That is the price of writ
 ### Voice, stance and idiolect
 
 - **Commit.** A balanced survey that never lands is a detector signal and an exam fault at once. Hedge only where the law is genuinely uncertain, and vary the strength of the hedge; do not attach "may", "might", "generally" to every claim by reflex.
-- **Make one genuinely critical remark** where the law earns it, in exam register: "an odd result, but a settled one"; "the rule is hard on a minority member, and the Act does little to soften it". The booklet asks for informal critical comment, and authentic evaluative stance is a strong human signal — but evaluative passages are also the most exposed, so one per answer, attached to a named authority or provision. See "Conclusions and critical comment" above, which governs.
 - **Sound like the same person throughout — reuse your own phrases.** Humans have pet expressions and lean on them; the model's repetition penalty does the opposite, which is exactly what elegant-variation detection keys on. Pick two or three unremarkable workhorses for the essay ("on these facts", "the better view", "nothing turns on this") and let them recur naturally. This is the mirror image of the synonym-cycling rule: repeating *your own phrasing* is human; cycling synonyms for *legal terms* is not.
 
 ### Impersonality and register
