@@ -1,0 +1,47 @@
+{
+  "candidate_id": "candidate-a",
+  "case_refs": [
+    "S01",
+    "S02",
+    "P05B",
+    "P08A"
+  ],
+  "plans": [
+    {
+      "label": "action",
+      "path": "plans/action.json",
+      "sha256": "f0d4c351c2db86c612a2cc7f580addb00d2aa0b9c3129ff5fddf44bf87835006",
+      "validation_path": "validation/action.json",
+      "validation_sha256": "62d927b0d3da79009781e28783f38ddebd24120bfd0a557606a6854c65b22853"
+    },
+    {
+      "label": "completion",
+      "path": "plans/completion.json",
+      "sha256": "119364fa5f56ada07e999f8f3a9db6398f5398d60a0708f74c7bd7c3fb804cd8",
+      "validation_path": "validation/completion.json",
+      "validation_sha256": "c458ac9a0a8a2a42d38f64332a0cafd4f7971d16539c937262742a389ec84572"
+    },
+    {
+      "label": "managed",
+      "path": "plans/managed.json",
+      "sha256": "cfe71b287208b2cabeb21d281782b5c898bf0df9e11fc5d15d8f19f92d28d517",
+      "validation_path": "validation/managed.json",
+      "validation_sha256": "a592b7f1ed48bdda46570dc5f6ae6199abb33b87fa7d16b74c040b2deb5cbf93"
+    },
+    {
+      "label": "source_access",
+      "path": "plans/source_access.json",
+      "sha256": "96c4062175d300bd7b8dc8d6a95ddee85c05fd563d5275ba0ebbdf0280fee396",
+      "validation_path": "validation/source_access.json",
+      "validation_sha256": "d7458020144f49e3d5ca7e4ff7dda2c6bd09df2a203d1d4c80d43ff543ef3c00"
+    },
+    {
+      "label": "transfer",
+      "path": "plans/transfer.json",
+      "sha256": "ee54857d0c62cf2439fa6163c0e38564e901d50d158529db10029e7fae9ad3c6",
+      "validation_path": "validation/transfer.json",
+      "validation_sha256": "faee22eb83fb8499c0d301cc92157177f3065935a0ca7ca3bb096ef385fc31cb"
+    }
+  ],
+  "schema": "focused-route-plan-candidate-package-v1"
+}

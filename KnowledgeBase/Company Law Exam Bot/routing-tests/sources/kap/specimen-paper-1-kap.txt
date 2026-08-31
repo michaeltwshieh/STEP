@@ -1,0 +1,344 @@
+===== PAGE 1 =====
+In association with
+Specimen Examination Paper 1 – Key Answer Points
+STEP Advanced Certificate 
+in Company Law and Practice
+(International)
+
+===== PAGE 2 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+2
+Note:
+The following key answer points are provided to support your preparation and understanding of the 
+issues raised in the questions in the specimen examination paper. These are not model or specimen 
+answers, and you are not expected to replicate the structure, style, or vocabulary used. 
+ 
+They are intended as a learning aid to help you develop your analytical approach and exam 
+technique, rather than as templates for your own responses. Use them to reflect on how issues are 
+framed and addressed, and to strengthen your ability to construct well-reasoned conclusions for the 
+final assessment. 
+
+===== PAGE 3 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+3
+Question 1
+1.1 Candidates should draft a Notice that complies with Article 11.1, which is illustrated in Appendices 
+25E and 30B of the online Study Resources, and also shown below.
+COMPANY LIMITED (Number xxx, the ‘Company’)
+NOTICE OF GENERAL MEETING OF THE COMPANY TO CONSIDER SPECIFIC RESOLUTION
+To: The members of the Company: C, D and E
+ The directors of the Company: A and B
+ 
+NOTICE IS HEREBY GIVEN THAT a general meeting of the Company will take place at [venue] on 
+[date] at [time] for the purposes of considering and, if thought fit, passing the following SPECIAL 
+RESOLUTIONS:
+1. THAT the Company be wound up voluntarily.
+2. THAT [name and address] and [name and address] (the ‘Liquidators’) be and are hereby 
+appointed as liquidators of the Company to act jointly and severally for the purposes of 
+such winding up.
+3. THAT the Liquidators’ accounts of receipts and payments need not be audited.
+DATE
+SIGNED
+Note: A member of the Company who is entitled to attend and vote is also entitled to appoint a 
+proxy, who need not be a member of the Company, to attend, speak and vote instead of him.
+In relation to subsequent questions, it is expected that candidates should cover the 
+following points.
+1.2  Notice should be served upon all shareholders and the directors in accordance with 
+Article 27.5. Service should be effected personally, by post or email attachment in accordance 
+with Articles 27.1 and 27.2. 
+It is suggested that service by email is more efficient as it is permitted by Article 27.1 (provided 
+the shareholders have supplied a ‘registered email address’) and service is deemed effected 
+upon sending.
+1.3 Failure to give proper notice usually invalidates the meeting and any business transacted. 
+However, the Articles may excuse an accidental error in service. Article 11.3 comes into play 
+to validate the meeting following accidental failure to give proper notice.
+1.4 The quorum for a members’ meeting under Article 12.2 is two shareholders personally 
+present. Accordingly, if only C attends, the meeting is inquorate and should be adjourned 
+in accordance with Article 12.3.
+1.5 On a show of hands D and E can vote out C. However, in accordance with Article 12.6, C can 
+demand a poll in which case their 70% of the votes constitutes a super-majority in accordance 
+with the definition in Article 1), sufficient to pass the special resolution.
+
+===== PAGE 4 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+4
+Question 2
+2.1 It is expected that candidates should cover the following points.
+ y Article 19.3 requires any borrowing in excess of $1 million to be approved by the 
+company in general meeting. In these circumstances, as a nominee shareholder has been 
+appointed, a shareholders’ meeting can be dispensed with. There is a two-stage process: a 
+shareholder’s resolution is required to authorise the borrowing; and a director’s resolution 
+to borrow the money, buy the aircraft, register the new ownership and mortgage and, 
+finally, to transfer the registration to the Manx Aircraft Registry.
+ y Firstly, to pass a shareholder’s resolution:
+(a) obtain the beneficial owner’s written instructions to the nominee shareholder 
+to pass a written ordinary resolution to approve the borrowing of $5 million and 
+to mortgage the aircraft as security;
+(b)  the directors of the corporate nominee should appoint an authorised representative 
+to sign documentation on behalf of the corporate nominee – see precedent in 
+Appendix 25H and notice at Appendix 25J;
+(c) pass a written resolution by having it signed by the authorised representative of the 
+corporate nominee; and
+(d) file the written resolution of the sole shareholder in the company’s minute book.
+ y Secondly, a sole director cannot hold a board meeting, therefore all that is necessary is 
+for the sole director to pass a board resolution to approve and complete the transactions 
+as follows:
+(i) the corporate director must appoint an authorised representative to sign the board 
+resolution on its behalf;
+(ii) draft and sign a written board resolution to borrow the funds, purchase the aircraft, 
+mortgage the aircraft, register the new ownership and mortgage and, finally, 
+transfer the registration to the Manx Aircraft Registry;
+(iii) file the resolution in the company’s minute book of board resolutions; and
+(iv) update the company’s register of charges, where applicable.
+
+===== PAGE 5 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+5
+2.2 Candidates should draft written resolutions of the sole shareholder and written resolutions 
+of the sole director, illustrated below.
+COMPANY LIMITED (No. xxx, the ‘Company’)
+WRITTEN RESOLUTIONS OF THE SOLE MEMBER OF COMPANY
+Pursuant to Articles 12.2 and 12.11 of the Company’s Articles of Association, we the undersigned 
+sole member of the Company for the time being:
+NOTE:
+(A) THAT it is proposed that the Company do borrow the sum of $5 million from XYZ Bank, 
+Miami in order to buy a Lear Star Jet, Tailfin Number 1234 (the ‘Aircraft’) and that the loan 
+be secured by way of legal mortgage over the Aircraft (the ‘Borrowing’).
+(B) THAT the sole shareholder wishes to approve the Borrowing pursuant to Art 19.3 of the 
+Company’s articles.
+(C) THAT the sole shareholder wishes to approve the purchase of the Aircraft in order that the 
+board may proceed without liability for breach of their duty to the Company.
+RESOLVED:
+THAT the Borrowing and the purchase of the Aircraft be and is hereby approved.
+DATED
+SIGNED
+For and on behalf of Corporate Services Provider (Nominees) Limited
+COMPANY LIMITED (No. xxx, the ‘Company’)
+WRITTEN RESOLUTIONS OF THE SOLE DIRECTOR OF COMPANY 
+Pursuant to Article 20.15 of the Company’s Articles of Association, we the undersigned sole 
+director of the Company:
+NOTE:
+(A) With the approval of the sole shareholder of the Company, the Company proposes 
+to borrow the sum of $5 million from XYZ Bank, Miami (the ‘Loan’ and the ‘Lender’ 
+respectively) in order to buy a Lear Star Jet, Tail Fin No.1234 (the ‘Aircraft’)
+(B) The purchase of the Aircraft and its terms and conditions shall be recorded in a Bill of 
+Sale, a copy of which is attached and forms part of these resolutions marked AB1 (the ‘Bill 
+of Sale’)
+(C) The Loan shall be secured against the Aircraft by way of Legal Mortgage in the Lender’s 
+standard form, a copy of which is attached marked AB2 (the ‘Mortgage’).
+(D) The Mortgage creates a fixed and floating charge over the Aircraft and other assets of the 
+Company and may be enforced by the Lender upon the happening of certain defined Acts 
+of Default.
+(E) Upon completion of the purchase of the Aircraft and registration of the Company as 
+owner and the Lender as mortgagee of the Aircraft, and with the Lender’s consent, the 
+registration of the Aircraft be transferred from the United States Federal Aviation Authority 
+to the Manx Aircraft Registry. 
+
+===== PAGE 6 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+6
+(F) After careful consideration it was decided that the borrowing from the Lender of the Loan 
+to acquire the Aircraft, the acquisition of the Aircraft and the transfer of its registration to 
+the Manx Aircraft Registry would promote the interests and success of the Company for 
+the benefit of its shareholders.
+RESOLVE:
+1. That the terms and conditions set out in the Bill of Sale be and are hereby approved.
+2. That the Bill of Sale be entered into and executed as a deed.
+3. THAT the terms and conditions of the Loan, secured by the Mortgage be and are hereby 
+approved.
+4. THAT the Loan be signed by the Company’s authorised representative and the Mortgage 
+be entered into and executed as a deed.
+5. THAT the authorised representative of the Company be and is hereby instructed to enter 
+particulars of the Mortgage in the Company’s register of charges.
+6. THAT upon completion of the purchase of the Aircraft and registration of the Company 
+as owner and the Lender as mortgagee of the Aircraft, and with the Lender’s consent, 
+the registration of the Aircraft be transferred from the United States’ Federal Aviation 
+Authority to the Manx Aircraft Registry.
+7. THAT the authorised representative be and is hereby authorised to execute all 
+documentation on behalf of the Company in order to complete the registration referred to 
+in Resolution 6, above.
+DATED
+SIGNED
+For and on behalf of Corporate Services Provider (Directorships) Ltd
+
+===== PAGE 7 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+7
+Question 3
+3.1 
+It is expected that candidates should cover the following points.
+ y The typical division of power within a corporate structure is between ownership 
+and control: the shareholders passively own the company; the directors control day-to-day 
+management of its business. 
+• The historic reasons for the division of power are manifold, including those referred 
+to in Module 2:
+(i) raising capital – it enabled entrepreneurs to raise significant amounts of capital 
+to finance their start-up businesses;
+(ii) expertise and business acumen – the entrepreneurs were experts in their field 
+of business, the capitalists not so; and
+(iii) liquidity – it permitted the owners of a business to liquidate their investment by 
+selling their shares to a willing buyer, without it affecting the day-to-day business 
+conducted by the board of directors.
+3.2 Candidates are expected to cover the following points.
+ y The apportionment of power referred to above in Question 3.1 is confirmed by Article 
+19.1 of the Company’s articles (which is modelled upon Table A of the English Companies 
+Act 1948). 
+ y The article confers upon the board the power to run the business of the Company as 
+well as other residual powers that are not expressly conferred upon the shareholders 
+by applicable companies legislation (for example, to alter the constitution, migrate or 
+voluntarily wind-up) or by the articles (for example, to approve corporate borrowing above 
+a maximum limit per Article 19.3 and remove and replace board members). 
+ y However, no power to manage, or interfere in management of, the business of the 
+company is expressly conferred upon the shareholders by the articles under scrutiny in 
+Appendix 1 and, therefore, Article 19.1 simply codifies the typical division. According to 
+Quin & Axtens Ltd v Salmon,1 this means that shareholders have no power to give binding 
+instructions to the board.
+3.3 Candidates are expected to discuss the following points.
+ y When both the board of directors and the body of shareholders are provided by one and 
+the same trust company, the division of power between the two organs is often regarded  
+ 
+as academic. The sole shareholder of an underlying company is the trust company which 
+also provides the company’s board of directors. 
+ y When making corporate decisions affecting the company and its assets, its board of 
+directors technically owe the company an independent fiduciary duty and duty of care. 
+To comply with such duties a director must always act carefully and in the best interests 
+of the company as a whole. Whereas a shareholder can decide matters in its own favour. 
+1. Quin & Axtens Ltd v Salmon [1909] AC 442.
+
+===== PAGE 8 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+8
+ y However, in relation to the management of an underlying company, the board of directors 
+are really an extension of the trustee that owes similar duties, but to the beneficiaries 
+rather than the company.
+3.4 The power to remove a director of the Company is conferred upon the shareholders. According 
+to Article 15.3, it requires an ordinary resolution passed by majority vote. Removal of board 
+members can, therefore, be carried out by the sole shareholder, namely the trustee of the 
+Redhouse Trust. The power to replace a director who has been removed is also conferred on the 
+sole shareholder by Article 15.4, exercised by passing an ordinary resolution. 
+In practice, you are only likely to be removed as director of an underlying company and replaced 
+when there is a change of trustee. For instance, if the trustee of the Redhouse Trust is removed 
+and replaced by T2, the shares of Company will be transferred to T2, who will then vote the 
+shares to pass an ordinary resolution to remove existing board members and replace them by 
+appointing their own officers (or corporate subsidiary) to the board. 
+
+===== PAGE 9 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+9
+Question 4
+This is an academic essay in two parts. In the first part candidates are expected to review the 
+responsibilities of directors, the performance of which earns them remuneration, but they can also 
+be held personally liable to the company for breach of duty and to creditors for fraudulent/wrongful 
+trading. In the second part, candidates are expected to review how and to what extent members of the 
+board of directors can reduce their exposure to risk. 
+It is expected that, in the review of responsibilities and duties, candidates should cover the 
+following points.
+ y Responsibilities include the fiduciary duties owed to the company (Module 8 section 2.1, in 
+particular the duty of good faith, the no-conflicts rule, the no-profits rule, the no-other-benefits 
+rule) and the duty to exercise their powers with appropriate and reasonable care and skill 
+(Module 8 section 2.2).
+ y Remuneration is typically a matter for the shareholders in general meeting (see, for example, 
+Article 18 of Appendix 1).
+ y Breach of duty: the company, but not individual shareholders, may commence a lawsuit against 
+an errant director for breach of their fiduciary duty and/or duty to manage with appropriate 
+standards of reasonable care and skill (the proper-plaintiff rule in Foss v Harbottle,2 Module 
+8 section 4). The commencement of a lawsuit by the company against a director requires a 
+resolution of shareholders in general meeting. The majority of shareholders can therefore waive a 
+negligent, but not a fraudulent, breach of director’s duty.
+ y Fraudulent/wrongful trading: furthermore, a director can be held personally liable to pay debts 
+incurred by the company in circumstances when the director allows the company to continue 
+to trade, and thus incur liabilities, when the company is insolvent and they know (for fraudulent 
+trading) or ought reasonably to know (for wrongful trading) that the company is and will be 
+unable to pay. See Module 8 section 6.
+The second part of the essay requires candidates to state how and to what extent directors can 
+reduce their exposure to risk. 
+ y In order to eliminate liability for negligent acts and omissions, a director may:
+(i) obtaining shareholder approval;
+(ii) exoneration provisions in the articles and or in the director’s service agreement (‘DSA’), 
+provided lawful in the jurisdiction under scrutiny;
+(iii) indemnity provisions in the Company Management Agreement;
+(iv) Director’s indemnity insurance.
+ y In order to reduce liability for fraudulent/wrongful trading as soon as a director realises that the 
+company is approaching insolvency, they should convene a board meeting, recommend that the 
+company ceases to trade and be voluntarily wound up, or alternatively, if it is viable, propose a 
+compromise arrangement with its creditors. 
+2. Foss v Harbottle (1843) 67 ER 189.
+
+===== PAGE 10 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+10
+Question 5
+5.1 It is expected that candidates will cover the following points.
+ y A members’ voluntary winding-up is initiated by shareholders resolution in circumstances 
+when the company is solvent and requires a directors’ resolution of solvency. This entitles 
+the shareholders to appoint the liquidation to complete the winding-up process. 
+ y A creditors’ voluntary winding-up occurs in the absence of court proceedings when the 
+company is insolvent. The creditors’ voluntary winding-up is still initiated voluntarily by 
+shareholders’ resolution but without a court order. However, the directors are required to 
+then convene a creditors’ meeting for the creditors to appoint the liquidator.
+ y Once the liquidator is appointed, the winding-up process then follows a similar route
+ y In conclusion, a creditors’ voluntary winding-up is appropriate, as the Company is 
+insolvent. 
+5.2 Company Ltd (in creditors’ voluntary winding-up)
+LIQUIDATOR’S STATEMENT OF ACCOUNT
+Company: Company Limited
+Proceedings: Creditors’ voluntary winding-up
+Date of commencement  of winding-up: [date]
+Period of Accounts:  [date] to [date]
+Name of Liquidator: [Name] of [address]
+RECEIPTS AND REALISATIONS
+DATE RECEIVED FROM NATURE OF ASSET REALSISED
+AMOUNT 
+($)
+Date Broker Investments 310,000
+Date Realtor Real estate: Blackacre* 1,700,000
+Date Dealer Artwork 550,000
+Date Bank Deposit account closed_ 40,000
+Date PB Oil Co. Receivable 5,000
+2,605,000
+
+===== PAGE 11 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+ Specimen Examination Paper 1 – Key Answer Points
+11
+PAYMENTS
+DATE PAID NATURE OF SUM PAID
+AMOUNT 
+OWED($) PAID($)
+Date Mortgagee, Secured Proceeds of sale Blackacre* 2,400,000 1,700,000
+Date Liquidator Fees/disbursements (in full) 40,000 40,000
+Date Government, Pref Cr Tax (in full) 55,000 55,000
+Ordinary Creditors
+Date Mortgagee, balance Remaining debt as Ord Cr* 700,000 350,000
+Date Lawyer Legal fees 120,000 60,000
+Date Accountant Accountancy fees 15,000 7,500
+Date Trade Creditors Trade Creditors 225,000 112,500
+Date CSP Corporate services 60,000 30,000
+Date Beneficial Owner Shareholder loan 500,000 250,000
+2,605,000
+BALANCE  Nil
+SUMMARY
+Receipts and realisations 2,605,000
+Payments 2,605,000
+Balance Nil
+Capital returned to members Nil
+
+===== PAGE 12 =====
+All rights are reserved. No part of this publication may be reproduced, stored in a retrieval system, 
+or transmitted in any form or by any means – electronic, mechanical, photocopying, recording or 
+otherwise – without the prior permission of CLT International Ltd. 
+Crown copyright material is licensed under the Open Government Licence 3.0. T o view this licence, 
+visit https://www.nationalarchives.gov.uk/doc/open-government-licence/.
+While all reasonable care has been taken in the preparation of this manual, neither CLT International Ltd 
+nor any of the authors accept responsibility for any errors it may contain or for any loss sustained by 
+any person placing reliance upon its contents.
+© CLT International Ltd 2025 CLI16/16363

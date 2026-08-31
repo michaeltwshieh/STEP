@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "inventory": {
+    "modules": 12,
+    "appendices": 90
+  },
+  "registries": {
+    "modules": 12,
+    "appendices": 90
+  },
+  "candidate_hashes": {
+    "Content.md": "ce886f1f510c48094cf118d065dee42e6a0684ca9a8134a79236a5a05a2fc48f",
+    "routing-core.md": "ea3ef6fcb9d3aa98027941a42239532076613039c830b037c65a06827285be46",
+    "section-a.md": "d35c707d13035f6abd763cc6ccd10e928482d605f26dfca2bc03d8ff7d513c48",
+    "section-b.md": "645e506490b98c31d1d845251dc95ca07b31439888d892b6ba3b427715f81697",
+    "CLAUDE.md": "07ff62d2791faa0692ce9b548f87ee6f75cf94142b0385ddf9bb4a4d738c42a3"
+  },
+  "failures": [],
+  "warnings": []
+}

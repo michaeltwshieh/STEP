@@ -1,0 +1,10 @@
+# macOS Finder metadata
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Generated visual/rendering artefacts
+**/output/
+**/tmp/pdfs/
+**/tmp/docx-render-*/
+**/Routing-v2-Whiteboard-Deck/slide-*.png

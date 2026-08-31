@@ -1,0 +1,415 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "specimen1.q1.5.v1",
+  "case_refs": [],
+  "answer_unit": {
+    "id": "q1.5",
+    "mode": "PROSE",
+    "question_ref": "Specimen Paper 1 Question 1.5",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "exam-inputs/Specimen-Paper-1.pdf"
+    ],
+    "exam_attachment": [
+      "exam-inputs/Specimen-Paper-1.pdf"
+    ],
+    "course_manual": [
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md"
+    ],
+    "course_appendix": [
+      "Appendix-25G-Specific-proxy.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": [],
+      "alternatives": [
+        "Unidentified jurisdiction; use supplied legislation threshold and actual articles only"
+      ]
+    },
+    "regime_entity": {
+      "state": "supplied",
+      "value": "Company Ltd governed procedurally by supplied articles",
+      "deciding_fact_ids": [
+        "f.entity"
+      ],
+      "alternatives": []
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "C, D and E as members voting; C as potential poll demander",
+      "deciding_fact_ids": [
+        "f.actor"
+      ],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "Show-of-hands vote followed by a poll demand and share-weighted vote",
+      "deciding_fact_ids": [
+        "f.relationship"
+      ],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "Voting at the quorate 28 August meeting",
+      "deciding_fact_ids": [
+        "f.lifecycle"
+      ],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "supplied",
+      "value": "Applicable companies legislation threshold plus examination Appendix 1 articles",
+      "deciding_fact_ids": [
+        "f.governing"
+      ],
+      "alternatives": []
+    }
+  },
+  "facts": [
+    {
+      "id": "f.entity",
+      "kind": "regime_entity",
+      "subject_id": null,
+      "value": "Company Ltd",
+      "text": "Company Ltd is the company in question",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.actor",
+      "kind": "actor_capacity",
+      "subject_id": null,
+      "value": "C, D and E as members voting; C as potential poll demander",
+      "text": "C, D and E as members voting; C as potential poll demander",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.relationship",
+      "kind": "transaction_relationship",
+      "subject_id": null,
+      "value": "Show-of-hands vote followed by a poll demand and share-weighted vote",
+      "text": "Show-of-hands vote followed by a poll demand and share-weighted vote",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.lifecycle",
+      "kind": "lifecycle_stage",
+      "subject_id": null,
+      "value": "Voting at the quorate 28 August meeting",
+      "text": "Voting at the quorate 28 August meeting",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.governing",
+      "kind": "governing_instrument",
+      "subject_id": null,
+      "value": "legislation and exam Appendix 1",
+      "text": "Applicable legislation supplies a three-quarter threshold unless the articles define a lesser super-majority; examination Appendix 1 is supplied",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.holdings",
+      "kind": "general",
+      "subject_id": null,
+      "value": "70/20/10",
+      "text": "C, D and E hold 70%, 20% and 10% respectively",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.date",
+      "kind": "general",
+      "subject_id": null,
+      "value": "28 August",
+      "text": "The original general meeting is to take place on 28 August",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.command",
+      "kind": "general",
+      "subject_id": null,
+      "value": "apply voting",
+      "text": "Determine the show-of-hands result and what C should do",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.attendance",
+      "kind": "branch_decision",
+      "subject_id": null,
+      "value": "all attend; D and E against",
+      "text": "C, D and E all attend; D and E vote against on a show of hands",
+      "material": true,
+      "disposition": "used - content"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c.show",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The motion loses two votes to one on a show of hands.",
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "c.poll",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "C should demand a poll before or on declaration; C's 70% then exceeds the two-thirds special-resolution threshold.",
+      "disposition": "used - outcome"
+    }
+  ],
+  "entities": [
+    {
+      "id": "company",
+      "entity_type": "corporate",
+      "capacities": [
+        "other"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "secretary",
+      "entity_type": "human",
+      "capacities": [
+        "officer",
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "A",
+      "entity_type": "human",
+      "capacities": [
+        "director"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "B",
+      "entity_type": "human",
+      "capacities": [
+        "director"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "C",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "D",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "E",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "r.question",
+      "source": {
+        "namespace": "exam_question",
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "pinpoint": "Question 1.5, page 2"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.date",
+        "f.holdings"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies the 70/20/10 holdings, attendance, votes and four-mark scope.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.articles",
+      "source": {
+        "namespace": "exam_attachment",
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "pinpoint": "Appendix 1 definition of special resolution and arts 12.6-12.10 and 13.1"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.governing",
+        "f.attendance",
+        "f.holdings"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Controls one-member-one-vote on hands, the 15% poll-demand threshold, one-vote-per-share on poll and the two-thirds threshold.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.m10",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "pinpoint": "Sections 2.8-2.9"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.attendance"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies motions, special resolutions, show-of-hands voting and polls.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.forbidden",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-25G-Specific-proxy.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": [
+        "f.lifecycle"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "A specific proxy precedent is unnecessary because all three registered shareholders attend personally.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "fb70e9f55b18d2166c6d4383b238cf264f7233caf8631f42b878d6ae09a8a4c0",
+    "allowlist": [
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_question",
+        "role": "incorporated"
+      },
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_attachment",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      }
+    ],
+    "actual_open": [
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_question",
+        "role": "incorporated",
+        "sha256": "06dc9ab27f0bad1ffad543f84ee645a0af07aa0095075ff43b5cba90d7c11f66"
+      },
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_attachment",
+        "role": "incorporated",
+        "sha256": "06dc9ab27f0bad1ffad543f84ee645a0af07aa0095075ff43b5cba90d7c11f66"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"
+      }
+    ],
+    "forbidden_paths": [
+      "Appendix-25G-Specific-proxy.md"
+    ],
+    "prior_answer_paths": []
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": false,
+    "complex_transaction": false,
+    "instruments": [],
+    "expected_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    },
+    "actual_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    }
+  },
+  "materials_gaps": [],
+  "final_trace": [
+    {
+      "id": "trace.r.question",
+      "route_id": "r.question",
+      "contribution": "Supplies the 70/20/10 holdings, attendance, votes and four-mark scope.",
+      "answer_location": "Question 1.5 answer/check trace"
+    },
+    {
+      "id": "trace.r.articles",
+      "route_id": "r.articles",
+      "contribution": "Controls one-member-one-vote on hands, the 15% poll-demand threshold, one-vote-per-share on poll and the two-thirds threshold.",
+      "answer_location": "Question 1.5 answer/check trace"
+    },
+    {
+      "id": "trace.r.m10",
+      "route_id": "r.m10",
+      "contribution": "Supplies motions, special resolutions, show-of-hands voting and polls.",
+      "answer_location": "Question 1.5 answer/check trace"
+    },
+    {
+      "id": "trace.r.forbidden",
+      "route_id": "r.forbidden",
+      "contribution": "A specific proxy precedent is unnecessary because all three registered shareholders attend personally.",
+      "answer_location": "Question 1.5 answer/check trace"
+    }
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

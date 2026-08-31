@@ -1,0 +1,300 @@
+{
+  "answer_unit": {
+    "id": "Unit_main",
+    "mcq_options": [],
+    "mode": "PROSE",
+    "question_ref": "inputs/question.json"
+  },
+  "case_refs": [
+    "P08A"
+  ],
+  "claims": [],
+  "entities": [
+    {
+      "capacities": [
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": [],
+      "entity_type": "human",
+      "id": "E_human"
+    }
+  ],
+  "facts": [
+    {
+      "disposition": "used - outcome",
+      "id": "F_base",
+      "kind": "general",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied question fixes the generic requested outcome.",
+      "value": true
+    },
+    {
+      "disposition": "used - outcome",
+      "id": "F_completion_method",
+      "kind": "branch_decision",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied procedure selects one completion method.",
+      "value": "final meeting"
+    }
+  ],
+  "final_trace": [
+    {
+      "answer_location": "planned answer or private trace location for R_question",
+      "contribution": "Unique contribution from R_question",
+      "id": "T_R_question",
+      "route_id": "R_question"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_rule",
+      "contribution": "Unique contribution from R_rule",
+      "id": "T_R_rule",
+      "route_id": "R_rule"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_final_meeting",
+      "contribution": "Unique contribution from R_final_meeting",
+      "id": "T_R_final_meeting",
+      "route_id": "R_final_meeting"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_written_approval",
+      "contribution": "Unique contribution from R_written_approval",
+      "id": "T_R_written_approval",
+      "route_id": "R_written_approval"
+    }
+  ],
+  "locks": {
+    "governing_instruments": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied governing_instruments"
+    },
+    "jurisdiction": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied jurisdiction"
+    },
+    "legal_actor_capacity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied legal_actor_capacity"
+    },
+    "lifecycle_stage": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied lifecycle_stage"
+    },
+    "regime_entity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied regime_entity"
+    },
+    "transaction_relationship": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied transaction_relationship"
+    }
+  },
+  "materials_gaps": [],
+  "namespaces": {
+    "course_appendix": [
+      "course/final-meeting.md",
+      "course/written-approval.md"
+    ],
+    "course_manual": [
+      "course/generic-rule.md"
+    ],
+    "exam_attachment": [],
+    "exam_question": [
+      "inputs/question.json"
+    ]
+  },
+  "plan_id": "Fixture_final_completion_clean",
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  },
+  "requested_document_chain": {
+    "actual_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "complex_transaction": false,
+    "expected_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "instruments": [],
+    "required": false
+  },
+  "routes": [
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_question",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_question",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_rule",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_rule",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [
+        "F_completion_method"
+      ],
+      "gap_ids": [],
+      "id": "R_final_meeting",
+      "requirement": "optional",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/final-meeting.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_final_meeting",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": "X_completion"
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_written_approval",
+      "requirement": "optional",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/written-approval.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_written_approval",
+      "unresolved": false,
+      "verdict": "conditional",
+      "xor_set_id": "X_completion"
+    }
+  ],
+  "schema_version": "route-plan-v1",
+  "source_access": {
+    "actual_open": [
+      {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "role": "incorporated",
+        "sha256": "6aaeec79f5d6de38ca546fdd785f15ae4bed70caccdd1ee3a9c049e75a42c001"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "role": "incorporated",
+        "sha256": "b4be01f913c174a2f09745c29a2a7d7d71cbde6654b6cc9bfc737fcf2765590f"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/final-meeting.md",
+        "role": "incorporated",
+        "sha256": "934019541d98d1b4fbdfd0b6fc62a528e24b14b4e48606052125d799d7454944"
+      }
+    ],
+    "allowlist": [
+      {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/final-meeting.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/written-approval.md",
+        "role": "conditional"
+      }
+    ],
+    "allowlist_frozen": true,
+    "allowlist_sha256": "8a0b13baa4ee697a946e0af6a0ad5a78e310633c7cd6087b8ebe54464f759049",
+    "forbidden_paths": [],
+    "prior_answer_paths": [
+      "forbidden/prior-answer.md"
+    ]
+  },
+  "xor_branch_sets": [
+    {
+      "deciding_fact_ids": [
+        "F_completion_method"
+      ],
+      "id": "X_completion",
+      "route_ids": [
+        "R_final_meeting",
+        "R_written_approval"
+      ],
+      "selected_route_ids": [
+        "R_final_meeting"
+      ],
+      "selection_state": "selected"
+    }
+  ]
+}

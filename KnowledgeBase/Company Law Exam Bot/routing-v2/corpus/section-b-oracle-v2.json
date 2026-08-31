@@ -1,0 +1,629 @@
+{
+  "schema_version": "section-b-oracle-v2",
+  "derived_from": "routing-tests/corpus/cases.json",
+  "old_corpus_sha256": "7a0010d184925ad20ff12f61a60ba059e4a4e68fd6cee102c2694fedf37abed9",
+  "question_extract_sha256": "07d07ec52ed17dc4d0fe360d297ba8c88d9c48fae9f27c2da7b94cbf68b198a6",
+  "specimen_case_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "focused_regression_case_ids": [
+    "P05B",
+    "P08A",
+    "P08B"
+  ],
+  "cases": [
+    {
+      "id": "S01",
+      "group": "specimen-paper-1",
+      "title": "Specimen Question 1 - meeting notice, service, quorum and poll",
+      "question_ref": "routing-tests/sources/question/specimen-paper-1.txt pages 2 and 7-18",
+      "task_type": "hybrid: 1.1 drafting; 1.2-1.5 prose",
+      "changed_fact": null,
+      "tags": [
+        "specimen",
+        "drafting-prose-hybrid",
+        "examination-appendix-namespace",
+        "cross-module",
+        "genuinely-unknown-jurisdiction"
+      ],
+      "locks": {
+        "jurisdiction": "genuinely unknown; do not choose one",
+        "regime": "question-supplied majority rule plus examination Appendix 1",
+        "entity": "Company Ltd; three registered shareholders C/D/E; two directors A/B",
+        "actor": "company secretary/administrator convening a general meeting",
+        "stage": "notice, service, defective notice, initial quorum, show-of-hands then poll",
+        "governing_articles": "exam_attachment:Appendix-1 arts 1, 11.1-11.3, 12.2-12.3, 12.6-12.8, 13.1, 27.1-27.2, 27.5 and 28"
+      },
+      "must_open": [
+        "exam_attachment:Appendix-1 arts 1, 11, 12, 13, 27 and 28 :: actual notice, quorum, voting, service and winding-up terms",
+        "Course-Manual-Module-10-Company-Decision-making-Procedures.md :: §§2.2.1-2.2.6, 2.4, 2.5, 2.8-2.10 :: convening, notice, voting procedure and effect of defects",
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §§3.1.1-3.1.2 and 3.2.1 :: voluntary winding-up resolution and liquidator stage",
+        "Appendix-25A-Directors-resolution-to-convene-AGM-or-general-meeting-of.md :: checked procedural companion; not part of the requested notice",
+        "Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md :: notice structure, recipients, special business and proxy note",
+        "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md :: operative voluntary-winding-up, liquidator and audit resolutions"
+      ],
+      "conditional": [
+        "Appendix-25C-Consent-by-members-to-short-notice.md only if fewer than 14 clear days remain and all entitled members consent under exam art 11.2",
+        "Appendix-25F-Open-proxy.md or Appendix-25G-Specific-proxy.md only if a proxy instrument itself is requested",
+        "Appendix-25L-Certified-copy-of-special-resolution-for-filing-with.md only for the post-meeting filing stage",
+        "Members' versus creditors' voluntary-winding-up detail remains conditional because solvency is not supplied"
+      ],
+      "must_not_open": [
+        "Course Appendices 1A/1B/1C as substitutes for the separately namespaced examination Appendix 1",
+        "Appendix 31 series: striking off is not voluntary liquidation",
+        "Module 6 distribution routes: winding up is not a dividend/distribution question"
+      ],
+      "expected_document_chain": [
+        "Appendix 25E notice frame",
+        "Appendix 30B core operative business inserted into the notice: voluntary winding-up, liquidator appointment and no-audit resolution",
+        "date and authorised signature",
+        "proxy entitlement note"
+      ],
+      "mandatory_critical_routes": [
+        "exam arts 11.1 and 27.1-27.5 for content, recipients and service",
+        "exam arts 12.2-12.3 for C-only inquorate meeting and adjournment",
+        "exam arts 12.6-12.8 and 13.1 for C's poll demand and 70 percent poll vote",
+        "Appendix 25E plus the KAP/course-supported core Appendix 30B operative business in the drafted notice; Appendix 25A is check-only because the requested deliverable is the notice"
+      ],
+      "fact_dispositions": [
+        "28 August fixes the meeting date and backward clear-days calculation",
+        "14 clear days means personal/email service must be effective no later than 13 August; postal service deemed on the fourth day should be posted no later than 9 August",
+        "A and B are directors and receive notice under exam art 27.5(c)",
+        "C, D and E are registered shareholders and receive notice under exam art 27.5(a)",
+        "C owns 70 percent, D 20 percent and E 10 percent: irrelevant on a show of hands but decisive on a poll",
+        "only C attends in 1.4: one person does not satisfy the two-person quorum",
+        "if the director-convened meeting is adjourned under art 12.3, C alone can form the quorum after the half-hour at the adjourned meeting",
+        "all three attend in 1.5: D and E defeat C two hands to one before a poll",
+        "the question-supplied three-quarter-or-less rule yields to exam art 1's two-thirds special-resolution threshold",
+        "voluntary liquidation makes the notice special business and requires the winding-up resolution text"
+      ],
+      "expected_course_gap": [
+        "No jurisdiction is supplied, so jurisdiction-specific filing and liquidation variants cannot be stated non-conditionally",
+        "Solvency is not supplied, so the members/creditors voluntary-winding-up branch cannot be conclusively selected"
+      ],
+      "source_precedence": [
+        "question instruction on required majority",
+        "exam_attachment:Appendix-1 actual articles",
+        "Module 10 and Module 12 explanation",
+        "course Appendix 25E and 30B examples"
+      ],
+      "unresolved_branches": [
+        "members' versus creditors' voluntary winding-up",
+        "whether short notice consent is needed"
+      ]
+    },
+    {
+      "id": "S02",
+      "group": "specimen-paper-1",
+      "title": "Specimen Question 2 - managed-company aircraft acquisition and secured borrowing",
+      "question_ref": "routing-tests/sources/question/specimen-paper-1.txt pages 3 and 7-18",
+      "task_type": "hybrid: 2.1 prose procedure; 2.2 drafting",
+      "changed_fact": null,
+      "tags": [
+        "specimen",
+        "drafting-prose-hybrid",
+        "delegated-jurisdiction",
+        "examination-appendix-namespace",
+        "actor-lock",
+        "stage-lock",
+        "materials-gap",
+        "cross-module"
+      ],
+      "locks": {
+        "jurisdiction": "choice delegated; candidate must choose one course-supported jurisdiction and keep it fixed",
+        "regime": "exam Appendix 1 controls internal corporate approvals",
+        "entity": "managed company; sole corporate nominee shareholder; sole corporate director",
+        "actor": "Mr AB instructs; nominee shareholder approves; corporate director decides; authorised representatives sign",
+        "stage": "beneficial instruction -> corporate-representative authority -> member approval -> board approval -> execution -> ownership/mortgage registration -> register of charges",
+        "governing_articles": "exam_attachment:Appendix-1 arts 12.2, 12.11, 14, 19.1, 19.3, 20.4-20.5, 20.14-20.15 and 22"
+      },
+      "must_open": [
+        "exam_attachment:Appendix-1 arts 12.2, 12.11, 14, 19.1, 19.3, 20.4-20.5, 20.14-20.15 and 22 :: actual approval, written-resolution, corporate-representative and execution rules",
+        "Course-Manual-Module-06-Equity-Capital-and-Distributions.md :: §3 :: debt character",
+        "Course-Manual-Module-05-The-Companys-Constitution.md :: §2.4.3 :: BVI capacity/restricted-purpose check where BVI is chosen",
+        "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md :: §§2.1 and 3.1 :: board management and corporate-director eligibility in the chosen jurisdiction",
+        "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md :: §§1.1-1.4 and 2.1.1 :: authority, deed/execution and best-interests decision",
+        "Course-Manual-Module-10-Company-Decision-making-Procedures.md :: §§2.4, 4, 5.11-5.12 :: corporate representative, written resolutions and complex borrowing lifecycle",
+        "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md :: §§4.1.4 and 4.1.6 :: charge register and transaction file",
+        "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md :: §§2.5, 3.6 :: nominee and beneficial-owner instruction roles",
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §1.1 :: effect and enforcement character of the fixed aircraft mortgage",
+        "Appendix-23C-Members-resolution-to-approve-transaction-generally.md :: closest sole-member approval frame, adapted to exam art 19.3",
+        "Appendix-25H-Directors-resolution-to-appoint-corporate.md and Appendix-25J-Notice-to-company-of-appointment-of-corporate.md :: nominee shareholder representative chain",
+        "Appendix-25N-Directors-resolution-to-approve-complex-borrowing.md :: complex board-resolution structure and attachments",
+        "Appendix-7C-Register-of-charges.md :: internal charge-record stage"
+      ],
+      "conditional": [
+        "Appendix-25M-Directors-resolution-to-approve-borrowing.md only as a simpler comparison; 25N is the closer transaction precedent",
+        "public charge filing, aircraft ownership registration and mortgage registration depend on the chosen jurisdiction and supplied external forms",
+        "seal formalities apply only if the selected execution route and instrument require the seal",
+        "member meeting documents are discarded if the sole corporate member uses exam art 12.11 written resolution"
+      ],
+      "must_not_open": [
+        "Course Appendices 1A/1B/1C as substitutes for examination Appendix 1",
+        "Appendix 20C shareholder-loan route: XYZ Bank is an external lender",
+        "Appendix 29A/29B beneficial-owner power of attorney unless facts add one",
+        "external Lear Jet, FAA or Manx law from the internet"
+      ],
+      "expected_document_chain": [
+        "Mr AB written instruction to corporate nominee (exact course precedent absent)",
+        "corporate nominee board resolution appointing representative using Appendix 25H where applicable and Appendix 25J notice",
+        "Company sole-member written ordinary resolution approving borrowing above $1 million and aircraft purchase",
+        "corporate director authority for its signatory (exact generic precedent may be absent)",
+        "Company sole-director written resolution modelled on Appendix 25N",
+        "Bill of Sale attachment",
+        "loan/facility agreement attachment",
+        "legal mortgage/security attachment",
+        "internal register of charges entry using Appendix 7C",
+        "jurisdiction-dependent external ownership, mortgage and charge filings"
+      ],
+      "mandatory_critical_routes": [
+        "exam art 19.3 member approval because $5 million exceeds $1 million",
+        "separate sole-member and sole-director written resolutions under exam arts 12.11 and 20.5/20.15",
+        "corporate nominee/director authorised-representative stages",
+        "Appendix 25N complex transaction attachments and Appendix 7C charge record",
+        "chosen jurisdiction stated and applied without mixing regimes"
+      ],
+      "fact_dispositions": [
+        "$5 million exceeds exam art 19.3's $1 million threshold and triggers prior member sanction",
+        "two shares have one corporate registered holder, so Company has a sole member despite two issued shares",
+        "Mr AB is beneficial owner, not registered member or director, so he instructs but does not sign Company resolutions in those capacities",
+        "the sole director is a corporation, so an authorised human representative must sign for it",
+        "the aircraft purchase, borrowing, mortgage, ownership registration and registry transfer are distinct lifecycle stages",
+        "the mortgage triggers internal charge-record consideration and jurisdiction-dependent external filing",
+        "Lear Star Jet, tail number, lender and amounts populate the draft but do not create external-law authority",
+        "FAA-to-Isle-of-Man transfer is an external registration step and course-material gap, not a prompt trigger"
+      ],
+      "expected_course_gap": [
+        "No exact course precedent for Mr AB's borrowing instruction",
+        "Appendices 25H/25J concern a corporate representative at a member meeting; they illustrate corporate authority but do not supply a universal written-resolution signatory appointment",
+        "No complete Bill of Sale, bank facility or aircraft mortgage form",
+        "No complete FAA/Isle of Man transfer procedure or filing forms",
+        "No universal public charge-registration rule; chosen-jurisdiction legislation must control"
+      ],
+      "source_precedence": [
+        "question facts and delegated-jurisdiction instruction",
+        "chosen jurisdiction's mandatory legislation where supplied by course materials",
+        "exam_attachment:Appendix-1 actual articles",
+        "manual lifecycle explanations",
+        "course Appendices 25H/25J/25N/7C as examples"
+      ],
+      "unresolved_branches": [
+        "which course-supported jurisdiction is selected",
+        "seal versus deed/signature route",
+        "external registry and charge filings"
+      ]
+    },
+    {
+      "id": "S03",
+      "group": "specimen-paper-1",
+      "title": "Specimen Question 3 - division of power and trustee-controlled underlying company",
+      "question_ref": "routing-tests/sources/question/specimen-paper-1.txt pages 4 and 7-18",
+      "task_type": "prose",
+      "changed_fact": null,
+      "tags": [
+        "specimen",
+        "delegated-jurisdiction",
+        "examination-appendix-namespace",
+        "cross-module",
+        "trust-underlying-company"
+      ],
+      "locks": {
+        "jurisdiction": "choice delegated; choose one course-supported jurisdiction consistently",
+        "regime": "exam Appendix 1 actual articles",
+        "entity": "underlying asset-holding company; trustee is registered shareholder; two individual co-directors",
+        "actor": "shareholder/trustee versus board; removal and replacement by member",
+        "stage": "historical allocation -> actual article application -> trustee-control overlay -> removal/replacement",
+        "governing_articles": "exam_attachment:Appendix-1 arts 15.3, 15.4 and 19.1"
+      },
+      "must_open": [
+        "exam_attachment:Appendix-1 arts 15.3-15.4 and 19.1 :: actual management, removal and replacement powers",
+        "Course-Manual-Module-02-Characteristics-of-a-Company.md :: §§4.5-4.6 :: transferability/liquidity and separation of ownership from management",
+        "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md :: §§1, 2 and 4.3 :: governance, division of power and removal",
+        "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md :: §§2-3 :: independent fiduciary/care duties and nominee directors",
+        "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md :: §§2.3, 2.5 and 3.6 :: service-provider board/shareholder control and directions",
+        "Course-Manual-Module-10-Company-Decision-making-Procedures.md :: §1 and §5.2 :: organ division and change-of-director procedure"
+      ],
+      "conditional": [
+        "Appendix-21D-Minutes-of-meeting-of-shareholders-to-appoint-new-director.md only as a procedural illustration if documents are discussed, not drafted",
+        "director-consent and register/Registrar updates only after a replacement candidate and chosen-jurisdiction requirements are identified",
+        "trust-law duties remain outside the company-law materials except for the high-level Module 11 description"
+      ],
+      "must_not_open": [
+        "Course Appendices 1A/1B/1C as substitutes for the examination Appendix 1",
+        "Appendix 21E sole-director succession: the facts have two co-directors and member removal",
+        "external trust law to fill the course-material gap"
+      ],
+      "expected_document_chain": [],
+      "mandatory_critical_routes": [
+        "Module 2 historical separation plus Module 7 organ allocation",
+        "exam art 19.1 residual management power and no binding member instructions",
+        "Module 8 duties remain owed to Company despite trustee control",
+        "exam arts 15.3-15.4 ordinary-resolution removal and replacement",
+        "chosen jurisdiction locked consistently"
+      ],
+      "fact_dispositions": [
+        "trustee's registered shareholding places ownership power with International Trust Company",
+        "the candidate and Ms Avril Nath are co-directors and hold day-to-day management power under art 19.1",
+        "world-wide assets and Midcity Bank account illustrate board control over Company assets",
+        "underlying asset-holding status makes formal organ separation practically compressed but does not erase directors' duties",
+        "removal of the trust officer as director is by ordinary resolution under art 15.3",
+        "replacement is by ordinary resolution under art 15.4; change of trustee is a factual circumstance, not a universal legal prerequisite"
+      ],
+      "expected_course_gap": [
+        "The materials do not supply a full trust-law analysis of the trustee's duties to beneficiaries"
+      ],
+      "source_precedence": [
+        "question and delegated-jurisdiction instruction",
+        "chosen jurisdiction mandatory rules if supplied",
+        "exam_attachment:Appendix-1 actual arts 15 and 19",
+        "Modules 2, 7, 8, 10 and 11"
+      ],
+      "unresolved_branches": [
+        "chosen jurisdiction",
+        "jurisdiction-specific filing and register update after replacement"
+      ]
+    },
+    {
+      "id": "S04",
+      "group": "specimen-paper-1",
+      "title": "Specimen Question 4 - director risk and risk reduction",
+      "question_ref": "routing-tests/sources/question/specimen-paper-1.txt page 5",
+      "task_type": "prose academic discussion",
+      "changed_fact": null,
+      "tags": [
+        "specimen",
+        "genuinely-unknown-jurisdiction",
+        "cross-module",
+        "conditional-branch-isolation"
+      ],
+      "locks": {
+        "jurisdiction": "genuinely unknown; compare only course-supported variants and do not choose silently",
+        "regime": "general offshore/common-law course treatment",
+        "entity": "unspecified company",
+        "actor": "director",
+        "stage": "remunerated office -> duty risk -> remedies/creditor exposure -> preventive/protective measures",
+        "governing_articles": "none supplied; course examples are illustrations only"
+      },
+      "must_open": [
+        "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md :: §§2, 4, 5 and 6 :: fiduciary/care duties, remedies, protections and insolvent trading",
+        "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md :: §1 :: governance responsibilities and stakeholder context",
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §§1.2, 3 and 4 :: compromise, winding-up response and creditor priority context",
+        "Appendix-21C-Directors-service-agreement-DSA.md :: contractual exoneration/indemnity and insurance examples",
+        "Appendix-22-Company-management-agreement-between-Client-and.md :: client/service-provider indemnity limits"
+      ],
+      "conditional": [
+        "Course Appendix 1B art 29 and Appendix 1C only for an explicit model-article comparison, not as governing articles",
+        "jurisdiction-specific exoneration and wrongful-trading branches must remain separate",
+        "Appendix 23B/23C only as illustrations of disclosed member approval/ratification"
+      ],
+      "must_not_open": [
+        "a single jurisdiction's protection rules as if universal",
+        "Appendix 30G statement of account: no drafting or liquidation accounting requested",
+        "external law on directors' liability"
+      ],
+      "expected_document_chain": [],
+      "mandatory_critical_routes": [
+        "Module 8 §§2.1 and 2.2 fiduciary and care/skill risks",
+        "Module 8 §4 company remedies and proper-plaintiff/ratification limits",
+        "Module 8 §§5.1-5.4 approval, articles/DSA, management agreement and insurance",
+        "Module 8 §6 fraudulent/wrongful trading plus Module 12 response options",
+        "jurisdiction-dependent protections isolated rather than blended"
+      ],
+      "fact_dispositions": [
+        "'reward' requires only enough treatment to frame remuneration; marks focus on risk",
+        "'main problem areas' requires fiduciary conflicts/profits/benefits, care/skill and creditor exposure",
+        "'reduce exposure' requires prevention and limits of approval, exoneration, indemnity and insurance",
+        "absence of a jurisdiction prevents a universal statement that exoneration or wrongful-trading rules apply",
+        "absence of transaction facts calls for source-specific comparative detail rather than invented application facts"
+      ],
+      "expected_course_gap": [
+        "No chosen jurisdiction or actual articles/DSA/policy terms are supplied, so protection scope remains conditional"
+      ],
+      "source_precedence": [
+        "question focus on risk",
+        "mandatory jurisdictional legislation if later supplied",
+        "actual contract/articles if later supplied",
+        "Module 8",
+        "course appendices as examples"
+      ],
+      "unresolved_branches": [
+        "jurisdictional validity of exoneration/indemnity",
+        "whether wrongful trading exists in the applicable offshore jurisdiction"
+      ]
+    },
+    {
+      "id": "S05",
+      "group": "specimen-paper-1",
+      "title": "Specimen Question 5 - insolvent voluntary winding-up and final account",
+      "question_ref": "routing-tests/sources/question/specimen-paper-1.txt page 6",
+      "task_type": "hybrid: 5.1 prose; 5.2 drafting/accounting",
+      "changed_fact": null,
+      "tags": [
+        "specimen",
+        "drafting-prose-hybrid",
+        "delegated-jurisdiction",
+        "pure-facts-without-label",
+        "cross-module",
+        "arithmetic"
+      ],
+      "locks": {
+        "jurisdiction": "choice delegated; choose one course-supported jurisdiction and keep it fixed",
+        "regime": "creditors' voluntary winding-up because insolvency is explicit",
+        "entity": "insolvent Company Ltd",
+        "actor": "members initiate; creditors appoint liquidator; candidate acts as liquidator in 5.2",
+        "stage": "select winding-up route -> realise assets -> enforce fixed charge -> pay liquidation costs -> preferential tax -> pari-passu unsecured distribution -> final statement",
+        "governing_articles": "none supplied"
+      },
+      "must_open": [
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §§3.1, 3.2 and 4 :: members/creditors comparison and payment waterfall",
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §1.1 :: fixed-charge enforcement and shortfall context",
+        "Course-Manual-Module-06-Equity-Capital-and-Distributions.md :: §§3 and 7.1 :: shareholder loan as debt, not equity distribution",
+        "Appendix-30G-Liquidators-statement-of-account.md :: exact Statement of Account structure and execution/analysis fields"
+      ],
+      "conditional": [
+        "Appendices 30A-30F describe a members' voluntary chain or closing documents and are not the requested draft, though 30A/30B may be used for comparison in 5.1",
+        "chosen-jurisdiction deviations from the Companies Act 1948 priority model must be stated separately",
+        "tax preference depends on the course-supported law chosen; the question calls the tax lawful and enforceable"
+      ],
+      "must_not_open": [
+        "Appendix 17B balance sheet as the drafting precedent",
+        "Appendix 31 striking-off forms",
+        "Module 6 dividend/distribution procedures",
+        "external insolvency priority law"
+      ],
+      "expected_document_chain": [
+        "Appendix 30G creditor-winding-up adaptation",
+        "receipts and realisations schedule totalling $2,605,000",
+        "payments waterfall: $1,700,000 fixed-charge proceeds; $40,000 liquidator; $55,000 tax; $810,000 pro rata among $1,620,000 unsecured claims",
+        "unsecured dividend 50 cents per dollar: Mortgagee $350,000; Lawyer $60,000; Accountancy Firm $7,500; Corporate Service Provider $30,000; trade creditors $112,500; Beneficial Owner $250,000",
+        "nil balance, nil capital return and final summary"
+      ],
+      "mandatory_critical_routes": [
+        "Module 12 §3.2 creditors' voluntary winding-up, not members' voluntary winding-up",
+        "Module 12 §4 fixed-charge/cost/preference/unsecured waterfall",
+        "shareholder promissory-note loan treated as ordinary debt",
+        "Appendix 30G exact drafting structure",
+        "all arithmetic reconciles to $2,605,000 and nil"
+      ],
+      "fact_dispositions": [
+        "explicit insolvency selects creditors' voluntary winding-up and forbids a declaration of solvency",
+        "Blackacre alone is subject to the fixed legal charge; its $1.7 million proceeds go to Mortgagee",
+        "Mortgagee's remaining $700,000 is unsecured",
+        "artwork $550,000, cash $40,000, securities $310,000 and PB Oil $5,000 form the free asset pool",
+        "liquidator fees $40,000 rank after fixed security and before other debts",
+        "Revenue Authority $55,000 is treated as preferential under the course model",
+        "Lawyer, Accountancy Firm, Corporate Service Provider, trade creditors, Mortgagee shortfall and Beneficial Owner loan rank pari passu",
+        "shareholder loan evidenced by promissory note remains a creditor claim",
+        "total assets $2,605,000; ordinary-creditor pool $810,000; ordinary claims $1,620,000; dividend 50 percent"
+      ],
+      "expected_course_gap": [
+        "The question does not supply actual dates, liquidator identity/address or jurisdiction-specific prescribed account wording"
+      ],
+      "source_precedence": [
+        "question facts and arithmetic",
+        "chosen jurisdiction's course-supplied mandatory priority rules",
+        "Module 12",
+        "Appendix 30G precedent"
+      ],
+      "unresolved_branches": [
+        "chosen jurisdiction",
+        "blank dates and liquidator particulars"
+      ]
+    },
+    {
+      "id": "P05B",
+      "group": "minimal-pair-05",
+      "title": "Legal title changes; nominee leaves register",
+      "question": "Nominee Ltd holds the shares of AB Ltd for Owner A. Owner A transfers the beneficial interest to Owner B. Nominee Ltd will not remain the registered shareholder; Owner B is to be entered on the register. Explain and draft the complete change-of-ownership chain.",
+      "task_type": "hybrid: prose plus drafting",
+      "changed_fact": "Nominee Ltd will leave the register; P05A differs only by it remaining registered.",
+      "tags": [
+        "minimal-pair",
+        "ownership-layer-lock",
+        "actor-lock",
+        "cross-module"
+      ],
+      "locks": {
+        "jurisdiction": "unknown",
+        "regime": "beneficial plus legal-title transfer",
+        "entity": "AB Ltd",
+        "actor": "Nominee Ltd as registered transferor; Owner B transferee; board registers",
+        "stage": "beneficial instruction -> legal transfer instrument -> board decision -> register/certificate and beneficial records",
+        "governing_articles": "actual transfer articles not supplied"
+      },
+      "must_open": [
+        "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md :: §§2.5 and 3",
+        "Course-Manual-Module-06-Equity-Capital-and-Distributions.md :: §5.1",
+        "Course-Manual-Module-10-Company-Decision-making-Procedures.md :: §5.3",
+        "Appendix-18A-Share-transfer-form.md",
+        "Appendix-26-Irrevocable-instruction-to-transfer-beneficial-ownership.md where it instructs the nominee",
+        "Appendix-18B-Directors-resolution-authorising-share-transfer.md XOR Appendices 18C/18D according to the actual board decision"
+      ],
+      "conditional": [
+        "18B if the board approves; 18C plus 18D if it refuses; preserve both branches because the decision is not supplied",
+        "27A/27B only if a nominee relationship continues for Owner B"
+      ],
+      "must_not_open": [
+        "Appendix 26/27 as the complete legal-title solution",
+        "Appendix 18E transmission"
+      ],
+      "expected_document_chain": [
+        "Owner A instruction/Appendix 26 as applicable",
+        "Appendix 18A executed by registered Nominee Ltd and Owner B",
+        "Appendix 18B XOR Appendices 18C+18D, selected only by the board's actual decision",
+        "register/certificate update only on approval",
+        "beneficial ownership records update"
+      ],
+      "mandatory_critical_routes": [
+        "Module 6 §5.1 + Module 10 §5.3",
+        "18A + (18B XOR 18C+18D)",
+        "nominee is legal transferor"
+      ],
+      "fact_dispositions": [
+        "Nominee Ltd leaving the register changes legal title",
+        "Owner A cannot execute as registered transferor merely because it owns beneficially",
+        "Owner B becomes registered holder only on register update",
+        "beneficial records also change"
+      ],
+      "expected_course_gap": [
+        "Actual transfer restrictions and filing requirements are absent"
+      ],
+      "source_precedence": [
+        "register-change fact",
+        "actual articles",
+        "Modules 6/10/11",
+        "Appendices 18A/18B and conditional 26"
+      ],
+      "unresolved_branches": [
+        "board approval/refusal",
+        "whether nominee relationship continues"
+      ]
+    },
+    {
+      "id": "P08A",
+      "group": "minimal-pair-08",
+      "title": "Solvent voluntary winding-up",
+      "question": "AB Ltd will cease business. After full inquiry, its directors conclude that all debts can be paid in full within the statutory period. Explain the voluntary winding-up route and identify the complete course-document chain.",
+      "task_type": "prose with document-chain identification",
+      "changed_fact": "Company is solvent; P08B changes only solvency to inability to pay all debts.",
+      "tags": [
+        "minimal-pair",
+        "regime-lock",
+        "lifecycle",
+        "cross-module"
+      ],
+      "locks": {
+        "jurisdiction": "unknown",
+        "regime": "members' voluntary winding-up",
+        "entity": "solvent AB Ltd",
+        "actor": "directors declare; members resolve/appoint; liquidator completes",
+        "stage": "solvency declaration -> resolution -> notices -> realisation/account -> final meeting/dissolution",
+        "governing_articles": "not supplied"
+      },
+      "must_open": [
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §§3.1.1-3.1.2",
+        "Appendix-30A-Directors-declaration-of-solvency.md",
+        "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md",
+        "Appendix-30C-Notice-of-winding-up-for-publication-in-press-and-Gazette.md",
+        "Appendix-30D-Notice-to-registrar-of-winding-up.md",
+        "Appendix-30E-Notice-of-final-general-meeting-of-the-company.md",
+        "Appendix-30F-Members-resolutions-approving-liquidators-statement-of.md",
+        "Appendix-30G-Liquidators-statement-of-account.md"
+      ],
+      "conditional": [
+        "jurisdiction may streamline, alter filing or allow director resolution for an IBC/BC",
+        "creditors' meeting omitted because solvency is locked"
+      ],
+      "must_not_open": [
+        "creditors' voluntary route as governing process",
+        "Appendix 31 striking-off forms"
+      ],
+      "expected_document_chain": [
+        "30A",
+        "30B",
+        "30C",
+        "30D",
+        "30G plus (30E final-meeting route XOR 30F written-approval route)",
+        "Registrar dissolution filing"
+      ],
+      "mandatory_critical_routes": [
+        "Module 12 §3.1",
+        "declaration of solvency",
+        "30A-30D plus 30G and one mutually exclusive 30E/30F completion route",
+        "no creditor appointment"
+      ],
+      "fact_dispositions": [
+        "full inquiry supports declaration",
+        "ability to pay all debts selects members' process",
+        "members appoint liquidator",
+        "final account may return surplus only after debts"
+      ],
+      "expected_course_gap": [
+        "jurisdiction-specific forms, periods and filing sections"
+      ],
+      "source_precedence": [
+        "solvency fact",
+        "mandatory jurisdictional law",
+        "Module 12 §3.1",
+        "30-series precedents"
+      ],
+      "unresolved_branches": [
+        "jurisdiction-specific procedural variant",
+        "30E final meeting XOR 30F written approval where the jurisdiction permits the latter"
+      ]
+    },
+    {
+      "id": "P08B",
+      "group": "minimal-pair-08",
+      "title": "Insolvent voluntary winding-up",
+      "question": "AB Ltd will cease business. After full inquiry, its directors conclude that the company cannot pay all debts in full within the statutory period. Explain the voluntary winding-up route and identify the complete course-document chain.",
+      "task_type": "prose with document-chain identification",
+      "changed_fact": "Company is insolvent; P08A differs only by solvency.",
+      "tags": [
+        "minimal-pair",
+        "regime-lock",
+        "lifecycle",
+        "materials-gap",
+        "cross-module"
+      ],
+      "locks": {
+        "jurisdiction": "unknown",
+        "regime": "creditors' voluntary winding-up",
+        "entity": "insolvent AB Ltd",
+        "actor": "members initiate; creditors appoint; liquidator completes",
+        "stage": "member resolution -> creditors' meeting/disclosure -> creditor appointment -> priority distributions -> final meetings/account",
+        "governing_articles": "not supplied"
+      },
+      "must_open": [
+        "Course-Manual-Module-12-Termination-of-Companies.md :: §§3.2.1-3.2.3 and 4",
+        "Appendix-30G-Liquidators-statement-of-account.md :: adaptable final-account structure"
+      ],
+      "conditional": [
+        "Appendix 30B only as a cautiously adapted initial member-resolution frame; its solvency/member-appointment wording is inapplicable",
+        "30C-30F only where adaptable and jurisdiction requires them"
+      ],
+      "must_not_open": [
+        "Appendix 30A declaration of solvency",
+        "members' appointment of liquidator as the governing actor",
+        "Appendix 31 striking off"
+      ],
+      "expected_document_chain": [
+        "adapted member special resolution with no solvency recital or member appointment of liquidator (exact creditor-specific precedent absent)",
+        "creditors' meeting notice/materials and creditor appointment record (course precedent gaps)",
+        "adapted publication/Registrar notices only where applicable",
+        "creditor and member final-meeting/approval documents (course precedent gaps)",
+        "adapted final account; Appendix 30G supplies structure only"
+      ],
+      "mandatory_critical_routes": [
+        "Module 12 §3.2",
+        "no 30A",
+        "creditors appoint liquidator",
+        "creditor-specific precedent gaps stated; no exact Appendix 30B-30G transplantation"
+      ],
+      "fact_dispositions": [
+        "inability to pay all debts forbids truthful solvency declaration",
+        "members still initiate voluntary winding up",
+        "creditors obtain liquidator selection power",
+        "priority waterfall replaces member-surplus focus"
+      ],
+      "expected_course_gap": [
+        "No creditors' voluntary-specific initial resolution",
+        "No creditor-meeting notice/minutes or final creditor approval precedent",
+        "Appendix 30G is labelled for members' winding-up and must be adapted"
+      ],
+      "source_precedence": [
+        "insolvency fact",
+        "mandatory local law",
+        "Module 12 §§3.2/4",
+        "30-series forms only where adaptable"
+      ],
+      "unresolved_branches": [
+        "jurisdiction-specific creditor procedure and forms"
+      ]
+    }
+  ]
+}

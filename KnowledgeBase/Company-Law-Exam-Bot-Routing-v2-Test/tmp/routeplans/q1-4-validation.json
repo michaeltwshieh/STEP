@@ -1,0 +1,75 @@
+{
+  "exit_code": 0,
+  "invariants": [
+    {
+      "code": "FACT_CLAIM_DISPOSITIONS",
+      "status": "PASS"
+    },
+    {
+      "code": "LOCK_SUPPORT",
+      "status": "PASS"
+    },
+    {
+      "code": "ENTITY_COUNT_SUPPORT",
+      "status": "PASS"
+    },
+    {
+      "code": "SOURCE_NAMESPACE",
+      "status": "PASS"
+    },
+    {
+      "code": "SOURCE_ALLOWLIST",
+      "status": "PASS"
+    },
+    {
+      "code": "FORBIDDEN_SOURCE_ACCESS",
+      "status": "PASS"
+    },
+    {
+      "code": "XOR_SELECTION",
+      "status": "PASS"
+    },
+    {
+      "code": "BRANCH_DECIDING_FACT",
+      "status": "PASS"
+    },
+    {
+      "code": "CORPORATE_ACTOR_AUTHORITY",
+      "status": "PASS"
+    },
+    {
+      "code": "DOCUMENT_COUNT_RECONCILIATION",
+      "status": "PASS"
+    },
+    {
+      "code": "ACTION_NOTICE_COMPONENTS",
+      "status": "PASS"
+    },
+    {
+      "code": "COMPLEX_TRANSACTION_DOCUMENTS",
+      "status": "PASS"
+    },
+    {
+      "code": "MATERIALS_GAP_PRESERVATION",
+      "status": "PASS"
+    },
+    {
+      "code": "FINAL_ROUTE_TRACE",
+      "status": "PASS"
+    },
+    {
+      "code": "RENDER_GATE",
+      "status": "PASS"
+    }
+  ],
+  "issues": [],
+  "plan_id": "specimen1.q1.4.v1",
+  "plan_sha256": "961afddf41d09fae6f661a291de06a2058d98792a5aab0040c7fc7ce93c8b0c3",
+  "report_version": "route-plan-validation-report-v1",
+  "schema_sha256": "7f74ad5620634e843f10bf3170028daf749fdfbadbd02b1a96f1abe50c5e6704",
+  "status": "VALID",
+  "summary": {
+    "critical_count": 0,
+    "warning_count": 0
+  }
+}

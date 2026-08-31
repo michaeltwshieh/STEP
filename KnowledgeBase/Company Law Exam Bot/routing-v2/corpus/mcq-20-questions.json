@@ -1,0 +1,316 @@
+{
+  "schema": "section-a-synthetic-question-fixture-v1",
+  "status": "synthetic regression corpus; contains no gold fields",
+  "questions": [
+    {
+      "id": "MCQ01",
+      "pair_id": "MP01",
+      "single_fact_change_from_pair": "Traditional articles in MCQ01; BVI BC distribution regime in MCQ02.",
+      "stem": "AB Ltd has traditional articles reproducing Appendix 1B article 23.1. It has distributable profits and proposes a final cash dividend. Which document route must be used?",
+      "polarity": "correct",
+      "qualifiers": [
+        "must"
+      ],
+      "options": {
+        "A": "Appendix 19A board recommendation followed by Appendix 19B members' declaration.",
+        "B": "Appendix 19C board-only declaration.",
+        "C": "Appendix 20E director-authorised solvency distribution.",
+        "D": "Appendices 20B and 20D shareholder-loan repayment."
+      }
+    },
+    {
+      "id": "MCQ02",
+      "pair_id": "MP01",
+      "single_fact_change_from_pair": "BVI BC distribution regime in MCQ02; traditional articles in MCQ01.",
+      "stem": "AB Ltd is a BVI BC governed by the BVI Business Companies Act 2004. It has distributable funds and proposes the same final cash payment to its member. Which document route must be used?",
+      "polarity": "correct",
+      "qualifiers": [
+        "must"
+      ],
+      "options": {
+        "A": "Appendix 19A board recommendation followed by Appendix 19B members' declaration.",
+        "B": "Appendix 19C board-only declaration.",
+        "C": "Appendix 20E director-authorised solvency distribution.",
+        "D": "Appendices 20B and 20D shareholder-loan repayment."
+      }
+    },
+    {
+      "id": "MCQ03",
+      "pair_id": "MP02",
+      "single_fact_change_from_pair": "Voluntary sale by living holder in MCQ03; death and personal-representative election in MCQ04.",
+      "stem": "A living registered shareholder voluntarily sells issued shares to a buyer, and the articles require board approval. Which route is correct?",
+      "polarity": "correct",
+      "qualifiers": [],
+      "options": {
+        "A": "Appendix 26 plus a new Appendix 27A or 27B nominee instrument.",
+        "B": "Appendix 18E with probate evidence.",
+        "C": "Appendix 16C allotment and issue resolution.",
+        "D": "Appendix 18A transfer form followed by Appendix 18B board approval and register/certificate updates."
+      }
+    },
+    {
+      "id": "MCQ04",
+      "pair_id": "MP02",
+      "single_fact_change_from_pair": "Death and personal-representative election in MCQ04; voluntary sale in MCQ03.",
+      "stem": "The registered shareholder has died, and the personal representative elects to be registered in the deceased's place. Which route is correct?",
+      "polarity": "correct",
+      "qualifiers": [],
+      "options": {
+        "A": "Appendix 26 plus a new Appendix 27A or 27B nominee instrument.",
+        "B": "Appendix 18E with death and probate evidence.",
+        "C": "Appendix 16C allotment and issue resolution.",
+        "D": "Appendix 18A transfer form followed by Appendix 18B board approval and register/certificate updates."
+      }
+    },
+    {
+      "id": "MCQ05",
+      "pair_id": "MP03",
+      "single_fact_change_from_pair": "Registered nominee stays in MCQ05; registered nominee is replaced in MCQ06.",
+      "stem": "The beneficial owner transfers only the beneficial interest to a new client; the same nominee remains the registered shareholder. Which statement is incorrect?",
+      "polarity": "incorrect",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "The Appendix 26 and new Appendix 27A or 27B route is sufficient for the title change described.",
+        "B": "The beneficial-owner register and FATCA/CRS records may require updating.",
+        "C": "The register of members must be changed to replace the nominee.",
+        "D": "A share transfer form is needed only if legal title also moves."
+      }
+    },
+    {
+      "id": "MCQ06",
+      "pair_id": "MP03",
+      "single_fact_change_from_pair": "Registered nominee is replaced in MCQ06; nominee stays in MCQ05.",
+      "stem": "The beneficial owner arranges for the nominee to cease being registered holder and for legal title to pass to the buyer. Which statement is incorrect?",
+      "polarity": "incorrect",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "The Appendix 26 and new Appendix 27A or 27B route is sufficient for the title change described.",
+        "B": "The beneficial-owner register and FATCA/CRS records may require updating.",
+        "C": "The register of members must be changed to replace the nominee.",
+        "D": "A share transfer form is needed only if legal title also moves."
+      }
+    },
+    {
+      "id": "MCQ07",
+      "pair_id": "MP04",
+      "single_fact_change_from_pair": "Restrictive company objects are defective in MCQ07; director authority is defective in MCQ08.",
+      "stem": "The directors were otherwise properly authorised, but the proposed transaction falls outside the company's restrictive objects. Which source route is not contradicted by the course materials?",
+      "polarity": "not contradicted",
+      "qualifiers": [],
+      "options": {
+        "A": "Corporate capacity under Module 5 section 2.4 is primary; director authority under Module 8 is conditional.",
+        "B": "Shareholder reserve power under Module 7 section 2 is primary.",
+        "C": "Meeting procedure under Module 10 alone governs.",
+        "D": "Director authority under Module 8 section 1.3 is primary; capacity is merely conditional."
+      }
+    },
+    {
+      "id": "MCQ08",
+      "pair_id": "MP04",
+      "single_fact_change_from_pair": "Director authority is defective in MCQ08; company capacity is defective in MCQ07.",
+      "stem": "The transaction is within the company's objects, but the individual director exceeded authority conferred by the articles. Which source route is not contradicted by the course materials?",
+      "polarity": "not contradicted",
+      "qualifiers": [],
+      "options": {
+        "A": "Corporate capacity under Module 5 section 2.4 is primary; director authority under Module 8 is conditional.",
+        "B": "Shareholder reserve power under Module 7 section 2 is primary.",
+        "C": "Meeting procedure under Module 10 alone governs.",
+        "D": "Director authority under Module 8 section 1.3 is primary; capacity is merely conditional."
+      }
+    },
+    {
+      "id": "MCQ09",
+      "pair_id": "MP05",
+      "single_fact_change_from_pair": "Traditional article 80 management power in MCQ09; express shareholder reserve power in MCQ10.",
+      "stem": "The board refuses a proposed acquisition. The company's management article is the unmodified 1948/Table A article 80 form reproduced in Appendix 1B article 19.1. All propositions are incorrect EXCEPT:",
+      "polarity": "except",
+      "qualifiers": [
+        "always"
+      ],
+      "options": {
+        "A": "Shareholders may always bind the board by ordinary resolution.",
+        "B": "Shareholders cannot presently bind the board; they must first alter the articles if they wish to control this director power.",
+        "C": "Shareholders may direct the board by special resolution under an existing reserve power and use Appendix 21G.",
+        "D": "Share ownership alone displaces the board's management power."
+      }
+    },
+    {
+      "id": "MCQ10",
+      "pair_id": "MP05",
+      "single_fact_change_from_pair": "Express shareholder reserve power in MCQ10; traditional article 80 in MCQ09.",
+      "stem": "The board refuses the same acquisition, but the articles reproduce the 1985/2008 shareholder reserve power in Appendix 1C article 4. All propositions are incorrect EXCEPT:",
+      "polarity": "except",
+      "qualifiers": [
+        "always",
+        "may"
+      ],
+      "options": {
+        "A": "Shareholders may always bind the board by ordinary resolution.",
+        "B": "Shareholders cannot presently bind the board; they must first alter the articles if they wish to control this director power.",
+        "C": "Shareholders may direct the board by special resolution under an existing reserve power and use Appendix 21G.",
+        "D": "Share ownership alone displaces the board's management power."
+      }
+    },
+    {
+      "id": "MCQ11",
+      "pair_id": "MP06",
+      "single_fact_change_from_pair": "Address changes within the same jurisdiction in MCQ11; domicile changes to another jurisdiction in MCQ12.",
+      "stem": "The company will move its registered office to a new street address within the same jurisdiction. Which route must be opened first?",
+      "polarity": "correct",
+      "qualifiers": [
+        "must"
+      ],
+      "options": {
+        "A": "Appendices 13A and 13B public-to-private re-registration.",
+        "B": "Module 4 section 2 and Appendices 10A to 10C migration.",
+        "C": "Appendix 31D reinstatement.",
+        "D": "Module 5 section 3.2, Module 10 section 5.4, and Appendix 12 address-move resolution."
+      }
+    },
+    {
+      "id": "MCQ12",
+      "pair_id": "MP06",
+      "single_fact_change_from_pair": "Domicile changes to another jurisdiction in MCQ12; address stays within one jurisdiction in MCQ11.",
+      "stem": "The same company instead proposes to move its domicile, governing law, and registered office from State A to State B by continuance. Which route must be opened first?",
+      "polarity": "correct",
+      "qualifiers": [
+        "must"
+      ],
+      "options": {
+        "A": "Appendices 13A and 13B public-to-private re-registration.",
+        "B": "Module 4 section 2 and Appendices 10A to 10C migration.",
+        "C": "Appendix 31D reinstatement.",
+        "D": "Module 5 section 3.2, Module 10 section 5.4, and Appendix 12 address-move resolution."
+      }
+    },
+    {
+      "id": "MCQ13",
+      "pair_id": "MP07",
+      "single_fact_change_from_pair": "Board allocation only in MCQ13; consideration and registration completed in MCQ14.",
+      "stem": "The board has resolved to allocate 500 unissued shares to an identified applicant for stated consideration, but payment has not yet been received and the register has not been updated. Which is the only accurate classification?",
+      "polarity": "correct",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "Allotment.",
+        "B": "Transfer.",
+        "C": "Issue.",
+        "D": "Transmission."
+      }
+    },
+    {
+      "id": "MCQ14",
+      "pair_id": "MP07",
+      "single_fact_change_from_pair": "Consideration and registration completed in MCQ14; board allocation only in MCQ13.",
+      "stem": "The board has resolved to allocate the same 500 shares; payment has now been received and the allottee entered in the register as legal owner. Which is the only accurate classification of the completed stage?",
+      "polarity": "correct",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "Allotment.",
+        "B": "Transfer.",
+        "C": "Issue.",
+        "D": "Transmission."
+      }
+    },
+    {
+      "id": "MCQ15",
+      "pair_id": "MP08",
+      "single_fact_change_from_pair": "Internal administrative functions in MCQ15; shareholder meeting representation in MCQ16.",
+      "stem": "The board appoints an officer to maintain statutory registers, prepare notices and agendas, and take minutes. Which pairing is the only correct one?",
+      "polarity": "correct",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "Registered agent; Appendix 24A.",
+        "B": "Company secretary; Appendix 24A, with Appendix 24C if the delegated role description is required.",
+        "C": "Corporate director; Appendices 21A and 21B.",
+        "D": "Corporate representative; Appendices 25H and 25J."
+      }
+    },
+    {
+      "id": "MCQ16",
+      "pair_id": "MP08",
+      "single_fact_change_from_pair": "Shareholder meeting representation in MCQ16; internal administrative functions in MCQ15.",
+      "stem": "A corporate shareholder appoints an individual solely to attend, speak, and vote for it at AB Ltd's general meeting. Which pairing is the only correct one?",
+      "polarity": "correct",
+      "qualifiers": [
+        "only"
+      ],
+      "options": {
+        "A": "Registered agent; Appendix 24A.",
+        "B": "Company secretary; Appendix 24A, with Appendix 24C if the delegated role description is required.",
+        "C": "Corporate director; Appendices 21A and 21B.",
+        "D": "Corporate representative; Appendices 25H and 25J."
+      }
+    },
+    {
+      "id": "MCQ17",
+      "pair_id": "MP09",
+      "single_fact_change_from_pair": "Assets/liabilities remain in MCQ17; zero-state eligibility in MCQ18.",
+      "stem": "A solvent company has assets to realise and liabilities to pay before surplus can be returned to members. Which route may properly be initiated to terminate it?",
+      "polarity": "correct",
+      "qualifiers": [
+        "may"
+      ],
+      "options": {
+        "A": "Voluntary striking off under Appendix 31A plus the jurisdictionally applicable Appendix 31B or 31C.",
+        "B": "Administrative reinstatement under Appendix 31D.",
+        "C": "Members' voluntary winding-up beginning with Appendices 30A and 30B and continuing through the applicable notices/final-account chain.",
+        "D": "Compulsory winding-up solely because the members no longer want the company."
+      }
+    },
+    {
+      "id": "MCQ18",
+      "pair_id": "MP09",
+      "single_fact_change_from_pair": "Zero-state eligibility in MCQ18; assets/liabilities remain in MCQ17.",
+      "stem": "The same jurisdiction permits voluntary striking off, and the company now has no assets, liabilities, claims, proceedings, or business. Which route may properly be initiated to terminate it?",
+      "polarity": "correct",
+      "qualifiers": [
+        "may",
+        "best"
+      ],
+      "options": {
+        "A": "Voluntary striking off under Appendix 31A plus the jurisdictionally applicable Appendix 31B or 31C.",
+        "B": "Administrative reinstatement under Appendix 31D.",
+        "C": "Members' voluntary winding-up beginning with Appendices 30A and 30B and continuing through the applicable notices/final-account chain.",
+        "D": "Compulsory winding-up solely because the members no longer want the company."
+      }
+    },
+    {
+      "id": "MCQ19",
+      "pair_id": "MP10",
+      "single_fact_change_from_pair": "Bilateral agreement requested in MCQ19; unilateral declaration requested in MCQ20.",
+      "stem": "The parties want a bilateral nominee shareholder agreement between the registered nominee and beneficial owner. Which is the best-supported course-material route?",
+      "polarity": "best",
+      "qualifiers": [],
+      "options": {
+        "A": "Appendix 26 alone is a complete nominee agreement.",
+        "B": "Open Appendix 27B, report that 'etc., as above' leaves operative provisions missing, and do not invent them.",
+        "C": "Appendix 18A is the nominee agreement because shares are involved.",
+        "D": "Appendix 27A is the bilateral source, but its terms must be adapted and must not be represented as universally complete."
+      }
+    },
+    {
+      "id": "MCQ20",
+      "pair_id": "MP10",
+      "single_fact_change_from_pair": "Unilateral declaration requested in MCQ20; bilateral agreement requested in MCQ19.",
+      "stem": "The client instead requests a complete unilateral nominee shareholder declaration. Which is the best-supported course-material route?",
+      "polarity": "best",
+      "qualifiers": [],
+      "options": {
+        "A": "Appendix 26 alone is a complete nominee agreement.",
+        "B": "Open Appendix 27B, report that 'etc., as above' leaves operative provisions missing, and do not invent them.",
+        "C": "Appendix 18A is the nominee agreement because shares are involved.",
+        "D": "Appendix 27A is the bilateral source, but its terms must be adapted and must not be represented as universally complete."
+      }
+    }
+  ]
+}

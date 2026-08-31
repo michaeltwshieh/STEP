@@ -1,0 +1,327 @@
+{
+  "answer_unit": {
+    "id": "Unit_main",
+    "mcq_options": [],
+    "mode": "PROSE",
+    "question_ref": "inputs/question.json"
+  },
+  "case_refs": [
+    "P05B"
+  ],
+  "claims": [],
+  "entities": [
+    {
+      "capacities": [
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": [],
+      "entity_type": "human",
+      "id": "E_human"
+    }
+  ],
+  "facts": [
+    {
+      "disposition": "used - outcome",
+      "id": "F_base",
+      "kind": "general",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied question fixes the generic requested outcome.",
+      "value": true
+    }
+  ],
+  "final_trace": [
+    {
+      "answer_location": "planned answer or private trace location for R_transfer_instrument",
+      "contribution": "Unique contribution from R_transfer_instrument",
+      "id": "T_R_transfer_instrument",
+      "route_id": "R_transfer_instrument"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_refusal",
+      "contribution": "Unique contribution from R_refusal",
+      "id": "T_R_refusal",
+      "route_id": "R_refusal"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_approval",
+      "contribution": "Unique contribution from R_approval",
+      "id": "T_R_approval",
+      "route_id": "R_approval"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_rule",
+      "contribution": "Unique contribution from R_rule",
+      "id": "T_R_rule",
+      "route_id": "R_rule"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_question",
+      "contribution": "Unique contribution from R_question",
+      "id": "T_R_question",
+      "route_id": "R_question"
+    }
+  ],
+  "locks": {
+    "governing_instruments": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied governing_instruments"
+    },
+    "jurisdiction": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied jurisdiction"
+    },
+    "legal_actor_capacity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied legal_actor_capacity"
+    },
+    "lifecycle_stage": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied lifecycle_stage"
+    },
+    "regime_entity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied regime_entity"
+    },
+    "transaction_relationship": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied transaction_relationship"
+    }
+  },
+  "materials_gaps": [],
+  "namespaces": {
+    "course_appendix": [
+      "course/Appendix-18A-Share-transfer-form.md",
+      "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+      "course/Appendix-18C-Directors-resolution-refusing-to-register-share-transfer.md"
+    ],
+    "course_manual": [
+      "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md"
+    ],
+    "exam_attachment": [],
+    "exam_question": [
+      "question/focused-case-manifest.json"
+    ]
+  },
+  "plan_id": "Behavioral_candidate_b_transfer",
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  },
+  "requested_document_chain": {
+    "actual_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "complex_transaction": false,
+    "expected_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "instruments": [],
+    "required": false
+  },
+  "routes": [
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_transfer_instrument",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_transfer_instrument",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_refusal",
+      "requirement": "optional",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_refusal",
+      "unresolved": false,
+      "verdict": "conditional",
+      "xor_set_id": "X_transfer_decision"
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_approval",
+      "requirement": "optional",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18C-Directors-resolution-refusing-to-register-share-transfer.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_approval",
+      "unresolved": false,
+      "verdict": "conditional",
+      "xor_set_id": "X_transfer_decision"
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_rule",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_rule",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_question",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_question",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    }
+  ],
+  "schema_version": "route-plan-v1",
+  "source_access": {
+    "actual_open": [
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "role": "incorporated",
+        "sha256": "e05871d7ee93e8f80f821c4c31a08b93c9564bf7632362d4181369ab1376c686"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "role": "conditional",
+        "sha256": "d85e65514abcf887f2a5d5e06a5fe995ff6593cb9cc05b6e7684fcaf7c720908"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18C-Directors-resolution-refusing-to-register-share-transfer.md",
+        "role": "conditional",
+        "sha256": "9a0210e9a7b40c0a69b0b484bb107430d7ddeedd10543e1ae1d5946ec19c6f65"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated",
+        "sha256": "864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b"
+      },
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated",
+        "sha256": "ecfacd83eb0edc52d65e7da54e844b7b5d11fcc731f64a9d95ed8b4aea09dd36"
+      }
+    ],
+    "allowlist": [
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "role": "conditional"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18C-Directors-resolution-refusing-to-register-share-transfer.md",
+        "role": "conditional"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated"
+      }
+    ],
+    "allowlist_frozen": true,
+    "allowlist_sha256": "a92fd181c6c8c2c08741b050e8787c8166efe6f08220c6a6abd82e2f41e7277d",
+    "forbidden_paths": [],
+    "prior_answer_paths": [
+      "forbidden/prior-answer.md"
+    ]
+  },
+  "xor_branch_sets": [
+    {
+      "deciding_fact_ids": [],
+      "id": "X_transfer_decision",
+      "route_ids": [
+        "R_approval",
+        "R_refusal"
+      ],
+      "selected_route_ids": [],
+      "selection_state": "unresolved"
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-plan.schema.json",
+  "title": "Trusts Exam Bot deterministic RoutePlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "case_refs",
+    "answer_unit",
+    "namespaces",
+    "locks",
+    "facts",
+    "claims",
+    "entities",
+    "routes",
+    "source_access",
+    "xor_branch_sets",
+    "requested_document_chain",
+    "materials_gaps",
+    "final_trace",
+    "render_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "route-plan-v1"},
+    "plan_id": {"$ref": "#/$defs/id"},
+    "case_refs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonEmptyString"},
+      "uniqueItems": true
+    },
+    "answer_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mode", "question_ref", "mcq_options"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "mode": {"enum": ["MCQ", "PROSE", "DRAFTING"]},
+        "question_ref": {"$ref": "#/$defs/nonEmptyString"},
+        "mcq_options": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^[A-Z]$"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "namespaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exam_question", "exam_attachment", "course_manual", "course_appendix"],
+      "properties": {
+        "exam_question": {"$ref": "#/$defs/pathList"},
+        "exam_attachment": {"$ref": "#/$defs/pathList"},
+        "course_manual": {"$ref": "#/$defs/pathList"},
+        "course_appendix": {"$ref": "#/$defs/pathList"}
+      }
+    },
+    "locks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "jurisdiction",
+        "regime_entity",
+        "legal_actor_capacity",
+        "transaction_relationship",
+        "lifecycle_stage",
+        "governing_instruments"
+      ],
+      "properties": {
+        "jurisdiction": {"$ref": "#/$defs/lock"},
+        "regime_entity": {"$ref": "#/$defs/lock"},
+        "legal_actor_capacity": {"$ref": "#/$defs/lock"},
+        "transaction_relationship": {"$ref": "#/$defs/lock"},
+        "lifecycle_stage": {"$ref": "#/$defs/lock"},
+        "governing_instruments": {"$ref": "#/$defs/lock"}
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/fact"}
+    },
+    "claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "entities": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/entity"}
+    },
+    "routes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/route"}
+    },
+    "source_access": {"$ref": "#/$defs/sourceAccess"},
+    "xor_branch_sets": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/xorBranchSet"}
+    },
+    "requested_document_chain": {"$ref": "#/$defs/documentChain"},
+    "materials_gaps": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/materialsGap"}
+    },
+    "final_trace": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/traceEntry"}
+    },
+    "render_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "validation_report"],
+      "properties": {
+        "status": {"const": "not_rendered"},
+        "validation_report": {"type": "null"}
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "idList": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/id"},
+      "uniqueItems": true
+    },
+    "pathList": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/path"},
+      "uniqueItems": true
+    },
+    "lock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "value", "deciding_fact_ids", "alternatives"],
+      "properties": {
+        "state": {"enum": ["supplied", "choice_delegated", "genuinely_unknown"]},
+        "value": {"type": ["string", "null"]},
+        "deciding_fact_ids": {"$ref": "#/$defs/idList"},
+        "alternatives": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "disposition": {
+      "enum": [
+        "used - outcome",
+        "used - content",
+        "supported",
+        "refuted",
+        "partly true but not best",
+        "condition",
+        "not outcome-changing",
+        "input gap",
+        "materials gap",
+        "materials do not resolve"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "subject_id", "value", "text", "material", "disposition"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {
+          "enum": [
+            "general",
+            "jurisdiction",
+            "regime_entity",
+            "actor_capacity",
+            "transaction_relationship",
+            "legal_relationship",
+            "trust_relationship",
+            "purpose_trust_relationship",
+            "foundation_relationship",
+            "lifecycle_stage",
+            "governing_instrument",
+            "branch_decision",
+            "director_count"
+          ]
+        },
+        "subject_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+        "value": {"type": ["string", "integer", "boolean", "null"]},
+        "text": {"$ref": "#/$defs/nonEmptyString"},
+        "material": {"type": "boolean"},
+        "disposition": {"$ref": "#/$defs/disposition"}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "option", "text", "disposition"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["mcq_option", "answer_assertion", "document_assertion"]},
+        "option": {"type": ["string", "null"], "pattern": "^[A-Z]$"},
+        "text": {"$ref": "#/$defs/nonEmptyString"},
+        "disposition": {"$ref": "#/$defs/disposition"}
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "entity_type", "capacities", "director_count", "director_count_fact_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "entity_type": {"enum": ["human", "corporate", "trust", "purpose_trust", "foundation"]},
+        "capacities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "settlor",
+              "trust",
+              "purpose_trust",
+              "trustee",
+              "corporate_trustee",
+              "beneficiary",
+              "protector",
+              "enforcer",
+              "founder",
+              "foundation",
+              "councillor",
+              "corporate_councillor",
+              "guardian",
+              "life_tenant",
+              "appointor",
+              "investment_manager",
+              "delegate",
+              "agent",
+              "principal",
+              "transferor",
+              "transferee",
+              "secured_creditor",
+              "beneficial_owner",
+              "member",
+              "corporate_member",
+              "director",
+              "corporate_director",
+              "officer",
+              "signatory",
+              "liquidator",
+              "creditor",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "director_count": {"type": ["integer", "null"], "minimum": 0},
+        "director_count_fact_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namespace", "path", "pinpoint"],
+      "properties": {
+        "namespace": {"enum": ["exam_question", "exam_attachment", "course_manual", "course_appendix"]},
+        "path": {"$ref": "#/$defs/path"},
+        "pinpoint": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source",
+        "requirement",
+        "verdict",
+        "triggering_fact_ids",
+        "deciding_fact_ids",
+        "unique_contribution",
+        "xor_set_id",
+        "unresolved",
+        "gap_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "source": {"$ref": "#/$defs/source"},
+        "requirement": {"enum": ["mandatory", "optional"]},
+        "verdict": {"enum": ["incorporated", "conditional", "forbidden", "checked_not_relevant"]},
+        "triggering_fact_ids": {"$ref": "#/$defs/idList"},
+        "deciding_fact_ids": {"$ref": "#/$defs/idList"},
+        "unique_contribution": {"$ref": "#/$defs/nonEmptyString"},
+        "xor_set_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+        "unresolved": {"type": "boolean"},
+        "gap_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "accessEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "namespace", "role"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"},
+        "namespace": {"enum": ["exam_question", "exam_attachment", "course_manual", "course_appendix"]},
+        "role": {"enum": ["incorporated", "conditional", "check_only"]}
+      }
+    },
+    "actualOpenEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "namespace", "role", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"},
+        "namespace": {"enum": ["exam_question", "exam_attachment", "course_manual", "course_appendix"]},
+        "role": {"enum": ["incorporated", "conditional", "check_only"]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "sourceAccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowlist_frozen", "allowlist_sha256", "allowlist", "actual_open", "forbidden_paths", "prior_answer_paths"],
+      "properties": {
+        "allowlist_frozen": {"const": true},
+        "allowlist_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "allowlist": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/accessEntry"}
+        },
+        "actual_open": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/actualOpenEntry"}
+        },
+        "forbidden_paths": {"$ref": "#/$defs/pathList"},
+        "prior_answer_paths": {"$ref": "#/$defs/pathList"}
+      }
+    },
+    "xorBranchSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "route_ids", "selection_state", "selected_route_ids", "deciding_fact_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "route_ids": {"$ref": "#/$defs/idList"},
+        "selection_state": {"enum": ["selected", "unresolved", "not_applicable"]},
+        "selected_route_ids": {"$ref": "#/$defs/idList"},
+        "deciding_fact_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "signatory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human", "name_or_placeholder", "authority_instrument_id"],
+      "properties": {
+        "human": {"type": "boolean"},
+        "name_or_placeholder": {"$ref": "#/$defs/nonEmptyString"},
+        "authority_instrument_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"}
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source_component_id", "status", "unresolved", "gap_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "source_component_id": {"$ref": "#/$defs/id"},
+        "status": {"enum": ["produced", "placeholder", "conditional", "omitted"]},
+        "unresolved": {"type": "boolean"},
+        "gap_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "attachment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "status", "unresolved", "gap_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {
+          "enum": [
+            "conveyance_bill_of_sale",
+            "facility",
+            "security",
+            "registry",
+            "trust_property_transfer",
+            "trust_fund",
+            "deed",
+            "schedule",
+            "foundation_endowment",
+            "foundation_charter",
+            "foundation_registration",
+            "certificate",
+            "consent",
+            "other"
+          ]
+        },
+        "status": {"enum": ["produced", "placeholder", "conditional", "omitted"]},
+        "unresolved": {"type": "boolean"},
+        "gap_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "recordFiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "status", "unresolved", "gap_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {
+          "enum": [
+            "register_of_charges",
+            "internal_register",
+            "external_filing",
+            "minutes",
+            "accounts",
+            "trust_register",
+            "trust_accounts",
+            "trustee_minutes",
+            "foundation_register",
+            "foundation_accounts",
+            "council_minutes",
+            "certificate_of_registration",
+            "release",
+            "receipt",
+            "other"
+          ]
+        },
+        "status": {"enum": ["produced", "placeholder", "conditional", "omitted"]},
+        "unresolved": {"type": "boolean"},
+        "gap_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "instrument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sequence",
+        "kind",
+        "actor_id",
+        "target_act",
+        "upstream_authority_instrument_id",
+        "target_instrument",
+        "signatory",
+        "action_business",
+        "selected_action_component_ids",
+        "operative_components",
+        "attachments",
+        "execution",
+        "records_filings"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "sequence": {"type": "integer", "minimum": 1},
+        "kind": {
+          "enum": [
+            "upstream_authority",
+            "notice",
+            "resolution",
+            "agreement",
+            "conveyance",
+            "security",
+            "registry_document",
+            "account",
+            "deed",
+            "trust_deed",
+            "deed_of_settlement",
+            "declaration_of_trust",
+            "purpose_trust_deed",
+            "deed_of_appointment",
+            "deed_of_resettlement",
+            "deed_of_release",
+            "deed_of_variation",
+            "trustee_resolution",
+            "protector_consent",
+            "protector_direction",
+            "enforcer_appointment",
+            "foundation_charter",
+            "foundation_regulations",
+            "foundation_registration",
+            "foundation_council_resolution",
+            "power_of_attorney",
+            "statement_of_wishes",
+            "irrevocable_instruction",
+            "memorandum",
+            "other"
+          ]
+        },
+        "actor_id": {"$ref": "#/$defs/id"},
+        "target_act": {"type": "boolean"},
+        "upstream_authority_instrument_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+        "target_instrument": {"$ref": "#/$defs/nonEmptyString"},
+        "signatory": {"$ref": "#/$defs/signatory"},
+        "action_business": {"type": "boolean"},
+        "selected_action_component_ids": {"$ref": "#/$defs/idList"},
+        "operative_components": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/component"}
+        },
+        "attachments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/attachment"}
+        },
+        "execution": {"$ref": "#/$defs/executionBlock"},
+        "records_filings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/recordFiling"}
+        }
+      }
+    },
+    "executionBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "unresolved", "gap_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "status": {"enum": ["produced", "placeholder", "conditional", "omitted"]},
+        "unresolved": {"type": "boolean"},
+        "gap_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "countSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instruments", "operative_components", "attachments", "execution_blocks", "records_filings"],
+      "properties": {
+        "instruments": {"type": "integer", "minimum": 0},
+        "operative_components": {"type": "integer", "minimum": 0},
+        "attachments": {"type": "integer", "minimum": 0},
+        "execution_blocks": {"type": "integer", "minimum": 0},
+        "records_filings": {"type": "integer", "minimum": 0}
+      }
+    },
+    "documentChain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "complex_transaction", "instruments", "expected_counts", "actual_counts"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "complex_transaction": {"type": "boolean"},
+        "instruments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/instrument"}
+        },
+        "expected_counts": {"$ref": "#/$defs/countSet"},
+        "actual_counts": {"$ref": "#/$defs/countSet"}
+      }
+    },
+    "materialsGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description", "resolution", "affected_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "description": {"$ref": "#/$defs/nonEmptyString"},
+        "resolution": {"enum": ["conditional", "placeholder"]},
+        "affected_ids": {"$ref": "#/$defs/idList"}
+      }
+    },
+    "traceEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "route_id", "contribution", "answer_location"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "route_id": {"$ref": "#/$defs/id"},
+        "contribution": {"$ref": "#/$defs/nonEmptyString"},
+        "answer_location": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "candidate_id": "candidate-a",
+  "files": [
+    {
+      "category": "course",
+      "sha256": "e05871d7ee93e8f80f821c4c31a08b93c9564bf7632362d4181369ab1376c686",
+      "virtual_path": "course/Appendix-18A-Share-transfer-form.md"
+    },
+    {
+      "category": "course",
+      "sha256": "d85e65514abcf887f2a5d5e06a5fe995ff6593cb9cc05b6e7684fcaf7c720908",
+      "virtual_path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md"
+    },
+    {
+      "category": "course",
+      "sha256": "9a0210e9a7b40c0a69b0b484bb107430d7ddeedd10543e1ae1d5946ec19c6f65",
+      "virtual_path": "course/Appendix-18C-Directors-resolution-refusing-to-register-share-transfer.md"
+    },
+    {
+      "category": "course",
+      "sha256": "2e52fcf38609c22dfebd6e03c6892a164f5f53275b160a781b578fbc87101e28",
+      "virtual_path": "course/Appendix-18D-Notice-of-refusal-to-register-share-transfer.md"
+    },
+    {
+      "category": "course",
+      "sha256": "c1eed42e361819d8173cc313c4b93c5e0214117c49c1f3d94b4a926a3054a85d",
+      "virtual_path": "course/Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md"
+    },
+    {
+      "category": "course",
+      "sha256": "49bc30043f3ca43561a4ea352ce74c36d0fa2c437ce56ad66c98e0ea6ee8a636",
+      "virtual_path": "course/Appendix-25H-Directors-resolution-to-appoint-corporate.md"
+    },
+    {
+      "category": "course",
+      "sha256": "c05e54a45206877935158a3bca8b5e11883ff15a530b94c7ae62c02994afa61d",
+      "virtual_path": "course/Appendix-25J-Notice-to-company-of-appointment-of-corporate.md"
+    },
+    {
+      "category": "course",
+      "sha256": "a9262aa7a999c7a3ea0682b9f6a574406c2c20cda41d4705aef318a82e6d18ec",
+      "virtual_path": "course/Appendix-25N-Directors-resolution-to-approve-complex-borrowing.md"
+    },
+    {
+      "category": "course",
+      "sha256": "9b6f085d5f7a68b3d4f6488e612fc50dfa47bd47e1ce7fe6adfb011dcb58c9f4",
+      "virtual_path": "course/Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md"
+    },
+    {
+      "category": "course",
+      "sha256": "5982f9f2d8d2c7ce3a93a6d97fe71f5a6f3e339e62233cf9361c7ae765c850e6",
+      "virtual_path": "course/Appendix-30E-Notice-of-final-general-meeting-of-the-company.md"
+    },
+    {
+      "category": "course",
+      "sha256": "4d94e63c5199b7b9175c440df9606e0796a43b7a06627cabb8b4a6f721fe97bc",
+      "virtual_path": "course/Appendix-30F-Members-resolutions-approving-liquidators-statement-of.md"
+    },
+    {
+      "category": "course",
+      "sha256": "ef5ccd46622d8112e7d6f13931527f1b819c7aba5451818d97495f156bcee225",
+      "virtual_path": "course/Appendix-30G-Liquidators-statement-of-account.md"
+    },
+    {
+      "category": "course",
+      "sha256": "30330230b405f4c4036021cc643cb099317c22d635ffe2f06f01ccbd7d067efb",
+      "virtual_path": "course/Appendix-7C-Register-of-charges.md"
+    },
+    {
+      "category": "course",
+      "sha256": "864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b",
+      "virtual_path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md"
+    },
+    {
+      "category": "course",
+      "sha256": "699aeceece06118c5a53b9421673a40c49dd09c87aa41f1c8d1aaed8820b8f5d",
+      "virtual_path": "course/Course-Manual-Module-06-Equity-Capital-and-Distributions.md"
+    },
+    {
+      "category": "course",
+      "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc",
+      "virtual_path": "course/Course-Manual-Module-10-Company-Decision-making-Procedures.md"
+    },
+    {
+      "category": "course",
+      "sha256": "1246d3259c6aac6149ed68e0f87a44c002871d246fddd147cb90be92adaa603c",
+      "virtual_path": "course/Course-Manual-Module-12-Termination-of-Companies.md"
+    },
+    {
+      "category": "question",
+      "sha256": "ecfacd83eb0edc52d65e7da54e844b7b5d11fcc731f64a9d95ed8b4aea09dd36",
+      "virtual_path": "question/focused-case-manifest.json"
+    },
+    {
+      "category": "workflow",
+      "sha256": "52e3af6c0f31634cd598bb401ffbd7b11db1f969affb66295ed7c8a98493c3d8",
+      "virtual_path": "workflow/CLAUDE.md"
+    },
+    {
+      "category": "workflow",
+      "sha256": "ce886f1f510c48094cf118d065dee42e6a0684ca9a8134a79236a5a05a2fc48f",
+      "virtual_path": "workflow/Content.md"
+    },
+    {
+      "category": "workflow",
+      "sha256": "f1bc8f5a09d79ebb6b2c9944646b7a15383534600636db978ffd53912781c42b",
+      "virtual_path": "workflow/behavioral_candidate_builder.py"
+    },
+    {
+      "category": "workflow",
+      "sha256": "76070e990d1bd1d25495d8bce91d8f622b839d97925aedb1fba44f9c6d641372",
+      "virtual_path": "workflow/route-plan.schema.json"
+    },
+    {
+      "category": "workflow",
+      "sha256": "31265a944958682be1e270cbe18a7aa8a177833fca13581a8c0861f0c17259d0",
+      "virtual_path": "workflow/route_plan_fixture_factory.py"
+    },
+    {
+      "category": "workflow",
+      "sha256": "d1b34970e0bdfbc602d8d6050f5e5e027ab8095645df033e4717fcff22e21a07",
+      "virtual_path": "workflow/routing-core.md"
+    },
+    {
+      "category": "workflow",
+      "sha256": "6dd342f80bc7e473e674462188afe5ec9dee96c3cfb475572d4b01e140e3461c",
+      "virtual_path": "workflow/section-a.md"
+    },
+    {
+      "category": "workflow",
+      "sha256": "21c929d360b4a23c4e4cd49c3aed277be831de1ebb2dd647183618707f54b23c",
+      "virtual_path": "workflow/section-b.md"
+    },
+    {
+      "category": "workflow",
+      "sha256": "9f9cb0616435f32d635bd49c6e51f81eb9f71de210e843a4fe93d76958c8007b",
+      "virtual_path": "workflow/validate_route_plan.py"
+    }
+  ],
+  "forbidden_categories": [
+    "gold",
+    "kap",
+    "prior_answer",
+    "peer_output"
+  ],
+  "harness_version": "routing-isolation-harness-v1",
+  "input_tree": "answer-inputs/candidate-a"
+}

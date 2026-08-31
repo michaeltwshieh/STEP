@@ -1,0 +1,774 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "Specimen2.Question1.BVI",
+  "case_refs": [],
+  "answer_unit": {
+    "id": "question1",
+    "mode": "PROSE",
+    "question_ref": "Specimen Examination Paper 2, Question 1, including examination Appendix 1, 20 marks",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#page=2"
+    ],
+    "exam_attachment": [
+      "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#pages=7-8"
+    ],
+    "course_manual": [
+      "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+      "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+      "Course-Manual-Module-05-The-Companys-Constitution.md",
+      "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+      "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+      "Course-Manual-Module-09-Other-Officers-Secretary-and-Registered-Agent.md",
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+      "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md"
+    ],
+    "course_appendix": [
+      "Appendix-5-New-Company-Questionnaire.md",
+      "Appendix-6B-Types-of-company-available-in-selected-jurisdictions.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "choice_delegated",
+      "value": "British Virgin Islands",
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "alternatives": ["Bahamas", "Bermuda", "Cayman Islands", "Guernsey", "Jersey"]
+    },
+    "regime_entity": {
+      "state": "choice_delegated",
+      "value": "BVI business company limited by shares, proposed as a private investment-holding company",
+      "deciding_fact_ids": ["f.jurisdiction_choice", "f.investment_holding", "f.company_type_request"],
+      "alternatives": ["BVI company limited by guarantee"]
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "Company administrator at Corporate Service Provider responding to a New York private banker who acts for proposed beneficial owner Mr X",
+      "deciding_fact_ids": ["f.administrator", "f.instructions"],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "Pre-incorporation onboarding and formation instructions for Mr X through his private banker",
+      "deciding_fact_ids": ["f.instructions", "f.deliverable"],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "Pre-incorporation questionnaire review before name approval, due diligence and filing",
+      "deciding_fact_ids": ["f.instructions", "f.deliverable"],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "choice_delegated",
+      "value": "BVI Business Companies Act 2004 and the proposed company's memorandum and articles, once approved and filed",
+      "deciding_fact_ids": ["f.jurisdiction_choice", "f.standard_articles"],
+      "alternatives": []
+    }
+  },
+  "facts": [
+    {
+      "id": "f.administrator",
+      "kind": "actor_capacity",
+      "subject_id": "e.administrator",
+      "value": "company administrator employed by Corporate Service Provider",
+      "text": "The candidate is a company administrator employed by Corporate Service Provider.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.jurisdiction_delegated",
+      "kind": "jurisdiction",
+      "subject_id": "e.proposed_company",
+      "value": "choice delegated",
+      "text": "The examination requires the candidate to choose a jurisdiction, state it in a preliminary paragraph and apply it consistently.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.jurisdiction_choice",
+      "kind": "jurisdiction",
+      "subject_id": "e.proposed_company",
+      "value": "British Virgin Islands",
+      "text": "British Virgin Islands selected once under the delegated choice because the local materials give a complete formation, company-type, constitution, director, officer and registered-agent route for a BVI business company.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.instructions",
+      "kind": "transaction_relationship",
+      "subject_id": "e.proposed_company",
+      "value": "incorporate for Mr X through New York private banker",
+      "text": "A private banker in New York instructs incorporation on behalf of client Mr X and emails a completed New Company Questionnaire.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.deliverable",
+      "kind": "lifecycle_stage",
+      "subject_id": "e.proposed_company",
+      "value": "written response to questionnaire",
+      "text": "Review every answer and question in bold italics in examination Appendix 1 and provide a written response; total 20 marks.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.names",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "Royal Offshore Investments SA; Royal Banking Services SA; Offshore Investments SA",
+      "text": "The three proposed names, in priority order, are Royal Offshore Investments SA, Royal Banking Services SA and Offshore Investments SA.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.company_type_request",
+      "kind": "regime_entity",
+      "subject_id": "e.proposed_company",
+      "value": "shares or guarantee unresolved by banker",
+      "text": "The banker asks whether the company should be limited by shares or by guarantee.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.capital",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "authorised and issued capital blank; maximum capital at minimum cost requested",
+      "text": "Authorised capital, denomination and issued capital are blank; the banker requests the maximum capital for the minimum cost.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.client_details_gap",
+      "kind": "general",
+      "subject_id": "e.mr_x",
+      "value": "client details only on file in New York",
+      "text": "The questionnaire supplies no beneficial-owner particulars to the CSP and merely says that client details are on file in New York.",
+      "material": true,
+      "disposition": "input gap"
+    },
+    {
+      "id": "f.nominee_shareholder",
+      "kind": "transaction_relationship",
+      "subject_id": "e.csp",
+      "value": true,
+      "text": "Nominee shareholder services are requested.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.directors_gap",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "nominee director request unanswered; count and corporate-director eligibility queried",
+      "text": "The director section does not answer whether nominee services are required and asks how many directors are required and whether corporate directors are allowed.",
+      "material": true,
+      "disposition": "input gap"
+    },
+    {
+      "id": "f.officer_questions",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "secretary and registered-agent necessity and functions queried",
+      "text": "The banker asks whether a secretary is necessary, what a secretary does, what a registered agent is and whether one is necessary.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.investment_holding",
+      "kind": "transaction_relationship",
+      "subject_id": "e.proposed_company",
+      "value": "investment-holding company",
+      "text": "The banker requests standard articles for an investment-holding company but gives no detailed business or object description.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.objects_gap",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "object detail queried and business particulars absent",
+      "text": "The banker asks how detailed the objects must be, without identifying the investments, markets, countries or activities contemplated.",
+      "material": true,
+      "disposition": "input gap"
+    },
+    {
+      "id": "f.standard_articles",
+      "kind": "governing_instrument",
+      "subject_id": "e.proposed_company",
+      "value": "standard articles requested",
+      "text": "Standard articles for an investment-holding company are requested, but no special director, quorum, share-right or control provisions are supplied.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.registered_office",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "private banker's New York office proposed",
+      "text": "The questionnaire proposes the private banker's office in New York as the registered office.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f.financial_matters",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "no auditor unless required; Morgan's New York adviser; no tax adviser; 31 December year end",
+      "text": "The financial answers decline an auditor unless required, name Morgan's in New York as investment adviser, state no tax adviser and select 31 December as financial year end.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.bank_gap",
+      "kind": "general",
+      "subject_id": "e.proposed_company",
+      "value": "bank after incorporation; account details blank",
+      "text": "Bank arrangements will follow further instructions after incorporation; account type, currency and signatories or mandate are blank.",
+      "material": true,
+      "disposition": "input gap"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c.names",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Respond to each proposed name and reserve incorporation pending name approval and any regulated-word clearance.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.type_capital",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Recommend the BVI business-company form suited to Mr X's investment-holding purpose and explain the applicable share and capital choices.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.onboarding",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Require direct delivery and verification of Mr X's beneficial-owner, source-of-funds and related due-diligence particulars before incorporation.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.nominees",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Explain nominee shareholder and proposed director arrangements without treating nominees as substitutes for ownership transparency or director duties.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.officers",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "State the BVI position and roles of the secretary, registered agent and registered office.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.objects_articles",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Explain BVI objects and capacity and qualify the request for standard articles by asking for the business and governance particulars needed for adaptation.",
+      "disposition": "used - content"
+    },
+    {
+      "id": "c.financial_bank",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Address auditor, adviser, tax, year-end and later bank-account instructions, distinguishing incorporation data from post-incorporation appointments.",
+      "disposition": "used - content"
+    }
+  ],
+  "entities": [
+    {
+      "id": "e.administrator",
+      "entity_type": "human",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "e.private_banker",
+      "entity_type": "human",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "e.mr_x",
+      "entity_type": "human",
+      "capacities": ["beneficial_owner"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "e.csp",
+      "entity_type": "corporate",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "e.proposed_company",
+      "entity_type": "corporate",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "r.exam_question",
+      "source": {
+        "namespace": "exam_question",
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#page=2",
+        "pinpoint": "Question 1, page 2"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.jurisdiction_delegated", "f.instructions", "f.deliverable"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Fixes the delegated jurisdiction choice, candidate capacity, incorporation scenario, written-response command and 20-mark scope.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.exam_attachment",
+      "source": {
+        "namespace": "exam_attachment",
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#pages=7-8",
+        "pinpoint": "Examination Appendix 1, New Company Questionnaire, pages 7-8, items 1-11"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.names", "f.company_type_request", "f.capital", "f.client_details_gap", "f.nominee_shareholder", "f.directors_gap", "f.officer_questions", "f.investment_holding", "f.objects_gap", "f.standard_articles", "f.registered_office", "f.financial_matters", "f.bank_gap"],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies every questionnaire answer, query and blank that the response must address, kept separate from course appendices.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module2",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "pinpoint": "sections 4.2 and 5"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.company_type_request", "f.investment_holding"],
+      "deciding_fact_ids": ["f.jurisdiction_choice", "f.investment_holding"],
+      "unique_contribution": "Explains the limited-by-shares choice and the use of an offshore company to hold investments and segregate ownership from Mr X personally.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module3",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "pinpoint": "sections 3.1-3.6 and 4.1-4.5"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.instructions", "f.names", "f.company_type_request", "f.client_details_gap", "f.directors_gap", "f.standard_articles", "f.registered_office", "f.financial_matters", "f.bank_gap"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Supplies the BVI formation sequence, naming controls, due-diligence information, filing requirements and post-incorporation board, record, adviser, year-end and banking actions.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module5",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-05-The-Companys-Constitution.md",
+        "pinpoint": "sections 1, 2.1-2.6 and 4.1-4.3"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.names", "f.company_type_request", "f.capital", "f.objects_gap", "f.standard_articles", "f.registered_office"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Supplies the memorandum and articles content governing name, BVI registered office and agent, member liability, capacity and objects, share terms and governance provisions.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module6",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "pinpoint": "sections 1.2 and 4.1-4.2"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.capital", "f.client_details_gap"],
+      "deciding_fact_ids": ["f.jurisdiction_choice", "f.company_type_request"],
+      "unique_contribution": "Distinguishes share authorisation, allotment and issue and supports a coherent number, class, par-value or no-par-value choice instead of an unexplained maximum-capital request.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module7",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "pinpoint": "sections 3.1-3.3"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.directors_gap"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Supplies the BVI minimum-director, eligibility, corporate-director and appointment rules needed to answer the director questions.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module9",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-09-Other-Officers-Secretary-and-Registered-Agent.md",
+        "pinpoint": "sections 1.1-1.4 and 2.1-2.4"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.officer_questions", "f.registered_office"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Provides the BVI requirement and functions of the secretary and registered agent and connects the registered office to the agent's BVI office.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module10",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "pinpoint": "sections 5.9-5.10"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.capital", "f.financial_matters"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Supplies the post-incorporation procedure for issuing the initial shares and the BVI audit and accounting-record position relevant to the banker’s answers.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.module11",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "pinpoint": "sections 2.3-2.10 and 3.1-3.6"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.client_details_gap", "f.nominee_shareholder", "f.directors_gap", "f.financial_matters", "f.bank_gap"],
+      "deciding_fact_ids": ["f.nominee_shareholder"],
+      "unique_contribution": "Explains nominee shareholder and director services, beneficial-owner control, registered-office and agent services, records, accounting and adviser or bank-control arrangements.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.appendix6b",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-6B-Types-of-company-available-in-selected-jurisdictions.md",
+        "pinpoint": "British Virgin Islands subsection"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f.jurisdiction_delegated", "f.company_type_request", "f.investment_holding"],
+      "deciding_fact_ids": ["f.jurisdiction_choice"],
+      "unique_contribution": "Confirms the selected BVI business-company forms and the fit of a company limited by shares for the proposed investment-holding use.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.appendix5",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-5-New-Company-Questionnaire.md",
+        "pinpoint": "whole questionnaire template"
+      },
+      "requirement": "optional",
+      "verdict": "checked_not_relevant",
+      "triggering_fact_ids": ["f.deliverable"],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Checks the course questionnaire field architecture; the examination attachment itself supplies the operative facts, so the course template does not add submitted content.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "e14d714ec59aeb3ed87a697c1cf0d8169e00760a266b602b68a934f9caac7fb7",
+    "allowlist": [
+      {
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#page=2",
+        "namespace": "exam_question",
+        "role": "incorporated"
+      },
+      {
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#pages=7-8",
+        "namespace": "exam_attachment",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-05-The-Companys-Constitution.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-09-Other-Officers-Secretary-and-Registered-Agent.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Appendix-6B-Types-of-company-available-in-selected-jurisdictions.md",
+        "namespace": "course_appendix",
+        "role": "incorporated"
+      },
+      {
+        "path": "Appendix-5-New-Company-Questionnaire.md",
+        "namespace": "course_appendix",
+        "role": "check_only"
+      }
+    ],
+    "actual_open": [
+      {
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#page=2",
+        "namespace": "exam_question",
+        "role": "incorporated",
+        "sha256": "9954f2313dfb753aac3b0409601502b4a4760a0573d05c71e735d4dabc165922"
+      },
+      {
+        "path": "external-exam/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#pages=7-8",
+        "namespace": "exam_attachment",
+        "role": "incorporated",
+        "sha256": "9954f2313dfb753aac3b0409601502b4a4760a0573d05c71e735d4dabc165922"
+      },
+      {
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "88ad9c58645e8212a937f445ee28d83d8b68264047e14712f7e86af2857a1288"
+      },
+      {
+        "path": "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b"
+      },
+      {
+        "path": "Course-Manual-Module-05-The-Companys-Constitution.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "b420a4bc6f9512dd4827d5a04c4a1f870d55c8d92f3769f7cf2bd74f5333e8f2"
+      },
+      {
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "699aeceece06118c5a53b9421673a40c49dd09c87aa41f1c8d1aaed8820b8f5d"
+      },
+      {
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "dda8c75e6257e9c5a5fc088cc7f6ff3b771c551de0c35606c6c1dab2ea66aa88"
+      },
+      {
+        "path": "Course-Manual-Module-09-Other-Officers-Secretary-and-Registered-Agent.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "2b44ed1f628115212bd1d100bcf4c4349e5520c5a1fa6281f4ff8f833188d19a"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"
+      },
+      {
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "00db94fd76cc6b973eee259767d341d9227dcb62b91889b3c08a2a406eadf0af"
+      },
+      {
+        "path": "Appendix-6B-Types-of-company-available-in-selected-jurisdictions.md",
+        "namespace": "course_appendix",
+        "role": "incorporated",
+        "sha256": "91ec80465fecf2bc163c4b13bd68e76caa54e5e03f35d1dee79e07ce90201f98"
+      },
+      {
+        "path": "Appendix-5-New-Company-Questionnaire.md",
+        "namespace": "course_appendix",
+        "role": "check_only",
+        "sha256": "6e21e09906bb57e889b58e361a8923450f12d6f1757378288a19dde457d94ef4"
+      }
+    ],
+    "forbidden_paths": [
+      "Appendix-1B-Articles-of-Association-based-upon-Table-A-1948-Act-with.md",
+      "Appendix-1C-Articles-of-Association-based-upon-English-2008-Model.md"
+    ],
+    "prior_answer_paths": [
+      "tmp/routeplans/build_q1_routeplans.py",
+      "tmp/routeplans/q1-1-route-plan.json",
+      "tmp/routeplans/q1-1-validation.json",
+      "tmp/routeplans/q1-2-route-plan.json",
+      "tmp/routeplans/q1-2-validation.json",
+      "tmp/routeplans/q1-3-route-plan.json",
+      "tmp/routeplans/q1-3-validation.json",
+      "tmp/routeplans/q1-4-route-plan.json",
+      "tmp/routeplans/q1-4-validation.json",
+      "tmp/routeplans/q1-5-route-plan.json",
+      "tmp/routeplans/q1-5-validation.json",
+      "tmp/routeplans/q1-submit.txt"
+    ]
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": false,
+    "complex_transaction": false,
+    "instruments": [],
+    "expected_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    },
+    "actual_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    }
+  },
+  "materials_gaps": [],
+  "final_trace": [
+    {
+      "id": "t.exam_question",
+      "route_id": "r.exam_question",
+      "contribution": "Fixes the delegated jurisdiction choice, candidate capacity, incorporation scenario, written-response command and 20-mark scope.",
+      "answer_location": "Preliminary jurisdiction paragraph and scope of the complete response"
+    },
+    {
+      "id": "t.exam_attachment",
+      "route_id": "r.exam_attachment",
+      "contribution": "Supplies every questionnaire answer, query and blank that the response must address, kept separate from course appendices.",
+      "answer_location": "Numbered responses 1-11"
+    },
+    {
+      "id": "t.module2",
+      "route_id": "r.module2",
+      "contribution": "Explains the limited-by-shares choice and the use of an offshore company to hold investments and segregate ownership from Mr X personally.",
+      "answer_location": "Response 2"
+    },
+    {
+      "id": "t.module3",
+      "route_id": "r.module3",
+      "contribution": "Supplies the BVI formation sequence, naming controls, due-diligence information, filing requirements and post-incorporation board, record, adviser, year-end and banking actions.",
+      "answer_location": "Responses 1, 2, 4, 5, 8, 10 and 11"
+    },
+    {
+      "id": "t.module5",
+      "route_id": "r.module5",
+      "contribution": "Supplies the memorandum and articles content governing name, BVI registered office and agent, member liability, capacity and objects, share terms and governance provisions.",
+      "answer_location": "Responses 1-3 and 6-9"
+    },
+    {
+      "id": "t.module6",
+      "route_id": "r.module6",
+      "contribution": "Distinguishes share authorisation, allotment and issue and supports a coherent number, class, par-value or no-par-value choice instead of an unexplained maximum-capital request.",
+      "answer_location": "Response 3"
+    },
+    {
+      "id": "t.module7",
+      "route_id": "r.module7",
+      "contribution": "Supplies the BVI minimum-director, eligibility, corporate-director and appointment rules needed to answer the director questions.",
+      "answer_location": "Response 5"
+    },
+    {
+      "id": "t.module9",
+      "route_id": "r.module9",
+      "contribution": "Provides the BVI requirement and functions of the secretary and registered agent and connects the registered office to the agent's BVI office.",
+      "answer_location": "Responses 6 and 9"
+    },
+    {
+      "id": "t.module10",
+      "route_id": "r.module10",
+      "contribution": "Supplies the post-incorporation procedure for issuing the initial shares and the BVI audit and accounting-record position relevant to the banker’s answers.",
+      "answer_location": "Responses 3 and 10"
+    },
+    {
+      "id": "t.module11",
+      "route_id": "r.module11",
+      "contribution": "Explains nominee shareholder and director services, beneficial-owner control, registered-office and agent services, records, accounting and adviser or bank-control arrangements.",
+      "answer_location": "Responses 4-6 and 9-11"
+    },
+    {
+      "id": "t.appendix6b",
+      "route_id": "r.appendix6b",
+      "contribution": "Confirms the selected BVI business-company forms and the fit of a company limited by shares for the proposed investment-holding use.",
+      "answer_location": "Preliminary jurisdiction paragraph and response 2"
+    },
+    {
+      "id": "t.appendix5",
+      "route_id": "r.appendix5",
+      "contribution": "Checks the course questionnaire field architecture; the examination attachment itself supplies the operative facts, so the course template does not add submitted content.",
+      "answer_location": "Private cross-check only"
+    }
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

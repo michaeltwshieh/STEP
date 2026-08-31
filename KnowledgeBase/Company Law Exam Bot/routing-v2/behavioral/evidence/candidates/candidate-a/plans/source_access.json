@@ -1,0 +1,269 @@
+{
+  "answer_unit": {
+    "id": "Unit_main",
+    "mcq_options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "mode": "MCQ",
+    "question_ref": "inputs/question.json"
+  },
+  "case_refs": [
+    "MCQ17"
+  ],
+  "claims": [
+    {
+      "disposition": "refuted",
+      "id": "Claim_A",
+      "kind": "mcq_option",
+      "option": "A",
+      "text": "Generic option A"
+    },
+    {
+      "disposition": "refuted",
+      "id": "Claim_B",
+      "kind": "mcq_option",
+      "option": "B",
+      "text": "Generic option B"
+    },
+    {
+      "disposition": "supported",
+      "id": "Claim_C",
+      "kind": "mcq_option",
+      "option": "C",
+      "text": "Generic option C"
+    },
+    {
+      "disposition": "refuted",
+      "id": "Claim_D",
+      "kind": "mcq_option",
+      "option": "D",
+      "text": "Generic option D"
+    }
+  ],
+  "entities": [
+    {
+      "capacities": [
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": [],
+      "entity_type": "human",
+      "id": "E_human"
+    }
+  ],
+  "facts": [
+    {
+      "disposition": "used - outcome",
+      "id": "F_base",
+      "kind": "general",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied question fixes the generic requested outcome.",
+      "value": true
+    }
+  ],
+  "final_trace": [
+    {
+      "answer_location": "planned answer or private trace location for R_question",
+      "contribution": "Unique contribution from R_question",
+      "id": "T_R_question",
+      "route_id": "R_question"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_rule",
+      "contribution": "Unique contribution from R_rule",
+      "id": "T_R_rule",
+      "route_id": "R_rule"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_forbidden",
+      "contribution": "Unique contribution from R_forbidden",
+      "id": "T_R_forbidden",
+      "route_id": "R_forbidden"
+    }
+  ],
+  "locks": {
+    "governing_instruments": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied governing_instruments"
+    },
+    "jurisdiction": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied jurisdiction"
+    },
+    "legal_actor_capacity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied legal_actor_capacity"
+    },
+    "lifecycle_stage": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied lifecycle_stage"
+    },
+    "regime_entity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied regime_entity"
+    },
+    "transaction_relationship": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied transaction_relationship"
+    }
+  },
+  "materials_gaps": [],
+  "namespaces": {
+    "course_appendix": [
+      "course/forbidden-comparator.md"
+    ],
+    "course_manual": [
+      "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md"
+    ],
+    "exam_attachment": [],
+    "exam_question": [
+      "question/focused-case-manifest.json"
+    ]
+  },
+  "plan_id": "Behavioral_candidate_a_source_access",
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  },
+  "requested_document_chain": {
+    "actual_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "complex_transaction": false,
+    "expected_counts": {
+      "attachments": 0,
+      "execution_blocks": 0,
+      "instruments": 0,
+      "operative_components": 0,
+      "records_filings": 0
+    },
+    "instruments": [],
+    "required": false
+  },
+  "routes": [
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_question",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_question",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_rule",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_rule",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_forbidden",
+      "requirement": "optional",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/forbidden-comparator.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_forbidden",
+      "unresolved": false,
+      "verdict": "forbidden",
+      "xor_set_id": null
+    }
+  ],
+  "schema_version": "route-plan-v1",
+  "source_access": {
+    "actual_open": [
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated",
+        "sha256": "ecfacd83eb0edc52d65e7da54e844b7b5d11fcc731f64a9d95ed8b4aea09dd36"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated",
+        "sha256": "864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b"
+      }
+    ],
+    "allowlist": [
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated"
+      }
+    ],
+    "allowlist_frozen": true,
+    "allowlist_sha256": "17b3f989213a16d6ccd576b670a3c06f3141b1c3cf5de12bddcc591ab7c818b0",
+    "forbidden_paths": [
+      "course/forbidden-comparator.md"
+    ],
+    "prior_answer_paths": [
+      "forbidden/prior-answer.md"
+    ]
+  },
+  "xor_branch_sets": []
+}

@@ -1,0 +1,268 @@
+{
+  "activation": "NOT RUN - implementation remains candidate-only and is not a GO decision.",
+  "candidate_architecture": {
+    "inventory": {
+      "appendices": 90,
+      "modules": 12
+    },
+    "registries": {
+      "appendices": 90,
+      "modules": 12
+    },
+    "status": "PASS"
+  },
+  "diff_checks": {
+    "git_diff_check": "PASS",
+    "routing_v2_whitespace_failures": [],
+    "routing_v2_whitespace_scan": "PASS"
+  },
+  "failures": [],
+  "fixtures": [
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "action-notice.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "action-notice.missing-operatives.fail.json",
+      "issue_codes": [
+        "ACTION_NOTICE_COMPONENTS"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "entity-count.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "entity-count.unsupported.fail.json",
+      "issue_codes": [
+        "ENTITY_COUNT_SUPPORT"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "final-completion.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "final-completion.cumulative.fail.json",
+      "issue_codes": [
+        "XOR_SELECTION"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "final-completion.unselected-incorporated.fail.json",
+      "issue_codes": [
+        "XOR_SELECTION"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "managed-borrowing.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "managed-borrowing.missing-bill-of-sale.fail.json",
+      "issue_codes": [
+        "COMPLEX_TRANSACTION_DOCUMENTS"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "managed-borrowing.missing-charge-register.fail.json",
+      "issue_codes": [
+        "COMPLEX_TRANSACTION_DOCUMENTS"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "managed-borrowing.missing-complex-attachment.fail.json",
+      "issue_codes": [
+        "COMPLEX_TRANSACTION_DOCUMENTS"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "managed-borrowing.missing-upstream.fail.json",
+      "issue_codes": [
+        "CORPORATE_ACTOR_AUTHORITY"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "materials-gap.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "materials-gap.unconditional.fail.json",
+      "issue_codes": [
+        "MATERIALS_GAP_PRESERVATION"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "source-access.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "source-access.forbidden-open.fail.json",
+      "issue_codes": [
+        "FORBIDDEN_SOURCE_ACCESS",
+        "SOURCE_ALLOWLIST"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "source-access.incorporated-not-opened.fail.json",
+      "issue_codes": [
+        "SOURCE_ALLOWLIST"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "source-access.prior-answer-open.fail.json",
+      "issue_codes": [
+        "FORBIDDEN_SOURCE_ACCESS",
+        "SOURCE_ALLOWLIST"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "source-access.role-mismatch.fail.json",
+      "issue_codes": [
+        "SOURCE_ALLOWLIST"
+      ],
+      "observed": "INVALID"
+    },
+    {
+      "exit_code": 0,
+      "expected": "VALID",
+      "fixture": "transfer-unresolved.clean.json",
+      "issue_codes": [],
+      "observed": "VALID"
+    },
+    {
+      "exit_code": 1,
+      "expected": "INVALID",
+      "fixture": "transfer-unresolved.hard-approval.fail.json",
+      "issue_codes": [
+        "BRANCH_DECIDING_FACT"
+      ],
+      "observed": "INVALID"
+    }
+  ],
+  "focused_behavioral": {
+    "answer_lock_sha256": "e8e69562c9e663b064894cb113ee5eb33bb9a891628579823ec2be0ea76b3cf2",
+    "candidate_count": 2,
+    "fresh_execution_status": "PASS",
+    "report_sha256": "b1c9c9f53cf469e17d71c114fbc8cae151cef370a010ddaeafcade02f66594e7",
+    "retained_artifact_hashes_valid": true,
+    "retained_matches_fresh": true,
+    "scope_note": "Focused deterministic RoutePlan candidate run; not a full Section A/Section B activation audit and not a GO decision.",
+    "status": "PASS"
+  },
+  "legacy_checker": {
+    "metrics": {
+      "appendix_count": 90,
+      "case_count": 23,
+      "known_source_duplicate_heading_instances": 119,
+      "markdown_files_checked": 167,
+      "minimal_pair_count": 9,
+      "module_count": 12
+    },
+    "status": "PASS"
+  },
+  "live_workflow": {
+    "actual_hashes": {
+      "CLAUDE.md": "511e564e9f6f3c40be76582ccfe2f2ee24beae00aac2dbc8d7ab2386ec74aa58",
+      "Content.md": "24b08234f7a29266d6d199d5f5bc8c721253f4b23a53757fc370473bd677416b",
+      "section-a.md": "bc6697e97513d3922b8b7304e414a812dad35973ff5ef6331c400187e4c746e7",
+      "section-b.md": "2f80861e1fd8f23dfa50b181216c4eb96899aefdc01213884ab409df51473d75"
+    },
+    "expected_hashes": {
+      "CLAUDE.md": "511e564e9f6f3c40be76582ccfe2f2ee24beae00aac2dbc8d7ab2386ec74aa58",
+      "Content.md": "24b08234f7a29266d6d199d5f5bc8c721253f4b23a53757fc370473bd677416b",
+      "section-a.md": "bc6697e97513d3922b8b7304e414a812dad35973ff5ef6331c400187e4c746e7",
+      "section-b.md": "2f80861e1fd8f23dfa50b181216c4eb96899aefdc01213884ab409df51473d75"
+    },
+    "status": "UNCHANGED"
+  },
+  "mcq_corpus": {
+    "answer_balance": {
+      "A": 5,
+      "B": 5,
+      "C": 5,
+      "D": 5
+    },
+    "minimal_pairs": 10,
+    "questions": 20,
+    "status": "PASS"
+  },
+  "report_version": "deterministic-routing-implementation-acceptance-v1",
+  "source_integrity": {
+    "actual_bundle_sha256": "43eadd34fa7a613e0741aa5e0415d989b2bb3442446a3c290a89b802122d2c7e",
+    "expected_bundle_sha256": "43eadd34fa7a613e0741aa5e0415d989b2bb3442446a3c290a89b802122d2c7e",
+    "failures": [],
+    "inventory": {
+      "appendices": 90,
+      "immutable_sources": 105,
+      "modules": 12
+    },
+    "status": "PASS"
+  },
+  "status": "PASS",
+  "unit_tests": {
+    "returncode": 0,
+    "status": "PASS",
+    "tests": 17
+  },
+  "unresolved_evaluation_policy": [
+    "Exact MCQ closest-two scoring remains undecided; gold was not relaxed.",
+    "The combined 2.605m versus 905k account presentation remains undecided; gold was not relaxed."
+  ]
+}

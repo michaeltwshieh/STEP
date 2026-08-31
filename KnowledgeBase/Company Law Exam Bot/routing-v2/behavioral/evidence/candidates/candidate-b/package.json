@@ -1,0 +1,47 @@
+{
+  "candidate_id": "candidate-b",
+  "case_refs": [
+    "S01",
+    "S02",
+    "P05B",
+    "P08A"
+  ],
+  "plans": [
+    {
+      "label": "action",
+      "path": "plans/action.json",
+      "sha256": "1386d270b810d7cbf21f86d63f98a2a70defab13f5dd09a4016297a03c2a0009",
+      "validation_path": "validation/action.json",
+      "validation_sha256": "48a7fdc3a0d6347c692ac517209d66d019700cdd1dd0d521618eb84a5586248f"
+    },
+    {
+      "label": "completion",
+      "path": "plans/completion.json",
+      "sha256": "a135a22d776910732caa1698ca6d2c4e3f1f53997d1362a40663fba082c20103",
+      "validation_path": "validation/completion.json",
+      "validation_sha256": "e0eb6fae56978d2d961230d2c1ccfee0f211e0f8a6d6330f7418f17b71cab396"
+    },
+    {
+      "label": "managed",
+      "path": "plans/managed.json",
+      "sha256": "0ecad6c4870334ef7d1de8eed2f36543c50795921febd9644475a6478180ac81",
+      "validation_path": "validation/managed.json",
+      "validation_sha256": "f01947b2161c0617c90704cffe3e1508cd1a444d33978be5d55d217faf07727d"
+    },
+    {
+      "label": "source_access",
+      "path": "plans/source_access.json",
+      "sha256": "e4aab622d26334fc04f453af11e9a8d5d45012b50994391ad369e20fab7ca123",
+      "validation_path": "validation/source_access.json",
+      "validation_sha256": "11110a743d1cca21f426232e35efd3e1ab1de29c07843e59fa9292b2b05de3d1"
+    },
+    {
+      "label": "transfer",
+      "path": "plans/transfer.json",
+      "sha256": "2ac2d762e6a5a53efd7cd7d37fc149317a8d3be28d241c0dd1ac52b6e009bd7b",
+      "validation_path": "validation/transfer.json",
+      "validation_sha256": "9c72fefb369a1d6fafa892bf5260669c10f2b3c6883b539d2ae1328da8a6e3d3"
+    }
+  ],
+  "schema": "focused-route-plan-candidate-package-v1"
+}

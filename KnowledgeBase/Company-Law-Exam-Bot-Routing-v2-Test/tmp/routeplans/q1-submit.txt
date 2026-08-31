@@ -1,0 +1,51 @@
+1.1
+
+COMPANY LTD (Company No. [number])
+
+NOTICE OF EXTRAORDINARY SPECIAL GENERAL MEETING TO CONSIDER SPECIAL RESOLUTIONS
+
+To:
+
+C, D and E, the members of the Company
+
+A and B, the directors of the Company
+
+NOTICE IS HEREBY GIVEN THAT a general meeting of Company Ltd will take place at [venue] on 28 August [year] at [time] for the purposes of considering and, if thought fit, passing the following resolutions as special resolutions:
+
+1. THAT the Company be wound up voluntarily.
+
+2. THAT [name and address] and [name and address] (the 'Liquidators') be and are hereby appointed as liquidators of the Company to act jointly and severally for the purposes of such winding up.
+
+3. THAT the Liquidators are authorised to charge for their professional services rendered during the course of the winding up of the Company at their published scale rate of charges.
+
+4. THAT the Liquidators be and are hereby authorised to exercise all of the implied powers of a liquidator and that they be conferred with the power to divide any part of the assets of the Company as they shall think fit among the members of the Company in specie or in kind.
+
+5. THAT the Liquidators' accounts of receipts and payments need not be audited.
+
+DATE: [date]
+
+SIGNED: [Secretary/administrator]
+
+Note: A member of the Company who is entitled to attend and vote is also entitled to appoint a proxy, who need not be a member of the Company, to attend, speak and vote instead of him. The instrument appointing the proxy, together with any required authority, must be deposited at the registered office of the Company not less than 48 hours before the meeting.
+
+1.2
+
+Notice should be served on C, D and E as the registered shareholders. Article 27.5 refers to members who have supplied an address or registered facsimile number for notices, while Article 27.1 also permits personal service, so the absence of registered electronic details would not prevent service. Notice should also be served on A and B because Article 27.5 gives it to every director who is not also a shareholder. A person who had become entitled to a share through a member's death or bankruptcy would also be entitled, but no such person appears on these facts. Article 27.5 says that nobody else is entitled, so an auditor should not be added without a contrary provision in the governing legislation.
+
+Article 27.1 permits personal service, post to the member's registered address or email to a registered email address. Email is the cleanest method here because Article 27.2 deems service complete when it is sent; using tracked post as a second method would leave evidence of dispatch. The notice must give 14 clear days under Article 11.1, excluding both the date of service and 28 August. Personal or email service must therefore occur no later than 13 August. Postal notice is deemed served on the fourth day after posting, so it should be posted no later than 9 August, and prudence favours an earlier date. A shorter period works only if all members entitled to notice consent under Article 11.2.
+
+1.3
+
+A failure to comply with the notice period, contents or service requirements will ordinarily invalidate the proceedings and the resolution. Article 11.3 saves the meeting where there was merely an accidental omission to notify a member or the member did not receive a notice which was properly sent. The distinction is factual and the word 'accidental' is not defined. Attendance in person or by proxy would usually support the conclusion that the member received valid notice.
+
+1.4
+
+C cannot pass the resolution at the original meeting on 28 August. Although C owns 70%, Article 12.2 fixes the quorum by persons: two shareholders must be personally present while the Company has three shareholders. No business may be transacted with C alone, and any purported resolution would be invalid.
+
+If the meeting was convened by the directors, Article 12.3 requires it to stand adjourned, after half an hour without a quorum, to the same day in the following week at the same time and place. If it had been convened on a members' requisition, it would instead be dissolved. At the adjourned meeting, the members present after the further half-hour period are the quorum, so C could then proceed alone. C would be the only vote on a show of hands and, on a poll, C's 70% would exceed the two-thirds threshold.
+
+1.5
+
+The motion is lost on the show of hands. Article 13.1 gives one vote to each member present, without regard to shareholding, so C supplies one vote in favour while D and E supply two votes against. Unless a poll is demanded, the chairman's declaration and the corresponding entry in the Company's proceedings are conclusive under Article 12.7.
+
+C should demand a poll before, or when, the result of the show of hands is declared. C may do so alone because Article 12.6 permits a poll demand by one member holding at least 15% of the paid-up capital, and C holds 70%. Article 13.1 then gives one vote for each share. The poll produces 70% in favour and 30% against, so the special resolution passes the two-thirds threshold fixed by the articles.

@@ -1,0 +1,17 @@
+{
+  "schema": "focused-route-plan-behavioral-v1",
+  "purpose": "Question-only case references for the deterministic behavioral regression; oracle content is evaluator-only.",
+  "case_refs": [
+    "S01",
+    "S02",
+    "P05B",
+    "P08A"
+  ],
+  "target_classes": [
+    "action-notice operative completeness",
+    "managed complex-transaction document chain",
+    "unresolved mutually exclusive decision",
+    "alternative completion methods",
+    "frozen source allowlist"
+  ]
+}

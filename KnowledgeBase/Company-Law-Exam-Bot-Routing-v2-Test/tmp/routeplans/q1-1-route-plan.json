@@ -1,0 +1,687 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "specimen1.q1.1.v1",
+  "case_refs": [],
+  "answer_unit": {
+    "id": "q1.1",
+    "mode": "DRAFTING",
+    "question_ref": "Specimen Paper 1 Question 1.1",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "exam-inputs/Specimen-Paper-1.pdf"
+    ],
+    "exam_attachment": [
+      "exam-inputs/Specimen-Paper-1.pdf"
+    ],
+    "course_manual": [
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+      "Course-Manual-Module-12-Termination-of-Companies.md"
+    ],
+    "course_appendix": [
+      "Appendix-25D-Notice-of-AGM.md",
+      "Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md",
+      "Appendix-30A-Directors-declaration-of-solvency.md",
+      "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md",
+      "Appendix-30C-Notice-of-winding-up-for-publication-in-press-and-Gazette.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": [],
+      "alternatives": [
+        "Unidentified jurisdiction; use supplied legislation threshold and actual articles only"
+      ]
+    },
+    "regime_entity": {
+      "state": "supplied",
+      "value": "Company Ltd governed procedurally by supplied articles",
+      "deciding_fact_ids": [
+        "f.entity"
+      ],
+      "alternatives": []
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "Company secretary or administrator drafting the Company's meeting notice",
+      "deciding_fact_ids": [
+        "f.actor"
+      ],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "Company convening members to decide voluntary liquidation",
+      "deciding_fact_ids": [
+        "f.relationship"
+      ],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "Pre-meeting notice for an extraordinary special general meeting",
+      "deciding_fact_ids": [
+        "f.lifecycle"
+      ],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "supplied",
+      "value": "Applicable companies legislation threshold plus examination Appendix 1 articles",
+      "deciding_fact_ids": [
+        "f.governing"
+      ],
+      "alternatives": []
+    }
+  },
+  "facts": [
+    {
+      "id": "f.entity",
+      "kind": "regime_entity",
+      "subject_id": null,
+      "value": "Company Ltd",
+      "text": "Company Ltd is the company in question",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.actor",
+      "kind": "actor_capacity",
+      "subject_id": null,
+      "value": "Company secretary or administrator drafting the Company's meeting notice",
+      "text": "Company secretary or administrator drafting the Company's meeting notice",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.relationship",
+      "kind": "transaction_relationship",
+      "subject_id": null,
+      "value": "Company convening members to decide voluntary liquidation",
+      "text": "Company convening members to decide voluntary liquidation",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.lifecycle",
+      "kind": "lifecycle_stage",
+      "subject_id": null,
+      "value": "Pre-meeting notice for an extraordinary special general meeting",
+      "text": "Pre-meeting notice for an extraordinary special general meeting",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.governing",
+      "kind": "governing_instrument",
+      "subject_id": null,
+      "value": "legislation and exam Appendix 1",
+      "text": "Applicable legislation supplies a three-quarter threshold unless the articles define a lesser super-majority; examination Appendix 1 is supplied",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.holdings",
+      "kind": "general",
+      "subject_id": null,
+      "value": "70/20/10",
+      "text": "C, D and E hold 70%, 20% and 10% respectively",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.date",
+      "kind": "general",
+      "subject_id": null,
+      "value": "28 August",
+      "text": "The original general meeting is to take place on 28 August",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.command",
+      "kind": "general",
+      "subject_id": null,
+      "value": "draft notice",
+      "text": "Draft a notice for the meeting",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.threshold",
+      "kind": "branch_decision",
+      "subject_id": null,
+      "value": "two-thirds",
+      "text": "The supplied articles define a special resolution as two-thirds of votes",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f.missing",
+      "kind": "general",
+      "subject_id": null,
+      "value": "placeholders",
+      "text": "The question omits the year, time, place and proposed liquidator particulars",
+      "material": true,
+      "disposition": "input gap"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c.notice",
+      "kind": "document_assertion",
+      "option": null,
+      "text": "The notice must reproduce all applicable action business and its execution/proxy structure.",
+      "disposition": "used - content"
+    }
+  ],
+  "entities": [
+    {
+      "id": "company",
+      "entity_type": "corporate",
+      "capacities": [
+        "other"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "secretary",
+      "entity_type": "human",
+      "capacities": [
+        "officer",
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "A",
+      "entity_type": "human",
+      "capacities": [
+        "director"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "B",
+      "entity_type": "human",
+      "capacities": [
+        "director"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "C",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "D",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "E",
+      "entity_type": "human",
+      "capacities": [
+        "member"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "r.question",
+      "source": {
+        "namespace": "exam_question",
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "pinpoint": "Question 1.1, page 2"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.date",
+        "f.holdings"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies the requested notice, date, parties, holdings, transaction and marks.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.articles",
+      "source": {
+        "namespace": "exam_attachment",
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "pinpoint": "Appendix 1 arts 1, 10.3-10.4, 11.1-11.3, 12.1, 13.7-13.8 and 27.1-27.5"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.governing",
+        "f.threshold"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Controls the meeting type, two-thirds special-resolution threshold, notice content, service period, recipients and proxy mechanics.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.m10",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "pinpoint": "Sections 2.1-2.4 and 2.8"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.lifecycle"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies the general-meeting notice and proxy procedure needed to complete the notice.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.m12",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-12-Termination-of-Companies.md",
+        "pinpoint": "Section 3.1"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.relationship"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies the members' voluntary winding-up decision sequence and the liquidator-appointment business.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.a25e",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies the exact structure, addressing, special-resolution block, proxy note, board-order line and execution placeholders for the notice.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.a30a",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-30A-Directors-declaration-of-solvency.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "optional",
+      "verdict": "checked_not_relevant",
+      "triggering_fact_ids": [
+        "f.relationship"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Confirms the pre-resolution solvency declaration and statement but adds no requested component to the notice on the supplied facts.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.a30b",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f.command",
+        "f.relationship"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Supplies every action-specific operative resolution that the meeting notice must set out for the members' voluntary winding-up business.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.a25d",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-25D-Notice-of-AGM.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": [
+        "f.lifecycle"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "AGM notice is the wrong meeting and transaction stage.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r.a30c",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-30C-Notice-of-winding-up-for-publication-in-press-and-Gazette.md",
+        "pinpoint": "Complete precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": [
+        "f.lifecycle"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Publication notice follows commencement of winding-up and is not the requested meeting notice.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "ccbea558bacd167730845e4029c0f0a3d9b540fefc144df783fa0b5b9932b6be",
+    "allowlist": [
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_question",
+        "role": "incorporated"
+      },
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_attachment",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-12-Termination-of-Companies.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md",
+        "namespace": "course_appendix",
+        "role": "incorporated"
+      },
+      {
+        "path": "Appendix-30A-Directors-declaration-of-solvency.md",
+        "namespace": "course_appendix",
+        "role": "check_only"
+      },
+      {
+        "path": "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md",
+        "namespace": "course_appendix",
+        "role": "incorporated"
+      }
+    ],
+    "actual_open": [
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_question",
+        "role": "incorporated",
+        "sha256": "06dc9ab27f0bad1ffad543f84ee645a0af07aa0095075ff43b5cba90d7c11f66"
+      },
+      {
+        "path": "exam-inputs/Specimen-Paper-1.pdf",
+        "namespace": "exam_attachment",
+        "role": "incorporated",
+        "sha256": "06dc9ab27f0bad1ffad543f84ee645a0af07aa0095075ff43b5cba90d7c11f66"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"
+      },
+      {
+        "path": "Course-Manual-Module-12-Termination-of-Companies.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "1246d3259c6aac6149ed68e0f87a44c002871d246fddd147cb90be92adaa603c"
+      },
+      {
+        "path": "Appendix-25E-Notice-of-general-meeting-to-pass-a-specific.md",
+        "namespace": "course_appendix",
+        "role": "incorporated",
+        "sha256": "c1eed42e361819d8173cc313c4b93c5e0214117c49c1f3d94b4a926a3054a85d"
+      },
+      {
+        "path": "Appendix-30A-Directors-declaration-of-solvency.md",
+        "namespace": "course_appendix",
+        "role": "check_only",
+        "sha256": "22620cc72d2774905249b0f1b6cf55a8d654c738005dec4dcd64727adce22bb0"
+      },
+      {
+        "path": "Appendix-30B-Members-resolution-to-voluntarily-wind-up-the-company.md",
+        "namespace": "course_appendix",
+        "role": "incorporated",
+        "sha256": "9b6f085d5f7a68b3d4f6488e612fc50dfa47bd47e1ce7fe6adfb011dcb58c9f4"
+      }
+    ],
+    "forbidden_paths": [
+      "Appendix-25D-Notice-of-AGM.md",
+      "Appendix-30C-Notice-of-winding-up-for-publication-in-press-and-Gazette.md"
+    ],
+    "prior_answer_paths": []
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": true,
+    "complex_transaction": false,
+    "instruments": [
+      {
+        "id": "notice",
+        "sequence": 1,
+        "kind": "notice",
+        "actor_id": "company",
+        "target_company_act": true,
+        "upstream_authority_instrument_id": null,
+        "target_instrument": "Notice of extraordinary special general meeting",
+        "signatory": {
+          "human": true,
+          "name_or_placeholder": "[Secretary/administrator]",
+          "authority_instrument_id": null
+        },
+        "action_business": true,
+        "selected_action_component_ids": [
+          "a30b.resolution1",
+          "a30b.resolution2",
+          "a30b.resolution3",
+          "a30b.resolution4",
+          "a30b.resolution5"
+        ],
+        "operative_components": [
+          {
+            "id": "notice.time_place",
+            "source_component_id": "a25e.time_place",
+            "status": "placeholder",
+            "unresolved": true,
+            "gap_ids": [
+              "gap.notice_particulars"
+            ]
+          },
+          {
+            "id": "notice.resolution1",
+            "source_component_id": "a30b.resolution1",
+            "status": "produced",
+            "unresolved": false,
+            "gap_ids": []
+          },
+          {
+            "id": "notice.resolution2",
+            "source_component_id": "a30b.resolution2",
+            "status": "placeholder",
+            "unresolved": true,
+            "gap_ids": [
+              "gap.notice_particulars"
+            ]
+          },
+          {
+            "id": "notice.resolution3",
+            "source_component_id": "a30b.resolution3",
+            "status": "produced",
+            "unresolved": false,
+            "gap_ids": []
+          },
+          {
+            "id": "notice.resolution4",
+            "source_component_id": "a30b.resolution4",
+            "status": "produced",
+            "unresolved": false,
+            "gap_ids": []
+          },
+          {
+            "id": "notice.resolution5",
+            "source_component_id": "a30b.resolution5",
+            "status": "produced",
+            "unresolved": false,
+            "gap_ids": []
+          },
+          {
+            "id": "notice.proxy",
+            "source_component_id": "a25e.proxy_note",
+            "status": "produced",
+            "unresolved": false,
+            "gap_ids": []
+          }
+        ],
+        "attachments": [],
+        "execution": {
+          "id": "notice.execution",
+          "status": "placeholder",
+          "unresolved": true,
+          "gap_ids": [
+            "gap.notice_particulars"
+          ]
+        },
+        "records_filings": []
+      }
+    ],
+    "expected_counts": {
+      "instruments": 1,
+      "operative_components": 7,
+      "attachments": 0,
+      "execution_blocks": 1,
+      "records_filings": 0
+    },
+    "actual_counts": {
+      "instruments": 1,
+      "operative_components": 7,
+      "attachments": 0,
+      "execution_blocks": 1,
+      "records_filings": 0
+    }
+  },
+  "materials_gaps": [
+    {
+      "id": "gap.notice_particulars",
+      "description": "The paper gives 28 August but no year, time, place, notice date or proposed liquidator particulars.",
+      "resolution": "placeholder",
+      "affected_ids": [
+        "notice.time_place",
+        "notice.resolution2",
+        "notice.execution"
+      ]
+    }
+  ],
+  "final_trace": [
+    {
+      "id": "trace.r.question",
+      "route_id": "r.question",
+      "contribution": "Supplies the requested notice, date, parties, holdings, transaction and marks.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.articles",
+      "route_id": "r.articles",
+      "contribution": "Controls the meeting type, two-thirds special-resolution threshold, notice content, service period, recipients and proxy mechanics.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.m10",
+      "route_id": "r.m10",
+      "contribution": "Supplies the general-meeting notice and proxy procedure needed to complete the notice.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.m12",
+      "route_id": "r.m12",
+      "contribution": "Supplies the members' voluntary winding-up decision sequence and the liquidator-appointment business.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.a25e",
+      "route_id": "r.a25e",
+      "contribution": "Supplies the exact structure, addressing, special-resolution block, proxy note, board-order line and execution placeholders for the notice.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.a30a",
+      "route_id": "r.a30a",
+      "contribution": "Confirms the pre-resolution solvency declaration and statement but adds no requested component to the notice on the supplied facts.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.a30b",
+      "route_id": "r.a30b",
+      "contribution": "Supplies every action-specific operative resolution that the meeting notice must set out for the members' voluntary winding-up business.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.a25d",
+      "route_id": "r.a25d",
+      "contribution": "AGM notice is the wrong meeting and transaction stage.",
+      "answer_location": "Question 1.1 answer/check trace"
+    },
+    {
+      "id": "trace.r.a30c",
+      "route_id": "r.a30c",
+      "contribution": "Publication notice follows commencement of winding-up and is not the requested meeting notice.",
+      "answer_location": "Question 1.1 answer/check trace"
+    }
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

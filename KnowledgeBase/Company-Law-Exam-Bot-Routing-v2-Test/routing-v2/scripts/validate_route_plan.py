@@ -1,0 +1,705 @@
+#!/usr/bin/env python3
+"""Deterministically validate a structured pre-answer RoutePlan.
+
+The validator intentionally reads no free-form answer prose.  It first enforces the
+checked-in JSON Schema with a small dependency-free schema walker, then applies the
+cross-field routing invariants that JSON Schema cannot express conveniently.
+
+Exit codes are stable: 0 valid, 1 invalid RoutePlan, 2 input/schema/tool error.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
+from typing import Any, Iterable
+
+
+ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_SCHEMA = ROOT / "routing-v2/schema/route-plan.schema.json"
+REPORT_VERSION = "route-plan-validation-report-v1"
+SUCCESS_DISPOSITIONS = {"used - outcome", "used - content", "supported"}
+INCLUDED_STATUSES = {"produced", "placeholder"}
+INVARIANT_CODES = (
+    "FACT_CLAIM_DISPOSITIONS",
+    "LOCK_SUPPORT",
+    "ENTITY_COUNT_SUPPORT",
+    "SOURCE_NAMESPACE",
+    "SOURCE_ALLOWLIST",
+    "FORBIDDEN_SOURCE_ACCESS",
+    "XOR_SELECTION",
+    "BRANCH_DECIDING_FACT",
+    "CORPORATE_ACTOR_AUTHORITY",
+    "DOCUMENT_COUNT_RECONCILIATION",
+    "ACTION_NOTICE_COMPONENTS",
+    "COMPLEX_TRANSACTION_DOCUMENTS",
+    "MATERIALS_GAP_PRESERVATION",
+    "FINAL_ROUTE_TRACE",
+    "RENDER_GATE",
+)
+
+
+@dataclass(frozen=True, order=True)
+class Issue:
+    code: str
+    path: str
+    message: str
+    severity: str = "critical"
+
+    def as_dict(self) -> dict[str, str]:
+        return {
+            "severity": self.severity,
+            "code": self.code,
+            "path": self.path,
+            "message": self.message,
+        }
+
+
+class Collector:
+    def __init__(self) -> None:
+        self.issues: list[Issue] = []
+        self.failed_invariants: set[str] = set()
+
+    def add(self, invariant: str, path: str, message: str) -> None:
+        self.failed_invariants.add(invariant)
+        self.issues.append(Issue(invariant, path, message))
+
+    def schema(self, path: str, message: str) -> None:
+        self.failed_invariants.add("SCHEMA")
+        self.issues.append(Issue("SCHEMA", path, message))
+
+
+def sha256_bytes(content: bytes) -> str:
+    return hashlib.sha256(content).hexdigest()
+
+
+def canonical_sha256(value: Any) -> str:
+    encoded = json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return sha256_bytes(encoded)
+
+
+def json_type_matches(value: Any, expected: str) -> bool:
+    if expected == "null":
+        return value is None
+    if expected == "boolean":
+        return isinstance(value, bool)
+    if expected == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if expected == "number":
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if expected == "string":
+        return isinstance(value, str)
+    if expected == "array":
+        return isinstance(value, list)
+    if expected == "object":
+        return isinstance(value, dict)
+    return False
+
+
+def resolve_ref(schema_root: dict[str, Any], ref: str) -> dict[str, Any]:
+    if not ref.startswith("#/"):
+        raise ValueError(f"unsupported schema reference: {ref}")
+    current: Any = schema_root
+    for token in ref[2:].split("/"):
+        token = token.replace("~1", "/").replace("~0", "~")
+        current = current[token]
+    if not isinstance(current, dict):
+        raise ValueError(f"schema reference does not resolve to an object: {ref}")
+    return current
+
+
+def schema_walk(
+    value: Any,
+    rule: dict[str, Any],
+    schema_root: dict[str, Any],
+    path: str,
+    collector: Collector,
+) -> None:
+    """Validate the JSON-Schema subset used by route-plan.schema.json."""
+
+    if "$ref" in rule:
+        schema_walk(value, resolve_ref(schema_root, rule["$ref"]), schema_root, path, collector)
+        return
+    for subrule in rule.get("allOf", []):
+        schema_walk(value, subrule, schema_root, path, collector)
+
+    if "const" in rule and value != rule["const"]:
+        collector.schema(path, f"must equal {rule['const']!r}")
+    if "enum" in rule and value not in rule["enum"]:
+        collector.schema(path, f"must be one of {rule['enum']!r}")
+
+    expected = rule.get("type")
+    if expected is not None:
+        expected_types = [expected] if isinstance(expected, str) else expected
+        if not any(json_type_matches(value, item) for item in expected_types):
+            collector.schema(path, f"expected type {expected_types!r}, got {type(value).__name__}")
+            return
+
+    if isinstance(value, dict):
+        required = rule.get("required", [])
+        for key in required:
+            if key not in value:
+                collector.schema(f"{path}/{key}", "required property is missing")
+        properties = rule.get("properties", {})
+        if rule.get("additionalProperties") is False:
+            for key in sorted(set(value) - set(properties)):
+                collector.schema(f"{path}/{key}", "additional property is not permitted")
+        for key, subvalue in value.items():
+            if key in properties:
+                schema_walk(subvalue, properties[key], schema_root, f"{path}/{key}", collector)
+
+    if isinstance(value, list):
+        item_rule = rule.get("items")
+        if isinstance(item_rule, dict):
+            for index, item in enumerate(value):
+                schema_walk(item, item_rule, schema_root, f"{path}/{index}", collector)
+        if rule.get("uniqueItems"):
+            seen: set[str] = set()
+            for index, item in enumerate(value):
+                marker = json.dumps(item, sort_keys=True, separators=(",", ":"))
+                if marker in seen:
+                    collector.schema(f"{path}/{index}", "array item must be unique")
+                seen.add(marker)
+
+    if isinstance(value, str):
+        if len(value) < rule.get("minLength", 0):
+            collector.schema(path, f"string is shorter than {rule['minLength']}")
+        if "pattern" in rule and re.search(rule["pattern"], value) is None:
+            collector.schema(path, f"string does not match pattern {rule['pattern']!r}")
+
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if "minimum" in rule and value < rule["minimum"]:
+            collector.schema(path, f"value is below minimum {rule['minimum']}")
+
+
+def index_unique(
+    rows: Iterable[dict[str, Any]],
+    collection_path: str,
+    collector: Collector,
+) -> dict[str, dict[str, Any]]:
+    indexed: dict[str, dict[str, Any]] = {}
+    for index, row in enumerate(rows):
+        row_id = row.get("id")
+        if not isinstance(row_id, str):
+            continue
+        if row_id in indexed:
+            collector.add("SCHEMA", f"{collection_path}/{index}/id", f"duplicate id {row_id!r}")
+        indexed[row_id] = row
+    return indexed
+
+
+def reference_ids(
+    ids: Iterable[str],
+    known: dict[str, Any],
+    invariant: str,
+    path: str,
+    collector: Collector,
+) -> None:
+    for index, item_id in enumerate(ids):
+        if item_id not in known:
+            collector.add(invariant, f"{path}/{index}", f"unknown reference {item_id!r}")
+
+
+def is_safe_relative_path(value: str) -> bool:
+    path = PurePosixPath(value)
+    return bool(value) and not path.is_absolute() and ".." not in path.parts
+
+
+def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
+    facts = index_unique(plan.get("facts", []), "/facts", collector)
+    claims = index_unique(plan.get("claims", []), "/claims", collector)
+    entities = index_unique(plan.get("entities", []), "/entities", collector)
+    routes = index_unique(plan.get("routes", []), "/routes", collector)
+    gaps = index_unique(plan.get("materials_gaps", []), "/materials_gaps", collector)
+    trace = index_unique(plan.get("final_trace", []), "/final_trace", collector)
+
+    # Every material fact and every MCQ option is represented by exactly one scalar disposition.
+    for fact_id, fact in facts.items():
+        if fact.get("material") and not isinstance(fact.get("disposition"), str):
+            collector.add("FACT_CLAIM_DISPOSITIONS", f"/facts/{fact_id}", "material fact lacks one disposition")
+    answer_unit = plan.get("answer_unit", {})
+    option_claims: dict[str, list[str]] = {}
+    for claim_id, claim in claims.items():
+        if claim.get("kind") == "mcq_option":
+            option_claims.setdefault(str(claim.get("option")), []).append(claim_id)
+    if answer_unit.get("mode") == "MCQ":
+        for option in answer_unit.get("mcq_options", []):
+            matching = option_claims.get(option, [])
+            if len(matching) != 1:
+                collector.add(
+                    "FACT_CLAIM_DISPOSITIONS",
+                    "/claims",
+                    f"MCQ option {option!r} must have exactly one claim/disposition; found {len(matching)}",
+                )
+        extras = sorted(set(option_claims) - set(answer_unit.get("mcq_options", [])))
+        if extras:
+            collector.add("FACT_CLAIM_DISPOSITIONS", "/claims", f"orphan MCQ option claims: {extras}")
+    elif answer_unit.get("mcq_options"):
+        collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/mcq_options", "non-MCQ unit cannot declare MCQ options")
+
+    # All six locks use a supported state/value combination.
+    for name, lock in plan.get("locks", {}).items():
+        path = f"/locks/{name}"
+        state = lock.get("state")
+        value = lock.get("value")
+        fact_ids = lock.get("deciding_fact_ids", [])
+        reference_ids(fact_ids, facts, "LOCK_SUPPORT", f"{path}/deciding_fact_ids", collector)
+        if state == "genuinely_unknown":
+            if value is not None:
+                collector.add("LOCK_SUPPORT", f"{path}/value", "genuinely unknown lock must have null value")
+        else:
+            if not isinstance(value, str) or not value.strip():
+                collector.add("LOCK_SUPPORT", f"{path}/value", f"{state} lock requires a selected value")
+            if not fact_ids:
+                collector.add("LOCK_SUPPORT", f"{path}/deciding_fact_ids", f"{state} lock requires supporting facts")
+            for fact_id in fact_ids:
+                if fact_id in facts and facts[fact_id].get("disposition") not in SUCCESS_DISPOSITIONS:
+                    collector.add("LOCK_SUPPORT", path, f"lock relies on non-supporting fact {fact_id!r}")
+
+    # A precise director count may not be inferred from entity type or a target company's facts.
+    for entity_id, entity in entities.items():
+        count = entity.get("director_count")
+        fact_ids = entity.get("director_count_fact_ids", [])
+        reference_ids(fact_ids, facts, "ENTITY_COUNT_SUPPORT", f"/entities/{entity_id}/director_count_fact_ids", collector)
+        if count is not None and not fact_ids:
+            collector.add(
+                "ENTITY_COUNT_SUPPORT",
+                f"/entities/{entity_id}/director_count",
+                "director count is asserted without a supplied supporting fact",
+            )
+        for fact_id in fact_ids:
+            if fact_id not in facts:
+                continue
+            fact = facts[fact_id]
+            if fact.get("disposition") not in SUCCESS_DISPOSITIONS:
+                collector.add("ENTITY_COUNT_SUPPORT", f"/entities/{entity_id}", f"director count relies on non-supporting fact {fact_id!r}")
+            if (
+                fact.get("kind") != "director_count"
+                or fact.get("subject_id") != entity_id
+                or fact.get("value") != count
+            ):
+                collector.add(
+                    "ENTITY_COUNT_SUPPORT",
+                    f"/entities/{entity_id}/director_count_fact_ids",
+                    f"fact {fact_id!r} is not a typed director-count fact for this entity and value",
+                )
+
+    # Namespace lists are authoritative, and all route/access paths must be safe and listed.
+    namespace_paths = {
+        namespace: set(paths)
+        for namespace, paths in plan.get("namespaces", {}).items()
+    }
+    for namespace, paths in namespace_paths.items():
+        for path in paths:
+            if not is_safe_relative_path(path):
+                collector.add("SOURCE_NAMESPACE", f"/namespaces/{namespace}", f"unsafe path {path!r}")
+    for route_id, route in routes.items():
+        source = route.get("source", {})
+        namespace = source.get("namespace")
+        path = source.get("path")
+        if path not in namespace_paths.get(namespace, set()):
+            collector.add("SOURCE_NAMESPACE", f"/routes/{route_id}/source", "route source is absent from its namespace")
+        reference_ids(route.get("triggering_fact_ids", []), facts, "SOURCE_NAMESPACE", f"/routes/{route_id}/triggering_fact_ids", collector)
+        reference_ids(route.get("deciding_fact_ids", []), facts, "BRANCH_DECIDING_FACT", f"/routes/{route_id}/deciding_fact_ids", collector)
+        reference_ids(route.get("gap_ids", []), gaps, "MATERIALS_GAP_PRESERVATION", f"/routes/{route_id}/gap_ids", collector)
+
+    access = plan.get("source_access", {})
+    allowlist = access.get("allowlist", [])
+    actual_open = access.get("actual_open", [])
+    expected_allowlist_hash = hashlib.sha256(
+        json.dumps(allowlist, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    if access.get("allowlist_sha256") != expected_allowlist_hash:
+        collector.add(
+            "SOURCE_ALLOWLIST",
+            "/source_access/allowlist_sha256",
+            "frozen allowlist hash does not match the declared allowlist",
+        )
+    allow_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    for index, entry in enumerate(allowlist):
+        key = (entry.get("namespace"), entry.get("path"))
+        if key in allow_by_key:
+            collector.add("SOURCE_ALLOWLIST", f"/source_access/allowlist/{index}", f"duplicate allowlist entry {key!r}")
+        allow_by_key[key] = entry
+        if entry.get("path") not in namespace_paths.get(entry.get("namespace"), set()):
+            collector.add("SOURCE_NAMESPACE", f"/source_access/allowlist/{index}", "allowlist path is absent from its namespace")
+    open_keys: set[tuple[str, str]] = set()
+    actual_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    for index, entry in enumerate(actual_open):
+        key = (entry.get("namespace"), entry.get("path"))
+        if key in open_keys:
+            collector.add("SOURCE_ALLOWLIST", f"/source_access/actual_open/{index}", f"duplicate actual-open ledger entry {key!r}")
+        open_keys.add(key)
+        actual_by_key[key] = entry
+        if key not in allow_by_key:
+            collector.add("SOURCE_ALLOWLIST", f"/source_access/actual_open/{index}", "actual-open file lies outside frozen allowlist")
+        elif allow_by_key[key].get("role") != entry.get("role"):
+            collector.add(
+                "SOURCE_ALLOWLIST",
+                f"/source_access/actual_open/{index}/role",
+                "actual-open role does not match the frozen allowlist role",
+            )
+
+    for route_id, route_item in routes.items():
+        source = route_item.get("source", {})
+        key = (source.get("namespace"), source.get("path"))
+        verdict = route_item.get("verdict")
+        allowed = allow_by_key.get(key)
+        opened = actual_by_key.get(key)
+        if verdict == "incorporated":
+            if allowed is None or allowed.get("role") != "incorporated":
+                collector.add(
+                    "SOURCE_ALLOWLIST",
+                    f"/routes/{route_id}/source",
+                    "incorporated route must be frozen in the allowlist with incorporated role",
+                )
+            if opened is None or opened.get("role") != "incorporated":
+                collector.add(
+                    "SOURCE_ALLOWLIST",
+                    f"/routes/{route_id}/source",
+                    "incorporated route source is missing from the actual-open ledger",
+                )
+        elif verdict == "conditional" and allowed is None:
+            collector.add(
+                "SOURCE_ALLOWLIST",
+                f"/routes/{route_id}/source",
+                "conditional route must be represented in the frozen allowlist",
+            )
+
+    prohibited = set(access.get("forbidden_paths", [])) | set(access.get("prior_answer_paths", []))
+    forbidden_route_paths = {
+        route.get("source", {}).get("path")
+        for route in routes.values()
+        if route.get("verdict") == "forbidden"
+    }
+    prohibited |= {item for item in forbidden_route_paths if isinstance(item, str)}
+    for list_name, entries in (("allowlist", allowlist), ("actual_open", actual_open)):
+        for index, entry in enumerate(entries):
+            if entry.get("path") in prohibited:
+                collector.add(
+                    "FORBIDDEN_SOURCE_ACCESS",
+                    f"/source_access/{list_name}/{index}",
+                    "forbidden or prior-answer file cannot be opened or converted to check-only access",
+                )
+
+    # XOR selection is exclusive and cannot be made without an outcome-supporting fact.
+    route_to_xor: dict[str, str] = {}
+    for index, branch_set in enumerate(plan.get("xor_branch_sets", [])):
+        set_id = branch_set.get("id")
+        path = f"/xor_branch_sets/{index}"
+        route_ids = branch_set.get("route_ids", [])
+        selected = branch_set.get("selected_route_ids", [])
+        deciding = branch_set.get("deciding_fact_ids", [])
+        reference_ids(route_ids, routes, "XOR_SELECTION", f"{path}/route_ids", collector)
+        reference_ids(selected, routes, "XOR_SELECTION", f"{path}/selected_route_ids", collector)
+        reference_ids(deciding, facts, "BRANCH_DECIDING_FACT", f"{path}/deciding_fact_ids", collector)
+        for route_id in route_ids:
+            if route_id in route_to_xor and route_to_xor[route_id] != set_id:
+                collector.add("XOR_SELECTION", path, f"route {route_id!r} belongs to more than one XOR set")
+            route_to_xor[route_id] = set_id
+            if route_id in routes and routes[route_id].get("xor_set_id") != set_id:
+                collector.add("XOR_SELECTION", f"/routes/{route_id}/xor_set_id", "route does not point back to its XOR set")
+        if not set(selected).issubset(route_ids):
+            collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "selected route is outside XOR set")
+        state = branch_set.get("selection_state")
+        if state == "selected":
+            if len(selected) != 1:
+                collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "selected XOR set must contain exactly one selected route")
+            if not deciding:
+                collector.add("BRANCH_DECIDING_FACT", f"{path}/deciding_fact_ids", "selected branch lacks a deciding fact")
+            for fact_id in deciding:
+                if fact_id in facts and facts[fact_id].get("disposition") not in SUCCESS_DISPOSITIONS:
+                    collector.add("BRANCH_DECIDING_FACT", path, f"branch relies on non-deciding fact {fact_id!r}")
+            for route_id in selected:
+                if route_id in routes and routes[route_id].get("verdict") != "incorporated":
+                    collector.add("XOR_SELECTION", f"/routes/{route_id}/verdict", "selected XOR route must be incorporated")
+            incorporated = {
+                route_id for route_id in route_ids
+                if route_id in routes and routes[route_id].get("verdict") == "incorporated"
+            }
+            if incorporated != set(selected):
+                collector.add(
+                    "XOR_SELECTION",
+                    f"{path}/selected_route_ids",
+                    f"incorporated XOR routes must equal the one selected route: incorporated={sorted(incorporated)}",
+                )
+        elif state == "unresolved":
+            if selected:
+                collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "unresolved XOR set cannot hard-select a route")
+            for route_id in route_ids:
+                if route_id in routes and routes[route_id].get("verdict") != "conditional":
+                    collector.add("XOR_SELECTION", f"/routes/{route_id}/verdict", "unresolved XOR branches must remain conditional")
+        elif state == "not_applicable" and selected:
+            collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "not-applicable XOR set cannot select a route")
+    for route_id, route in routes.items():
+        if route.get("xor_set_id") is not None and route_id not in route_to_xor:
+            collector.add(
+                "XOR_SELECTION",
+                f"/routes/{route_id}/xor_set_id",
+                "route names an XOR set but is absent from every declared branch set",
+            )
+
+    # Document chain: actor authority, counts, embedded notice business and complex bundles.
+    chain = plan.get("requested_document_chain", {})
+    instruments = index_unique(chain.get("instruments", []), "/requested_document_chain/instruments", collector)
+    sequence_seen: set[int] = set()
+    component_ids: set[str] = set()
+    attachment_ids: set[str] = set()
+    record_ids: set[str] = set()
+    execution_ids: set[str] = set()
+    for instrument_id, instrument in instruments.items():
+        sequence = instrument.get("sequence")
+        if sequence in sequence_seen:
+            collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/sequence", "instrument sequence must be unique")
+        sequence_seen.add(sequence)
+        actor_id = instrument.get("actor_id")
+        if actor_id not in entities:
+            collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/actor_id", f"unknown actor {actor_id!r}")
+        signatory = instrument.get("signatory", {})
+        if signatory.get("human") is not True:
+            collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatory", "operative instrument requires a human signatory")
+        actor = entities.get(actor_id, {})
+        corporate_target_actor = actor.get("entity_type") == "corporate" and bool(
+            {"corporate_member", "corporate_director"} & set(actor.get("capacities", []))
+        ) and instrument.get("target_company_act") is True
+        if corporate_target_actor:
+            upstream_id = instrument.get("upstream_authority_instrument_id")
+            if not upstream_id or upstream_id == instrument_id or upstream_id not in instruments:
+                collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/upstream_authority_instrument_id", "corporate member/director needs a distinct upstream authority instrument")
+            else:
+                upstream = instruments[upstream_id]
+                if upstream.get("kind") != "upstream_authority" or upstream.get("actor_id") != actor_id or upstream.get("target_company_act"):
+                    collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{upstream_id}", "upstream authority must belong to the same corporate actor and precede the target-company act")
+                if upstream.get("sequence", 0) >= instrument.get("sequence", 0):
+                    collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/sequence", "upstream authority must precede the target-company instrument")
+                if signatory.get("authority_instrument_id") != upstream_id:
+                    collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatory/authority_instrument_id", "human signatory must derive authority from the distinct upstream instrument")
+
+        for component in instrument.get("operative_components", []):
+            component_id = component.get("id")
+            if component_id in component_ids:
+                collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/operative_components", f"duplicate component id {component_id!r}")
+            component_ids.add(component_id)
+            validate_gap_backing(component, f"/requested_document_chain/instruments/{instrument_id}/operative_components/{component_id}", gaps, collector)
+        for attachment in instrument.get("attachments", []):
+            attachment_id = attachment.get("id")
+            if attachment_id in attachment_ids:
+                collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/attachments", f"duplicate attachment id {attachment_id!r}")
+            attachment_ids.add(attachment_id)
+            validate_gap_backing(attachment, f"/requested_document_chain/instruments/{instrument_id}/attachments/{attachment_id}", gaps, collector)
+        for record in instrument.get("records_filings", []):
+            record_id = record.get("id")
+            if record_id in record_ids:
+                collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/records_filings", f"duplicate record/filing id {record_id!r}")
+            record_ids.add(record_id)
+            validate_gap_backing(record, f"/requested_document_chain/instruments/{instrument_id}/records_filings/{record_id}", gaps, collector)
+        execution = instrument.get("execution", {})
+        execution_id = execution.get("id")
+        if execution_id in execution_ids:
+            collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/execution", f"duplicate execution id {execution_id!r}")
+        execution_ids.add(execution_id)
+        validate_gap_backing(execution, f"/requested_document_chain/instruments/{instrument_id}/execution", gaps, collector)
+
+        if instrument.get("kind") == "notice" and instrument.get("action_business"):
+            selected_components = set(instrument.get("selected_action_component_ids", []))
+            included_sources = {
+                item.get("source_component_id")
+                for item in instrument.get("operative_components", [])
+                if item.get("status") in INCLUDED_STATUSES
+            }
+            missing = sorted(selected_components - included_sources)
+            if not selected_components:
+                collector.add("ACTION_NOTICE_COMPONENTS", f"/requested_document_chain/instruments/{instrument_id}/selected_action_component_ids", "action notice must identify selected action-precedent operatives")
+            if missing:
+                collector.add("ACTION_NOTICE_COMPONENTS", f"/requested_document_chain/instruments/{instrument_id}/operative_components", f"notice omits selected action-precedent operatives: {missing}")
+
+    computed = {
+        "instruments": len(instruments),
+        "operative_components": sum(
+            1
+            for instrument in instruments.values()
+            for item in instrument.get("operative_components", [])
+            if item.get("status") in INCLUDED_STATUSES
+        ),
+        "attachments": sum(
+            1
+            for instrument in instruments.values()
+            for item in instrument.get("attachments", [])
+            if item.get("status") in INCLUDED_STATUSES
+        ),
+        "execution_blocks": sum(
+            1 for instrument in instruments.values() if instrument.get("execution", {}).get("status") in INCLUDED_STATUSES
+        ),
+        "records_filings": sum(
+            1
+            for instrument in instruments.values()
+            for item in instrument.get("records_filings", [])
+            if item.get("status") in INCLUDED_STATUSES
+        ),
+    }
+    expected = chain.get("expected_counts", {})
+    actual = chain.get("actual_counts", {})
+    if expected != actual:
+        collector.add("DOCUMENT_COUNT_RECONCILIATION", "/requested_document_chain", f"expected and actual counts differ: expected={expected}, actual={actual}")
+    if actual != computed:
+        collector.add("DOCUMENT_COUNT_RECONCILIATION", "/requested_document_chain/actual_counts", f"declared actual counts do not match included document components: declared={actual}, computed={computed}")
+    if chain.get("required") and not instruments:
+        collector.add("DOCUMENT_COUNT_RECONCILIATION", "/requested_document_chain/instruments", "requested document chain is empty")
+
+    if chain.get("complex_transaction"):
+        attachment_kinds = {
+            item.get("kind")
+            for instrument in instruments.values()
+            for item in instrument.get("attachments", [])
+            if item.get("status") in INCLUDED_STATUSES
+        }
+        required_kinds = {"conveyance_bill_of_sale", "facility", "security", "registry"}
+        missing = sorted(required_kinds - attachment_kinds)
+        if missing:
+            collector.add("COMPLEX_TRANSACTION_DOCUMENTS", "/requested_document_chain/instruments", f"complex transaction lacks distinct included documents: {missing}")
+        charge_entries = [
+            item
+            for instrument in instruments.values()
+            for item in instrument.get("records_filings", [])
+            if item.get("kind") == "register_of_charges" and item.get("status") == "produced"
+        ]
+        if not charge_entries:
+            collector.add("COMPLEX_TRANSACTION_DOCUMENTS", "/requested_document_chain/instruments", "complex transaction lacks an actual produced register-of-charges stage")
+
+    # Every unresolved route/form point stays conditional or is represented by a placeholder.
+    for route_id, route in routes.items():
+        if route.get("unresolved"):
+            if route.get("verdict") != "conditional" or not route.get("gap_ids"):
+                collector.add("MATERIALS_GAP_PRESERVATION", f"/routes/{route_id}", "unresolved route must remain conditional and cite a materials gap")
+    affected_known = set(routes) | component_ids | attachment_ids | record_ids | execution_ids | set(instruments)
+    for gap_id, gap in gaps.items():
+        if not gap.get("affected_ids"):
+            collector.add("MATERIALS_GAP_PRESERVATION", f"/materials_gaps/{gap_id}/affected_ids", "materials gap must identify affected route or document fields")
+        for affected_id in gap.get("affected_ids", []):
+            if affected_id not in affected_known:
+                collector.add("MATERIALS_GAP_PRESERVATION", f"/materials_gaps/{gap_id}/affected_ids", f"gap points to unknown affected id {affected_id!r}")
+
+    # Every mandatory incorporated route contributes a specific final assertion.
+    traces_by_route: dict[str, list[dict[str, Any]]] = {}
+    for trace_id, entry in trace.items():
+        route_id = entry.get("route_id")
+        if route_id not in routes:
+            collector.add("FINAL_ROUTE_TRACE", f"/final_trace/{trace_id}/route_id", f"unknown route {route_id!r}")
+        traces_by_route.setdefault(str(route_id), []).append(entry)
+    for route_id, route_item in routes.items():
+        entries = traces_by_route.get(route_id, [])
+        if len(entries) != 1:
+            collector.add(
+                "FINAL_ROUTE_TRACE",
+                f"/routes/{route_id}",
+                f"every incorporated, conditional, forbidden or checked route must have exactly one trace; found {len(entries)}",
+            )
+        elif entries[0].get("contribution") != route_item.get("unique_contribution"):
+            collector.add("FINAL_ROUTE_TRACE", f"/final_trace/{entries[0].get('id')}/contribution", "trace must retain the route's unique contribution verbatim")
+
+    render_gate = plan.get("render_gate", {})
+    if render_gate != {"status": "not_rendered", "validation_report": None}:
+        collector.add("RENDER_GATE", "/render_gate", "RoutePlan must be validated before any answer is rendered")
+
+
+def validate_gap_backing(
+    item: dict[str, Any],
+    path: str,
+    gaps: dict[str, dict[str, Any]],
+    collector: Collector,
+) -> None:
+    gap_ids = item.get("gap_ids", [])
+    reference_ids(gap_ids, gaps, "MATERIALS_GAP_PRESERVATION", f"{path}/gap_ids", collector)
+    if item.get("unresolved"):
+        if item.get("status") not in {"placeholder", "conditional"} or not gap_ids:
+            collector.add("MATERIALS_GAP_PRESERVATION", path, "unresolved document/form point must be conditional or placeholder-backed")
+
+
+def build_report(
+    plan: dict[str, Any] | None,
+    schema: dict[str, Any] | None,
+    collector: Collector,
+    exit_code: int,
+    error: str | None = None,
+) -> dict[str, Any]:
+    issues = sorted(set(collector.issues))
+    status = "ERROR" if exit_code == 2 else ("VALID" if exit_code == 0 else "INVALID")
+    invariants = [
+        {"code": code, "status": "FAIL" if code in collector.failed_invariants else "PASS"}
+        for code in INVARIANT_CODES
+    ]
+    report: dict[str, Any] = {
+        "report_version": REPORT_VERSION,
+        "plan_id": plan.get("plan_id") if isinstance(plan, dict) else None,
+        "status": status,
+        "exit_code": exit_code,
+        "schema_sha256": canonical_sha256(schema) if schema is not None else None,
+        "plan_sha256": canonical_sha256(plan) if plan is not None else None,
+        "summary": {
+            "critical_count": len(issues),
+            "warning_count": 0,
+        },
+        "invariants": invariants,
+        "issues": [issue.as_dict() for issue in issues],
+    }
+    if error is not None:
+        report["error"] = error
+    return report
+
+
+def validate(plan: dict[str, Any], schema: dict[str, Any]) -> tuple[dict[str, Any], int]:
+    collector = Collector()
+    schema_walk(plan, schema, schema, "", collector)
+    if not collector.issues:
+        validate_invariants(plan, collector)
+    exit_code = 0 if not collector.issues else 1
+    return build_report(plan, schema, collector, exit_code), exit_code
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("plan", type=Path, help="RoutePlan JSON to validate")
+    parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
+    parser.add_argument("--output", type=Path, help="also write the deterministic report to this path")
+    parser.add_argument("--compact", action="store_true", help="emit one-line JSON")
+    args = parser.parse_args()
+
+    plan: dict[str, Any] | None = None
+    schema: dict[str, Any] | None = None
+    collector = Collector()
+    try:
+        schema = json.loads(args.schema.read_text(encoding="utf-8"))
+        plan = json.loads(args.plan.read_text(encoding="utf-8"))
+        if not isinstance(schema, dict) or not isinstance(plan, dict):
+            raise ValueError("schema and RoutePlan roots must be JSON objects")
+        report, exit_code = validate(plan, schema)
+    except (OSError, UnicodeError, json.JSONDecodeError, KeyError, ValueError) as error:
+        exit_code = 2
+        report = build_report(plan, schema, collector, exit_code, f"{type(error).__name__}: {error}")
+
+    rendered = json.dumps(
+        report,
+        indent=None if args.compact else 2,
+        sort_keys=True,
+        ensure_ascii=True,
+        separators=(",", ":") if args.compact else None,
+    ) + "\n"
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(rendered, encoding="utf-8")
+    sys.stdout.write(rendered)
+    return exit_code
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

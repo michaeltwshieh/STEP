@@ -1,0 +1,250 @@
+{
+  "answer_unit": {
+    "id": "Unit_main",
+    "mcq_options": [],
+    "mode": "DRAFTING",
+    "question_ref": "inputs/question.json"
+  },
+  "case_refs": [
+    "S02"
+  ],
+  "claims": [],
+  "entities": [
+    {
+      "capacities": [
+        "corporate_director"
+      ],
+      "director_count": 1,
+      "director_count_fact_ids": [],
+      "entity_type": "corporate",
+      "id": "E_provider"
+    }
+  ],
+  "facts": [
+    {
+      "disposition": "used - outcome",
+      "id": "F_base",
+      "kind": "general",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied question fixes the generic requested outcome.",
+      "value": true
+    },
+    {
+      "disposition": "supported",
+      "id": "F_director_count",
+      "kind": "director_count",
+      "material": true,
+      "subject_id": "E_provider",
+      "text": "The question expressly supplies the director count.",
+      "value": 1
+    }
+  ],
+  "final_trace": [
+    {
+      "answer_location": "planned answer or private trace location for R_question",
+      "contribution": "Unique contribution from R_question",
+      "id": "T_R_question",
+      "route_id": "R_question"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_rule",
+      "contribution": "Unique contribution from R_rule",
+      "id": "T_R_rule",
+      "route_id": "R_rule"
+    }
+  ],
+  "locks": {
+    "governing_instruments": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied governing_instruments"
+    },
+    "jurisdiction": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied jurisdiction"
+    },
+    "legal_actor_capacity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied legal_actor_capacity"
+    },
+    "lifecycle_stage": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied lifecycle_stage"
+    },
+    "regime_entity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied regime_entity"
+    },
+    "transaction_relationship": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied transaction_relationship"
+    }
+  },
+  "materials_gaps": [],
+  "namespaces": {
+    "course_appendix": [],
+    "course_manual": [
+      "course/generic-rule.md"
+    ],
+    "exam_attachment": [],
+    "exam_question": [
+      "inputs/question.json"
+    ]
+  },
+  "plan_id": "Fixture_entity_count_unsupported",
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  },
+  "requested_document_chain": {
+    "actual_counts": {
+      "attachments": 0,
+      "execution_blocks": 1,
+      "instruments": 1,
+      "operative_components": 1,
+      "records_filings": 0
+    },
+    "complex_transaction": false,
+    "expected_counts": {
+      "attachments": 0,
+      "execution_blocks": 1,
+      "instruments": 1,
+      "operative_components": 1,
+      "records_filings": 0
+    },
+    "instruments": [
+      {
+        "action_business": false,
+        "actor_id": "E_provider",
+        "attachments": [],
+        "execution": {
+          "gap_ids": [],
+          "id": "X_I_provider_authority",
+          "status": "produced",
+          "unresolved": false
+        },
+        "id": "I_provider_authority",
+        "kind": "upstream_authority",
+        "operative_components": [
+          {
+            "gap_ids": [],
+            "id": "C_provider_authority",
+            "source_component_id": "C_provider_authority",
+            "status": "produced",
+            "unresolved": false
+          }
+        ],
+        "records_filings": [],
+        "selected_action_component_ids": [],
+        "sequence": 1,
+        "signatory": {
+          "authority_instrument_id": null,
+          "human": true,
+          "name_or_placeholder": "[authorised human signatory]"
+        },
+        "target_company_act": false,
+        "target_instrument": "Generic upstream_authority instrument",
+        "upstream_authority_instrument_id": null
+      }
+    ],
+    "required": true
+  },
+  "routes": [
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_question",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_question",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_rule",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_rule",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    }
+  ],
+  "schema_version": "route-plan-v1",
+  "source_access": {
+    "actual_open": [
+      {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "role": "incorporated",
+        "sha256": "6aaeec79f5d6de38ca546fdd785f15ae4bed70caccdd1ee3a9c049e75a42c001"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "role": "incorporated",
+        "sha256": "b4be01f913c174a2f09745c29a2a7d7d71cbde6654b6cc9bfc737fcf2765590f"
+      }
+    ],
+    "allowlist": [
+      {
+        "namespace": "exam_question",
+        "path": "inputs/question.json",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/generic-rule.md",
+        "role": "incorporated"
+      }
+    ],
+    "allowlist_frozen": true,
+    "allowlist_sha256": "fa2faf119ec5dd9de319f2e875a08d00e46837455a37b0b38aa0854e17c6f1dc",
+    "forbidden_paths": [],
+    "prior_answer_paths": [
+      "forbidden/prior-answer.md"
+    ]
+  },
+  "xor_branch_sets": []
+}

@@ -1,0 +1,534 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "q4_bvi_combined_v1",
+  "case_refs": [],
+  "answer_unit": {
+    "id": "q4_combined",
+    "mode": "DRAFTING",
+    "question_ref": "Specimen Paper 2 Question 4, including 4.1 PROSE and the procedural PROSE and resolution DRAFTING deliverables in 4.2",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "exam_question/Specimen-Paper-2-Question-4-page-5"
+    ],
+    "exam_attachment": [],
+    "course_manual": [
+      "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+      "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+      "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md"
+    ],
+    "course_appendix": [
+      "Appendix-21G-Members-resolution-instructing-board-to-enter.md",
+      "Appendix-23A-Minutes-of-meeting-of-board-at-which-interested-director.md",
+      "Appendix-23B-Members-resolution-to-approve-transaction-in-which-director.md",
+      "Appendix-23C-Members-resolution-to-approve-transaction-generally.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "choice_delegated",
+      "value": "British Virgin Islands",
+      "deciding_fact_ids": ["f_jurisdiction_choice"],
+      "alternatives": ["other offshore financial centre identified in a preliminary paragraph"]
+    },
+    "regime_entity": {
+      "state": "supplied",
+      "value": "BVI incorporated company with one corporate director and one registered corporate member",
+      "deciding_fact_ids": ["f_jurisdiction_choice", "f_sole_director", "f_registered_member"],
+      "alternatives": []
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "Company is vendor; CSP (Directors) Ltd is Company's sole corporate director; CSP (Nominees) Ltd is sole registered corporate member; Miss Red is proposed assignee and beneficial owner of one of three shares",
+      "deciding_fact_ids": ["f_sole_director", "f_registered_member", "f_beneficial_holdings", "f_proposal"],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "Proposed assignment by Company of its XYZ Private Equity Partnership interest to Miss Red for US$3 million; value is difficult to determine",
+      "deciding_fact_ids": ["f_asset", "f_valuation", "f_proposal"],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "proposal awaiting informed decision, member approval/instruction, director approval, execution, closing and records",
+      "deciding_fact_ids": ["f_proposal", "f_q42_deliverables"],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": ["f_missing_instruments"],
+      "alternatives": [
+        "BVI Business Companies Act 2004 as covered by the course",
+        "Company's actual memorandum and articles",
+        "XYZ Private Equity Partnership agreement and proposed assignment instrument"
+      ]
+    }
+  },
+  "facts": [
+    {
+      "id": "f_jurisdiction_choice",
+      "kind": "jurisdiction",
+      "subject_id": "company",
+      "value": "BVI or another offshore financial centre identified in the answer; BVI selected",
+      "text": "Company is incorporated in the BVI, or in another identified offshore financial centre; this plan selects the BVI once and applies it consistently.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_incorporator",
+      "kind": "actor_capacity",
+      "subject_id": "csp",
+      "value": "corporate service provider",
+      "text": "CSP Ltd incorporated Company as corporate service provider.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_sole_director",
+      "kind": "director_count",
+      "subject_id": "company",
+      "value": 1,
+      "text": "CSP (Directors) Ltd, a subsidiary of CSP Ltd, is Company's sole director and is a corporate director.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_registered_member",
+      "kind": "actor_capacity",
+      "subject_id": "csp_nominees",
+      "value": "registered holder of all three issued shares",
+      "text": "Company issued three shares to CSP (Nominees) Ltd, which is the sole registered member.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_beneficial_holdings",
+      "kind": "transaction_relationship",
+      "subject_id": "csp_nominees",
+      "value": "one share for each of Mr Green, Miss Red and Mrs Brown",
+      "text": "CSP (Nominees) Ltd holds one share as nominee for Mr Green, one for Miss Red and one for Mrs Brown.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_asset",
+      "kind": "general",
+      "subject_id": "company",
+      "value": "equity interest in XYZ Private Equity Partnership",
+      "text": "Company invests heavily in infrastructure and private equity and owns an equity interest in XYZ Private Equity Partnership, which owns a majority of Old Industrial Co Ltd.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_valuation",
+      "kind": "general",
+      "subject_id": "xyz_interest",
+      "value": "extremely difficult to value",
+      "text": "Old Industrial Co Ltd's private-company shares are extremely difficult to value, so the indirect partnership interest also presents a valuation problem.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_proposal",
+      "kind": "transaction_relationship",
+      "subject_id": "company",
+      "value": "assignment to Miss Red for US$3 million",
+      "text": "Company proposes to assign its XYZ Private Equity Partnership interest to Miss Red for US$3 million.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_q41_deliverables",
+      "kind": "general",
+      "subject_id": null,
+      "value": "identify, describe and discuss duties and compliance; 8 marks",
+      "text": "Question 4.1 commands the candidate to identify and describe Sole Director's duties and discuss whether and how they can be complied with; 8 marks.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_q42_deliverables",
+      "kind": "lifecycle_stage",
+      "subject_id": null,
+      "value": "describe corporate procedures and draft appropriate resolutions; 12 marks",
+      "text": "Question 4.2 commands the candidate to describe procedures for lawful assignment without director liability and to draft appropriate resolutions; 12 marks.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_missing_instruments",
+      "kind": "governing_instrument",
+      "subject_id": "company",
+      "value": null,
+      "text": "The question supplies no memorandum, articles, partnership agreement, assignment agreement, internal nominee instructions, director counts for CSP group entities or human signatory names.",
+      "material": true,
+      "disposition": "input gap"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c_duties",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Sole Director owes duties to Company itself and must decide independently, for proper purpose, honestly and in good faith in Company's best interests, with the required care and skill.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_valuation",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The US$3 million price cannot responsibly be approved without adequate valuation material and transaction terms because the underlying private shares are extremely difficult to value.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_member_role",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "CSP (Nominees) Ltd is the registered corporate member; Mr Green, Miss Red and Mrs Brown are beneficial owners whose instructions do not themselves constitute Company resolutions.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_member_resolution",
+      "kind": "document_assertion",
+      "option": null,
+      "text": "The registered member should give fully informed approval and instruct the board through a written resolution, with Miss Red's benefit and the valuation uncertainty disclosed.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_director_resolution",
+      "kind": "document_assertion",
+      "option": null,
+      "text": "After considering independent valuation and the informed member decision, Sole Director should adopt its own written resolution approving the assignment terms and execution rather than treating member approval as a substitute for judgment.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_upstream_authority",
+      "kind": "document_assertion",
+      "option": null,
+      "text": "Each corporate member/director requires a distinct upstream authority resolution and a human signatory for the resolution it signs for Company.",
+      "disposition": "supported"
+    }
+  ],
+  "entities": [
+    {
+      "id": "company",
+      "entity_type": "corporate",
+      "capacities": ["other"],
+      "director_count": 1,
+      "director_count_fact_ids": ["f_sole_director"]
+    },
+    {
+      "id": "csp",
+      "entity_type": "corporate",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "sole_director",
+      "entity_type": "corporate",
+      "capacities": ["corporate_director"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "csp_nominees",
+      "entity_type": "corporate",
+      "capacities": ["corporate_member"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "mr_green",
+      "entity_type": "human",
+      "capacities": ["beneficial_owner"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "miss_red",
+      "entity_type": "human",
+      "capacities": ["beneficial_owner", "other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "mrs_brown",
+      "entity_type": "human",
+      "capacities": ["beneficial_owner"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "r_m7_division",
+      "source": {"namespace": "course_manual", "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md", "pinpoint": "sections 1-2"},
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f_sole_director", "f_registered_member", "f_q42_deliverables"],
+      "deciding_fact_ids": ["f_sole_director", "f_registered_member"],
+      "unique_contribution": "Division of power between Company's member and Sole Director, including limits on member direction and the board's continuing responsibility.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_m8_duties",
+      "source": {"namespace": "course_manual", "path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md", "pinpoint": "sections 1.1-1.4, 2-5"},
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f_sole_director", "f_valuation", "f_proposal", "f_q41_deliverables", "f_q42_deliverables"],
+      "deciding_fact_ids": ["f_sole_director", "f_valuation", "f_proposal"],
+      "unique_contribution": "BVI director duties, valuation/reliance standard, remedies and the permitted role and limits of member approval or ratification.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_m10_procedure",
+      "source": {"namespace": "course_manual", "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md", "pinpoint": "sections 1, 3-4"},
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f_sole_director", "f_registered_member", "f_q42_deliverables"],
+      "deciding_fact_ids": ["f_sole_director", "f_registered_member"],
+      "unique_contribution": "Decision-maker, written-resolution, corporate signatory, execution and minute-record procedure for the corporate member and corporate sole director.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": ["g_articles"]
+    },
+    {
+      "id": "r_m11_nominee",
+      "source": {"namespace": "course_manual", "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md", "pinpoint": "sections 2.3, 2.5 and 3.6"},
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f_incorporator", "f_sole_director", "f_registered_member", "f_beneficial_holdings", "f_proposal"],
+      "deciding_fact_ids": ["f_sole_director", "f_registered_member", "f_beneficial_holdings"],
+      "unique_contribution": "Distinction between registered member and beneficial owners, nominee instructions and the corporate director's obligation to exercise independent judgment despite service-provider or beneficial-owner wishes.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_app21g",
+      "source": {"namespace": "course_appendix", "path": "Appendix-21G-Members-resolution-instructing-board-to-enter.md", "pinpoint": "complete precedent"},
+      "requirement": "optional",
+      "verdict": "checked_not_relevant",
+      "triggering_fact_ids": ["f_registered_member", "f_proposal", "f_q42_deliverables"],
+      "deciding_fact_ids": ["f_registered_member", "f_q42_deliverables"],
+      "unique_contribution": "Checked but not reproduced: a binding special-resolution instruction depends on a reserved-power article that has not been supplied; informed member approval under Appendix 23C answers the liability issue without assuming that article.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_app23c",
+      "source": {"namespace": "course_appendix", "path": "Appendix-23C-Members-resolution-to-approve-transaction-generally.md", "pinpoint": "complete precedent"},
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["f_valuation", "f_proposal", "f_q42_deliverables"],
+      "deciding_fact_ids": ["f_valuation", "f_proposal"],
+      "unique_contribution": "Member approval wording for a risky transaction despite the board's reservations, adapted to the hard-to-value XYZ interest and US$3 million price.",
+      "xor_set_id": "x_member_approval_precedent",
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_app23b_forbidden",
+      "source": {"namespace": "course_appendix", "path": "Appendix-23B-Members-resolution-to-approve-transaction-in-which-director.md", "pinpoint": "interest-specific precedent"},
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": ["f_proposal"],
+      "deciding_fact_ids": ["f_sole_director", "f_proposal"],
+      "unique_contribution": "Rejected interest-specific precedent because no supplied fact gives Sole Director a personal interest in Miss Red's acquisition.",
+      "xor_set_id": "x_member_approval_precedent",
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_app23a_forbidden",
+      "source": {"namespace": "course_appendix", "path": "Appendix-23A-Minutes-of-meeting-of-board-at-which-interested-director.md", "pinpoint": "disinterested-board precedent"},
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": ["f_sole_director", "f_proposal"],
+      "deciding_fact_ids": ["f_sole_director", "f_proposal"],
+      "unique_contribution": "Rejected disinterested-board precedent because Company has only one director and no supplied fact identifies that director as interested.",
+      "xor_set_id": "x_member_approval_precedent",
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "7121f585dd2626aeead4f8141ab13dda3099ee26b45a8ec93f354a8c0f3e81c3",
+    "allowlist": [
+      {"path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md", "namespace": "course_manual", "role": "incorporated"},
+      {"path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md", "namespace": "course_manual", "role": "incorporated"},
+      {"path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md", "namespace": "course_manual", "role": "incorporated"},
+      {"path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md", "namespace": "course_manual", "role": "incorporated"},
+      {"path": "Appendix-21G-Members-resolution-instructing-board-to-enter.md", "namespace": "course_appendix", "role": "incorporated"},
+      {"path": "Appendix-23C-Members-resolution-to-approve-transaction-generally.md", "namespace": "course_appendix", "role": "incorporated"}
+    ],
+    "actual_open": [
+      {"path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md", "namespace": "course_manual", "role": "incorporated", "sha256": "dda8c75e6257e9c5a5fc088cc7f6ff3b771c551de0c35606c6c1dab2ea66aa88"},
+      {"path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md", "namespace": "course_manual", "role": "incorporated", "sha256": "ab1f46fb956cf69020be0efaeea4e9cf9f884119f67817e45d7e4fe719f4f696"},
+      {"path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md", "namespace": "course_manual", "role": "incorporated", "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"},
+      {"path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md", "namespace": "course_manual", "role": "incorporated", "sha256": "00db94fd76cc6b973eee259767d341d9227dcb62b91889b3c08a2a406eadf0af"},
+      {"path": "Appendix-21G-Members-resolution-instructing-board-to-enter.md", "namespace": "course_appendix", "role": "incorporated", "sha256": "f48f7ca168fcb74464343a498f2c88ee6c5cfec1a756c5c5c86505e4fbed453d"},
+      {"path": "Appendix-23C-Members-resolution-to-approve-transaction-generally.md", "namespace": "course_appendix", "role": "incorporated", "sha256": "99085ddc0fb2a581d500e48a777602e466c3dcf57ed5ccb5e8943c0be1d484b7"}
+    ],
+    "forbidden_paths": [
+      "Appendix-23A-Minutes-of-meeting-of-board-at-which-interested-director.md",
+      "Appendix-23B-Members-resolution-to-approve-transaction-in-which-director.md"
+    ],
+    "prior_answer_paths": [
+      "tmp/answers",
+      "tmp/routeplans/q1-1-route-plan.json",
+      "tmp/routeplans/q1-2-route-plan.json",
+      "tmp/routeplans/q1-3-route-plan.json",
+      "tmp/routeplans/q1-4-route-plan.json",
+      "tmp/routeplans/q1-5-route-plan.json"
+    ]
+  },
+  "xor_branch_sets": [
+    {
+      "id": "x_member_approval_precedent",
+      "route_ids": ["r_app23c", "r_app23b_forbidden", "r_app23a_forbidden"],
+      "selection_state": "selected",
+      "selected_route_ids": ["r_app23c"],
+      "deciding_fact_ids": ["f_sole_director", "f_valuation", "f_proposal"]
+    }
+  ],
+  "requested_document_chain": {
+    "required": true,
+    "complex_transaction": false,
+    "instruments": [
+      {
+        "id": "i_nominee_upstream",
+        "sequence": 1,
+        "kind": "upstream_authority",
+        "actor_id": "csp_nominees",
+        "target_company_act": false,
+        "upstream_authority_instrument_id": null,
+        "target_instrument": "Written resolutions of the directors of CSP (Nominees) Ltd authorising its act as Company's sole registered member",
+        "signatory": {"human": true, "name_or_placeholder": "[each director of CSP (Nominees) Ltd]", "authority_instrument_id": null},
+        "action_business": false,
+        "selected_action_component_ids": [],
+        "operative_components": [
+          {"id": "comp_nominee_instructions", "source_component_id": "src_nominee_instructions", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_nominee_approve", "source_component_id": "src_nominee_approve", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_nominee_signatory", "source_component_id": "src_nominee_signatory", "status": "produced", "unresolved": false, "gap_ids": []}
+        ],
+        "attachments": [],
+        "execution": {"id": "exec_nominee_upstream", "status": "produced", "unresolved": false, "gap_ids": []},
+        "records_filings": [
+          {"id": "record_nominee_upstream", "kind": "minutes", "status": "produced", "unresolved": false, "gap_ids": []}
+        ]
+      },
+      {
+        "id": "i_company_member_approval",
+        "sequence": 2,
+        "kind": "resolution",
+        "actor_id": "csp_nominees",
+        "target_company_act": true,
+        "upstream_authority_instrument_id": "i_nominee_upstream",
+        "target_instrument": "Written resolution of Company's sole registered member giving fully informed prior approval to the assignment",
+        "signatory": {"human": true, "name_or_placeholder": "[authorised signatory] for and on behalf of CSP (Nominees) Ltd", "authority_instrument_id": "i_nominee_upstream"},
+        "action_business": true,
+        "selected_action_component_ids": ["src_app23c_approve_transaction"],
+        "operative_components": [
+          {"id": "comp_member_approve_transaction", "source_component_id": "src_app23c_approve_transaction", "status": "produced", "unresolved": false, "gap_ids": []}
+        ],
+        "attachments": [],
+        "execution": {"id": "exec_company_member", "status": "produced", "unresolved": false, "gap_ids": []},
+        "records_filings": [
+          {"id": "record_company_member", "kind": "minutes", "status": "produced", "unresolved": false, "gap_ids": []}
+        ]
+      },
+      {
+        "id": "i_director_upstream",
+        "sequence": 3,
+        "kind": "upstream_authority",
+        "actor_id": "sole_director",
+        "target_company_act": false,
+        "upstream_authority_instrument_id": null,
+        "target_instrument": "Written resolutions of the directors of CSP (Directors) Ltd authorising its act as Company's sole corporate director",
+        "signatory": {"human": true, "name_or_placeholder": "[each director of CSP (Directors) Ltd]", "authority_instrument_id": null},
+        "action_business": false,
+        "selected_action_component_ids": [],
+        "operative_components": [
+          {"id": "comp_director_upstream_approve", "source_component_id": "src_director_upstream_approve", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_director_upstream_signatory", "source_component_id": "src_director_upstream_signatory", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_director_upstream_records", "source_component_id": "src_director_upstream_records", "status": "produced", "unresolved": false, "gap_ids": []}
+        ],
+        "attachments": [],
+        "execution": {"id": "exec_director_upstream", "status": "produced", "unresolved": false, "gap_ids": []},
+        "records_filings": [
+          {"id": "record_director_upstream", "kind": "minutes", "status": "produced", "unresolved": false, "gap_ids": []}
+        ]
+      },
+      {
+        "id": "i_company_director_approval",
+        "sequence": 4,
+        "kind": "resolution",
+        "actor_id": "sole_director",
+        "target_company_act": true,
+        "upstream_authority_instrument_id": "i_director_upstream",
+        "target_instrument": "Written resolution of Company's sole director approving the assignment and its execution",
+        "signatory": {"human": true, "name_or_placeholder": "[authorised signatory] for and on behalf of CSP (Directors) Ltd", "authority_instrument_id": "i_director_upstream"},
+        "action_business": false,
+        "selected_action_component_ids": [],
+        "operative_components": [
+          {"id": "comp_director_consider_material", "source_component_id": "src_director_consider_material", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_director_approve_assignment", "source_component_id": "src_director_approve_assignment", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_director_authorise_execution", "source_component_id": "src_director_authorise_execution", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "comp_director_records", "source_component_id": "src_director_records", "status": "produced", "unresolved": false, "gap_ids": []}
+        ],
+        "attachments": [
+          {"id": "att_valuation_report", "kind": "other", "status": "placeholder", "unresolved": true, "gap_ids": ["g_assignment"]},
+          {"id": "att_assignment_agreement", "kind": "other", "status": "placeholder", "unresolved": true, "gap_ids": ["g_assignment"]}
+        ],
+        "execution": {"id": "exec_company_director", "status": "produced", "unresolved": false, "gap_ids": []},
+        "records_filings": [
+          {"id": "record_company_director", "kind": "minutes", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "record_company_accounts", "kind": "accounts", "status": "produced", "unresolved": false, "gap_ids": []},
+          {"id": "record_external_consent", "kind": "external_filing", "status": "conditional", "unresolved": true, "gap_ids": ["g_assignment"]}
+        ]
+      }
+    ],
+    "expected_counts": {"instruments": 4, "operative_components": 11, "attachments": 2, "execution_blocks": 4, "records_filings": 5},
+    "actual_counts": {"instruments": 4, "operative_components": 11, "attachments": 2, "execution_blocks": 4, "records_filings": 5}
+  },
+  "materials_gaps": [
+    {
+      "id": "g_articles",
+      "description": "Company's actual memorandum and articles are not supplied, so any article-specific written-resolution threshold, procedural variation or restriction remains conditional on checking them.",
+      "resolution": "conditional",
+      "affected_ids": ["r_m10_procedure"]
+    },
+    {
+      "id": "g_assignment",
+      "description": "The partnership agreement and assignment instrument are not supplied, so transfer restrictions, required consents, exact asset description, payment mechanics, conditions and the execution form must remain placeholders or conditions.",
+      "resolution": "placeholder",
+      "affected_ids": ["i_company_director_approval", "att_valuation_report", "att_assignment_agreement", "record_external_consent"]
+    }
+  ],
+  "final_trace": [
+    {"id": "t_m7_division", "route_id": "r_m7_division", "contribution": "Division of power between Company's member and Sole Director, including limits on member direction and the board's continuing responsibility.", "answer_location": "4.1 duties and 4.2 decision sequence"},
+    {"id": "t_m8_duties", "route_id": "r_m8_duties", "contribution": "BVI director duties, valuation/reliance standard, remedies and the permitted role and limits of member approval or ratification.", "answer_location": "4.1 and 4.2 liability analysis"},
+    {"id": "t_m10_procedure", "route_id": "r_m10_procedure", "contribution": "Decision-maker, written-resolution, corporate signatory, execution and minute-record procedure for the corporate member and corporate sole director.", "answer_location": "4.2 procedure and all resolution execution blocks"},
+    {"id": "t_m11_nominee", "route_id": "r_m11_nominee", "contribution": "Distinction between registered member and beneficial owners, nominee instructions and the corporate director's obligation to exercise independent judgment despite service-provider or beneficial-owner wishes.", "answer_location": "4.1 application and 4.2 corporate actor chain"},
+    {"id": "t_app21g", "route_id": "r_app21g", "contribution": "Checked but not reproduced: a binding special-resolution instruction depends on a reserved-power article that has not been supplied; informed member approval under Appendix 23C answers the liability issue without assuming that article.", "answer_location": "4.2 conditional articles caveat and check trace only"},
+    {"id": "t_app23c", "route_id": "r_app23c", "contribution": "Member approval wording for a risky transaction despite the board's reservations, adapted to the hard-to-value XYZ interest and US$3 million price.", "answer_location": "4.2 Company member written resolution"},
+    {"id": "t_app23b_forbidden", "route_id": "r_app23b_forbidden", "contribution": "Rejected interest-specific precedent because no supplied fact gives Sole Director a personal interest in Miss Red's acquisition.", "answer_location": "check trace only"},
+    {"id": "t_app23a_forbidden", "route_id": "r_app23a_forbidden", "contribution": "Rejected disinterested-board precedent because Company has only one director and no supplied fact identifies that director as interested.", "answer_location": "check trace only"}
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

@@ -1,0 +1,648 @@
+===== PAGE 1 =====
+In association with
+Specimen Examination Paper 1
+STEP Advanced Certificate 
+in Company Law and Practice
+(International)
+
+===== PAGE 2 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+2
+Question 1
+You have been appointed as company secretary (or administrator) of Company Ltd (‘Company’). A and 
+B are directors of Company; C, D and E are its registered shareholders, owning 70%, 20% and 10% of the 
+issued share capital respectively.
+The articles of association of Company are attached, marked Appendix 1.
+You are asked to convene a general meeting of Company to take place on 28 August for the purpose 
+of placing the company into voluntary liquidation, a decision which, under applicable companies 
+legislation, requires a three-quarter majority vote or such other lesser super-majority defined in 
+the articles.
+1.1 Draft a notice for the meeting.
+ (5 marks)
+1.2 Upon whom should the notice be served? How do you suggest the notice be served and when?
+ (4 marks)
+1.3 What is the effect of a failure to give proper notice?
+ (3 marks)
+1.4 Assume for the purposes of this question that only C turns up for the meeting at the appointed 
+time on 28 August. Can C pass the resolution? Explain your answer.
+ (4 marks)
+1.5 Assume for the purpose of this question that all three shareholders attend at the appointed time. 
+On a show of hands D and E vote against the motion. What is the result of the vote? What would 
+you expect C to do in these circumstances?
+ (4 marks)
+Total: 20 marks
+CLI16/16363
+
+===== PAGE 3 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+3
+Question 2
+You are employed by Corporate Services Provider in the jurisdiction of your choice and are responsible 
+for the administration of a managed company, Company Ltd ( ‘Company’). In a preliminary paragraph 
+of your answer, you must clearly state your chosen jurisdiction and apply this consistently throughout.
+Company has issued two shares, both of which are held by Corporate Services Provider (Nominees) Ltd, 
+a subsidiary of Corporate Services Provider, as nominee for Mr AB.
+Company has a sole director, namely Corporate Services Provider (Directorships) Ltd, another subsidiary 
+of Corporate Services Provider. 
+Articles of association of the Company are attached to this Examination Paper, marked Appendix 1.
+Mr AB’s Relationship Manager at Corporate Services Provider advises you that Mr AB has arranged for 
+Company to borrow $5 million from XYZ Bank, Miami, in order for the Company to buy a Lear Star Jet 
+(Tail Fin No.1234). The loan will be secured by way of legal mortgage over the aircraft. Upon completion 
+of the purchase, the aircraft’s registration is to be transferred from the US Federal Aviation Authority 
+(FAA) to the Isle of Man Aircraft Registry. 
+2.1 Describe the corporate procedures that must be followed for Company to carry out the 
+transactions described above.  
+(10 marks)
+2.2 Draft appropriate resolutions to authorise Company lawfully to enter into and complete 
+the transactions.
+(10 marks)
+Total: 20 marks
+
+===== PAGE 4 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+4
+Question 3
+You are employed as a trust officer by International Trust Company, a trust company carrying on 
+business in an offshore jurisdiction of your choice. In a preliminary paragraph of your answer, you must 
+clearly state your chosen jurisdiction and apply this consistently throughout.
+You manage an underlying company by the name of Company Ltd (‘Company’). The shares of Company 
+are held by International Trust Company according to the terms of the Redhouse Trust.
+Company holds world-wide assets on behalf of the trustee of the Redhouse Trust, including an account 
+with Midcity Bank.
+You have been appointed as a co-director of Company together with a colleague, Ms Avril Nath. 
+The articles of the Company are in the same form as those attached marked Appendix 1.
+3.1 Describe the usual division of power to manage the business of a company and explain why 
+it arose from a historical perspective.
+(6 marks)
+3.2 How, if at all, is the division of power referred to in Question 3.1 affected by the terms of Article 
+19.1 of the Company’s articles? 
+(4 marks)
+3.3 Discuss how such division of power is affected when the Company is an underlying 
+asset-holding company that is managed and controlled by an offshore trustee?
+(5 marks)
+3.4 By what method, and in which circumstances, may you be removed from office as a director 
+of the Company? If you are removed, how and in what circumstances may a new director be 
+appointed in your place?
+(5 marks)
+Total: 20 marks
+
+===== PAGE 5 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+5
+Question 4
+‘A directorship is a double-edged sword. It can bring reward, but it also carries certain risks. ’
+Discuss the above statement so far as it relates to risk. Identify the main problem areas and state how 
+a director may seek to reduce the exposure.
+Total: 20 marks
+
+===== PAGE 6 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+6
+Question 5
+Company Ltd (‘Company’) is incorporated in the jurisdiction of your choice. In a preliminary paragraph 
+of your answer, you must clearly state your chosen jurisdiction and apply this consistently throughout.
+Company is insolvent. It has assets consisting of: 
+ y real estate, known as ‘Blackacre’ , valued at $1.7 million 
+ y moveable chattels, known as ‘artwork’ , valued at $550,000
+ y cash in Bank of $40,000
+ y securities, held with Broker, of $310,000.
+It is owed the sum of $5,000 by PB Oil Co.
+The liabilities of Company consist of: 
+ y a loan from Mortgagee which is ‘underwater’ insofar as it is secured by fixed legal charge over 
+Blackacre amounting to $2.4 million
+ y unpaid legal fees owed to Lawyer of $120,000
+ y unpaid accountancy fees due to Accountancy Firm of $15,000
+ y unpaid fees due to Corporate Service Provider of $60,000
+ y an unpaid lawful and enforceable tax liability to Revenue Authority of the state of incorporation 
+of the Company amounting to $55,000
+ y miscellaneous trade creditors of $225,000.
+The corporate documentation reveals that Company was initially financed by way of shareholder loan 
+from Beneficial Owner of $500,000, which is recorded by simple promissory note and is still outstanding.
+5.1 Compare and contrast the voluntary members, and the voluntary creditors, winding-up process. 
+Advice which is the appropriate process for Company to follow.
+(5 marks)
+5.2 You are appointed as the liquidator of Company. Assume that the corporate assets are realised 
+for their estimated values and the receivable is collected in full. Your own fees and disbursements 
+amount to $40,000.
+Draft the liquidator’s final Statement of Account to complete the winding-up.
+(15 marks)
+Total: 20 marks 
+END OF PAPER
+
+===== PAGE 7 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+7
+Appendix 1
+Articles of Association
+regulating the management of Company
+1. Definitions
+In these articles the terms below shall have the meanings set opposite to them.
+‘Articles’ means the articles of the Company in their present form or as amended from time 
+to time
+‘Companies Legislation’ means every statute, Order in Council and regulation for the time being 
+in force in [jurisdiction] affecting companies
+‘Company’ means the company incorporated in [jurisdiction] under the name of [name].
+‘Registered office’ means the registered office for the time being of the Company, situated at 
+such place in [jurisdiction] as the directors shall determine.
+‘Resolution’ means a resolution of the shareholders of the Company in general meeting passed 
+by a simple majority of votes of the shareholders entitled to vote; an ‘ordinary resolution’ being 
+passed by a simple majority of votes of the shareholders entitled to vote; a ‘special resolution’ 
+being passed by a super-majority of two thirds of the votes of shareholders entitled to vote.
+2. Shares
+2.1  Subject to the provisions, if any, in that behalf of the memorandum of association, and 
+without prejudice to any special rights previously conferred on the holders of existing 
+shares, any shares may be issued with such preferred, deferred or other special rights, or 
+such restrictions whether in regard to dividend, voting, return of share capital or otherwise 
+as the Company may, from time to time, by special resolution determine.
+2.2  Subject to the provisions, if any, in that behalf of the memorandum of association, 
+preference shares may, by special resolution, be issued on terms that they are to 
+be redeemed:
+(a) on a given date or on the happening of a specified event
+(b) at the option of the company, or, if authorised by the memorandum, at the option of 
+the holder.
+2.3 Subject to the provisions of these articles, the un-issued shares of the Company shall be at the 
+disposal of the board of directors who may offer, allot, issue or otherwise dispose of them to 
+such persons, at such time, for such consideration, and upon such terms and conditions as the 
+directors may determine.
+
+===== PAGE 8 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+8
+3. Share certificates
+3.1 Every person whose name is entered as a shareholder in the register of members shall, without 
+payment, be entitled to a certificate of the company specifying the share or shares held by him 
+and the amount paid up thereon:
+4. Modification of shareholder rights
+4.1 If, at any time, the share capital is divided into different classes of shares, the rights attached 
+to any class (unless otherwise provided by the terms of issue of the shares of that class) may 
+be varied with the sanction of a special resolution passed at a separate general meeting of the 
+holders of the shares of the class. To every such separate general meeting the provisions of these 
+regulations relating to general meetings shall, mutatis mutandis apply, but so that the necessary 
+quorum shall be two persons at least holding or representing by proxy one-third of the issued 
+shares of the class and that any holder of shares of the class present in person or by proxy may 
+demand a poll.
+5. Lien
+5.1 The Company shall have a lien on every share (not being a fully paid share) for all moneys 
+(whether presently payable or not) called or payable at a fixed time in respect of that share, 
+and the Company shall also have a lien on all shares (other than fully paid shares) standing 
+registered in the name of a single person for all moneys presently payable by him or his estate to 
+the Company. The Company’s lien, if any, on a share shall extend to all dividends payable thereon.
+5.2 The Company may sell, in such manner as the directors think fit, any shares in which the 
+Company has a lien.
+6. Calls on shares
+6.1 The directors may, from time to time, make calls upon the shareholders in respect of any moneys 
+unpaid on the shares; and each shareholder shall (subject to receiving at least 14 days’ notice 
+specifying the time or times of payment) pay to the Company at the time or times so specified 
+the amount called on his shares.
+6.2 If a sum called in respect of a share is not paid before or on the day appointed for payment 
+thereof, the person from whom the sum is due shall pay interest upon the sum at the rate of 6% 
+per annum from the day appointed for the payment thereof to the time of the actual payment, 
+but the directors shall be at liberty to waive payment of that interest wholly or in part.
+7. Forfeiture of Shares (for unpaid calls)
+7.1 If a member fails to pay any call or instalment of a call on the day appointed for payment thereof, 
+the directors may, at any time thereafter during such time as any part of such call or instalment 
+remains unpaid, serve a notice on him requiring payment of so much of the call or instalment as 
+is unpaid, together with any interest which may have accrued.
+7.2 If the requirements of a call notice is not complied with, any share in respect of which the notice 
+has been given may at any time thereafter, before the payment required by the notice has been 
+made, be forfeited by a resolution of the directors to that effect.
+
+===== PAGE 9 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+9
+8. Transfer and Transmission of Shares
+8.1 The instrument of transfer of any share shall be executed by or on behalf of the transferor and 
+transferee, and the transferor shall be deemed to remain a holder of the share until the name 
+of the transferee is entered in the register of members in respect thereof.
+8.2 Shares shall be transferred in the following form, or in any usual or common form approved by 
+the directors:
+‘I, [name of transferor], of [address] in consideration of the sum of $[price] paid to me by [name 
+of transferee], of [address] (hereinafter called “the said transferee”) do hereby transfer to the said 
+transferee the share (or shares) numbered in the undertaking called [name of the Company], to hold 
+unto the said transferee, subject to the several conditions on which I hold the same:  
+and I, the said transferee, do hereby agree to take the said share (or shares) subject to the 
+conditions aforesaid. ’
+8.3 The directors may decline to register any transfer of shares, not being fully paid shares, to a 
+person of whom they do not approve, and may also decline to register any transfer of shares 
+on which the Company has a lien.
+8.4 The directors may decline to recognise any instrument of transfer unless:
+(a) a fee not exceeding [$1.00] is paid to the company in respect thereof; and
+(b) the instrument of transfer is accompanied by the certificate of the shares to which it 
+relates and such other evidence as the directors may reasonably require to show the right 
+of the transferor to make the transfer.
+8.5 If the directors refuse to register a transfer of any shares, they shall, within two months after 
+the date on which the transfer was lodged with the Company, send to the transferee notice 
+of the refusal.
+8.6 The legal personal representative of a deceased sole holder of a share shall be the only person 
+recognised by the company as having any title to the share. In the case of a share registered in 
+the names of two or more holders, the survivors, survivor or the legal personal representatives 
+of the deceased survivor, shall be the only person recognised by the company as having any title 
+to the share.
+8.7 Any person becoming entitled to a share in consequence of the death or bankruptcy of a 
+member shall, upon such evidence being produced as may from time to time be properly 
+required by the directors, have the right either to be registered as a member in respect of the 
+share or, instead of being registered himself, to make such transfer of the share as the deceased 
+or bankrupt person could have made; but the directors shall, in either case, have the same right 
+to decline or suspend registration as they would have had in the case of a transfer of the share 
+by the deceased or bankrupt person before the death or bankruptcy.
+8.8 A person becoming entitled to a share by reason of the death or bankruptcy of the holder 
+shall be entitled to the same dividends and other advantages to which he would be entitled 
+if he were the registered holder of the share, except that he shall not, before being registered 
+as a member in respect of the share, be entitled in respect of it to exercise any right conferred 
+by membership in relation to meetings of the company.
+
+===== PAGE 10 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+10
+9. Alteration of Capital
+9.1 The company may, from time to time by special resolution, increase the share capital by such 
+sum, to be divided into shares of such amount, as the resolution shall prescribe.
+9.2 The new shares shall be subject to the same provisions with reference to the payment of calls, 
+lien, transfer, transmission, forfeiture and otherwise as the shares in the original share capital.
+9.3 The Company may, by special resolution, reduce its share capital and any capital redemption 
+reserve fund in any manner and with, and subject to, any incident authorised and consent 
+required by the Companies Legislation.
+10. General Meetings
+10.1 The first general meeting of the Company shall be held within a period of not more than 
+18 months from the day that the Company has the right to commence business.
+10.2 A general meeting (‘the annual general meeting’) shall be held once in every calendar year 
+at such time (not being more than 15 months after the holding of the last preceding general 
+meeting) and place as may be resolved by the company in general meeting. If the directors fail 
+to convene an annual general meeting it may be convened by any two members in the same 
+manner as nearly as possible as that in which meetings are to be convened by the directors.
+10.3 All general meetings other than annual general meetings shall be called extraordinary [special] 
+general meetings.
+10.4 The directors may, whenever they think fit, convene an extraordinary special general meeting. 
+Alternatively any two members of the company holding at least 10% of the issued share capital 
+of the Company may convene an extraordinary special general meeting in the same manner as 
+nearly as possible as that in which meetings may be convened by the directors.
+11. Notice of General Meetings
+11.1 Subject to the requirements of the Companies Legislation relating to [special] resolutions, 
+at least 14 clear days’ notice in writing (exclusive of the day on which the notice is served or 
+deemed to be served, and of the day for which notice is given) specifying the place, the day 
+and hour of meeting and, in case of special business, the general nature of that business shall 
+be given in the manner provided by para.27 of these articles, to such persons as are entitled to 
+receive such notices from the company.
+11.2 A general meeting may be convened by such shorter notice with the consent of all the members 
+entitled to receive notice of the meeting, and in such manner as those members may think fit.
+11.3 The accidental omission to give notice of a meeting to, or the non-receipt of a notice 
+of a meeting by any member shall not invalidate the proceedings at any meeting.
+12. Proceedings at General Meetings
+12.1 All business shall be deemed special that is transacted at any extraordinary special meeting, 
+and also all that is transacted at an annual general meeting, with the exception of sanctioning 
+a dividend, consideration of the accounts, balance sheets, and the report of the directors 
+
+===== PAGE 11 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+11
+(and auditors, if any) and the election of directors and other officers in the place of those retiring 
+by rotation.
+12.2 No business shall be transacted at any general meeting unless a quorum of members is present 
+at the time when the meeting proceeds to business; save as herein otherwise provided, two 
+shareholders personally present shall be a quorum unless the company has a sole shareholder in 
+which case a quorum is one and the sole shareholder can pass a written resolution in accordance 
+with art.12.11.
+12.3 If, within half an hour from the time appointed for the meeting, a quorum is not present, the 
+meeting, if convened upon the requisition of members, shall be dissolved; in any other case 
+it shall stand adjourned to the same day in the next week, at the time and place, and if at the 
+adjourned meeting a quorum is not present within half an hour from the time appointed for the 
+meeting the members present shall be a quorum.
+12.4 The shareholders present in person or by proxy and entitled to vote shall elect by majority vote 
+one of their number to act as chairman.
+12.5 The chairman may with the consent of any meeting at which a quorum is present (and shall if so 
+directed by the meeting), adjourn the meeting from time to time and from place to place, but no 
+business shall be transacted at any adjourned meeting other than the business left unfinished at 
+the meeting from which the adjournment took place. When a meeting is adjourned for 10 days 
+or more, notice of the adjourned meeting shall be given as in the case of an original meeting. 
+Save as aforesaid it shall not be necessary to give any notice of an adjournment or of the 
+business to be transacted at an adjourned meeting.
+12.6 At any general meeting a resolution put to the vote of the meeting shall be decided on a 
+show of hands, unless a poll is (before or on the declaration of the result of the show of hands) 
+demanded by at least three members present in person or by proxy entitled to vote or by one 
+member or two members together holding not less than 15% of the paid up capital of the 
+Company.
+12.7 Unless a poll is so demanded, a declaration by the chairman that a resolution has, on a show of 
+hands, been carried, carried unanimously, carried by a particular majority or lost, and an entry 
+to that effect in the book of the proceedings of the Company, shall be conclusive evidence of 
+the fact without proof of the number or proportion of the votes recorded in favour of, or against, 
+that resolution.
+12.8 If a poll is duly demanded it shall be taken in such manner as the chairman directs, and the result 
+of the poll shall be deemed to be the resolution of the meeting at which the poll was demanded.
+12.9 In the case of an equality of votes, whether on a show of hands or on a poll, the chairman of the 
+meeting at which the poll is demanded shall be entitled to a second or casting vote.
+12.10 A poll demanded on the election of a chairman or on a question of adjournment shall be taken 
+forthwith; a poll demanded on any other question shall be taken at such time as the chairman 
+of the meeting directs.
+12.11 A resolution in writing, signed by all of the shareholders for the time being entitled to receive 
+notice of a general meeting of the Company and vote thereat, shall be as valid and effective as 
+
+===== PAGE 12 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+12
+ if it had been passed at a general meeting of the Company duly convened and held, and may 
+consist of several documents in like form signed by any one or more of the shareholders
+13. Votes of Members
+13.1 On a show of hands every member present in person shall have one vote. On a poll every 
+member shall have one vote for each share of which he is the holder.
+13.2 In the case of joint holders the vote of the senior who tenders a vote, whether in person 
+or by proxy, shall be accepted to the exclusion of the votes of the other joint holders, and for 
+this purpose seniority shall be determined by the order in which the names stand in the register 
+of members.
+13.3 A member of unsound mind, or in respect of whom an order has been made by any court having 
+jurisdiction in lunacy, may vote, whether on a show of hand or on a poll, by his committee or 
+other person in the nature of a committee appointed by that court, and any such committee 
+or other person, may, on a poll, vote by proxy.
+13.4 No member shall be entitled to vote at any general meeting unless all calls or other sums 
+presently payable by him in respect of shares in the company have been paid.
+13.5 On a poll votes may be given either personally or by proxy.
+13.6 The instrument appointing a proxy shall be in writing under the hand of the appointor or his 
+attorney duly authorised in writing or, if the appointor is a corporation, either under seal 
+or under the hand of an officer or attorney duly authorised. A proxy need not be a member 
+of the company.
+13.7 The instrument appointing a proxy and the power of attorney or other authority, if any, under 
+which it is signed, or a notarially certified copy of that power or authority shall be deposited 
+at the registered office of the company not less than 48 hours before the time for holding the 
+meeting or adjourned meeting at which the person named in the instrument proposes to vote, 
+and in default the instrument of proxy shall not be treated as valid.
+13.8 An instrument appointing a proxy may be in the following form or any other form approved 
+by the directors:
+‘I, [name of shareholder], of [address], being a member of the [name of Company] hereby 
+appoint [name of proxy] of [address] as my proxy, to vote for me and on my behalf at 
+the ordinary [or extraordinary] general meeting of the Company to be held on the [date], 
+and at any adjournment thereof. ’
+[Signed by shareholder and dated].
+14. Corporations acting by representatives at general meetings
+Any corporation which is a member of the Company may, by resolution of its directors or other 
+governing body, authorise such persons as it thinks fit to act as its representative at any meeting 
+of the company or of any class of members of the company, and the person so authorised shall 
+be entitled to exercise the same powers on behalf of the corporation which he represents as that 
+corporation could exercise if it were an individual member of the company.
+
+===== PAGE 13 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+13
+15. Appointment of Directors
+15.1 The number of the directors and the names of the first directors shall be determined in writing 
+by a majority of the subscribers of the memorandum of association.
+15.2 Unless otherwise determined by ordinary resolution the number of directors shall be without 
+limit and the minimum number shall be one.
+15.3 The Company may, by ordinary resolution, remove a director before the expiration of his period 
+in office, notwithstanding anything in any agreement between the company and such director.
+15.4 The Company may, by an ordinary resolution, appoint another person in place of the director 
+so removed under the preceding article. The person so appointed shall be subject to retirement 
+at the same time as if he had become a director on the day on which the director in whose place 
+he is appointed was last elected a director.
+16. Rotation of Directors
+16.1 At the first annual general meeting of the company the whole of the directors shall retire from 
+office, and at the annual general meeting in every subsequent year one third of the directors for 
+the time being, or, if their number is not three or a multiple of three, then the number nearest 
+one third, shall retire from office.
+16.2 The directors to retire in every year shall be those who have been longest in office since their 
+last election but as between persons who became directors on the same day those to retire shall 
+(unless they otherwise agree among themselves) be determined by lot.
+16.3 A retiring director shall be eligible for re-election.
+17. Disqualification of Directors
+17.1 The office of director shall be vacated, if the director:
+(a) without the consent of the company in general meeting, holds any other office of profit 
+under the company except that of managing director or manager;
+(b) becomes bankrupt;
+(c) is found to be or becomes of unsound mind;
+(d) resigns his office by notice in writing to the company; or
+(e) is directly or indirectly interested in any contract with the company or participates in the 
+profits of any contract with the company:
+17.2 A director shall not vacate his office under the preceding paragraph by reason of his being a 
+member of any corporation which has entered into a contract with or done any work for the 
+company if he has declared the nature of his interest at the first meeting of the directors of 
+the company held after he became interested in the contract, but the director shall not vote in 
+respect of any such contract or work or any matter arising thereout, and if he does so vote his 
+vote shall not be counted.
+
+===== PAGE 14 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+14
+18. Remuneration of directors and director’s interests
+18.1 The remuneration of the directors shall be determined from time to time by the Company in 
+general meeting.
+18.2 A director [or other officer of the Company] may enter into a contract or other arrangement 
+with the Company (either as vendor, purchaser, lessor, lessee, manager, agent, broker or 
+otherwise) provided that the director shall disclose, at the board meeting at which the contract 
+or arrangement is determined, the nature of his interest but the director shall not vote in respect 
+of such contract or arrangement or on any matter arising in connection therewith.
+18.3 A director may occupy any other office or position in the Company or act in any professional 
+capacity to the Company in conjunction with his office of director, and on such terms as to 
+remuneration or otherwise as the directors shall think fit.
+19. Powers of directors
+19.1 The business of the Company shall be managed by the directors, who may pay all 
+expenses incurred in setting up and registering the company, and may exercise all such 
+powers of the Company as are not, by the Companies Legislation or these articles, required 
+to be exercised by the Company in general meeting.
+19.2 The directors may, by power of attorney or otherwise, appoint any person to be the agent 
+of the Company, for such purposes and on such conditions, as the directors determine
+19.3 The directors may exercise all of the powers of the Company to borrow money and 
+to mortgage or charge its undertaking and property, or any part thereof, and to issue 
+securities whether outright or as security for any debt, liability or obligation of the 
+Company, PROVIDED THAT the amount for the time being remaining undischarged of money 
+borrowed by the directors shall not without the previous sanction of an ordinary resolution of 
+the Company exceed $1 million.
+19.4 Without prejudice to the provisions of para.29 of these articles, the directors shall have 
+power to purchase and maintain insurance for any persons who are, or were at any time, 
+directors, officers or employees or the company, including insurance against any liability 
+incurred by such persons in respect of any act or omission in the actual or purported 
+execution of their powers or otherwise in relation to their duties to the Company.
+20. Proceedings of Directors
+20.1 The directors may meet together for the despatch of business, adjourn and otherwise regulate 
+their meetings, as they think fit.
+20.2 Questions arising at any meeting shall be decided by a majority of votes. In case of an equality of 
+votes the chairman shall have a second or casting vote.
+20.3 A director may, and the secretary on the requisition of a director shall, at any time, summon a 
+meeting of the directors.
+20.4 The quorum necessary for the transaction of the business of the directors may be fixed by the 
+directors, and unless so fixed shall be two [except that where the number of directors has been 
+
+===== PAGE 15 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+15
+fixed at one pursuant to para.15.2 of these articles, a sole director shall be deemed to form 
+a quorum].
+20.5 If and so far as there is a sole director, he may exercise all the powers conferred upon the 
+directors by these articles by resolution in writing signed by him.
+20.6 A meeting of directors, or committee of directors, may be validly held notwithstanding that such 
+directors may not be in the same place, provided that:
+(a) they are in constant communication with each other throughout by telephone, television 
+or some other form of communication; and
+(b) all directors entitled to attend such meeting agree.
+20.7 A person participating in such meeting as provided for by para.20.6 shall be deemed to be 
+present in person and so shall be counted in the quorum and be entitled to vote. Such meeting 
+shall be deemed to take place where the largest group of those participating is assembled, 
+or, if there is no such group, where the chairman of the meeting is situated.
+20.8 The continuing directors, [or sole director], may act notwithstanding any vacancy in their body, 
+but, if and so long as their number is reduced below the number fixed by or pursuant to the 
+articles of the company as the necessary quorum of directors, the continuing directors may 
+act for the purpose of increasing the number of directors to that number, or of summoning 
+a general meeting of the company, but for no other purpose.
+20.9 The directors may elect a chairman of their meetings and determine the period for which he is 
+to hold office; but if no such chairman is elected, or if at any meeting the chairman is not present 
+within five minutes after the time appointed for holding the same, the directors present may 
+choose one of their number to be chairman of the meeting.
+20.10 The directors may delegate any of their powers to committees consisting of such member or 
+members of their body as they think fit; any committee so formed shall, in the exercise of the 
+powers so delegated, conform to any regulations that may be imposed on it by the directors.
+20.11 A committee may elect a chairman of its meetings; if no such chairman is elected, or if at any 
+meeting the chairman is not present within five minutes after the time appointed for holding 
+the same, the members present may choose one of their number to be chairman of the meeting.
+20.12 A committee may meet and adjourn as it thinks proper. Questions arising at any meeting shall 
+be determined by a majority of votes of the members present and, in case of an equality of 
+votes, the chairman shall have a second or casting vote.
+20.13 All acts done by any meeting of the directors or of a committee of directors, or by any person 
+acting as a director, shall, notwithstanding that it be afterwards discovered that there was some 
+defect in the appointment of any such director or person acting as aforesaid, or that they or any 
+of them were disqualified, be as valid as if every such person had been duly appointed and was 
+qualified to be a director.
+20.14 The directors shall cause minutes to be made in books provided for the purpose:
+(a) of all appointments of officers made by the directors;
+(b) of the names of the directors present at each meeting of the directors and of any 
+committee of the directors; and
+
+===== PAGE 16 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+16
+(c) of all resolutions and proceedings at all meetings of the company, and of the directors 
+and of committees of directors, and every director present at any meeting of directors, 
+or committee thereof, or the chairman shall sign his name in a book to be kept for 
+that purpose.
+20.15 A resolution in writing, signed by all the directors for the time being entitled to receive notice 
+of a meeting of directors, shall be as valid and effective as if it had been passed at a meeting 
+of directors duly convened and held, and may consist of several documents in like form signed 
+by any one or more of the directors.
+21. Officers of the company
+21.1 The Secretary of the Company shall be appointed by the directors for such term at such 
+remuneration and upon such conditions as they think fit; and any secretary so appointed may 
+be removed by them.
+21.2 No person shall be appointed as secretary who is:
+(a) the sole director of the Company;
+(b) a corporation, the sole director of which is the sole Director of the Company;
+(c) the sole director of a corporation which is the sole Director of the Company.
+21.3 A provision in these articles requiring a thing to be done by a director and the secretary shall not 
+be satisfied by it being done by the same person acting as both Director and Secretary.
+22. The Seal
+The seal of the Company shall not be affixed to any instrument except by the authority of a 
+resolution of a board of directors, and in the presence of a director and of the secretary or such 
+other person as the directors may appoint for the purpose; and that director and the secretary 
+or other person as aforesaid shall sign every instrument to which any seal of the company is 
+so affixed in their presence.
+23. Dividends and Reserve
+23.1 The Company, by ordinary resolution in general meeting, may declare dividends to be paid to 
+shareholders, but no dividend shall exceed the amount recommended by directors.
+23.2 The directors may, from time to time, pay to the shareholders such interim dividends as appear 
+to the directors to be justified by the profits of the company.
+23.3 No dividends shall be paid otherwise than out of profits.
+24. Capitalisation of profits
+The directors may, with the authority of an ordinary resolution of the Company resolve to 
+capitalise any undistributed profits, namely any part of the Company’s reserve accounts, 
+or monies standing to the credit of the Company’s profit and loss account or otherwise available 
+for distribution;
+
+===== PAGE 17 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+17
+25. Accounts
+25.1 The directors shall cause proper books of account to be kept with respect to:
+(a) all sums of money received and expended by the company, and the matters in respect 
+of which the receipt and expenditure takes place; and
+(b) all sales and purchases of goods and services by the company and the assets and liabilities 
+of the company.
+25.2 The books of account shall be kept at the registered office of the Company, or at such other 
+place or places as the directors think fit, and shall always be open to the inspection of the 
+directors.
+25.3 The directors shall, from time to time, determine whether and to what extent, at what times and 
+places and under what conditions or regulations the accounts and books of the company or 
+any of them shall be open to the inspection of members not being directors, and no member 
+(not being a director) shall have any right of inspecting any account, book or document of 
+the company except as conferred by law or authorised by the directors or by the company 
+in general meeting.
+26. Audit
+The accounts relating to the company’s affairs may be audited in such manner as the Company 
+by ordinary resolution determines from time to time in general meeting or, failing any such 
+determination, by the directors.
+27. Service
+27.1 A notice may be given by the company to any member either personally or by sending it by post 
+to him to his registered address, or by email to the email address (the ‘registered email address’) 
+supplied by him to the Company for the giving of notices to him.
+27.2 Where a notice is sent by post, service of the notice shall be deemed to be effected by properly 
+addressing, prepaying, and posting a letter containing the notice, and to have been effected in 
+the case of a notice of a meeting on the fourth day after the letter containing the same is posted, 
+and in the case of a notice sent by email to the registered email address, upon sending.
+27.3 A notice may be given by the company to the joint holders of a share by giving the notice to the 
+joint holder named first in the register of members in respect of the share.
+27.4 A notice may be given by the company to the persons entitled to a share in consequence of 
+the death or bankruptcy of a member by sending it through the post in a prepaid envelope 
+addressed to them by name, or by the title of representatives of the deceased or trustee of 
+the bankrupt or by any like description, at the address, if any, supplied for the purpose by the 
+persons claiming to be so entitled, or (until such an address has been so supplied), by giving the 
+notice in any manner in which the same might have been given if the death or bankruptcy had 
+not occurred.
+
+===== PAGE 18 =====
+STEP Advanced Certificate in Company Law and Practice (International)
+Specimen Examination Paper 1 
+18
+27.5 Notice of every general meeting shall be given in some manner herein before authorised to:
+(a) every member who has supplied to the Company an address or registered facsimile 
+number for the giving of notices to him; and
+(b) every person entitled to a share in consequence of the death or bankruptcy of a member, 
+who, but for his death or bankruptcy, would be entitled to receive notice of the meeting
+(c) every director who is not also a shareholder.
+No other person shall be entitled to receive notices of general meetings. 
+28. Winding up
+If the Company is wound up, the liquidator may, with the sanction of a special resolution, divide 
+amongst the shareholders in specie the whole or any part of the assets of the Company, and may 
+for such purpose, set such value as he deems fair 
+and may determine how such division shall be carried out between shareholders. The liquidator 
+may, with like sanction, vest the whole or part of such assets in trustees upon such trusts as the 
+liquidator thinks fit.
+29. Exclusion of liability and indemnity
+29.1 The directors, secretary, [resident representative] or other officers for the time being of the 
+Company shall not, in the absence of bad faith, fraud or dishonesty, be liable for loss suffered 
+by the Company arising from any error, oversight or mistake in their performance or purported 
+performance of their duties, to the fullest extent permitted by the laws of [jurisdiction].
+29.2 The directors, secretary and other officers and servants or agents for the time being of the 
+Company shall be indemnified out of the assets of the company from and against all actions, 
+liabilities, damages and all reasonable costs and expenses (in respect of which they may 
+lawfully be indemnified under the laws of [jurisdiction]) which they may incur by reason of 
+an act, omission, contract entered into in or about the execution of their duties, except such 
+liability they may incur through their own wilful default, bad faith or fraud and provided that 
+such indemnity shall not extend to matters which would render it void under the Companies 
+Legislation.
+29.3 No director, secretary, officer, servant or agent of the Company shall be liable for the acts, 
+neglect, receipt or default of the others or of any bankers, brokers or other persons with whom 
+money or property belonging to the Company shall be lodged or deposited for safe custody or 
+into whose hands money or assets of the Company may come, or for any loss or damage caused 
+by an error of judgement or oversight except in so far as the same shall be caused by their own 
+wilful default.
+
+===== PAGE 19 =====
+All rights are reserved. No part of this publication may be reproduced, stored in a retrieval system, 
+or transmitted in any form or by any means – electronic, mechanical, photocopying, recording or 
+otherwise – without the prior permission of CLT International Ltd. 
+Crown copyright material is licensed under the Open Government Licence 3.0. T o view this licence, 
+visit https://www.nationalarchives.gov.uk/doc/open-government-licence/.
+While all reasonable care has been taken in the preparation of this manual, neither CLT International Ltd 
+nor any of the authors accept responsibility for any errors it may contain or for any loss sustained by 
+any person placing reliance upon its contents.
+© CLT International Ltd 2025 CLI16/16363

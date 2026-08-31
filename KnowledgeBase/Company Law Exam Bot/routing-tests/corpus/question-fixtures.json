@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "source_corpus_sha256": "7a0010d184925ad20ff12f61a60ba059e4a4e68fd6cee102c2694fedf37abed9",
+  "fixture_count": 18,
+  "fixtures": [
+    {
+      "id": "P01A",
+      "group": "minimal-pair-01",
+      "title": "Traditional final dividend",
+      "question": "AB Ltd has $120,000 of distributable profits and proposes a $100,000 final dividend. Its actual articles follow the traditional Table A division under which members declare a final dividend on the board's recommendation. Explain the procedure and draft the complete approval chain.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P01B",
+      "group": "minimal-pair-01",
+      "title": "BVI BC solvency distribution",
+      "question": "AB Ltd has $120,000 of distributable profits and proposes a $100,000 final dividend. Its actual articles and governing legislation are those of a BVI Business Company, under which the directors may authorise a distribution subject to the statutory solvency test. Explain the procedure and draft the complete approval chain.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P02A",
+      "group": "minimal-pair-02",
+      "title": "Board accepts voluntary share transfer",
+      "question": "A transferor has delivered a duly executed transfer form, the old share certificate and the required fee to AB Ltd. The board decides to register the transfer. Draft the complete transaction documents and identify the remaining records stage.",
+      "task_type_hint": "drafting with short procedural explanation"
+    },
+    {
+      "id": "P02B",
+      "group": "minimal-pair-02",
+      "title": "Board refuses voluntary share transfer",
+      "question": "A transferor has delivered a duly executed transfer form, the old share certificate and the required fee to AB Ltd. The board decides to refuse to register the transfer. Draft the complete transaction documents and identify the remaining notification stage.",
+      "task_type_hint": "drafting with short procedural explanation"
+    },
+    {
+      "id": "P03A",
+      "group": "minimal-pair-03",
+      "title": "Registered holder alive - voluntary transfer",
+      "question": "Jordan is the sole registered holder of one share. Morgan seeks to become the registered holder, and the company is willing to register Morgan if the correct route is followed. Jordan is alive and has agreed to transfer the share to Morgan. Identify and draft the document chain.",
+      "task_type_hint": "drafting"
+    },
+    {
+      "id": "P03B",
+      "group": "minimal-pair-03",
+      "title": "Registered holder deceased - transmission",
+      "question": "Jordan is the sole registered holder of one share. Morgan seeks to become the registered holder, and the company is willing to register Morgan if the correct route is followed. Jordan has died and Morgan is Jordan's duly appointed personal representative. Identify and draft the document chain.",
+      "task_type_hint": "drafting"
+    },
+    {
+      "id": "P04A",
+      "group": "minimal-pair-04",
+      "title": "Registered office move within jurisdiction",
+      "question": "AB Ltd will move its registered office from 1 Harbour Road to 2 Harbour Road. Both addresses are in the company's existing jurisdiction of incorporation. Explain the procedure and draft the approval.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P04B",
+      "group": "minimal-pair-04",
+      "title": "Continuation into another jurisdiction",
+      "question": "AB Ltd will move its registered office from 1 Harbour Road to 2 Harbour Road. The new address is in another jurisdiction and the company will continue there as the same legal entity. Explain the procedure and draft the approval package.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P05A",
+      "group": "minimal-pair-05",
+      "title": "Beneficial ownership changes; nominee remains registered",
+      "question": "Nominee Ltd holds the shares of AB Ltd for Owner A. Owner A transfers the beneficial interest to Owner B. Nominee Ltd will remain the registered shareholder. Explain and draft the complete change-of-ownership chain.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P05B",
+      "group": "minimal-pair-05",
+      "title": "Legal title changes; nominee leaves register",
+      "question": "Nominee Ltd holds the shares of AB Ltd for Owner A. Owner A transfers the beneficial interest to Owner B. Nominee Ltd will not remain the registered shareholder; Owner B is to be entered on the register. Explain and draft the complete change-of-ownership chain.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P06A",
+      "group": "minimal-pair-06",
+      "title": "Contract signed before incorporation",
+      "question": "A BVI Business Company has now been incorporated. The person who later became its sole director signed an ordinary written supply contract in the company's name one day before the certificate of incorporation was issued. The supplier acted in good faith. Advise who is bound and draft any corporate instrument required now.",
+      "task_type_hint": "hybrid: prose plus drafting"
+    },
+    {
+      "id": "P06B",
+      "group": "minimal-pair-06",
+      "title": "Contract signed after incorporation",
+      "question": "A BVI Business Company has now been incorporated. Its duly appointed sole director signed an ordinary written supply contract in the company's name one day after the certificate of incorporation was issued. The supplier acted in good faith. Advise who is bound and draft any corporate instrument required now.",
+      "task_type_hint": "prose with no drafting required on stated facts"
+    },
+    {
+      "id": "P07A",
+      "group": "minimal-pair-07",
+      "title": "Board originates general meeting",
+      "question": "The articles allow the board to convene a general meeting and members holding at least 15 percent of voting capital to require one. A proposed resolution, venue, date and time are supplied. The board originates the process. Draft the first document and identify the next procedural document.",
+      "task_type_hint": "drafting with procedural explanation"
+    },
+    {
+      "id": "P07B",
+      "group": "minimal-pair-07",
+      "title": "Qualifying members originate general meeting",
+      "question": "The articles allow the board to convene a general meeting and members holding at least 15 percent of voting capital to require one. A proposed resolution, venue, date and time are supplied. Members holding 20 percent originate the process. Draft the first document and identify the next procedural document.",
+      "task_type_hint": "drafting with procedural explanation"
+    },
+    {
+      "id": "P08A",
+      "group": "minimal-pair-08",
+      "title": "Solvent voluntary winding-up",
+      "question": "AB Ltd will cease business. After full inquiry, its directors conclude that all debts can be paid in full within the statutory period. Explain the voluntary winding-up route and identify the complete course-document chain.",
+      "task_type_hint": "prose with document-chain identification"
+    },
+    {
+      "id": "P08B",
+      "group": "minimal-pair-08",
+      "title": "Insolvent voluntary winding-up",
+      "question": "AB Ltd will cease business. After full inquiry, its directors conclude that the company cannot pay all debts in full within the statutory period. Explain the voluntary winding-up route and identify the complete course-document chain.",
+      "task_type_hint": "prose with document-chain identification"
+    },
+    {
+      "id": "P09A",
+      "group": "minimal-pair-09",
+      "title": "Appoint company secretary",
+      "question": "The sole director of AB Ltd decides to appoint Taylor for a fixed term to maintain minutes and filings. Draft the appointment instrument and identify the records step. Taylor is to act as company secretary.",
+      "task_type_hint": "drafting"
+    },
+    {
+      "id": "P09B",
+      "group": "minimal-pair-09",
+      "title": "Appoint registered agent - exact precedent gap",
+      "question": "The sole director of AB Ltd decides to appoint Taylor for a fixed term to maintain statutory records and accept service. Draft the appointment instrument and identify the records step. Taylor is to act as registered agent.",
+      "task_type_hint": "drafting request constrained by materials gap"
+    }
+  ]
+}

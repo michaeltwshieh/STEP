@@ -1,0 +1,159 @@
+{
+  "answer_lock_sha256": "e8e69562c9e663b064894cb113ee5eb33bb9a891628579823ec2be0ea76b3cf2",
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "candidate_id": "candidate-a",
+      "command": {
+        "command_sha256": "6cb042c35bb89dd3fa8b99ad9b6d1084ff395884528fc7b55da897c5b5621b06",
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "2c3c3079dd9612327e7122d143ce86a7e480fea31cdbd2fc17982696038ceee3"
+      },
+      "input_categories": [
+        "course",
+        "question",
+        "workflow"
+      ],
+      "input_file_count": 27,
+      "input_manifest_sha256": "71f5ab79d9e08aea399e0ca7067b2e335ee0e3e1eefed56d483b0b22e81711dd",
+      "target_checks": {
+        "action_notice_all_selected_operatives": true,
+        "completion_routes_not_cumulative": true,
+        "forbidden_and_prior_sources_not_opened": true,
+        "managed_actual_charge_register_entry": true,
+        "managed_both_corporate_authorities": true,
+        "managed_distinct_bill_facility_security_registry": true,
+        "transfer_unresolved_without_hard_selection": true
+      },
+      "validations": [
+        {
+          "label": "action",
+          "plan_sha256": "9027b3e32130984c123997bd35941ce3cadb15a37f05159db094ff15f1771943",
+          "report_sha256": "62d927b0d3da79009781e28783f38ddebd24120bfd0a557606a6854c65b22853",
+          "status": "VALID"
+        },
+        {
+          "label": "completion",
+          "plan_sha256": "4cf7990d7883da0f964ad5de4aad8fda2a5b2ef6c312793e3e73738978c7b3af",
+          "report_sha256": "c458ac9a0a8a2a42d38f64332a0cafd4f7971d16539c937262742a389ec84572",
+          "status": "VALID"
+        },
+        {
+          "label": "managed",
+          "plan_sha256": "c28dea5647d861cbc9def47baabc0c1b63ad8259bc63568bfb7e3bc8e282afd6",
+          "report_sha256": "a592b7f1ed48bdda46570dc5f6ae6199abb33b87fa7d16b74c040b2deb5cbf93",
+          "status": "VALID"
+        },
+        {
+          "label": "source_access",
+          "plan_sha256": "651dd0acb15da089a9b7d02dab7ea67f7683c400b2bb93294904c5462162116d",
+          "report_sha256": "d7458020144f49e3d5ca7e4ff7dda2c6bd09df2a203d1d4c80d43ff543ef3c00",
+          "status": "VALID"
+        },
+        {
+          "label": "transfer",
+          "plan_sha256": "686f5489874669703eb490ff5e52c390279b59d154360b4fc472855e209f7f72",
+          "report_sha256": "faee22eb83fb8499c0d301cc92157177f3065935a0ca7ca3bb096ef385fc31cb",
+          "status": "VALID"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate-b",
+      "command": {
+        "command_sha256": "97c792e2a4725889066fa4c1a054340312a0683e085fdcdb03c129d397ff6699",
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "2ab9f7d5c85cc694348a912be53d9c1b0e483e18680727a37d1777454da7a15e"
+      },
+      "input_categories": [
+        "course",
+        "question",
+        "workflow"
+      ],
+      "input_file_count": 27,
+      "input_manifest_sha256": "0c6994449b56724536537e0c1b37b14ab548aa7056ba51a424cc31a5ede2db3d",
+      "target_checks": {
+        "action_notice_all_selected_operatives": true,
+        "completion_routes_not_cumulative": true,
+        "forbidden_and_prior_sources_not_opened": true,
+        "managed_actual_charge_register_entry": true,
+        "managed_both_corporate_authorities": true,
+        "managed_distinct_bill_facility_security_registry": true,
+        "transfer_unresolved_without_hard_selection": true
+      },
+      "validations": [
+        {
+          "label": "action",
+          "plan_sha256": "c9569c56d295e4fa82212c9fe40a7f2257ebf9c47319d7407f25b18b883255fd",
+          "report_sha256": "48a7fdc3a0d6347c692ac517209d66d019700cdd1dd0d521618eb84a5586248f",
+          "status": "VALID"
+        },
+        {
+          "label": "completion",
+          "plan_sha256": "a90cea681923afa425d0dbce93e52217c1ff3a83a7f28efca2fcf8b7ad09be39",
+          "report_sha256": "e0eb6fae56978d2d961230d2c1ccfee0f211e0f8a6d6330f7418f17b71cab396",
+          "status": "VALID"
+        },
+        {
+          "label": "managed",
+          "plan_sha256": "1b5b8148d0b54b97c77ee6c663ae30c302e6dd06743f2ceb7c6df77aa102d52e",
+          "report_sha256": "f01947b2161c0617c90704cffe3e1508cd1a444d33978be5d55d217faf07727d",
+          "status": "VALID"
+        },
+        {
+          "label": "source_access",
+          "plan_sha256": "eca6da884d369d55e570683aae01d3f4ac9433c83480f414579f7eca158ff885",
+          "report_sha256": "11110a743d1cca21f426232e35efd3e1ab1de29c07843e59fa9292b2b05de3d1",
+          "status": "VALID"
+        },
+        {
+          "label": "transfer",
+          "plan_sha256": "659d78ef587f32d5415b775556c4a2a34a095c2e91df7f76001b48e022fc0aa2",
+          "report_sha256": "9c72fefb369a1d6fafa892bf5260669c10f2b3c6883b539d2ae1328da8a6e3d3",
+          "status": "VALID"
+        }
+      ]
+    }
+  ],
+  "case_refs": [
+    "S01",
+    "S02",
+    "P05B",
+    "P08A"
+  ],
+  "evaluator_release": {
+    "answer_lock_sha256": "e8e69562c9e663b064894cb113ee5eb33bb9a891628579823ec2be0ea76b3cf2",
+    "evaluation_only_basenames": [
+      "mcq-20-gold.json",
+      "section-b-oracle-v2.json",
+      "specimen-paper-1-kap.txt"
+    ],
+    "state": "EVALUATOR_READY_AFTER_LOCK"
+  },
+  "isolation": {
+    "candidates": [
+      {
+        "actual_open_count": 27,
+        "candidate_id": "candidate-a",
+        "hard_isolation_failures": []
+      },
+      {
+        "actual_open_count": 27,
+        "candidate_id": "candidate-b",
+        "hard_isolation_failures": []
+      }
+    ],
+    "hard_isolation_failure_count": 0,
+    "harness_version": "routing-isolation-harness-v1",
+    "status": "PASS"
+  },
+  "policy_decisions_not_relaxed": [
+    "Exact MCQ closest-two scoring remains an evaluation-policy decision.",
+    "The combined 2.605m versus 905k account presentation remains an evaluation-policy decision."
+  ],
+  "report_version": "focused-route-plan-behavioral-report-v1",
+  "scope_note": "Focused deterministic RoutePlan candidate run; not a full Section A/Section B activation audit and not a GO decision.",
+  "status": "PASS"
+}

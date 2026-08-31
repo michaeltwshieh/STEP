@@ -1,0 +1,332 @@
+{
+  "answer_unit": {
+    "id": "Unit_main",
+    "mcq_options": [],
+    "mode": "DRAFTING",
+    "question_ref": "inputs/question.json"
+  },
+  "case_refs": [
+    "S01"
+  ],
+  "claims": [],
+  "entities": [
+    {
+      "capacities": [
+        "signatory"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": [],
+      "entity_type": "human",
+      "id": "E_human"
+    }
+  ],
+  "facts": [
+    {
+      "disposition": "used - outcome",
+      "id": "F_base",
+      "kind": "general",
+      "material": true,
+      "subject_id": null,
+      "text": "The supplied question fixes the generic requested outcome.",
+      "value": true
+    }
+  ],
+  "final_trace": [
+    {
+      "answer_location": "planned answer or private trace location for R_question",
+      "contribution": "Unique contribution from R_question",
+      "id": "T_R_question",
+      "route_id": "R_question"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_rule",
+      "contribution": "Unique contribution from R_rule",
+      "id": "T_R_rule",
+      "route_id": "R_rule"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_action",
+      "contribution": "Unique contribution from R_action",
+      "id": "T_R_action",
+      "route_id": "R_action"
+    },
+    {
+      "answer_location": "planned answer or private trace location for R_notice_frame",
+      "contribution": "Unique contribution from R_notice_frame",
+      "id": "T_R_notice_frame",
+      "route_id": "R_notice_frame"
+    }
+  ],
+  "locks": {
+    "governing_instruments": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied governing_instruments"
+    },
+    "jurisdiction": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied jurisdiction"
+    },
+    "legal_actor_capacity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied legal_actor_capacity"
+    },
+    "lifecycle_stage": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied lifecycle_stage"
+    },
+    "regime_entity": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied regime_entity"
+    },
+    "transaction_relationship": {
+      "alternatives": [],
+      "deciding_fact_ids": [
+        "F_base"
+      ],
+      "state": "supplied",
+      "value": "generic supplied transaction_relationship"
+    }
+  },
+  "materials_gaps": [],
+  "namespaces": {
+    "course_appendix": [
+      "course/Appendix-18A-Share-transfer-form.md",
+      "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md"
+    ],
+    "course_manual": [
+      "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md"
+    ],
+    "exam_attachment": [],
+    "exam_question": [
+      "question/focused-case-manifest.json"
+    ]
+  },
+  "plan_id": "Behavioral_candidate_b_action",
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  },
+  "requested_document_chain": {
+    "actual_counts": {
+      "attachments": 0,
+      "execution_blocks": 1,
+      "instruments": 1,
+      "operative_components": 3,
+      "records_filings": 0
+    },
+    "complex_transaction": false,
+    "expected_counts": {
+      "attachments": 0,
+      "execution_blocks": 1,
+      "instruments": 1,
+      "operative_components": 3,
+      "records_filings": 0
+    },
+    "instruments": [
+      {
+        "action_business": true,
+        "actor_id": "E_human",
+        "attachments": [],
+        "execution": {
+          "gap_ids": [],
+          "id": "X_I_notice",
+          "status": "produced",
+          "unresolved": false
+        },
+        "id": "I_notice",
+        "kind": "notice",
+        "operative_components": [
+          {
+            "gap_ids": [],
+            "id": "B_C_Action_audit",
+            "source_component_id": "Action_audit",
+            "status": "produced",
+            "unresolved": false
+          },
+          {
+            "gap_ids": [],
+            "id": "B_C_Action_appoint",
+            "source_component_id": "Action_appoint",
+            "status": "produced",
+            "unresolved": false
+          },
+          {
+            "gap_ids": [],
+            "id": "B_C_Action_commence",
+            "source_component_id": "Action_commence",
+            "status": "produced",
+            "unresolved": false
+          }
+        ],
+        "records_filings": [],
+        "selected_action_component_ids": [
+          "Action_commence",
+          "Action_appoint",
+          "Action_audit"
+        ],
+        "sequence": 1,
+        "signatory": {
+          "authority_instrument_id": null,
+          "human": true,
+          "name_or_placeholder": "[authorised human signatory]"
+        },
+        "target_company_act": false,
+        "target_instrument": "Generic notice instrument",
+        "upstream_authority_instrument_id": null
+      }
+    ],
+    "required": true
+  },
+  "routes": [
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_question",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_question",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_rule",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_rule",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_action",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_action",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    },
+    {
+      "deciding_fact_ids": [],
+      "gap_ids": [],
+      "id": "R_notice_frame",
+      "requirement": "mandatory",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "pinpoint": "generic fixture passage"
+      },
+      "triggering_fact_ids": [
+        "F_base"
+      ],
+      "unique_contribution": "Unique contribution from R_notice_frame",
+      "unresolved": false,
+      "verdict": "incorporated",
+      "xor_set_id": null
+    }
+  ],
+  "schema_version": "route-plan-v1",
+  "source_access": {
+    "actual_open": [
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated",
+        "sha256": "ecfacd83eb0edc52d65e7da54e844b7b5d11fcc731f64a9d95ed8b4aea09dd36"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated",
+        "sha256": "864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "role": "incorporated",
+        "sha256": "e05871d7ee93e8f80f821c4c31a08b93c9564bf7632362d4181369ab1376c686"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "role": "incorporated",
+        "sha256": "d85e65514abcf887f2a5d5e06a5fe995ff6593cb9cc05b6e7684fcaf7c720908"
+      }
+    ],
+    "allowlist": [
+      {
+        "namespace": "exam_question",
+        "path": "question/focused-case-manifest.json",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_manual",
+        "path": "course/Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18A-Share-transfer-form.md",
+        "role": "incorporated"
+      },
+      {
+        "namespace": "course_appendix",
+        "path": "course/Appendix-18B-Directors-resolution-authorising-share-transfer.md",
+        "role": "incorporated"
+      }
+    ],
+    "allowlist_frozen": true,
+    "allowlist_sha256": "a113b51763aefdac56ebf2c25ed71e46fc43f6e1399cd8fab2d66fa935f4e6d6",
+    "forbidden_paths": [],
+    "prior_answer_paths": [
+      "forbidden/prior-answer.md"
+    ]
+  },
+  "xor_branch_sets": []
+}

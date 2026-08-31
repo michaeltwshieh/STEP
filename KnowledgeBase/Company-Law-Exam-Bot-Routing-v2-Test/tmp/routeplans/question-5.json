@@ -1,0 +1,424 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "Q5.RoutePlan.20260831",
+  "case_refs": [
+    "Specimen Paper 2 Question 5",
+    "Re Flitcroft's Case (1882)"
+  ],
+  "answer_unit": {
+    "id": "Q5",
+    "mode": "PROSE",
+    "question_ref": "Specimen Examination Paper 2, Question 5, page 6, parts 5.1 and 5.2(i)-(ii), total 20 marks",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf"
+    ],
+    "exam_attachment": [],
+    "course_manual": [
+      "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+      "Course-Manual-Module-12-Termination-of-Companies.md"
+    ],
+    "course_appendix": [
+      "Appendix-19A-Directors-resolution-to-recommend-payment-of-a-dividend.md",
+      "Appendix-19B-Members-resolution-to-declare-and-pay-a-dividend.md",
+      "Appendix-19C-Directors-resolution-to-declare-and-pay-dividend.md",
+      "Appendix-20E-Directors-resolution-to-distribute-from-IBC-with-statement.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "choice_delegated",
+      "value": "British Virgin Islands",
+      "deciding_fact_ids": ["F7"],
+      "alternatives": ["Bahamas"]
+    },
+    "regime_entity": {
+      "state": "supplied",
+      "value": "Offshore asset-holding company; British Virgin Islands business company for part 5.2(i)",
+      "deciding_fact_ids": ["F1", "F7"],
+      "alternatives": []
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "Company distributing to shareholders; directors authorising a distribution; beneficial owner funding the company; administrators structuring the initial funding",
+      "deciding_fact_ids": ["F1", "F2", "F8", "F9"],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "Company-member distribution and company-beneficial-owner debtor-creditor funding relationship",
+      "deciding_fact_ids": ["F2", "F8", "F9"],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "Capital initially introduced, followed by later return of assets by distribution or repayment",
+      "deciding_fact_ids": ["F2", "F9"],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "choice_delegated",
+      "value": "Common-law capital-maintenance rule in Re Flitcroft's Case (1882) and the British Virgin Islands Business Companies Act 2004 distribution regime; no actual memorandum or articles supplied",
+      "deciding_fact_ids": ["F3", "F7", "F8"],
+      "alternatives": ["Bahamian IBC statutory distribution regime"]
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "regime_entity",
+      "subject_id": "E1",
+      "value": "offshore money-box company",
+      "text": "The company is an offshore money-box company whose function is to hold assets.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "F2",
+      "kind": "transaction_relationship",
+      "subject_id": "E1",
+      "value": "flexible lawful return of assets to shareholders",
+      "text": "The company must be able lawfully to distribute corporate assets to shareholders flexibly at the time and in the amount required by the beneficial owner.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "F3",
+      "kind": "governing_instrument",
+      "subject_id": null,
+      "value": "Re Flitcroft's Case (1882)",
+      "text": "Part 5.1 commands a review of the common-law rule in Re Flitcroft's Case (1882), often codified by companies legislation, and a description of its rationale.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "F4",
+      "kind": "general",
+      "subject_id": null,
+      "value": "evaluate practical achievement",
+      "text": "Part 5.1 also asks to what extent the objectives of the rule were achieved in practice.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "F5",
+      "kind": "general",
+      "subject_id": null,
+      "value": 10,
+      "text": "Part 5.1 carries 10 marks.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "F6",
+      "kind": "general",
+      "subject_id": null,
+      "value": "circumvention",
+      "text": "Part 5.2 asks how the rules in Re Flitcroft's Case are circumvented or avoided.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "F7",
+      "kind": "jurisdiction",
+      "subject_id": "E1",
+      "value": "choice delegated",
+      "text": "For part 5.2(i), the candidate must choose a jurisdiction, state it clearly in a preliminary paragraph and apply it consistently throughout.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "F8",
+      "kind": "branch_decision",
+      "subject_id": "E1",
+      "value": "companies legislation",
+      "text": "Part 5.2(i) asks how companies legislation in the chosen jurisdiction avoids the common-law restriction.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "F9",
+      "kind": "lifecycle_stage",
+      "subject_id": "E1",
+      "value": "initial capital introduction",
+      "text": "Part 5.2(ii) asks about corporate practice adopted by administrators when establishing the financial structure of an offshore company when capital is initially introduced.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "F10",
+      "kind": "general",
+      "subject_id": null,
+      "value": 10,
+      "text": "Part 5.2 carries 10 marks across sub-parts (i) and (ii), and Question 5 carries 20 marks in total.",
+      "material": true,
+      "disposition": "used - content"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The common-law capital-maintenance rule restricts distributions from capital and must be distinguished from distributions of profit.",
+      "disposition": "supported"
+    },
+    {
+      "id": "C2",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The rule's creditor-protection rationale and its practical effectiveness require separate treatment.",
+      "disposition": "supported"
+    },
+    {
+      "id": "C3",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The British Virgin Islands statutory distribution regime replaces capital maintenance with a solvency-based authorisation route.",
+      "disposition": "supported"
+    },
+    {
+      "id": "C4",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Administrators can place only a nominal amount into share capital and introduce the balance as shareholder debt, allowing later repayment in the creditor capacity.",
+      "disposition": "supported"
+    }
+  ],
+  "entities": [
+    {
+      "id": "E1",
+      "entity_type": "corporate",
+      "capacities": ["other"],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "R1",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "pinpoint": "sections 4, 6 and 7.1-7.3"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["F1", "F2", "F3", "F4", "F6", "F7", "F8", "F9"],
+      "deciding_fact_ids": ["F3", "F7", "F9"],
+      "unique_contribution": "Capital-account distinctions, the Re Flitcroft rule and rationale, practical limits of capital maintenance, the British Virgin Islands solvency-distribution model and the nominal-capital/shareholder-loan practice.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R2",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "pinpoint": "section 5.8"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": ["F6", "F7", "F8"],
+      "deciding_fact_ids": ["F7", "F8"],
+      "unique_contribution": "The corporate decision procedure for a British Virgin Islands distribution, including board authorisation, solvency assessment and the role of the memorandum and articles.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R3",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-20E-Directors-resolution-to-distribute-from-IBC-with-statement.md",
+        "pinpoint": "entire precedent"
+      },
+      "requirement": "optional",
+      "verdict": "checked_not_relevant",
+      "triggering_fact_ids": ["F8"],
+      "deciding_fact_ids": ["F6"],
+      "unique_contribution": "The operative distribution-resolution precedent is excluded because Question 5 asks for prose analysis, not a drafted resolution.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R4",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-19A-Directors-resolution-to-recommend-payment-of-a-dividend.md",
+        "pinpoint": "entire precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": ["F7", "F8"],
+      "deciding_fact_ids": ["F7"],
+      "unique_contribution": "The traditional board-recommendation dividend precedent is a wrong-regime drafting route for the selected British Virgin Islands prose answer.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R5",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-19B-Members-resolution-to-declare-and-pay-a-dividend.md",
+        "pinpoint": "entire precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": ["F7", "F8"],
+      "deciding_fact_ids": ["F7"],
+      "unique_contribution": "The traditional member-declaration dividend precedent is a wrong-regime drafting route for the selected British Virgin Islands prose answer.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R6",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-19C-Directors-resolution-to-declare-and-pay-dividend.md",
+        "pinpoint": "entire precedent"
+      },
+      "requirement": "optional",
+      "verdict": "forbidden",
+      "triggering_fact_ids": ["F7", "F8"],
+      "deciding_fact_ids": ["F7"],
+      "unique_contribution": "The alternative traditional board-only dividend precedent is excluded because it does not supply the selected British Virgin Islands solvency-distribution regime and no drafting is requested.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "R7",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-12-Termination-of-Companies.md",
+        "pinpoint": "sections 2-4"
+      },
+      "requirement": "optional",
+      "verdict": "checked_not_relevant",
+      "triggering_fact_ids": ["F2", "F8"],
+      "deciding_fact_ids": ["F1"],
+      "unique_contribution": "Insolvency, recovery and creditor-priority consequences are background only because the question supplies no insolvency, winding-up or enforcement event.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "1014166782e2ec69086daa8ce290f6fa9ac1b09b248dd33747c68d57429c43e1",
+    "allowlist": [
+      {
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      }
+    ],
+    "actual_open": [
+      {
+        "path": "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "699aeceece06118c5a53b9421673a40c49dd09c87aa41f1c8d1aaed8820b8f5d"
+      },
+      {
+        "path": "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"
+      }
+    ],
+    "forbidden_paths": [
+      "Appendix-19A-Directors-resolution-to-recommend-payment-of-a-dividend.md",
+      "Appendix-19B-Members-resolution-to-declare-and-pay-a-dividend.md",
+      "Appendix-19C-Directors-resolution-to-declare-and-pay-dividend.md"
+    ],
+    "prior_answer_paths": [
+      "tmp/answers/question-1.md",
+      "tmp/answers/question-2.md",
+      "tmp/answers/question-3.md",
+      "tmp/answers/question-4.md"
+    ]
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": false,
+    "complex_transaction": false,
+    "instruments": [],
+    "expected_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    },
+    "actual_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    }
+  },
+  "materials_gaps": [],
+  "final_trace": [
+    {
+      "id": "T1",
+      "route_id": "R1",
+      "contribution": "Capital-account distinctions, the Re Flitcroft rule and rationale, practical limits of capital maintenance, the British Virgin Islands solvency-distribution model and the nominal-capital/shareholder-loan practice.",
+      "answer_location": "SUBMIT THIS, parts 5.1 and 5.2(i)-(ii)"
+    },
+    {
+      "id": "T2",
+      "route_id": "R2",
+      "contribution": "The corporate decision procedure for a British Virgin Islands distribution, including board authorisation, solvency assessment and the role of the memorandum and articles.",
+      "answer_location": "SUBMIT THIS, part 5.2(i)"
+    },
+    {
+      "id": "T3",
+      "route_id": "R3",
+      "contribution": "The operative distribution-resolution precedent is excluded because Question 5 asks for prose analysis, not a drafted resolution.",
+      "answer_location": "DO NOT SUBMIT, Cross-checked"
+    },
+    {
+      "id": "T4",
+      "route_id": "R4",
+      "contribution": "The traditional board-recommendation dividend precedent is a wrong-regime drafting route for the selected British Virgin Islands prose answer.",
+      "answer_location": "DO NOT SUBMIT, Cross-checked"
+    },
+    {
+      "id": "T5",
+      "route_id": "R5",
+      "contribution": "The traditional member-declaration dividend precedent is a wrong-regime drafting route for the selected British Virgin Islands prose answer.",
+      "answer_location": "DO NOT SUBMIT, Cross-checked"
+    },
+    {
+      "id": "T6",
+      "route_id": "R6",
+      "contribution": "The alternative traditional board-only dividend precedent is excluded because it does not supply the selected British Virgin Islands solvency-distribution regime and no drafting is requested.",
+      "answer_location": "DO NOT SUBMIT, Cross-checked"
+    },
+    {
+      "id": "T7",
+      "route_id": "R7",
+      "contribution": "Insolvency, recovery and creditor-priority consequences are background only because the question supplies no insolvency, winding-up or enforcement event.",
+      "answer_location": "DO NOT SUBMIT, Cross-checked"
+    }
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

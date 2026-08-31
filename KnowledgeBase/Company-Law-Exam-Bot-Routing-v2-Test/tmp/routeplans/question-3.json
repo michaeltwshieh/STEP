@@ -1,0 +1,479 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "specimen2.q3.routeplan",
+  "case_refs": [
+    "Specimen Examination Paper 2, Question 3, page 4"
+  ],
+  "answer_unit": {
+    "id": "q3",
+    "mode": "PROSE",
+    "question_ref": "'A stand-alone, one-man, asset-holding, offshore company is no more than an alter ego [other self] of its onshore beneficial owner and ought to be treated as such.' Discuss whether you consider this to be a correct proposition. Total: 20 marks.",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "exam-question/PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf#page=4"
+    ],
+    "exam_attachment": [],
+    "course_manual": [
+      "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+      "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+      "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+      "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md"
+    ],
+    "course_appendix": [
+      "Appendix-3-Lifting-the-veil-of-incorporation.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": [
+        "f_jurisdiction_absent"
+      ],
+      "alternatives": [
+        "common-law offshore jurisdiction",
+        "modern statutory offshore jurisdiction"
+      ]
+    },
+    "regime_entity": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": [
+        "f_entity_description",
+        "f_regime_absent"
+      ],
+      "alternatives": [
+        "company limited by shares",
+        "other offshore company form"
+      ]
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "onshore beneficial owner in relation to the offshore company; no other formal capacity is assumed",
+      "deciding_fact_ids": [
+        "f_beneficial_owner"
+      ],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "beneficial-owner/company relationship and proposed alter-ego treatment",
+      "deciding_fact_ids": [
+        "f_beneficial_owner",
+        "f_proposition"
+      ],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "existing stand-alone asset-holding company; no operative transaction or document requested",
+      "deciding_fact_ids": [
+        "f_entity_description"
+      ],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "genuinely_unknown",
+      "value": null,
+      "deciding_fact_ids": [
+        "f_instruments_absent"
+      ],
+      "alternatives": [
+        "applicable companies legislation",
+        "company's memorandum and articles"
+      ]
+    }
+  },
+  "facts": [
+    {
+      "id": "f_entity_description",
+      "kind": "regime_entity",
+      "subject_id": "offshore_company",
+      "value": "stand-alone, one-man, asset-holding offshore company",
+      "text": "The proposition concerns a stand-alone, one-man, asset-holding offshore company.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_beneficial_owner",
+      "kind": "actor_capacity",
+      "subject_id": "beneficial_owner",
+      "value": "onshore beneficial owner",
+      "text": "The company has an onshore beneficial owner.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_proposition",
+      "kind": "transaction_relationship",
+      "subject_id": "offshore_company",
+      "value": "alter ego treatment proposed",
+      "text": "The quoted proposition says the company is no more than the beneficial owner's alter ego and ought to be treated as such.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_command_marks",
+      "kind": "general",
+      "subject_id": null,
+      "value": "Discuss; 20 marks",
+      "text": "The command is to discuss whether the proposition is correct, for 20 marks.",
+      "material": true,
+      "disposition": "used - content"
+    },
+    {
+      "id": "f_jurisdiction_absent",
+      "kind": "jurisdiction",
+      "subject_id": "offshore_company",
+      "value": null,
+      "text": "No jurisdiction of incorporation is supplied.",
+      "material": true,
+      "disposition": "condition"
+    },
+    {
+      "id": "f_regime_absent",
+      "kind": "regime_entity",
+      "subject_id": "offshore_company",
+      "value": null,
+      "text": "No precise statutory regime or company form is supplied beyond the descriptive word 'offshore'.",
+      "material": true,
+      "disposition": "condition"
+    },
+    {
+      "id": "f_formal_capacity_absent",
+      "kind": "actor_capacity",
+      "subject_id": "beneficial_owner",
+      "value": null,
+      "text": "The question does not say whether the beneficial owner is the registered member, a director, an agent or a person directing a separate board.",
+      "material": true,
+      "disposition": "condition"
+    },
+    {
+      "id": "f_misuse_absent",
+      "kind": "branch_decision",
+      "subject_id": "offshore_company",
+      "value": false,
+      "text": "No fraud, sham, evasion, agency, statutory veil-lifting ground or other misuse is alleged.",
+      "material": true,
+      "disposition": "used - outcome"
+    },
+    {
+      "id": "f_instruments_absent",
+      "kind": "governing_instrument",
+      "subject_id": "offshore_company",
+      "value": null,
+      "text": "No legislation, memorandum or articles are identified or attached.",
+      "material": true,
+      "disposition": "condition"
+    },
+    {
+      "id": "f_no_document",
+      "kind": "lifecycle_stage",
+      "subject_id": "offshore_company",
+      "value": "no document requested",
+      "text": "The question requests discussion only and no operative document, record or filing.",
+      "material": true,
+      "disposition": "not outcome-changing"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c_separate_personality",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "An incorporated company has a legal personality distinct from its beneficial owner, including where one person owns or controls it.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_asset_ownership",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Assets vested in the company belong to the company rather than directly to the beneficial owner.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_one_man_effect",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The one-man and asset-holding features do not by themselves justify alter-ego treatment.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_veil_exception",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "Exceptional statutory or judicial grounds can justify looking behind or disregarding separate personality, but those grounds require more than ownership or control alone.",
+      "disposition": "supported"
+    },
+    {
+      "id": "c_control_duties",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "If the beneficial owner manages, directs or acts for the company, formal authority and director duties constrain the use of that control.",
+      "disposition": "condition"
+    },
+    {
+      "id": "c_conclusion",
+      "kind": "answer_assertion",
+      "option": null,
+      "text": "The proposition is legally overbroad, while its practical description may fit some wholly controlled asset-holding structures.",
+      "disposition": "used - outcome"
+    }
+  ],
+  "entities": [
+    {
+      "id": "offshore_company",
+      "entity_type": "corporate",
+      "capacities": [
+        "other"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    },
+    {
+      "id": "beneficial_owner",
+      "entity_type": "human",
+      "capacities": [
+        "beneficial_owner"
+      ],
+      "director_count": null,
+      "director_count_fact_ids": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "r_module2_personality",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "pinpoint": "Sections 4.1-4.6 and 5"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f_entity_description",
+        "f_beneficial_owner",
+        "f_proposition"
+      ],
+      "deciding_fact_ids": [
+        "f_entity_description",
+        "f_beneficial_owner"
+      ],
+      "unique_contribution": "Separate personality, limited liability, corporate ownership of assets, perpetual succession, transferability, ownership-management separation and the legitimate asset-holding use of offshore companies.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_appendix3_veil",
+      "source": {
+        "namespace": "course_appendix",
+        "path": "Appendix-3-Lifting-the-veil-of-incorporation.md",
+        "pinpoint": "Entire appendix, with emphasis on one-man companies and recognised veil-lifting categories"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f_proposition",
+        "f_misuse_absent"
+      ],
+      "deciding_fact_ids": [
+        "f_misuse_absent"
+      ],
+      "unique_contribution": "Authorities and limits for one-man companies, corporate asset ownership and exceptional statutory or judicial lifting of the veil, including agency, sham or facade and evasion contexts.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_module11_owner_control",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "pinpoint": "Section 3, especially 3.1-3.6"
+      },
+      "requirement": "mandatory",
+      "verdict": "incorporated",
+      "triggering_fact_ids": [
+        "f_beneficial_owner",
+        "f_formal_capacity_absent"
+      ],
+      "deciding_fact_ids": [
+        "f_beneficial_owner"
+      ],
+      "unique_contribution": "Practical ways a beneficial owner may participate in or control an offshore company, and the distinction between those mechanisms and the company's separate legal identity.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_module7_board_member_power",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "pinpoint": "Section 2"
+      },
+      "requirement": "optional",
+      "verdict": "conditional",
+      "triggering_fact_ids": [
+        "f_formal_capacity_absent"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Conditional distinction between ownership and board management where the beneficial owner is also a member, appoints directors or seeks to direct the board.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    },
+    {
+      "id": "r_module8_director_duties",
+      "source": {
+        "namespace": "course_manual",
+        "path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+        "pinpoint": "Sections 2-3"
+      },
+      "requirement": "optional",
+      "verdict": "conditional",
+      "triggering_fact_ids": [
+        "f_formal_capacity_absent"
+      ],
+      "deciding_fact_ids": [],
+      "unique_contribution": "Conditional director-duty consequences if the beneficial owner is a director or directs nominee directors, showing that practical control does not make corporate decisions personal acts without legal constraints.",
+      "xor_set_id": null,
+      "unresolved": false,
+      "gap_ids": []
+    }
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "bdac481319d967b73ab07a3e2edd279d2c801761c9fdcc94c7086640976aaad6",
+    "allowlist": [
+      {
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Appendix-3-Lifting-the-veil-of-incorporation.md",
+        "namespace": "course_appendix",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "namespace": "course_manual",
+        "role": "incorporated"
+      },
+      {
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "namespace": "course_manual",
+        "role": "conditional"
+      },
+      {
+        "path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+        "namespace": "course_manual",
+        "role": "conditional"
+      }
+    ],
+    "actual_open": [
+      {
+        "path": "Course-Manual-Module-02-Characteristics-of-a-Company.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "88ad9c58645e8212a937f445ee28d83d8b68264047e14712f7e86af2857a1288"
+      },
+      {
+        "path": "Appendix-3-Lifting-the-veil-of-incorporation.md",
+        "namespace": "course_appendix",
+        "role": "incorporated",
+        "sha256": "f395b111183247c276d69fa2736b240f2639a9c96b1a9bf055457bb8cd523f10"
+      },
+      {
+        "path": "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md",
+        "namespace": "course_manual",
+        "role": "incorporated",
+        "sha256": "00db94fd76cc6b973eee259767d341d9227dcb62b91889b3c08a2a406eadf0af"
+      },
+      {
+        "path": "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+        "namespace": "course_manual",
+        "role": "conditional",
+        "sha256": "dda8c75e6257e9c5a5fc088cc7f6ff3b771c551de0c35606c6c1dab2ea66aa88"
+      },
+      {
+        "path": "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+        "namespace": "course_manual",
+        "role": "conditional",
+        "sha256": "ab1f46fb956cf69020be0efaeea4e9cf9f884119f67817e45d7e4fe719f4f696"
+      }
+    ],
+    "forbidden_paths": [
+      "Course-Manual-Module-06-Equity-Capital-and-Distributions.md",
+      "Appendix-26-Nominee-shareholder-agreement.md",
+      "Appendix-27A-Declaration-of-trust.md",
+      "Appendix-27B-Declaration-of-trust-short-form.md"
+    ],
+    "prior_answer_paths": [
+      "tmp/routeplans/q1-routeplan.json",
+      "tmp/routeplans/q1-routeplan-validation.json",
+      "tmp/q1-submit.txt"
+    ]
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": false,
+    "complex_transaction": false,
+    "instruments": [],
+    "expected_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    },
+    "actual_counts": {
+      "instruments": 0,
+      "operative_components": 0,
+      "attachments": 0,
+      "execution_blocks": 0,
+      "records_filings": 0
+    }
+  },
+  "materials_gaps": [],
+  "final_trace": [
+    {
+      "id": "t_module2_personality",
+      "route_id": "r_module2_personality",
+      "contribution": "Separate personality, limited liability, corporate ownership of assets, perpetual succession, transferability, ownership-management separation and the legitimate asset-holding use of offshore companies.",
+      "answer_location": "Opening position and central analysis of the company's legal identity, ownership and function"
+    },
+    {
+      "id": "t_appendix3_veil",
+      "route_id": "r_appendix3_veil",
+      "contribution": "Authorities and limits for one-man companies, corporate asset ownership and exceptional statutory or judicial lifting of the veil, including agency, sham or facade and evasion contexts.",
+      "answer_location": "Authority-based rebuttal and exceptional alter-ego treatment analysis"
+    },
+    {
+      "id": "t_module11_owner_control",
+      "route_id": "r_module11_owner_control",
+      "contribution": "Practical ways a beneficial owner may participate in or control an offshore company, and the distinction between those mechanisms and the company's separate legal identity.",
+      "answer_location": "Practical control analysis and response to the force of the quoted proposition"
+    },
+    {
+      "id": "t_module7_board_member_power",
+      "route_id": "r_module7_board_member_power",
+      "contribution": "Conditional distinction between ownership and board management where the beneficial owner is also a member, appoints directors or seeks to direct the board.",
+      "answer_location": "Conditional paragraph on formal capacity and division of power"
+    },
+    {
+      "id": "t_module8_director_duties",
+      "route_id": "r_module8_director_duties",
+      "contribution": "Conditional director-duty consequences if the beneficial owner is a director or directs nominee directors, showing that practical control does not make corporate decisions personal acts without legal constraints.",
+      "answer_location": "Conditional paragraph on director control, duties and liability"
+    }
+  ],
+  "render_gate": {
+    "status": "not_rendered",
+    "validation_report": null
+  }
+}

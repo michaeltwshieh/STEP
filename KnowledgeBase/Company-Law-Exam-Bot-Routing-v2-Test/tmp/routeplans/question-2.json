@@ -1,0 +1,217 @@
+{
+  "schema_version": "route-plan-v1",
+  "plan_id": "Q2.Bahamas.composite.v1",
+  "case_refs": [
+    "Question 2, specimen paper 2, page 3"
+  ],
+  "answer_unit": {
+    "id": "Q2",
+    "mode": "DRAFTING",
+    "question_ref": "Question 2: mixed Section B unit, with 2.1.1 and 2.2.1 classified PROSE, 2.1.2 split into PROSE procedure and DRAFTING documentation, and 2.2.2 classified DRAFTING",
+    "mcq_options": []
+  },
+  "namespaces": {
+    "exam_question": [
+      "PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf"
+    ],
+    "exam_attachment": [],
+    "course_manual": [
+      "Course-Manual-Module-03-Company-Formation-and-Related-Issues.md",
+      "Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md",
+      "Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md",
+      "Course-Manual-Module-10-Company-Decision-making-Procedures.md",
+      "Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md"
+    ],
+    "course_appendix": [
+      "Appendix-4-Board-resolution-to-adopt-pre-incorporation-contract.md",
+      "Appendix-21A-Directors-consent-to-be-appointed-as-director.md",
+      "Appendix-21B-Subscribers-resolution-appointing-first-director-s.md",
+      "Appendix-21C-Directors-service-agreement-DSA.md"
+    ]
+  },
+  "locks": {
+    "jurisdiction": {
+      "state": "choice_delegated",
+      "value": "The Bahamas",
+      "deciding_fact_ids": ["F01"],
+      "alternatives": []
+    },
+    "regime_entity": {
+      "state": "choice_delegated",
+      "value": "Bahamian international business company limited by shares under the International Business Companies Act 2000",
+      "deciding_fact_ids": ["F01", "F14"],
+      "alternatives": []
+    },
+    "legal_actor_capacity": {
+      "state": "supplied",
+      "value": "AB acts before incorporation for Company; CSP (Nominees) Ltd is corporate nominee subscriber; CSP (Directors) Ltd is proposed corporate sole director",
+      "deciding_fact_ids": ["F05", "F09", "F14", "F15"],
+      "alternatives": []
+    },
+    "transaction_relationship": {
+      "state": "supplied",
+      "value": "pre-incorporation art purchase and first-director appointment",
+      "deciding_fact_ids": ["F05", "F06", "F07", "F14", "F15"],
+      "alternatives": []
+    },
+    "lifecycle_stage": {
+      "state": "supplied",
+      "value": "contract made before incorporation; statutory adoption and first-director appointment immediately after incorporation",
+      "deciding_fact_ids": ["F05", "F12", "F13", "F14", "F17"],
+      "alternatives": []
+    },
+    "governing_instruments": {
+      "state": "choice_delegated",
+      "value": "International Business Companies Act 2000 of The Bahamas and Company's memorandum and articles; actual memorandum and articles not supplied",
+      "deciding_fact_ids": ["F01", "F14"],
+      "alternatives": []
+    }
+  },
+  "facts": [
+    {"id":"F01","kind":"jurisdiction","subject_id":null,"value":"choice delegated","text":"The candidate is a CSP company administrator in a jurisdiction of choice and must state and consistently apply the chosen jurisdiction in a preliminary paragraph.","material":true,"disposition":"used - outcome"},
+    {"id":"F02","kind":"actor_capacity","subject_id":"CSP","value":"company administrator employer","text":"The candidate is employed by Corporate Service Provider (CSP).","material":true,"disposition":"used - content"},
+    {"id":"F03","kind":"general","subject_id":"AB","value":"incorporation instructions","text":"On Ms AB's instructions, CSP incorporates Company Ltd.","material":true,"disposition":"used - content"},
+    {"id":"F04","kind":"transaction_relationship","subject_id":"Company","value":"fine art and antiquities holding","text":"Company is incorporated to invest in and hold fine art and antiquities from around the world for subsequent generations of AB's family.","material":true,"disposition":"used - content"},
+    {"id":"F05","kind":"lifecycle_stage","subject_id":"Company","value":"weeks before incorporation","text":"Several weeks before Company is incorporated, AB agrees to purchase a unique work of fine art.","material":true,"disposition":"used - outcome"},
+    {"id":"F06","kind":"transaction_relationship","subject_id":"Sothebys","value":"seller in London","text":"Sotheby's in London is the seller.","material":true,"disposition":"used - content"},
+    {"id":"F07","kind":"general","subject_id":"Company","value":"GBP 1.5 million","text":"The agreed purchase price is GBP 1.5 million.","material":true,"disposition":"used - content"},
+    {"id":"F08","kind":"general","subject_id":"AB","value":"claimed value at least GBP 3 million","text":"AB claims the work is worth at least twice the GBP 1.5 million price.","material":true,"disposition":"used - content"},
+    {"id":"F09","kind":"actor_capacity","subject_id":"AB","value":"purported company representative","text":"AB signs the contract 'Ms AB, for and on behalf of Company Ltd'.","material":true,"disposition":"used - outcome"},
+    {"id":"F10","kind":"general","subject_id":"Company","value":"common-law enforceability both ways","text":"2.1.1 asks what happens at common law if Sotheby's refuses delivery or Company after incorporation refuses to complete and pay.","material":true,"disposition":"used - outcome"},
+    {"id":"F11","kind":"general","subject_id":"Company","value":"offshore statutory comparison","text":"2.1.1 also asks how the answer differs under companies legislation in the chosen offshore jurisdiction.","material":true,"disposition":"used - outcome"},
+    {"id":"F12","kind":"branch_decision","subject_id":"Company","value":true,"text":"For 2.1.2, Company wishes to proceed with the Sotheby's purchase.","material":true,"disposition":"used - outcome"},
+    {"id":"F13","kind":"lifecycle_stage","subject_id":"Company","value":"post-incorporation adoption","text":"2.1.2 requires a description of corporate procedures as soon as Company is incorporated and a draft of the appropriate corporate documentation.","material":true,"disposition":"used - outcome"},
+    {"id":"F14","kind":"actor_capacity","subject_id":"CSPNominees","value":"corporate nominee subscriber","text":"CSP's standard practice is for CSP (Nominees) Ltd to sign Company's memorandum as nominee subscriber before filing it with the registrar for incorporation.","material":true,"disposition":"used - outcome"},
+    {"id":"F15","kind":"director_count","subject_id":"Company","value":1,"text":"AB is content for CSP (Directors) Ltd to be appointed Company's sole director.","material":true,"disposition":"used - outcome"},
+    {"id":"F16","kind":"general","subject_id":"CSPDirectors","value":"appointment process and DSA merits","text":"2.2.1 asks for the process by which CSP (Directors) Ltd is lawfully appointed sole director and the merits of a Directors Service Agreement.","material":true,"disposition":"used - outcome"},
+    {"id":"F17","kind":"lifecycle_stage","subject_id":"Company","value":"first-director resolution","text":"2.2.2 requires a draft resolution appointing CSP (Directors) Ltd as Company's first and sole director.","material":true,"disposition":"used - outcome"},
+    {"id":"F18","kind":"general","subject_id":null,"value":6,"text":"2.1.1 carries 6 marks.","material":true,"disposition":"used - content"},
+    {"id":"F19","kind":"general","subject_id":null,"value":6,"text":"2.1.2 carries 6 marks.","material":true,"disposition":"used - content"},
+    {"id":"F20","kind":"general","subject_id":null,"value":8,"text":"2.2.1 and 2.2.2 together carry 8 marks; Question 2 totals 20 marks.","material":true,"disposition":"used - content"}
+  ],
+  "claims": [
+    {"id":"C211Mode","kind":"answer_assertion","option":null,"text":"2.1.1 is PROSE: explain and apply common-law enforceability in both directions, then compare Bahamian statutory treatment.","disposition":"supported"},
+    {"id":"C212ProseMode","kind":"answer_assertion","option":null,"text":"The procedure limb of 2.1.2 is PROSE.","disposition":"supported"},
+    {"id":"C212DraftMode","kind":"document_assertion","option":null,"text":"The corporate-documentation limb of 2.1.2 is DRAFTING.","disposition":"supported"},
+    {"id":"C221Mode","kind":"answer_assertion","option":null,"text":"2.2.1 is PROSE: describe lawful appointment and DSA merits.","disposition":"supported"},
+    {"id":"C222Mode","kind":"document_assertion","option":null,"text":"2.2.2 is DRAFTING: reproduce and adapt the first-director subscriber resolution, with separate upstream corporate-member authority.","disposition":"supported"}
+  ],
+  "entities": [
+    {"id":"Company","entity_type":"corporate","capacities":["other"],"director_count":1,"director_count_fact_ids":["F15"]},
+    {"id":"AB","entity_type":"human","capacities":["beneficial_owner","signatory","other"],"director_count":null,"director_count_fact_ids":[]},
+    {"id":"Sothebys","entity_type":"corporate","capacities":["creditor","other"],"director_count":null,"director_count_fact_ids":[]},
+    {"id":"CSP","entity_type":"corporate","capacities":["other"],"director_count":null,"director_count_fact_ids":[]},
+    {"id":"CSPNominees","entity_type":"corporate","capacities":["member","corporate_member"],"director_count":null,"director_count_fact_ids":[]},
+    {"id":"CSPDirectors","entity_type":"corporate","capacities":["director","corporate_director"],"director_count":null,"director_count_fact_ids":[]}
+  ],
+  "routes": [
+    {"id":"RExam","source":{"namespace":"exam_question","path":"PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf","pinpoint":"page 3, Question 2"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F01","F05","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20"],"deciding_fact_ids":["F01"],"unique_contribution":"Supplies all Question 2 facts, command words, requested documents and marks.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RPreincorp","source":{"namespace":"course_manual","path":"Course-Manual-Module-03-Company-Formation-and-Related-Issues.md","pinpoint":"sections 2.1-2.2, footnote 35 and section 4.5.14"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F05","F09","F10","F11","F12","F13"],"deciding_fact_ids":["F01","F12"],"unique_contribution":"Supplies the common-law and Bahamian statutory pre-incorporation-contract rules and adoption procedure.","xor_set_id":null,"unresolved":false,"gap_ids":["GStatutoryDischarge"]},
+    {"id":"RDirectorAppointment","source":{"namespace":"course_manual","path":"Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md","pinpoint":"sections 3.1-3.3.1 and footnotes 54, 56-58"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F14","F15","F16","F17"],"deciding_fact_ids":["F01","F14","F15"],"unique_contribution":"Supplies Bahamian corporate-director eligibility, consent, sole-director minimum and the subscriber route for appointing first directors.","xor_set_id":null,"unresolved":false,"gap_ids":["GLicenceStatus","GRegistrarDetails"]},
+    {"id":"RDSAProtection","source":{"namespace":"course_manual","path":"Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md","pinpoint":"sections 5.2-5.4"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F16"],"deciding_fact_ids":["F15"],"unique_contribution":"Supplies the role and limits of contractual exoneration, indemnity and insurance in a DSA.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RWrittenProcedure","source":{"namespace":"course_manual","path":"Course-Manual-Module-10-Company-Decision-making-Procedures.md","pinpoint":"sections 4 and 5.2"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F13","F14","F15","F17"],"deciding_fact_ids":["F12","F14","F15"],"unique_contribution":"Supplies written-resolution and first-director appointment procedure, records and filing stages.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RProviderDirector","source":{"namespace":"course_manual","path":"Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md","pinpoint":"sections 2.3 and 3.6"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F02","F15","F16"],"deciding_fact_ids":["F15"],"unique_contribution":"Supplies the CSP corporate-director context and the distinction between client wishes and directors' continuing responsibility.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RAdoptionDraft","source":{"namespace":"course_appendix","path":"Appendix-4-Board-resolution-to-adopt-pre-incorporation-contract.md","pinpoint":"whole precedent"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F09","F12","F13"],"deciding_fact_ids":["F01","F12"],"unique_contribution":"Supplies the structure, operative provisions and execution form for Company's post-incorporation adoption resolution.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RDirectorConsent","source":{"namespace":"course_appendix","path":"Appendix-21A-Directors-consent-to-be-appointed-as-director.md","pinpoint":"whole precedent"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F15","F16"],"deciding_fact_ids":["F15"],"unique_contribution":"Supplies the form and particulars of the proposed corporate director's prior written consent.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RFirstDirectorDraft","source":{"namespace":"course_appendix","path":"Appendix-21B-Subscribers-resolution-appointing-first-director-s.md","pinpoint":"whole precedent"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F14","F15","F17"],"deciding_fact_ids":["F14","F15"],"unique_contribution":"Supplies the subscriber resolution's heading, recitals, appointment operative and execution block.","xor_set_id":null,"unresolved":false,"gap_ids":[]},
+    {"id":"RDSA","source":{"namespace":"course_appendix","path":"Appendix-21C-Directors-service-agreement-DSA.md","pinpoint":"whole precedent and schedule"},"requirement":"mandatory","verdict":"incorporated","triggering_fact_ids":["F16"],"deciding_fact_ids":["F15"],"unique_contribution":"Supplies the DSA's service, remuneration, termination, duties, confidentiality, exoneration and indemnity components and dependencies.","xor_set_id":null,"unresolved":false,"gap_ids":[]}
+  ],
+  "source_access": {
+    "allowlist_frozen": true,
+    "allowlist_sha256": "f07ca1993628aa016a4caa7250f6354b84e9672addee23ad6a5273fe9255030f",
+    "allowlist": [
+      {"path":"PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf","namespace":"exam_question","role":"incorporated"},
+      {"path":"Course-Manual-Module-03-Company-Formation-and-Related-Issues.md","namespace":"course_manual","role":"incorporated"},
+      {"path":"Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md","namespace":"course_manual","role":"incorporated"},
+      {"path":"Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md","namespace":"course_manual","role":"incorporated"},
+      {"path":"Course-Manual-Module-10-Company-Decision-making-Procedures.md","namespace":"course_manual","role":"incorporated"},
+      {"path":"Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md","namespace":"course_manual","role":"incorporated"},
+      {"path":"Appendix-4-Board-resolution-to-adopt-pre-incorporation-contract.md","namespace":"course_appendix","role":"incorporated"},
+      {"path":"Appendix-21A-Directors-consent-to-be-appointed-as-director.md","namespace":"course_appendix","role":"incorporated"},
+      {"path":"Appendix-21B-Subscribers-resolution-appointing-first-director-s.md","namespace":"course_appendix","role":"incorporated"},
+      {"path":"Appendix-21C-Directors-service-agreement-DSA.md","namespace":"course_appendix","role":"incorporated"}
+    ],
+    "actual_open": [
+      {"path":"PsLX_LZ-5PjenfZITy-Y1_Company-Law---Practice-Specimen-Paper-2-CLI16-16364-V1.00.pdf","namespace":"exam_question","role":"incorporated","sha256":"9954f2313dfb753aac3b0409601502b4a4760a0573d05c71e735d4dabc165922"},
+      {"path":"Course-Manual-Module-03-Company-Formation-and-Related-Issues.md","namespace":"course_manual","role":"incorporated","sha256":"864162f60a3902d83a10ca67b769d5cc89c53c34d579ee9909810da68ba49a2b"},
+      {"path":"Course-Manual-Module-07-Directors-Part-I-Role-Appointment-and-Removal-of-Directors.md","namespace":"course_manual","role":"incorporated","sha256":"dda8c75e6257e9c5a5fc088cc7f6ff3b771c551de0c35606c6c1dab2ea66aa88"},
+      {"path":"Course-Manual-Module-08-Directors-Part-II-Powers-and-Duties.md","namespace":"course_manual","role":"incorporated","sha256":"ab1f46fb956cf69020be0efaeea4e9cf9f884119f67817e45d7e4fe719f4f696"},
+      {"path":"Course-Manual-Module-10-Company-Decision-making-Procedures.md","namespace":"course_manual","role":"incorporated","sha256":"99613860d1e48fb2230a549ac577b2884d9073aa580ede3c2298ba32026ae4dc"},
+      {"path":"Course-Manual-Module-11-Company-Management-Services-and-Beneficial-Owner-Control.md","namespace":"course_manual","role":"incorporated","sha256":"00db94fd76cc6b973eee259767d341d9227dcb62b91889b3c08a2a406eadf0af"},
+      {"path":"Appendix-4-Board-resolution-to-adopt-pre-incorporation-contract.md","namespace":"course_appendix","role":"incorporated","sha256":"381c02356f413d40f0203b4699d7fa9e354bf7a7cea5726b0fb28c023e3d5bf5"},
+      {"path":"Appendix-21A-Directors-consent-to-be-appointed-as-director.md","namespace":"course_appendix","role":"incorporated","sha256":"4a450b9352ab591ef9ba853c8e571e0c9d60a9dd1fae54c1718f2182f4570410"},
+      {"path":"Appendix-21B-Subscribers-resolution-appointing-first-director-s.md","namespace":"course_appendix","role":"incorporated","sha256":"fa8494d66b95634fd6f9e5aada5f45a9b916fa67199f2de7bdc32c7c0032907c"},
+      {"path":"Appendix-21C-Directors-service-agreement-DSA.md","namespace":"course_appendix","role":"incorporated","sha256":"af57b49134ea5c3277203e9527b3e7d1101c8c64af3f62a5c3b515a2d314dde2"}
+    ],
+    "forbidden_paths": ["KAP.md","gold-answer.md","prior-answer.md","tmp/routeplans/q1-validation.json","tmp/routeplans/q1.json","tmp/routeplans/q1-submit.txt"],
+    "prior_answer_paths": ["tmp/routeplans/q1-validation.json","tmp/routeplans/q1.json","tmp/routeplans/q1-submit.txt"]
+  },
+  "xor_branch_sets": [],
+  "requested_document_chain": {
+    "required": true,
+    "complex_transaction": false,
+    "instruments": [
+      {
+        "id":"I_CSPDirectorsAuthority","sequence":1,"kind":"upstream_authority","actor_id":"CSPDirectors","target_company_act":false,"upstream_authority_instrument_id":null,"target_instrument":"CSP (Directors) Ltd written board resolution approving adoption of the Sotheby's contract and authorising a human representative",
+        "signatory":{"human":true,"name_or_placeholder":"[authorised human signatory for CSP (Directors) Ltd]","authority_instrument_id":null},"action_business":false,"selected_action_component_ids":[],
+        "operative_components":[
+          {"id":"Comp_CSPD_Approve","source_component_id":"Source_CSPD_Approve","status":"produced","unresolved":false,"gap_ids":[]},
+          {"id":"Comp_CSPD_Authorise","source_component_id":"Source_CSPD_Authorise","status":"placeholder","unresolved":true,"gap_ids":["GSignatories"]}
+        ],
+        "attachments":[],"execution":{"id":"Exec_CSPD","status":"placeholder","unresolved":true,"gap_ids":["GSignatories"]},"records_filings":[]
+      },
+      {
+        "id":"I_CompanyAdoption","sequence":2,"kind":"resolution","actor_id":"CSPDirectors","target_company_act":true,"upstream_authority_instrument_id":"I_CSPDirectorsAuthority","target_instrument":"Company Ltd written resolution of sole director adopting the pre-incorporation Sotheby's contract",
+        "signatory":{"human":true,"name_or_placeholder":"[authorised human signatory for CSP (Directors) Ltd]","authority_instrument_id":"I_CSPDirectorsAuthority"},"action_business":true,"selected_action_component_ids":["Source_App4_AdoptRelease"],
+        "operative_components":[
+          {"id":"Comp_App4_AdoptRelease","source_component_id":"Source_App4_AdoptRelease","status":"produced","unresolved":false,"gap_ids":[]}
+        ],
+        "attachments":[],"execution":{"id":"Exec_App4","status":"placeholder","unresolved":true,"gap_ids":["GCompanyParticulars","GSignatories"]},
+        "records_filings":[{"id":"Record_Adoption","kind":"minutes","status":"produced","unresolved":false,"gap_ids":[]}]
+      },
+      {
+        "id":"I_CSPNomineesAuthority","sequence":3,"kind":"upstream_authority","actor_id":"CSPNominees","target_company_act":false,"upstream_authority_instrument_id":null,"target_instrument":"CSP (Nominees) Ltd written board resolution authorising a human representative to sign the subscriber's appointment resolution",
+        "signatory":{"human":true,"name_or_placeholder":"[authorised human signatory for CSP (Nominees) Ltd]","authority_instrument_id":null},"action_business":false,"selected_action_component_ids":[],
+        "operative_components":[
+          {"id":"Comp_CSPN_Approve","source_component_id":"Source_CSPN_Approve","status":"produced","unresolved":false,"gap_ids":[]},
+          {"id":"Comp_CSPN_Authorise","source_component_id":"Source_CSPN_Authorise","status":"placeholder","unresolved":true,"gap_ids":["GSignatories"]}
+        ],
+        "attachments":[],"execution":{"id":"Exec_CSPN","status":"placeholder","unresolved":true,"gap_ids":["GSignatories"]},"records_filings":[]
+      },
+      {
+        "id":"I_SubscriberAppointment","sequence":4,"kind":"resolution","actor_id":"CSPNominees","target_company_act":true,"upstream_authority_instrument_id":"I_CSPNomineesAuthority","target_instrument":"Subscriber's written resolution appointing CSP (Directors) Ltd as Company's first and sole director",
+        "signatory":{"human":true,"name_or_placeholder":"[authorised human signatory for CSP (Nominees) Ltd]","authority_instrument_id":"I_CSPNomineesAuthority"},"action_business":true,"selected_action_component_ids":["Source_App21B_Appointment"],
+        "operative_components":[
+          {"id":"Comp_App21B_Appointment","source_component_id":"Source_App21B_Appointment","status":"produced","unresolved":false,"gap_ids":[]}
+        ],
+        "attachments":[],"execution":{"id":"Exec_App21B","status":"placeholder","unresolved":true,"gap_ids":["GCompanyParticulars","GSignatories"]},
+        "records_filings":[
+          {"id":"Record_Directors","kind":"internal_register","status":"produced","unresolved":false,"gap_ids":[]},
+          {"id":"Filing_DirectorParticulars","kind":"external_filing","status":"placeholder","unresolved":true,"gap_ids":["GRegistrarDetails"]}
+        ]
+      }
+    ],
+    "expected_counts": {"instruments":4,"operative_components":6,"attachments":0,"execution_blocks":4,"records_filings":3},
+    "actual_counts": {"instruments":4,"operative_components":6,"attachments":0,"execution_blocks":4,"records_filings":3}
+  },
+  "materials_gaps": [
+    {"id":"GCompanyParticulars","description":"The Company number, incorporation date, contract date and actual article authorising a sole-director written resolution are not supplied.","resolution":"placeholder","affected_ids":["Exec_App4","Exec_App21B"]},
+    {"id":"GSignatories","description":"The human authorised signatories and internal governing instruments of CSP (Directors) Ltd and CSP (Nominees) Ltd are not supplied.","resolution":"placeholder","affected_ids":["Comp_CSPD_Authorise","Exec_CSPD","Exec_App4","Comp_CSPN_Authorise","Exec_CSPN","Exec_App21B"]},
+    {"id":"GLicenceStatus","description":"The facts do not confirm that CSP (Directors) Ltd holds the Bahamian regulatory licence required to provide company-management/directorship services.","resolution":"conditional","affected_ids":["RDirectorAppointment"]},
+    {"id":"GRegistrarDetails","description":"The permitted materials identify s.44(4) of the International Business Companies Act 2000 but do not set out the prescribed filing form or deadline for director particulars.","resolution":"placeholder","affected_ids":["RDirectorAppointment","Filing_DirectorParticulars"]},
+    {"id":"GStatutoryDischarge","description":"The permitted materials identify s.70 of the International Business Companies Act 2000 as the Bahamian pre-incorporation-contract provision but do not reproduce its exact promoter-discharge wording; the adopted resolution therefore releases AB expressly.","resolution":"conditional","affected_ids":["RPreincorp"]}
+  ],
+  "final_trace": [
+    {"id":"TExam","route_id":"RExam","contribution":"Supplies all Question 2 facts, command words, requested documents and marks.","answer_location":"All sub-parts and check coverage"},
+    {"id":"TPreincorp","route_id":"RPreincorp","contribution":"Supplies the common-law and Bahamian statutory pre-incorporation-contract rules and adoption procedure.","answer_location":"2.1.1 and 2.1.2 procedure"},
+    {"id":"TDirectorAppointment","route_id":"RDirectorAppointment","contribution":"Supplies Bahamian corporate-director eligibility, consent, sole-director minimum and the subscriber route for appointing first directors.","answer_location":"2.2.1 and 2.2.2"},
+    {"id":"TDSAProtection","route_id":"RDSAProtection","contribution":"Supplies the role and limits of contractual exoneration, indemnity and insurance in a DSA.","answer_location":"2.2.1"},
+    {"id":"TWrittenProcedure","route_id":"RWrittenProcedure","contribution":"Supplies written-resolution and first-director appointment procedure, records and filing stages.","answer_location":"2.1.2 procedure and 2.2.1"},
+    {"id":"TProviderDirector","route_id":"RProviderDirector","contribution":"Supplies the CSP corporate-director context and the distinction between client wishes and directors' continuing responsibility.","answer_location":"2.2.1"},
+    {"id":"TAdoptionDraft","route_id":"RAdoptionDraft","contribution":"Supplies the structure, operative provisions and execution form for Company's post-incorporation adoption resolution.","answer_location":"2.1.2 draft"},
+    {"id":"TDirectorConsent","route_id":"RDirectorConsent","contribution":"Supplies the form and particulars of the proposed corporate director's prior written consent.","answer_location":"2.2.1"},
+    {"id":"TFirstDirectorDraft","route_id":"RFirstDirectorDraft","contribution":"Supplies the subscriber resolution's heading, recitals, appointment operative and execution block.","answer_location":"2.2.2 draft"},
+    {"id":"TDSA","route_id":"RDSA","contribution":"Supplies the DSA's service, remuneration, termination, duties, confidentiality, exoneration and indemnity components and dependencies.","answer_location":"2.2.1"}
+  ],
+  "render_gate": {"status":"not_rendered","validation_report":null}
+}
