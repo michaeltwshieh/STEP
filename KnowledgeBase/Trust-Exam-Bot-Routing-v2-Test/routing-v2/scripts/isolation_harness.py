@@ -205,13 +205,28 @@ def load_manifest(run_dir: Path, candidate_id: str) -> tuple[dict[str, Any], dic
 
 
 def append_event(paths: dict[str, Path], event: dict[str, Any]) -> None:
+    ledger = load_event_ledger(paths)
+    event = {"sequence": len(ledger["events"]) + 1, **event}
+    ledger["events"].append(event)
+    write_json(paths["events"], ledger)
+
+
+def load_event_ledger(paths: dict[str, Path]) -> dict[str, Any]:
     try:
         ledger = json.loads(paths["events"].read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
         raise HarnessError("event ledger unavailable") from error
-    event = {"sequence": len(ledger["events"]) + 1, **event}
-    ledger["events"].append(event)
-    write_json(paths["events"], ledger)
+    if not isinstance(ledger, dict) or not isinstance(ledger.get("events"), list):
+        raise HarnessError("event ledger is invalid")
+    return ledger
+
+
+def hard_isolation_failures(paths: dict[str, Path]) -> list[dict[str, Any]]:
+    return [
+        event
+        for event in load_event_ledger(paths)["events"]
+        if event.get("type") == "hard_isolation_failure"
+    ]
 
 
 def request_open(run_dir: Path, candidate_id: str, requested_path: str) -> bytes:
@@ -363,7 +378,17 @@ def run_answer(
         raise HarnessError("answer hashes are already locked")
     for requested in declared_opens:
         request_open(run_dir, candidate_id, requested)
-    completed, denials = sandbox_command(paths, command)
+    try:
+        completed, denials = sandbox_command(paths, command)
+    except HarnessError as error:
+        append_event(paths, {
+            "type": "hard_isolation_failure",
+            "requested_path": "<answer-command>",
+            "permitted": False,
+            "reason": "sandbox_execution_or_audit_failure",
+            "detail": str(error),
+        })
+        raise
     stdout_path = paths["output"] / "answer.stdout"
     stderr_path = paths["output"] / "answer.stderr"
     stdout_path.write_text(completed.stdout, encoding="utf-8")
@@ -384,6 +409,7 @@ def run_answer(
             "stderr_sha256": result["stderr_sha256"],
             "denied_operations": sorted({item["operation"] for item in denials}),
         })
+        raise HarnessError("hard isolation failure: sandbox denial during answer command")
     return result
 
 
@@ -447,10 +473,18 @@ def lock_answers(run_dir: Path, candidate_ids: Iterable[str]) -> dict[str, Any]:
     locked: list[dict[str, Any]] = []
     for candidate_id in candidates:
         _, paths = load_manifest(run_dir, candidate_id)
+        failures = hard_isolation_failures(paths)
+        if failures:
+            raise HarnessError(
+                f"candidate has hard isolation failures and cannot be locked: "
+                f"{candidate_id} ({len(failures)})"
+            )
         try:
             staged = json.loads(paths["staged"].read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as error:
             raise HarnessError(f"candidate has no staged output: {candidate_id}") from error
+        if not isinstance(staged, dict) or not isinstance(staged.get("outputs"), list):
+            raise HarnessError(f"candidate staged output record is invalid: {candidate_id}")
         staged_paths = {item["path"] for item in staged.get("outputs", [])}
         observed_paths = {
             path.relative_to(paths["output"]).as_posix()
@@ -487,7 +521,18 @@ def prepare_evaluator_inputs(
     lock_path = run_dir / "answer-lock.json"
     if not lock_path.is_file():
         raise HarnessError("evaluator inputs cannot be created before answer hash lock")
-    lock = json.loads(lock_path.read_text(encoding="utf-8"))
+    try:
+        lock = json.loads(lock_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise HarnessError("answer hash lock is unavailable or invalid") from error
+    if not isinstance(lock, dict) or not isinstance(lock.get("candidates"), list):
+        raise HarnessError("answer hash lock is invalid")
+    report = isolation_report(run_dir)
+    if report["status"] != "PASS":
+        raise HarnessError(
+            "evaluator inputs cannot be created after a failed isolation report: "
+            f"{report['hard_isolation_failure_count']} hard isolation failure(s)"
+        )
     evaluator_root = run_dir / "evaluator-inputs"
     if evaluator_root.exists():
         raise HarnessError("evaluator inputs already prepared")
@@ -533,12 +578,14 @@ def isolation_report(run_dir: Path) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     failures = 0
     for path in event_files:
-        ledger = json.loads(path.read_text(encoding="utf-8"))
-        candidate_failures = [item for item in ledger["events"] if item["type"] == "hard_isolation_failure"]
+        ledger = load_event_ledger({"events": path})
+        candidate_failures = [
+            item for item in ledger["events"] if item.get("type") == "hard_isolation_failure"
+        ]
         failures += len(candidate_failures)
         candidates.append({
             "candidate_id": ledger["candidate_id"],
-            "actual_open_count": sum(item["type"] == "actual_open" for item in ledger["events"]),
+            "actual_open_count": sum(item.get("type") == "actual_open" for item in ledger["events"]),
             "hard_isolation_failures": candidate_failures,
         })
     return {

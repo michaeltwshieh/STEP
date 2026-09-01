@@ -43,27 +43,32 @@ Classify every answer unit separately as exactly one mode:
 A client-advice letter is prose unless an operative precedent controls it. A document
 mentioned in an MCQ does not turn the MCQ into a drafting task. For drafting, open the
 exact appendix before drafting, count every operative clause/resolution and preserve its
-execution structure.
+execution structure. Advice about an existing statement, letter or memorandum of wishes
+remains `PROSE` unless the user asks to draft or revise the document itself.
 
 ## Deterministic Routing v2 sequence
 
 Run the following before rendering each MCQ or Section B sub-part:
 
 1. Transcribe the complete stem, options, command word, marks, facts, attachments and
-   requested deliverable. Keep examination attachments and course appendices in
-   separate namespaces.
-2. Read `Content.md`, then run all of `routing-core.md`: additive routing, six locks,
-   fact/claim dispositions, independent relationship/lifecycle pass, relevance gate,
-   exact source verification, XOR branches, document-chain reconciliation, gaps and
-   final trace.
+   requested deliverable. Record each answer unit's sub-part reference, command word,
+   marks, requested deliverables and polarity; for MCQs reserve `selected_option` and
+   `closest_options`, then populate them after option analysis and before validation.
+   Keep examination attachments and course appendices in separate namespaces.
+2. Read `Content.md`, then run all of `routing-core.md`: additive routing, the mandatory
+   Trust classification arrays, fact/claim dispositions, independent relationship and
+   lifecycle pass, relevance gate, exact source verification, route relationship sets,
+   document-chain reconciliation, gaps and final trace.
 3. Create a pre-answer RoutePlan conforming to
-   `routing-v2/schema/route-plan.schema.json`.
+   `routing-v2/schema/route-plan.schema.json` with `schema_version: route-plan-v2`.
 4. Freeze its source allowlist and hash before substantive retrieval. Open only frozen
    paths. Record every actual path, namespace, role and SHA-256. Forbidden material,
    KAP, gold, prior answers and peer outputs cannot become check-only sources.
-5. For an operative document, reconcile the legal actor, any corporate decision-maker,
-   human signatory, instrument count, operative count, attachments, execution and
-   internal or external records/filings. Do not merge mutually exclusive alternatives.
+5. For an operative document, reconcile the legal actor, capacity, power character, any
+   corporate decision-maker, human signatory, instrument count, operative count,
+   attachments, execution and internal or external records/filings. Apply XOR, AND
+   prerequisite, SEQUENCE and OPTIONAL-overlay relationships as the actual instrument
+   requires; do not merge alternatives or omit prerequisites.
 6. Validate the completed RoutePlan before drafting the answer:
 
    ```sh
@@ -71,12 +76,18 @@ Run the following before rendering each MCQ or Section B sub-part:
      --output /tmp/trusts-route-plan-validation.json
    ```
 
-7. Exit code `0` and report status `VALID` authorise rendering. Exit code `1` requires
-   RoutePlan repair. Exit code `2` requires correction of the input, schema or tool
-   error. Never write the answer first and reconstruct routing from prose afterward.
-8. Render through `section-a.md` or `section-b.md`, then run that adapter's full Done
-   when checklist. Put the plan ID, canonical plan hash and validation-report reference
-   only in the non-submitted check trace.
+7. Exit code `0` and report status `VALID` confirm structural validity only. Render only
+   when `render_authorization.decision` is `render`; use explicit placeholders and gap
+   disclosure for `render_with_placeholders`; produce no substantive answer for
+   `do_not_render`. Exit code `1` requires RoutePlan repair. Exit code `2` requires
+   correction of the input, schema or tool error. Never write the answer first and
+   reconstruct routing from prose afterward.
+8. Before drafting, confirm that the selected precedent is complete for the requested
+   instrument. An abbreviated or defective source, or a referenced attachment that is
+   missing, remains a materials gap; do not reconstruct it. Render through
+   `section-a.md` or `section-b.md`, then run that adapter's full Done when checklist.
+   Put the plan ID, canonical plan hash and validation-report reference only in the
+   non-submitted check trace.
 
 For a blind or behavioural test, use `routing-v2/scripts/isolation_harness.py`. The
 answer process receives only files mediated into its `opened-inputs` tree. Evaluator-only

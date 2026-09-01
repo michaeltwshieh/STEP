@@ -5,8 +5,9 @@ Run the single source map in `Content.md` and the shared algorithm in
 marks, coverage, output, style and completion rules; it contains no legal source map.
 
 Do not draft the `SUBMIT THIS` block until the unit's RoutePlan has passed
-`routing-v2/scripts/validate_route_plan.py`. Consume the validated plan directly; never
-parse the essay afterwards to invent a route, document or source-access ledger.
+`routing-v2/scripts/validate_route_plan.py` and its render decision permits output.
+Consume the validated plan directly; never parse the essay afterwards to invent a
+route, document or source-access ledger.
 
 ## Sub-part adapter
 
@@ -28,7 +29,7 @@ checked-not-relevant, conditional or materials gap.
 Include a layer only where it answers the question, earns marks, completes a requested
 document or changes the conclusion. An empty layer needs a reason, not padding.
 
-For every drafting task additionally lock and verify:
+For every drafting task additionally classify and verify:
 
 - legal actor and signatory;
 - document type and decision method;
@@ -45,6 +46,13 @@ authority only where the facts and course materials support it; a generic signat
 recital is not a substitute. Count the selected precedent's operative clauses or
 resolutions one by one. A broad first operative part cannot stand in for separate
 appointments, directions, consents, releases, receipts or completion steps.
+
+Before rendering a draft, classify the selected precedent as complete, incomplete,
+defective or attachment-dependent for the requested instrument. Source slips,
+abbreviated execution wording and missing schedules or referenced attachments remain
+gaps. Use explicit placeholders only where the source supports the surrounding
+architecture; never reconstruct omitted operative wording. Drafting risk turns on that
+fitness assessment as well as the command word.
 
 ## Output format
 
@@ -69,7 +77,7 @@ Coverage — <the completeness list: every point the answer had to contain, sub-
 Authorities cited: <every case / statute / article, so the user can verify each>
 Source: <module(s) + section(s) + appendix(es) + filenames>
 Cross-checked: <the shared routing-core second-pass result — any other module/appendix checked for a multi-module overlap and the verdict, e.g. "Module 5 §4 → incorporated; Module 2 → considered, not relevant"; or "single-module". Always present, even when empty-handed.>
-RoutePlan validation: VALID - <plan ID; canonical plan SHA-256; retained validation-report reference>
+RoutePlan validation: VALID - <render decision; plan ID; canonical plan SHA-256; retained validation-report reference>
 Risk: <how exposed this question is — see "Question risk" below. One line, naming the
  high-risk sub-parts and their marks, so the user can judge which of the five to drop.>
 Confidence: high / medium / low — also give a numeric score out of 10 (e.g. "high (9/10)")
@@ -148,7 +156,8 @@ Weight each sub-part's risk by its marks:
 
 | what the sub-part asks for | risk |
 |---|---|
-| **Draft** a deed, trustees' resolution, memorandum, power of attorney | none |
+| **Draft** from a complete, applicable precedent with every component supplied | very low |
+| **Draft** from an incomplete/defective precedent or with missing attachments | medium-high, proportionate to the missing operative content |
 | Apply supplied figures, dates, holdings or named parties | low |
 | Procedure for the specific transaction in the scenario | low-medium |
 | A general account that still breaks into named specifics (statute by statute, jurisdiction by jurisdiction, a list of risks and protections) | medium |
@@ -212,7 +221,11 @@ A letter is a **prose task in formal letter dress** — the style rules below ap
 
 - Formal letter layout: addressee block, date as a placeholder, salutation ("Dear [name]" / "Dear Sirs"), and a matching sign-off ("Yours sincerely" for a named addressee, "Yours faithfully" otherwise).
 - **Sign with a placeholder ([name]) — never the user's real name.** The no-name rule covers everything submitted.
-- If a precedent in letter or memorandum form exists for the situation (e.g. Appendix 14B, irrevocable instruction; Appendix 13, statement of wishes), the drafting rules above take over — open it and reproduce it. Otherwise the letter is your own prose.
+- Advice about an existing statement, letter or memorandum of wishes remains prose,
+  even when Appendix 13 helps analyse it. If the question asks to draft or revise the
+  document itself, the drafting rules take over: open the applicable Appendix 13 or
+  Appendix 14B precedent and reproduce only the supported branch. Otherwise the letter
+  is the candidate's own prose.
 
 ## Writing style (matters — answers are AI- and plagiarism-checked)
 
@@ -338,7 +351,7 @@ Expect the conclusion to be the part that still flags. That is the price of writ
 
 ## When the rules conflict
 
-If the reword / own-words rule and the precedent-fidelity rule point in opposite directions, **precedent-fidelity wins for drafted documents**. Article-accurate or "improved" wording does not override the wording of the named precedent. Reword only the substantive legal explanation that surrounds or follows a draft, never the drafted document itself.
+If the reword / own-words rule and the precedent-fidelity rule point in opposite directions, **precedent-fidelity wins for drafted documents**. Instrument- or clause-accurate "improved" wording does not override the wording of the named precedent. Reword only the substantive legal explanation that surrounds or follows a draft, never the drafted document itself.
 
 ## Citation form
 
@@ -388,3 +401,5 @@ Run this before handing over. Every box must pass.
 - [ ] No source tag, module number, or page reference anywhere in the block.
 - [ ] Check panel complete: Coverage, Authorities cited, Source, Cross-checked, RoutePlan validation, Risk, Confidence, Verify.
 - [ ] RoutePlan validator returned exit code zero before rendering; plan ID/hash/report recorded in the check panel.
+- [ ] Render decision permits the output; any `render_with_placeholders` gap is visible
+      and no substantive answer was produced for `do_not_render`.

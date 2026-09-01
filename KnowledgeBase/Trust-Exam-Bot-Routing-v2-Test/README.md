@@ -15,8 +15,16 @@ legal sources or instructions.
 - `submission-checklist.md`; and
 - `SOURCE-MANIFEST.json` plus `routing-v2/scripts/check_package.py` for integrity checks.
 
-No self-assessment answers, gold answers, KAP, past answers, peer answers or prior
-behavioural outputs are included in the package.
+A clean distribution contains no self-assessment answers, gold answers, KAP, past
+answers, peer answers or prior behavioural outputs. A development workspace may retain
+local `answers/`, `evaluation/`, `routing-v2/artifacts/` and `tmp/` trees; they are never
+permitted by the default distribution check.
+
+The `route-plan-v2` Trust-native RoutePlan records issue-specific jurisdiction factors, vehicle and
+trust architecture, actor capacities, power characteristics, relationships, lifecycle,
+governing instruments and standing. Related routes use XOR, AND-prerequisite, SEQUENCE
+or OPTIONAL-overlay sets, and structural validation is followed by an explicit
+`render`, `render_with_placeholders` or `do_not_render` decision.
 
 ## Test it in another Codex session
 
@@ -34,10 +42,20 @@ From this folder, run:
 
 ```sh
 python3 routing-v2/scripts/check_package.py
+python3 -m unittest discover -s routing-v2/tests -p 'test_*.py' -v
 ```
 
-The expected result is `PASS`, with 11 modules, 37 appendices, all Content registry
-paths resolved and every immutable source hash matching `SOURCE-MANIFEST.json`.
+The default package check is the clean-distribution gate. Its expected result is `PASS`,
+with 11 modules, 37 appendices, all Content registry paths resolved and both source and
+workflow hashes matching `SOURCE-MANIFEST.json`. In a development workspace that
+intentionally retains the four local artifact trees, run:
+
+```sh
+python3 routing-v2/scripts/check_package.py --allow-development-artifacts
+```
+
+That flag permits only those named trees; it does not suppress any other unexpected-file,
+hash, symlink or integrity failure.
 
 Routing v2 remains a test candidate. This folder is deliberately separate so testing it
 does not activate or alter the live exam workflow.

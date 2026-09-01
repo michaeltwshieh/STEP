@@ -10,20 +10,28 @@
     "case_refs",
     "answer_unit",
     "namespaces",
-    "locks",
+    "jurisdiction_factors",
+    "trust_architecture",
+    "actor_capacities",
+    "power_characteristics",
+    "relationships",
+    "lifecycle_stages",
+    "governing_instruments",
+    "standing",
     "facts",
     "claims",
     "entities",
     "routes",
     "source_access",
-    "xor_branch_sets",
+    "route_relationship_sets",
     "requested_document_chain",
     "materials_gaps",
     "final_trace",
+    "render_authorization",
     "render_gate"
   ],
   "properties": {
-    "schema_version": {"const": "route-plan-v1"},
+    "schema_version": {"const": "route-plan-v2"},
     "plan_id": {"$ref": "#/$defs/id"},
     "case_refs": {
       "type": "array",
@@ -33,12 +41,40 @@
     "answer_unit": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "mode", "question_ref", "mcq_options"],
+      "required": [
+        "id",
+        "mode",
+        "question_ref",
+        "subpart_ref",
+        "command_word",
+        "marks",
+        "requested_deliverables",
+        "polarity",
+        "mcq_options",
+        "selected_option",
+        "closest_options"
+      ],
       "properties": {
         "id": {"$ref": "#/$defs/id"},
         "mode": {"enum": ["MCQ", "PROSE", "DRAFTING"]},
         "question_ref": {"$ref": "#/$defs/nonEmptyString"},
+        "subpart_ref": {"$ref": "#/$defs/nonEmptyString"},
+        "command_word": {"$ref": "#/$defs/nonEmptyString"},
+        "marks": {"type": ["integer", "null"], "minimum": 0},
+        "requested_deliverables": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        },
+        "polarity": {"enum": [null, "correct", "incorrect", "not", "except", "best", "other"]},
         "mcq_options": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^[A-Z]$"},
+          "uniqueItems": true
+        },
+        "selected_option": {"type": ["string", "null"], "pattern": "^[A-Z]$"},
+        "closest_options": {
           "type": "array",
           "items": {"type": "string", "pattern": "^[A-Z]$"},
           "uniqueItems": true
@@ -56,46 +92,38 @@
         "course_appendix": {"$ref": "#/$defs/pathList"}
       }
     },
-    "locks": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "jurisdiction",
-        "regime_entity",
-        "legal_actor_capacity",
-        "transaction_relationship",
-        "lifecycle_stage",
-        "governing_instruments"
-      ],
-      "properties": {
-        "jurisdiction": {"$ref": "#/$defs/lock"},
-        "regime_entity": {"$ref": "#/$defs/lock"},
-        "legal_actor_capacity": {"$ref": "#/$defs/lock"},
-        "transaction_relationship": {"$ref": "#/$defs/lock"},
-        "lifecycle_stage": {"$ref": "#/$defs/lock"},
-        "governing_instruments": {"$ref": "#/$defs/lock"}
-      }
-    },
+    "jurisdiction_factors": {"$ref": "#/$defs/jurisdictionFactorList"},
+    "trust_architecture": {"$ref": "#/$defs/classificationLockList"},
+    "actor_capacities": {"$ref": "#/$defs/classificationLockList"},
+    "power_characteristics": {"$ref": "#/$defs/classificationLockList"},
+    "relationships": {"$ref": "#/$defs/classificationLockList"},
+    "lifecycle_stages": {"$ref": "#/$defs/classificationLockList"},
+    "governing_instruments": {"$ref": "#/$defs/classificationLockList"},
+    "standing": {"$ref": "#/$defs/classificationLockList"},
     "facts": {
       "type": "array",
+      "minItems": 1,
       "items": {"$ref": "#/$defs/fact"}
     },
     "claims": {
       "type": "array",
+      "minItems": 1,
       "items": {"$ref": "#/$defs/claim"}
     },
     "entities": {
       "type": "array",
+      "minItems": 1,
       "items": {"$ref": "#/$defs/entity"}
     },
     "routes": {
       "type": "array",
+      "minItems": 1,
       "items": {"$ref": "#/$defs/route"}
     },
     "source_access": {"$ref": "#/$defs/sourceAccess"},
-    "xor_branch_sets": {
+    "route_relationship_sets": {
       "type": "array",
-      "items": {"$ref": "#/$defs/xorBranchSet"}
+      "items": {"$ref": "#/$defs/routeRelationshipSet"}
     },
     "requested_document_chain": {"$ref": "#/$defs/documentChain"},
     "materials_gaps": {
@@ -106,6 +134,7 @@
       "type": "array",
       "items": {"$ref": "#/$defs/traceEntry"}
     },
+    "render_authorization": {"$ref": "#/$defs/renderAuthorization"},
     "render_gate": {
       "type": "object",
       "additionalProperties": false,
@@ -134,11 +163,12 @@
       "items": {"$ref": "#/$defs/path"},
       "uniqueItems": true
     },
-    "lock": {
+    "classificationLock": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["state", "value", "deciding_fact_ids", "alternatives"],
+      "required": ["id", "state", "value", "deciding_fact_ids", "alternatives"],
       "properties": {
+        "id": {"$ref": "#/$defs/id"},
         "state": {"enum": ["supplied", "choice_delegated", "genuinely_unknown"]},
         "value": {"type": ["string", "null"]},
         "deciding_fact_ids": {"$ref": "#/$defs/idList"},
@@ -148,6 +178,43 @@
           "uniqueItems": true
         }
       }
+    },
+    "classificationLockList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/classificationLock"}
+    },
+    "jurisdictionFactor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "state", "value", "deciding_fact_ids", "alternatives"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {
+          "enum": [
+            "proper_law",
+            "forum",
+            "place_of_administration",
+            "party_connecting_factor",
+            "asset_situs",
+            "transferor_incorporation",
+            "foundation_registration"
+          ]
+        },
+        "state": {"enum": ["supplied", "choice_delegated", "genuinely_unknown"]},
+        "value": {"type": ["string", "null"]},
+        "deciding_fact_ids": {"$ref": "#/$defs/idList"},
+        "alternatives": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "jurisdictionFactorList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/jurisdictionFactor"}
     },
     "disposition": {
       "enum": [
@@ -183,7 +250,7 @@
             "lifecycle_stage",
             "governing_instrument",
             "branch_decision",
-            "director_count"
+            "cardinality"
           ]
         },
         "subject_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
@@ -199,7 +266,14 @@
       "required": ["id", "kind", "option", "text", "disposition"],
       "properties": {
         "id": {"$ref": "#/$defs/id"},
-        "kind": {"enum": ["mcq_option", "answer_assertion", "document_assertion"]},
+        "kind": {
+          "enum": [
+            "mcq_subclaim",
+            "mcq_option_conclusion",
+            "answer_assertion",
+            "document_assertion"
+          ]
+        },
         "option": {"type": ["string", "null"], "pattern": "^[A-Z]$"},
         "text": {"$ref": "#/$defs/nonEmptyString"},
         "disposition": {"$ref": "#/$defs/disposition"}
@@ -208,7 +282,7 @@
     "entity": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "entity_type", "capacities", "director_count", "director_count_fact_ids"],
+      "required": ["id", "entity_type", "capacities", "cardinalities"],
       "properties": {
         "id": {"$ref": "#/$defs/id"},
         "entity_type": {"enum": ["human", "corporate", "trust", "purpose_trust", "foundation"]},
@@ -252,8 +326,32 @@
           },
           "uniqueItems": true
         },
-        "director_count": {"type": ["integer", "null"], "minimum": 0},
-        "director_count_fact_ids": {"$ref": "#/$defs/idList"}
+        "cardinalities": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/cardinality"}
+        }
+      }
+    },
+    "cardinality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "count", "fact_ids"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "directors",
+            "trustees",
+            "protectors",
+            "enforcers",
+            "councillors",
+            "guardians",
+            "members",
+            "signatories",
+            "other"
+          ]
+        },
+        "count": {"type": ["integer", "null"], "minimum": 0},
+        "fact_ids": {"$ref": "#/$defs/idList"}
       }
     },
     "source": {
@@ -277,7 +375,8 @@
         "triggering_fact_ids",
         "deciding_fact_ids",
         "unique_contribution",
-        "xor_set_id",
+        "deliverable_scope",
+        "relationship_set_ids",
         "unresolved",
         "gap_ids"
       ],
@@ -289,7 +388,10 @@
         "triggering_fact_ids": {"$ref": "#/$defs/idList"},
         "deciding_fact_ids": {"$ref": "#/$defs/idList"},
         "unique_contribution": {"$ref": "#/$defs/nonEmptyString"},
-        "xor_set_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+        "deliverable_scope": {
+          "enum": ["requested output", "necessary companion", "background/check only"]
+        },
+        "relationship_set_ids": {"$ref": "#/$defs/idList"},
         "unresolved": {"type": "boolean"},
         "gap_ids": {"$ref": "#/$defs/idList"}
       }
@@ -328,18 +430,20 @@
         },
         "actual_open": {
           "type": "array",
+          "minItems": 1,
           "items": {"$ref": "#/$defs/actualOpenEntry"}
         },
         "forbidden_paths": {"$ref": "#/$defs/pathList"},
         "prior_answer_paths": {"$ref": "#/$defs/pathList"}
       }
     },
-    "xorBranchSet": {
+    "routeRelationshipSet": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "route_ids", "selection_state", "selected_route_ids", "deciding_fact_ids"],
+      "required": ["id", "kind", "route_ids", "selection_state", "selected_route_ids", "deciding_fact_ids"],
       "properties": {
         "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["XOR", "AND prerequisite", "SEQUENCE", "OPTIONAL overlay"]},
         "route_ids": {"$ref": "#/$defs/idList"},
         "selection_state": {"enum": ["selected", "unresolved", "not_applicable"]},
         "selected_route_ids": {"$ref": "#/$defs/idList"},
@@ -438,7 +542,7 @@
         "target_act",
         "upstream_authority_instrument_id",
         "target_instrument",
-        "signatory",
+        "signatories",
         "action_business",
         "selected_action_component_ids",
         "operative_components",
@@ -487,7 +591,11 @@
         "target_act": {"type": "boolean"},
         "upstream_authority_instrument_id": {"type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
         "target_instrument": {"$ref": "#/$defs/nonEmptyString"},
-        "signatory": {"$ref": "#/$defs/signatory"},
+        "signatories": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/signatory"}
+        },
         "action_business": {"type": "boolean"},
         "selected_action_component_ids": {"$ref": "#/$defs/idList"},
         "operative_components": {
@@ -563,6 +671,24 @@
         "route_id": {"$ref": "#/$defs/id"},
         "contribution": {"$ref": "#/$defs/nonEmptyString"},
         "answer_location": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "renderAuthorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "input_complete", "materials_outcome"],
+      "properties": {
+        "decision": {"enum": ["render", "render_with_placeholders", "do_not_render"]},
+        "input_complete": {"type": "boolean"},
+        "materials_outcome": {
+          "enum": [
+            "answerable",
+            "answerable with placeholders",
+            "conditional answer",
+            "partial course coverage",
+            "materials do not resolve"
+          ]
+        }
       }
     }
   }

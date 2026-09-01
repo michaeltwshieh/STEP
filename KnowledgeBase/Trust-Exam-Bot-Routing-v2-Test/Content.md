@@ -6,7 +6,7 @@ named files. The complete module filenames and appendix filenames are listed bel
 
 ## Quick topic map (topic → where to look)
 
-- **definition of a trust, three certainties, certainty of intention, capacity of settlor, legal vs equitable ownership, transfer of legal title, separate fund, trustee's core duties, beneficiaries' in personam and in rem rights, tracing, Hague Convention, trust compared with company / contract / will / foundation, civil law systems** → Module 1 (Review of the Trust Concept); —
+- **definition of a trust, three certainties (intention, subject matter/trust fund and objects/beneficiaries), capacity of settlor, legal vs equitable ownership, transfer of legal title, separate fund, trustee's core duties, beneficiaries' in personam and in rem rights, tracing, Hague Convention, trust compared with company / contract / will / foundation, civil law systems** → Module 1 (Review of the Trust Concept), plus Module 3 §§3.1 and 3.3 for subject matter/trust fund and objects/beneficiaries; —
 - **marketing trust services, marketing the jurisdiction, remuneration and the remuneration rule, charging clause, negotiating fees, appointment of first trustee, removal / retirement / appointment of trustees, duties on accepting existing trust business, acquainting with trust terms and property, review of trust accounts, investment review, compliance** → Module 2 (Marketing Trust Services and Accepting New Business); Appendix 2, Appendix 3, Appendix 4, Appendix 5
 - **trust instrument preliminary provisions, formal parts, recitals, definitions clause, the trust fund, the trust period, definition of beneficiaries, the trustees, the protector, the proper law, trust for sale, trusts of original and additional property** → Module 3 (The Trust Instrument - Part 1: Preliminary Provisions); Appendix 7
 - **discretionary trust, dispositive provisions over income and capital, power of appointment, power of re-settlement, ultimate default trust, duties owed under a dispositive power, factors in the decision-making process, letter / statement / memorandum of wishes, sham trust, distribution procedure and checklist, releases and receipts, settlor-directed (reserved powers) trust, reserved powers legislation, life interest trust, determinable life interest** → Module 4 (The Trust Instrument - Part 2: Dispositive Provisions); Appendix 1, Appendix 6, Appendix 8, Appendix 9, Appendix 10, Appendix 11A, Appendix 11B, Appendix 12, Appendix 13, Appendix 14B, Appendix 15, Appendix 16A, Appendix 16B, Appendix 17, Appendix 18, Appendix 20A, Appendix 20B, Appendix 21
@@ -16,7 +16,7 @@ named files. The complete module filenames and appendix filenames are listed bel
 - **estate planning, forced heirship, freedom of disposition, forced heirship on death and over inter vivos gifts, domicile, nationality, habitual residence, clawback, attack in the forum of the foreign state, jurisdiction over offshore trustees, enforcement of foreign judgments, defence of the trust** → Module 8 (Estate Planning and Forced Heirship Avoidance); —
 - **asset protection trusts, Statute of Elizabeth, fraudulent dispositions, intent to defraud, creditor, limitation period, burden of proof, survivability of the trust, structuring an asset protection trust, bankruptcy, transaction at an undervalue, recognition of a foreign trustee in bankruptcy, divorce, nuptial settlement, treating trust assets as a resource, setting the trust aside** → Module 9 (Asset Protection Trusts); —
 - **purpose trusts, human beneficiary principle, trusts of imperfect obligation, charitable trusts, offshore purpose trust legislation, Bermuda second generation, STAR trusts (Cayman), enforcer, private trust company, employee benefit trusts, subordination trusts, project and asset financing** → Module 10 (Purpose Trusts); Appendix 30
-- **private foundations, definition and characteristics, formation and registration, separate legal entity, charter (foundation deed), regulations / by-laws, founder's reserved rights, the council and councillors' duties, guardian or supervisory body, beneficiaries of a foundation, capacity, termination, trusts versus foundations compared** → Module 11 (Private Foundations); Appendix 31, Appendix 32
+- **private foundations, definition and characteristics, formation and registration, separate legal entity, charter (foundation deed), regulations / by-laws, founder's reserved rights, the council and councillors' duties, guardian or supervisory body, beneficiaries of a foundation, capacity, termination, trusts versus foundations compared** → Module 11 (Private Foundations); Appendix 31, with Appendix 32 only for its council distribution/property-acquisition actions
 
 ## Map contract
 
@@ -42,6 +42,13 @@ opening those sources and it does not itself state a complete rule of law.
   when its unique contribution affects the requested answer.
 - Ownership below identifies the starting module only. The additive issue map, the
   decision map and the lifecycle notes control the final source union.
+
+Tag each incorporated source by role. A **primary** source supplies the governing rule
+for the requested issue; a **supporting** source contributes a triggered distinction,
+exception or stage; a **drafting** source supplies the selected instrument architecture;
+and a **reference/check** source is used privately or comparatively without being
+treated as operative wording. One source may change role between answer units, but its
+role must be explicit and justified by the requested deliverable.
 
 ## Module ownership
 
@@ -73,6 +80,9 @@ instrument.
   certainty of intention; legal and equitable ownership; transfer of legal title;
   separate fund; trustee duties; beneficiary in personam and in rem rights; tracing**
   - Base: Module 1 §§1-5.
+  - For the three certainties, Module 1 §2.3 supplies intention; add Module 3 §§3.1 and
+    3.3 for the trust fund/subject matter and beneficiaries/objects. Do not reduce the
+    general test to intention alone.
   - If the question concerns the trust instrument used to constitute or describe the
     arrangement, add Module 3 §§1-5.
   - If the capacity, transfer or ownership issue has a foreign element, add Module 6
@@ -150,11 +160,12 @@ instrument.
   - Base: Module 3 §3.3 and Module 4 §2.
   - A conventional trust with a settlor or protector power: add Module 7 §2.1.2 and
     Appendix 1 or Appendix 6 according to the actor and the requested act.
-  - A STAR trust: add Module 10 §§2.2-2.3.5 and Appendix 30 §§9-10; the Enforcer's
+  - A STAR trust: add Module 10 §§2.3.1-2.3.5 and Appendix 30 §§9-10; the Enforcer's
     consent or direction is a fact-sensitive overlay.
-  - A foundation: add Module 11 §§5.2, 8 and 9 and Appendices 31-32. Do not carry a
-    trustee's beneficiary-addition route into a foundation without checking its
-    charter and regulations.
+  - A foundation: add Module 11 §§5.2, 8 and 9 and Appendix 31. Appendix 32 applies only
+    when the requested act is the council's distribution decision in that specimen; it
+    is not an addition/exclusion precedent. Do not carry a trustee's beneficiary route
+    into a foundation without checking its charter and regulations.
   - There is no standalone conventional-trust exclusion precedent in the appendix
     set. If the question asks for one, use the source instrument's exclusion clause
     where it exists and disclose the materials gap instead of inventing a deed.
@@ -210,6 +221,9 @@ instrument.
   - The requested document controls the output. A preceding checklist, bank transfer,
     underlying-company resolution or register entry is a companion/check unless the
     question asks for it.
+  - In the lifecycle, Appendix 11A is the operative direct-appointment resolution.
+    Appendix 11B is the upstream approval/execution resolution and must be followed by
+    its attached appointment deed; neither architecture absorbs the other.
 
 - **Settlor-directed or reserved-powers trust; negative veto/approval; positive direction;
   lawfulness; administration**
@@ -368,9 +382,12 @@ instrument.
   offshore firewall/defence and attack in the offshore forum**
   - Base: Module 8 §§3.2-3.3.
   - Governing-law and foreign-law exclusion: Module 6 §§2.3-2.5.
-  - APT or bankruptcy overlay: Module 9 §§2-5 when the attacking party is a creditor,
-    trustee in bankruptcy or spouse; do not conflate a forced-heirship claimant with
-    a bankruptcy trustee.
+  - A creditor attack follows the applicable Module 9 §§2-3 jurisdiction/model branch;
+    a trustee-in-bankruptcy attack follows Module 9 §5; a spouse/divorce attack follows
+    Module 9 §6. Do not conflate those claimants or routes.
+  - If a private foundation is the target or alternative vehicle, add Module 11 §4.3
+    for its conflict-of-laws treatment, with §§4.1-4.2 only as formation/endowment facts
+    require.
 
 ### F. Protectors and STAR enforcers
 
@@ -398,8 +415,8 @@ instrument.
 
 - **STAR enforcer, enforcement, directions, consent, replacement, fiduciary powers,
   information, remuneration, liability and termination**
-  - Base: Module 10 §§2.3.1-2.3.5 and §3.4 where the use or finance structure is
-    relevant.
+  - Base: Module 10 §§2.3.1-2.3.5. Add §3.4 only for an employee-benefit use and §3.5
+    only for a subordination, project-finance or asset-finance structure.
   - Exact specimen: Appendix 30, with its Cayman Part VIII reference, enforcer and
     incomplete Schedule 1/execution material.
   - Do not substitute Module 7's protector analysis for a STAR enforcer, or assume a
@@ -407,13 +424,22 @@ instrument.
 
 ### G. Asset protection, bankruptcy and divorce
 
-- **Common-law position; Statute of Elizabeth; conveyance, property, intent to defraud,
-  creditor, limitation, burden of proof and survivability**
-  - Base: Module 9 §§1-3.8.
+- **Creditor attack; common-law position; Statute of Elizabeth; fraudulent-disposition,
+  statutory-equivalent and Actio Pauliana models; conveyance, property, intent,
+  standing, limitation, burden of proof and survivability**
+  - Base: Module 9 §1, then select the jurisdiction/model branch instead of treating
+    §§2-3.8 as one cumulative rule.
+  - Statute of Elizabeth model: Module 9 §§2-2.5. Cayman FDA and jurisdictions using
+    that modern model: Module 9 §§3-3.8 plus the exact Task 9.1 jurisdiction passage.
+  - BVI and Hong Kong statutory-equivalent routes, the Isle of Man Fraudulent
+    Assignments Act route and Singapore's insolvency-statute route come from their exact
+    Task 9.1 passages. Guernsey and Jersey use the Task 9.1 Actio Pauliana passage.
+  - Preserve each model's creditor standing, limitation, burden, survivability, prior
+    distributions and costs consequences; never transfer one model's result to another.
   - Forced-heirship overlay: Module 8 §§3.1-3.3; governing-law/firewall overlay:
     Module 6 §§2.3-2.5.
-  - Keep the source's jurisdictional model visible. Do not replace it with an external
-    current statute or a general insolvency rule.
+  - Keep the source's jurisdictional model visible. Do not replace it with outside law
+    or a general insolvency rule.
 
 - **Structuring an asset protection trust; governing law; offshore trustee;
   irrevocability; few reserved powers; discretionary nature; trust property**
@@ -426,7 +452,8 @@ instrument.
 
 - **Bankruptcy, 1914 model, 1986 model, settlement, transaction at undervalue,
   voidability, time limits and recognition of a foreign trustee in bankruptcy**
-  - Base: Module 9 §5.1-5.3.
+  - Base: select Module 9 §5.1 or §5.2 according to the supplied bankruptcy model; add
+    §5.3 only for recognition/jurisdiction of a foreign trustee in bankruptcy.
   - Creditor/trust-property rights: Module 1 §5 and Module 9 §§1-3.
   - Cross-border court and governing-law issues: Module 6 §1-2 and Module 8 §3.2 only
     where the facts involve a foreign judgment or succession attack.
@@ -468,13 +495,16 @@ instrument.
   - Drafting/reference specimen: Appendix 30. It contains employee-benefit, controlled-
     company, Business Plan and Enforcer architecture that must not be generalised to
     every STAR or purpose trust.
-  - If the issue is trustee investment/administration, enforcer direction or
-    confidentiality, add the matching Appendix 30 clauses and Module 10 §3.4.
+  - For trustee investment/administration add the matching Appendix 30 clauses and
+    Module 5 §§1.7-1.9; for enforcer direction or confidentiality use the matching
+    Appendix 30 clauses and Module 10 §2.3. Add Module 10 §3.4 only for employee
+    benefits and §3.5 only for a financing use.
 
 - **Uses: private non-charitable purposes, family operating/investment company, private
   trust company, employee benefits, subordination, project financing and asset
   financing**
-  - Base: Module 10 §§3.1-3.5.3.
+  - Base: Module 10 §§3.1-3.3 for the named private/company use; §3.4 for employee
+    benefits; or §§3.5-3.5.3 for financing. Select by use rather than opening all uses.
   - Underlying shares, voting and anti-Bartlett supervision: Module 5 §§1.7-1.8.
   - Employee-benefit STAR specimen: Appendix 30; financing terms are not fully
     reproduced there and any missing facility/security documents stay a gap.
@@ -508,6 +538,9 @@ instrument.
     only when the facts make that issue outcome-changing.
   - A foundation's charter/regulations and council acts are not a trust deed or trustee
     resolution. Keep the legal actor, ownership and document chain separate.
+  - No appendix supplies a foundation dissolution/termination instrument. If drafting
+    one is requested, Module 11 §11 remains the primary prose source and the operative
+    document is an explicit materials gap; Appendix 32 is not a dissolution precedent.
 
 ## Appendix decision map
 
@@ -591,41 +624,47 @@ appendix is not supplied merely because the appendix says it is attached.
 | **31** Foundation Charter of the AB Foundation | Appendix-31-Foundation-Charter-of-the-AB-Foundation.md | Composite specimen charter and regulations for a numbered foundation | Use as an example of charter/regulations architecture. Replace sample people, amounts, registration number and jurisdiction; it is not a trust deed or a universal foundation statute. |
 | **32** AB Foundation (Number 12345N) | Appendix-32-AB-Foundation-Number-12345N.md | Composite specimen containing council meeting minutes for a distribution and a separate written-resolution property acquisition | Select the requested branch. The referenced Contract and Conveyance are attachments not reproduced here; do not hide them inside a generic resolution. |
 
-## Appendix XOR and combination rules
+## Appendix relationship and combination rules
 
-- **Appendix 7 deed versus written resolution**: choose the instrument that matches the
+- **XOR - Appendix 7 deed versus written resolution**: choose the instrument that matches the
   requested acceptance act and signatory. They are alternatives, not two required
   additions.
-- **Appendix 9 versus 10 versus 12**: absolute appointment, appointment upon new
+- **XOR - Appendix 9 versus 10 versus 12**: absolute appointment, appointment upon new
   trusts and resettlement to a named Transferee Trust are distinct dispositive acts.
   Select one by the requested legal effect.
-- **Appendix 11A versus 11B**: direct trustee appointment resolution versus approval and
+- **XOR - Appendix 11A versus 11B**: direct trustee appointment resolution versus approval and
   execution of an attached deed. They are alternative document architectures. If the
-  question requests both the upstream resolution and the attached deed, 11B plus the
-  selected deed is the chain; do not also add 11A.
-- **Appendix 13 alternatives**: select one wishes formulation; do not write all
+  11B branch is selected, a separate **SEQUENCE** set links that upstream resolution to
+  the selected attached deed; do not also add 11A.
+- **XOR - Appendix 13 alternatives**: select one wishes formulation; do not write all
   bracketed spouse, children, education and investment alternatives as simultaneous
   directions.
-- **Appendix 14A versus 14B**: receipt attorney versus bank-payment instruction.
-  Neither is the Trustee's dispositive act.
-- **Appendix 16A versus 16B**: Trustee implementing a Settlor instruction versus
+- **OPTIONAL overlay - Appendix 14A and 14B**: receipt attorney and bank-payment
+  instruction are distinct possible implementation documents. Neither is the Trustee's
+  dispositive act; include either only when its own facts and requested stage trigger
+  it. Any activated document belongs in a separate **SEQUENCE** set after the Trustee's
+  dispositive decision.
+- **XOR - Appendix 16A versus 16B**: Trustee implementing a Settlor instruction versus
   Settlor/Appointor exercising the reserved power. The actors and operative wording
   cannot be merged.
-- **Appendix 17 versus 18**: release of a life interest versus assignment to an
+- **XOR - Appendix 17 versus 18**: release of a life interest versus assignment to an
   assignee.
-- **Appendix 20B versus 21**: closure on death versus discretionary early termination.
-- **Appendix 24A versus 24B**: bringing/defending proceedings versus accepting a
+- **XOR - Appendix 20B versus 21**: closure on death versus discretionary early termination.
+- **SEQUENCE - Appendix 24A and 24B**: bringing/defending proceedings and later accepting a
   compromise. They may be sequential in real litigation, but the requested stage
   decides which document is drafted.
-- **Appendix 26 full versus partial revocation**: select one branch and identify the
+- **XOR - Appendix 26 full versus partial revocation**: select one branch and identify the
   assets. Do not draft both.
-- **Appendix 27 versus 28**: change of governing law versus execution of a flee-clause
-  transfer power. One does not supply the other.
-- **Appendix 30 versus the Bermuda routes in Module 10 §2.2**: Cayman STAR specimen
+- **OPTIONAL overlay - Appendix 27 and 28**: change of governing law and execution
+  of a flee-clause transfer power are distinct acts. One does not supply the other; use
+  both only when the instrument and event require both stages, then link them in a
+  separate **SEQUENCE** set.
+- **XOR - Appendix 30 versus the Bermuda routes in Module 10 §2.2**: Cayman STAR specimen
   versus Bermudian second-generation statutory model. Keep them conditional.
-- **Appendix 31 versus 32**: charter/regulations versus council action. A foundation
-  cannot acquire property merely because a charter exists; the council instrument and
-  referenced conveyance/contract are separate stages.
+- **AND prerequisite - Appendix 31 and 32**: the applicable charter/regulations power and
+  council authority must support the selected council act. A separate **SEQUENCE** set
+  links a property-acquisition resolution to its referenced contract and conveyance;
+  the charter alone does not acquire property.
 
 ## High-risk distinctions
 
@@ -646,7 +685,7 @@ appendix is not supplied merely because the appendix says it is attached.
 - Trustee retirement/removal, disclaimer before acceptance, protector succession,
   enforcer succession and flee-clause retirement are separate lifecycle events.
 - Governing law, forum, place of administration, trustees' residence, asset situs and
-  the place where a bank account is held are separate locks.
+  the place where a bank account is held are separate jurisdiction factors.
 - A change of governing law is not a migration of the trustee and a flee clause is not
   a general power of attorney.
 - A life tenant's occupancy of real estate is not ownership, an absolute appointment or
@@ -659,8 +698,9 @@ appendix is not supplied merely because the appendix says it is attached.
 - A foundation charter/regulations, a council meeting, a circular written resolution,
   a contract and a conveyance are separate foundation documents and actors.
 - The appendix set has no complete generic APT deed, no generic Bermuda purpose-trust
-  precedent, no standalone conventional-trust exclusion deed, and no complete
-  asset-specific transfer package. State the gap where the question requires one.
+  precedent, no standalone conventional-trust exclusion deed, no foundation dissolution
+  instrument and no complete asset-specific transfer package. State the gap where the
+  question requires one.
 
 ## Lifecycle and document-chain notes
 
@@ -673,14 +713,14 @@ answer merely because it appears in the sequence.
 | 1. Instructions and acceptance | Client objective, jurisdiction, settlor capacity, trust type, trustee choice, conflicts, remuneration and compliance | Module 1 §§1-3; Module 2 §§1-4; Appendix 2 or 4; Appendix 3 only if the proposed trustee disclaims before acceptance |
 | 2. Constitution and funding | Instrument formalities, recitals, definitions, proper law, trust period, initial fund, additional property and asset-specific transfer method | Module 3 §§1-5; Module 5 §7; Module 6 §§2-3; Appendix 1 and Appendix 7; missing conveyance/assignment/stock-transfer material remains a gap |
 | 3. Control architecture | Reserved settlor powers, protector/enforcer consent, direction/veto, statement of wishes and sham/control risk | Module 4 §2; Module 6 §2.3.5; Module 7 §§1-3; Module 10 §2.3; Appendix 1, 13, 14B, 16A/16B or 30 as applicable |
-| 4. Dispositive decision | Identify income/capital, class, power clause, relevant considerations, accounts, tax, decision record and required consent | Module 4 §§1.5-1.7; Module 7 §§2-3; Appendix 8, 9, 10, 11A or 11B |
-| 5. Operative distribution | Deed/resolution/instruction, beneficiary receipt, payment route, underlying company authority and release/indemnity | Appendices 9, 11B, 14A, 14B and 15; use Appendix 8 for income and Appendix 16A/16B for settlor-directed routes |
+| 4. Dispositive decision | Identify income/capital, class, power clause, relevant considerations, accounts, tax, decision record and required consent | Module 4 §§1.5-1.7; Module 7 §§2-3; Appendix 11A for a direct appointment resolution, or Appendix 11B for approval and execution of an attached deed; use Appendices 8-10 for their specified acts |
+| 5. Operative distribution | Implement the selected resolution/deed architecture, then payment/transfer, receipt, release and records | Appendix 11A itself effects its direct appointment; Appendix 11B requires the separately selected attached deed; Appendices 9, 14A, 14B and 15 supply their distinct acts; use Appendix 8 for income and Appendix 16A/16B for settlor-directed routes |
 | 6. Life-interest event | Release, assignment, occupation, income payment, death closure or discretionary early termination; identify life tenant and remainderman | Module 4 §3; Appendices 17-21; Appendix 20B's accounts/release/transfer stages are not implied in Appendix 21 |
 | 7. Administration | Investment, delegation, lending, property, company shares, taxes, litigation, compromise, appropriation and administrative variation | Module 5 §§1-3; Appendices 19, 22-25; any referred Loan Agreement, Mortgage Deed, settlement deed or investment agreement must be supplied or kept conditional |
 | 8. Trustee/protector/enforcer change | Consent, notice, appointment, removal, retirement, successor, release, indemnity and vesting | Module 2 §3; Module 5 §4; Module 7 §§1 and 4-6; Module 10 §2.3.3; Appendices 5 and 29; Appendix 28 only for the specified flee event |
 | 9. Governing law or flight | Express power, new governing law, forum, place of administration, emergency event, successor trustee and transfer of underlying-company shares | Module 6 §§2.6 and 3; Module 5 §5; Module 7 §2.2.12; Appendices 27 and 28 |
-| 10. Termination/closure | Revocation, expiry, life-tenant death, early termination, default beneficiary, final accounts, release, legal-title transfer and records | Module 4 §3; Module 5 §6; Module 10 §2.3.5; Module 11 §11; Appendices 20B, 21, 26, 30 and 32 |
-| 11. Foundation lifecycle | Charter, registration, endowment, regulations, council decision, supervisor/guardian, distribution/acquisition, capacity and dissolution | Module 11 §§4-11; Appendices 31-32; Contract and Conveyance referred to in Appendix 32 are separate missing attachments |
+| 10. Termination/closure | Revocation, expiry, life-tenant death, early termination, default beneficiary, final accounts, release, legal-title transfer and records | Module 4 §3; Module 5 §6; Module 10 §2.3.5; Module 11 §11; Appendices 20B, 21, 26 and 30 as applicable; no foundation dissolution precedent is supplied |
+| 11. Foundation lifecycle | Charter, registration, endowment, regulations, council decision, supervisor/guardian, distribution/acquisition, capacity and dissolution | Module 11 §§4-11; Appendices 31-32 only for their charter/regulations and sample council-action roles; the Contract and Conveyance, and any dissolution instrument, are separate materials gaps |
 
 Document-chain rules:
 
@@ -798,8 +838,9 @@ Open the exact source and flag a material warning on Verify.
   Conveyance are not reproduced. Select the relevant branch and keep those attachments
   separate.
 - No appendix supplies a complete generic APT deed, generic Bermuda purpose-trust
-  instrument, conventional exclusion deed or every asset-specific conveyance/registry
-  form. These are materials gaps when the question expressly asks for them.
+  instrument, conventional exclusion deed, foundation dissolution instrument or every
+  asset-specific conveyance/registry form. These are materials gaps when the question
+  expressly asks for them.
 
 ## Modules (with section outlines)
 

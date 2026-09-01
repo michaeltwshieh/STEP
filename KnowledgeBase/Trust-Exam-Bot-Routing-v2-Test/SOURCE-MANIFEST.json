@@ -52,5 +52,22 @@
     "Course-Manual-Module-11-Private-Foundations.md": "0c8788a998e060d9f6f94cc28f0649731cb9ed6700663b1d8b53ca7a6054aada",
     "submission-checklist.md": "d347623da89f09f14f29bd11adab7397bab6b1b6162c2c93a016d6bc2bf1e30b"
   },
-  "schema": "trusts-routing-v2-source-manifest-v1"
+  "schema": "trusts-routing-v2-source-manifest-v2",
+  "workflow_bundle_sha256": "772047fd3f2e8f0541e2a0f23c7307d6794b074edb2ad820ea7e33c93501fa10",
+  "workflow_files": {
+    "AGENTS.md": "2ff17b72280d50a5b64c9be934e979e75c132eccd0d92bc7d64ec9b8392bafad",
+    "CLAUDE.md": "12df404fd73f66b33f083c62daf8429ff6cd9da250b018a1dd376df00d299d52",
+    "Content.md": "e5fca51d98a37cd17acc676e6a5fa4daa51d15bf0fa97bfd8eab1a81cf451911",
+    "README.md": "9ed0888667d1af5713141a95185e3d713afffe5565639e9fffd30fd04b4820de",
+    "routing-core.md": "197b4618f9c82a2207ab4e7905477917ac74574a98a1a5a3cd58e88eb6c78060",
+    "routing-v2/schema/route-plan.schema.json": "6f5857cfc0ec0b14b957a7c7546c4a111bb797db732844e063224f5c93c68d0d",
+    "routing-v2/scripts/check_package.py": "59425e3191bb6ade32484e86edc160623623ba2d5b05fd3b6babcb25039c11af",
+    "routing-v2/scripts/isolation_harness.py": "0b76de6d0fb81f9d3bdfad6ecc8a5d11d25e6c7f0bdd864985eed3381e1f39a4",
+    "routing-v2/scripts/validate_route_plan.py": "19f91a6d0e19bd18998328d566c8ec69aab98ae01ef47294c7844e507d8ae333",
+    "routing-v2/tests/test_check_package.py": "53501151bea3aa709d9b9fa869b12be7221edb0d4b4e55264ef94fdbd5df061f",
+    "routing-v2/tests/test_isolation_harness.py": "717981331a8cabb69deb97b3bc58758392d9e1a2958ed639b5aae92f108ff262",
+    "routing-v2/tests/test_validate_route_plan.py": "14b14a6a5875c29c8079418fabf189351ca41ae14710bcd8b1b9ddb915181437",
+    "section-a.md": "b4bae8765af4095463b209dfdecdf139c288dd5c4781d13d45798c1d82f23dda",
+    "section-b.md": "30efd1f44c218f22037053a9f9abed02665d625e71ffc08f7c5ab9b9d2f67c91"
+  }
 }

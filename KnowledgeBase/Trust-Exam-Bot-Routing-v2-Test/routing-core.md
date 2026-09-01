@@ -10,15 +10,18 @@ Routing is a structured artifact, not prompt-only bookkeeping. For each answer u
 
 1. create a `RoutePlan` JSON conforming to
    `routing-v2/schema/route-plan.schema.json` before rendering answer prose;
-2. populate the facts/claims, six locks, entities, candidate routes, XOR sets and a
-   frozen pre-open allowlist before opening a substantive source;
+2. populate the answer-unit fields, facts/claims, mandatory Trust classification
+   arrays, entities, candidate routes, route relationship sets and a frozen pre-open
+   allowlist before opening a substantive source;
 3. open only allowlisted sources and add their exact relative path, namespace, role and
    SHA-256 to `actual_open`;
 4. complete the requested-document chain, materials gaps and final route trace;
 5. run `python3 routing-v2/scripts/validate_route_plan.py <plan.json> --output
    <validation-report.json>`; and
-6. enter the relevant adapter only when the report status is `VALID` and exit code is
-   zero. Retain the report and its plan hash in the private check trace.
+6. after a `VALID` report and exit code zero, apply the plan's render decision: enter the
+   adapter for `render`, enter it with explicit gaps for `render_with_placeholders`, and
+   do not produce substantive content for `do_not_render`. Retain the report and its
+   plan hash in the private check trace.
 
 Never infer these fields by parsing a completed answer. If validation fails, repair the
 RoutePlan and validate again; do not render around the failure. In a blind or behavioral
@@ -62,6 +65,12 @@ Set mode: `MCQ`, `PROSE` or `DRAFTING`.
 - Prose/drafting: split every sub-part by command word, marks, facts and deliverables.
 - Never classify the whole question from its first or most obvious label.
 
+Each answer unit records `subpart_ref`, `command_word`, `marks`,
+`requested_deliverables` and `polarity`. An MCQ also records `selected_option` and
+`closest_options`; non-MCQs leave option-selection fields inapplicable. Advice about an
+existing statement, letter or memorandum of wishes is `PROSE` unless the requested
+deliverable is a new or revised document.
+
 ## 4. Fact and Claim Disposition Ledger
 
 Create one row for every material fact and, for an MCQ, every option claim.
@@ -87,28 +96,41 @@ No fact or option may remain orphaned.
 Record each row in `facts` or `claims` with one scalar `disposition`. For an MCQ,
 `answer_unit.mcq_options` and the `mcq_option` claims must be bijective.
 
-## 5. Six locks
+## 5. Mandatory Trust classifications
 
-Lock or expressly mark unknown:
+Populate all eight required arrays. Each entry records its state, value, deciding fact
+IDs and any isolated alternatives; an unknown or disputed value remains conditional or
+a gap rather than being silently selected.
 
-1. jurisdiction;
-2. regime, trust type or foundation/entity type;
-3. legal actor/capacity;
-4. transaction/legal relationship;
-5. current and requested lifecycle stage; and
-6. governing legislation, trust instrument, foundation charter and regulations.
+1. `jurisdiction_factors`: classify separately the proper law, forum, place of
+   administration, relevant party connecting factors, asset situs, transferor's place
+   of incorporation and foundation registration jurisdiction, but only as applicable to
+   the issue.
+2. `trust_architecture`: vehicle and architecture, including conventional trust,
+   reserved-powers trust, life-interest trust, purpose trust, Cayman STAR trust or
+   foundation, plus any dispositive, administrative or governance structure that
+   changes the route.
+3. `actor_capacities`: every actor in each legally relevant capacity, including when a
+   company acts as trustee, settlor, protector, enforcer, founder or council member.
+4. `power_characteristics`: identify the power holder and whether the power is a duty
+   or discretion, and dispositive, administrative or enforcement in nature; separately
+   record direction, consent, veto, approval, revocation or other operative character.
+5. `relationships`: classify both sides of each legal relationship rather than relying
+   on role labels alone.
+6. `lifecycle_stages`: current, prerequisite, requested and later implementation stages.
+7. `governing_instruments`: applicable legislation, trust instrument, foundation
+   charter, regulations/by-laws and actor authority instruments.
+8. `standing`: identify who may request, decide, consent, enforce, challenge, receive or
+   seek a remedy, and on what supplied basis.
 
-Jurisdiction has exactly three states:
+Do not collapse jurisdiction into one label. Proper law does not by itself establish the
+forum, administration place, asset law, transferor-capacity law or foundation registry.
+A trustee, protector or beneficiary address, asset location, registry or counterparty
+does not establish another jurisdictional factor without an issue-specific rule and
+fact. If choice is genuinely delegated, choose only from the course-supported factors,
+actual-instrument fit, complete document chain and fewest materials gaps; an unresolved
+tie stays conditional.
 
-- `supplied`: apply it and exclude other regimes;
-- `choice delegated`: choose once using complete course coverage, actual-instrument fit,
-  document-chain completeness and fewest gaps; break a true tie alphabetically; or
-- `genuinely unknown`: do not choose; isolate supported alternatives.
-
-A trustee, protector or beneficiary address, asset location, registry or counterparty is
-not the trust's or foundation's jurisdiction without an express fact.
-
-Represent every lock with its state, value, deciding fact IDs and isolated alternatives.
 Any exact trustee, protector, councillor, enforcer or corporate-director count is a
 separate entity assertion and needs its own supplied fact; do not infer the board
 composition of a trust company or other corporate actor from its role.
@@ -132,6 +154,9 @@ Before lifecycle expansion, classify each possible contribution by deliverable s
 - `necessary companion` - mention or perform it only where the answer would otherwise
   be legally or procedurally incomplete; or
 - `background/check only` - verify privately and exclude from the submitted answer.
+
+Carry that scope on every route, together with its `relationship_set_ids`; one route
+may participate in more than one relationship set.
 
 A preceding trustee, protector or corporate step is not automatically part of a document
 that the question asks the candidate to draft. A simpler neighbouring precedent is not
@@ -166,7 +191,7 @@ Give every stage a verdict: `triggered`, `not triggered`, `conditional` or `gap`
 
 A route found only here is a first-pass map miss and must be added.
 
-## 8. Conditional branch isolation
+## 8. Route relationship sets and conditional isolation
 
 Represent alternatives separately:
 
@@ -177,14 +202,23 @@ branch only when the deciding fact is supplied. A desired end state is not proof
 intermediate trustee, protector, settlor, beneficiary or council decision that produces
 it.
 
-Record mutually exclusive routes as XOR sets. In particular, an appointment and its
-resettlement alternative, a direction and a veto/consent route, or two alternative
-completion methods cannot be made cumulative merely because each appears in the source
-map.
+Give each related group an ID, add it to every participating route's
+`relationship_set_ids`, and classify the relationship from the actual governing
+instrument and requested act:
 
-An unresolved XOR set has no selected route and keeps every branch conditional. A
-selected XOR set has exactly one selected route and at least one outcome-supporting
-deciding fact.
+- `XOR`: mutually exclusive jurisdictions, actors, powers, precedents or completion
+  methods. An unresolved set has no selected route; a selected set has exactly one route
+  and an outcome-supporting deciding fact.
+- `AND prerequisite`: every listed authority, consent, capacity, decision or instrument
+  must exist before the target act can be validly completed.
+- `SEQUENCE`: routes occur in order, such as decision, deed, transfer, receipt and
+  record; an earlier step is not automatically part of the requested deliverable.
+- `OPTIONAL overlay`: activate only on its stated fact, such as a protector consent,
+  underlying company, foreign asset, release, filing or tax consequence.
+
+Do not infer a relationship type from neighbouring appendix titles. A positive direction
+and a negative consent or veto may be XOR alternatives, prerequisites or separate
+stages depending on the instrument. Keep unresolved conditions isolated.
 
 ## 9. Mandatory, conditional and forbidden routes
 
@@ -220,7 +254,7 @@ Default to discard. Incorporate a source only if all are answered:
 2. What unique contribution does it add?
 3. What answer letter, confidence, sentence, calculation or document component changes
    without it?
-4. Does it match every lock?
+4. Does it match every applicable Trust classification?
 5. Is it proportionate to the polarity/marks/deliverable?
 
 For an MCQ, a second source is incorporated only if it can change the answer letter or
@@ -285,6 +319,10 @@ Rules:
 6. Count expected and produced instruments, operative parts, attachments and execution
    blocks. Reconcile every mismatch before writing; a gap stays an explicit placeholder
    rather than disappearing.
+7. Classify precedent fitness as complete, incomplete, defective or attachment-dependent.
+   An incomplete or defective precedent is not authority to reconstruct omitted wording.
+   A referenced but unsupplied deed, schedule, agreement, conveyance or execution block
+   remains a distinct gap, even when the surrounding precedent is usable.
 
 The validator computes these counts from included instruments, components, attachments,
 execution blocks and records/filings. A direction to update records later is not an
@@ -304,8 +342,11 @@ Use one outcome:
 - `materials do not resolve`
 
 State exactly what is missing, what sources were checked, what remains answerable and
-what must stay blank or conditional. Never invent statute, section, article, form,
-filing rule or precedent.
+what must stay blank or conditional. Assign `render` only where the sourced answer or
+instrument is complete, `render_with_placeholders` where identified gaps can safely
+remain explicit, and `do_not_render` where missing input or source material prevents a
+responsible substantive output. `VALID` by itself does not select a render decision.
+Never invent statute, section, instrument clause, form, filing rule or precedent.
 
 ## 14. Final route trace
 
@@ -315,12 +356,13 @@ Keep a private trace and expose its result in the section output:
 |---|---|---|---|---|
 
 Record incorporated, checked-not-relevant, conditional, forbidden and gap routes.
-Routing completes only when all facts/claims have dispositions, all locks are fixed or
-unknown, both passes reconcile, exact passages are verified and every requested
-deliverable has a source or explicit gap.
+Routing completes only when all facts/claims have dispositions, all required
+classification arrays are populated, both passes reconcile, exact passages are verified,
+every requested deliverable has a source or explicit gap and the render decision matches
+those gaps.
 
 Each mandatory incorporated route must have exactly one trace entry whose contribution
 matches that route's unique contribution and identifies the planned answer location.
-Append `RoutePlan validation: VALID`, the plan ID and the validator's canonical plan
-hash to the adapter check trace. This line is evidence of the gate, not part of the
-submitted answer.
+Append `RoutePlan validation: VALID`, the render decision, plan ID and validator's
+canonical plan hash to the adapter check trace. This line is evidence of the gate, not
+part of the submitted answer.

@@ -4,8 +4,9 @@ Run `Content.md` and `routing-core.md` first. This file contains only MCQ analys
 output, confidence and completion rules.
 
 Do not write the MCQ response until the unit's RoutePlan has passed
-`routing-v2/scripts/validate_route_plan.py`. The adapter consumes the validated plan;
-it never reconstructs routing fields from the response.
+`routing-v2/scripts/validate_route_plan.py` and its render decision permits output. The
+adapter consumes the validated plan; it never reconstructs routing fields from the
+response.
 
 ## Option-level decomposition
 
@@ -19,6 +20,10 @@ For every MCQ record:
 5. candidate source required for that option; and
 6. verdict: `supported`, `refuted`, `partly true but not best`, or
    `materials do not resolve`.
+
+Record the committed letter in `selected_option` and the closest pair in
+`closest_options`; those fields come from the completed option analysis, not from a
+post-answer parse.
 
 Do not route only the stem. Do not let one true clause rescue an option whose absolute
 qualifier or second clause is false.
@@ -54,8 +59,9 @@ dependent on an unstated condition.
 - After the answer is determined, provide an exact-open attestation. Any accessed file
   absent from the frozen `OPEN` plan is a completion failure; do not answer until the
   plan and access ledger reconcile.
-- An option mentioning a deed, resolution, memorandum or power of attorney remains an
-  MCQ claim; do not draft the document.
+- An option mentioning a deed, resolution, statement or memorandum of wishes,
+  instruction, power of attorney, trust instrument or foundation charter remains an MCQ
+  claim; do not draft the document.
 - If materials do not resolve the letter after the shared escalation, say so rather
   than inventing a high-confidence answer.
 
@@ -71,7 +77,8 @@ dependent on an unstated condition.
 - **Closest two:** `<letters>` - `<one outcome-changing distinction>`
 - **Sources used:** exact module/section/appendix filenames.
 - **Cross-check:** incorporated or discarded second source and why.
-- **RoutePlan validation:** `VALID` - plan ID, canonical plan SHA-256 and retained
+- **RoutePlan validation:** `VALID` - render decision (`render` or
+  `render_with_placeholders`), plan ID, canonical plan SHA-256 and retained
   validation-report reference.
 - **Confidence:** high / medium / low plus score out of 10 and verify note if needed.
 
@@ -100,4 +107,6 @@ accuracy; official unseen Section A material remains an external holdout.
 - [ ] One letter committed, or a genuine materials gap expressly stated.
 - [ ] Sources, cross-check and honest confidence included.
 - [ ] RoutePlan validator returned exit code zero; plan ID/hash/report recorded.
+- [ ] Render decision is `render` or an expressly gap-preserving
+      `render_with_placeholders`; `VALID` was not treated as standalone authority.
 - [ ] No Section B drafting workflow activated merely by document terminology.

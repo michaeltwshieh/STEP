@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministically validate a structured pre-answer RoutePlan.
+"""Validate a source-bound structured pre-answer RoutePlan.
 
 The validator intentionally reads no free-form answer prose.  It first enforces the
 checked-in JSON Schema with a small dependency-free schema walker, then applies the
@@ -34,13 +34,16 @@ INCLUDED_STATUSES = {"produced", "placeholder"}
 # trust act; requiring another synthetic upstream row would duplicate the act.
 CORPORATE_UPSTREAM_CAPACITIES = {"corporate_member", "corporate_director"}
 INVARIANT_CODES = (
+    "NONEMPTY_PLAN",
     "FACT_CLAIM_DISPOSITIONS",
-    "LOCK_SUPPORT",
-    "ENTITY_COUNT_SUPPORT",
+    "CLASSIFICATION_SUPPORT",
+    "ENTITY_CARDINALITY_SUPPORT",
+    "ENTITY_CAPACITY",
     "SOURCE_NAMESPACE",
     "SOURCE_ALLOWLIST",
+    "SOURCE_FILE_INTEGRITY",
     "FORBIDDEN_SOURCE_ACCESS",
-    "XOR_SELECTION",
+    "RELATIONSHIP_SELECTION",
     "BRANCH_DECIDING_FACT",
     "CORPORATE_ACTOR_AUTHORITY",
     "DOCUMENT_COUNT_RECONCILIATION",
@@ -50,6 +53,18 @@ INVARIANT_CODES = (
     "FINAL_ROUTE_TRACE",
     "RENDER_GATE",
 )
+
+CLASSIFICATION_FIELDS = (
+    "jurisdiction_factors",
+    "trust_architecture",
+    "actor_capacities",
+    "power_characteristics",
+    "relationships",
+    "lifecycle_stages",
+    "governing_instruments",
+    "standing",
+)
+COURSE_NAMESPACES = {"course_manual", "course_appendix"}
 
 
 @dataclass(frozen=True, order=True)
@@ -167,6 +182,8 @@ def schema_walk(
                 schema_walk(subvalue, properties[key], schema_root, f"{path}/{key}", collector)
 
     if isinstance(value, list):
+        if len(value) < rule.get("minItems", 0):
+            collector.schema(path, f"array has fewer than {rule['minItems']} items")
         item_rule = rule.get("items")
         if isinstance(item_rule, dict):
             for index, item in enumerate(value):
@@ -223,7 +240,20 @@ def is_safe_relative_path(value: str) -> bool:
     return bool(value) and not path.is_absolute() and ".." not in path.parts
 
 
-def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
+def load_source_manifest(source_root: Path, collector: Collector) -> dict[str, str]:
+    manifest_path = source_root / "SOURCE-MANIFEST.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        files = manifest["files"]
+        if not isinstance(files, dict) or not all(isinstance(key, str) and isinstance(value, str) for key, value in files.items()):
+            raise ValueError("files must map paths to SHA-256 strings")
+        return files
+    except (OSError, UnicodeError, json.JSONDecodeError, KeyError, ValueError) as error:
+        collector.add("SOURCE_FILE_INTEGRITY", "/source_access", f"cannot load SOURCE-MANIFEST.json: {error}")
+        return {}
+
+
+def validate_invariants(plan: dict[str, Any], collector: Collector, source_root: Path) -> None:
     facts = index_unique(plan.get("facts", []), "/facts", collector)
     claims = index_unique(plan.get("claims", []), "/claims", collector)
     entities = index_unique(plan.get("entities", []), "/entities", collector)
@@ -231,78 +261,139 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
     gaps = index_unique(plan.get("materials_gaps", []), "/materials_gaps", collector)
     trace = index_unique(plan.get("final_trace", []), "/final_trace", collector)
 
+    if not facts or not routes or not entities:
+        collector.add(
+            "NONEMPTY_PLAN",
+            "",
+            "RoutePlan must contain at least one fact, entity and candidate route",
+        )
+    for field in CLASSIFICATION_FIELDS:
+        if not plan.get(field):
+            collector.add("NONEMPTY_PLAN", f"/{field}", "mandatory classification array is empty")
+
     # Every material fact and every MCQ option is represented by exactly one scalar disposition.
     for fact_id, fact in facts.items():
         if fact.get("material") and not isinstance(fact.get("disposition"), str):
             collector.add("FACT_CLAIM_DISPOSITIONS", f"/facts/{fact_id}", "material fact lacks one disposition")
     answer_unit = plan.get("answer_unit", {})
-    option_claims: dict[str, list[str]] = {}
+    option_subclaims: dict[str, list[str]] = {}
+    option_conclusions: dict[str, list[str]] = {}
     for claim_id, claim in claims.items():
-        if claim.get("kind") == "mcq_option":
-            option_claims.setdefault(str(claim.get("option")), []).append(claim_id)
+        if claim.get("kind") == "mcq_subclaim":
+            option_subclaims.setdefault(str(claim.get("option")), []).append(claim_id)
+        elif claim.get("kind") == "mcq_option_conclusion":
+            option_conclusions.setdefault(str(claim.get("option")), []).append(claim_id)
     if answer_unit.get("mode") == "MCQ":
-        for option in answer_unit.get("mcq_options", []):
-            matching = option_claims.get(option, [])
-            if len(matching) != 1:
+        options = answer_unit.get("mcq_options", [])
+        selected = answer_unit.get("selected_option")
+        closest = answer_unit.get("closest_options", [])
+        authorization = plan.get("render_authorization", {})
+        unresolved_mcq = selected is None
+        if not options:
+            collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/mcq_options", "MCQ must declare options")
+        if unresolved_mcq:
+            if authorization.get("decision") != "do_not_render" or authorization.get("materials_outcome") != "materials do not resolve":
+                collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/selected_option", "null selected option is allowed only for a do-not-render, materials-do-not-resolve MCQ")
+            if closest and (len(closest) != 2 or any(option not in options for option in closest)):
+                collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/closest_options", "unresolved MCQ closest options must be empty or two declared options")
+        else:
+            if selected not in options:
+                collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/selected_option", "selected option must be one declared MCQ option")
+            if len(closest) != 2 or any(option not in options for option in closest):
+                collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/closest_options", "resolved MCQ must identify two distinct declared closest options")
+            elif selected not in closest:
+                collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/closest_options", "closest options must include the selected answer")
+        if answer_unit.get("polarity") is None:
+            collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/polarity", "MCQ must record its exact polarity")
+        for option in options:
+            subclaims = option_subclaims.get(option, [])
+            conclusions = option_conclusions.get(option, [])
+            if not subclaims:
                 collector.add(
                     "FACT_CLAIM_DISPOSITIONS",
                     "/claims",
-                    f"MCQ option {option!r} must have exactly one claim/disposition; found {len(matching)}",
+                    f"MCQ option {option!r} must have at least one independently disposed subclaim",
                 )
-        extras = sorted(set(option_claims) - set(answer_unit.get("mcq_options", [])))
+            if len(conclusions) != 1:
+                collector.add(
+                    "FACT_CLAIM_DISPOSITIONS",
+                    "/claims",
+                    f"MCQ option {option!r} must have exactly one option conclusion; found {len(conclusions)}",
+                )
+        extras = sorted((set(option_subclaims) | set(option_conclusions)) - set(options))
         if extras:
             collector.add("FACT_CLAIM_DISPOSITIONS", "/claims", f"orphan MCQ option claims: {extras}")
-    elif answer_unit.get("mcq_options"):
-        collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/mcq_options", "non-MCQ unit cannot declare MCQ options")
+    elif (
+        answer_unit.get("mcq_options")
+        or answer_unit.get("selected_option") is not None
+        or answer_unit.get("closest_options")
+        or option_subclaims
+        or option_conclusions
+    ):
+        collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit", "non-MCQ unit cannot declare MCQ option analysis")
+    elif answer_unit.get("polarity") is not None:
+        collector.add("FACT_CLAIM_DISPOSITIONS", "/answer_unit/polarity", "non-MCQ unit must leave polarity null")
 
-    # All six locks use a supported state/value combination.
-    for name, lock in plan.get("locks", {}).items():
-        path = f"/locks/{name}"
-        state = lock.get("state")
-        value = lock.get("value")
-        fact_ids = lock.get("deciding_fact_ids", [])
-        reference_ids(fact_ids, facts, "LOCK_SUPPORT", f"{path}/deciding_fact_ids", collector)
-        if state == "genuinely_unknown":
-            if value is not None:
-                collector.add("LOCK_SUPPORT", f"{path}/value", "genuinely unknown lock must have null value")
-        else:
-            if not isinstance(value, str) or not value.strip():
-                collector.add("LOCK_SUPPORT", f"{path}/value", f"{state} lock requires a selected value")
-            if not fact_ids:
-                collector.add("LOCK_SUPPORT", f"{path}/deciding_fact_ids", f"{state} lock requires supporting facts")
-            for fact_id in fact_ids:
-                if fact_id in facts and facts[fact_id].get("disposition") not in SUCCESS_DISPOSITIONS:
-                    collector.add("LOCK_SUPPORT", path, f"lock relies on non-supporting fact {fact_id!r}")
+    # All eight classification arrays use the same supported lock contract.
+    classification_ids: set[str] = set()
+    for name in CLASSIFICATION_FIELDS:
+        for index, lock in enumerate(plan.get(name, [])):
+            path = f"/{name}/{index}"
+            lock_id = lock.get("id")
+            if lock_id in classification_ids:
+                collector.add("CLASSIFICATION_SUPPORT", f"{path}/id", f"duplicate classification id {lock_id!r}")
+            classification_ids.add(lock_id)
+            state = lock.get("state")
+            value = lock.get("value")
+            fact_ids = lock.get("deciding_fact_ids", [])
+            reference_ids(fact_ids, facts, "CLASSIFICATION_SUPPORT", f"{path}/deciding_fact_ids", collector)
+            if state == "genuinely_unknown":
+                if value is not None:
+                    collector.add("CLASSIFICATION_SUPPORT", f"{path}/value", "genuinely unknown classification must have null value")
+            else:
+                if not isinstance(value, str) or not value.strip():
+                    collector.add("CLASSIFICATION_SUPPORT", f"{path}/value", f"{state} classification requires a selected value")
+                if not fact_ids:
+                    collector.add("CLASSIFICATION_SUPPORT", f"{path}/deciding_fact_ids", f"{state} classification requires supporting facts")
+                for fact_id in fact_ids:
+                    if fact_id in facts and facts[fact_id].get("disposition") not in SUCCESS_DISPOSITIONS:
+                        collector.add("CLASSIFICATION_SUPPORT", path, f"classification relies on non-supporting fact {fact_id!r}")
 
-    # A precise director count may not be inferred from entity type or another
-    # entity's facts.  The field remains available for corporate trustees,
-    # foundations and underlying companies whose board composition matters.
+    # Exact role counts are supported only by typed facts for the same entity/value.
     for entity_id, entity in entities.items():
-        count = entity.get("director_count")
-        fact_ids = entity.get("director_count_fact_ids", [])
-        reference_ids(fact_ids, facts, "ENTITY_COUNT_SUPPORT", f"/entities/{entity_id}/director_count_fact_ids", collector)
-        if count is not None and not fact_ids:
-            collector.add(
-                "ENTITY_COUNT_SUPPORT",
-                f"/entities/{entity_id}/director_count",
-                "director count is asserted without a supplied supporting fact",
-            )
-        for fact_id in fact_ids:
-            if fact_id not in facts:
-                continue
-            fact = facts[fact_id]
-            if fact.get("disposition") not in SUCCESS_DISPOSITIONS:
-                collector.add("ENTITY_COUNT_SUPPORT", f"/entities/{entity_id}", f"director count relies on non-supporting fact {fact_id!r}")
-            if (
-                fact.get("kind") != "director_count"
-                or fact.get("subject_id") != entity_id
-                or fact.get("value") != count
-            ):
-                collector.add(
-                    "ENTITY_COUNT_SUPPORT",
-                    f"/entities/{entity_id}/director_count_fact_ids",
-                    f"fact {fact_id!r} is not a typed director-count fact for this entity and value",
+        entity_type = entity.get("entity_type")
+        capacities = set(entity.get("capacities", []))
+        impossible = (
+            (entity_type == "trust" and capacities != {"trust"})
+            or (entity_type == "purpose_trust" and capacities != {"purpose_trust"})
+            or (
+                entity_type == "foundation"
+                and (
+                    "foundation" not in capacities
+                    or bool(capacities & {"trust", "purpose_trust", "corporate_trustee", "corporate_councillor", "corporate_member", "corporate_director"})
                 )
+            )
+            or (entity_type == "human" and bool(capacities & {"trust", "purpose_trust", "foundation", "corporate_trustee", "corporate_councillor", "corporate_member", "corporate_director"}))
+            or (entity_type == "corporate" and bool(capacities & {"trust", "purpose_trust", "foundation"}))
+        )
+        if impossible or not capacities:
+            collector.add("ENTITY_CAPACITY", f"/entities/{entity_id}", "entity type and asserted capacities are incompatible")
+        seen_kinds: set[str] = set()
+        for index, cardinality in enumerate(entity.get("cardinalities", [])):
+            path = f"/entities/{entity_id}/cardinalities/{index}"
+            kind = cardinality.get("kind")
+            count = cardinality.get("count")
+            fact_ids = cardinality.get("fact_ids", [])
+            if kind in seen_kinds:
+                collector.add("ENTITY_CARDINALITY_SUPPORT", path, f"duplicate cardinality kind {kind!r}")
+            seen_kinds.add(kind)
+            reference_ids(fact_ids, facts, "ENTITY_CARDINALITY_SUPPORT", f"{path}/fact_ids", collector)
+            if count is not None and not fact_ids:
+                collector.add("ENTITY_CARDINALITY_SUPPORT", f"{path}/count", "exact cardinality lacks a supplied fact")
+            for fact_id in fact_ids:
+                fact = facts.get(fact_id, {})
+                if fact.get("kind") != "cardinality" or fact.get("subject_id") != entity_id or fact.get("value") != count or fact.get("disposition") not in SUCCESS_DISPOSITIONS:
+                    collector.add("ENTITY_CARDINALITY_SUPPORT", f"{path}/fact_ids", f"fact {fact_id!r} does not support this entity cardinality")
 
     # Namespace lists are authoritative, and all route/access paths must be safe and listed.
     namespace_paths = {
@@ -345,6 +436,7 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
             collector.add("SOURCE_NAMESPACE", f"/source_access/allowlist/{index}", "allowlist path is absent from its namespace")
     open_keys: set[tuple[str, str]] = set()
     actual_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    course_manifest = load_source_manifest(source_root, collector)
     for index, entry in enumerate(actual_open):
         key = (entry.get("namespace"), entry.get("path"))
         if key in open_keys:
@@ -359,6 +451,23 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
                 f"/source_access/actual_open/{index}/role",
                 "actual-open role does not match the frozen allowlist role",
             )
+        relative_path = entry.get("path")
+        if isinstance(relative_path, str) and is_safe_relative_path(relative_path):
+            file_path = source_root / relative_path
+            if file_path.is_symlink():
+                collector.add("SOURCE_FILE_INTEGRITY", f"/source_access/actual_open/{index}/path", "actual-open source cannot be a symlink")
+            elif not file_path.is_file():
+                collector.add("SOURCE_FILE_INTEGRITY", f"/source_access/actual_open/{index}/path", "actual-open path is not a real file under source root")
+            else:
+                try:
+                    file_path.resolve().relative_to(source_root.resolve())
+                except ValueError:
+                    collector.add("SOURCE_FILE_INTEGRITY", f"/source_access/actual_open/{index}/path", "actual-open source resolves outside source root")
+                actual_hash = sha256_bytes(file_path.read_bytes())
+                if entry.get("sha256") != actual_hash:
+                    collector.add("SOURCE_FILE_INTEGRITY", f"/source_access/actual_open/{index}/sha256", "declared SHA-256 does not match file bytes")
+                if entry.get("namespace") in COURSE_NAMESPACES and course_manifest.get(relative_path) != actual_hash:
+                    collector.add("SOURCE_FILE_INTEGRITY", f"/source_access/actual_open/{index}", "course source is absent from SOURCE-MANIFEST.json or its manifest hash differs")
 
     for route_id, route_item in routes.items():
         source = route_item.get("source", {})
@@ -392,12 +501,18 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
                     f"/routes/{route_id}/source",
                     "incorporated route source is missing from the actual-open ledger",
                 )
+            trigger_ids = route_item.get("triggering_fact_ids", [])
+            if not trigger_ids or not any(facts.get(fact_id, {}).get("disposition") in SUCCESS_DISPOSITIONS for fact_id in trigger_ids):
+                collector.add("SOURCE_ALLOWLIST", f"/routes/{route_id}/triggering_fact_ids", "incorporated route requires a supporting trigger fact")
         elif verdict == "conditional" and allowed is None:
             collector.add(
                 "SOURCE_ALLOWLIST",
                 f"/routes/{route_id}/source",
                 "conditional route must be represented in the frozen allowlist",
             )
+        elif verdict == "checked_not_relevant":
+            if allowed is None or opened is None or allowed.get("role") != "check_only" or opened.get("role") != "check_only":
+                collector.add("SOURCE_ALLOWLIST", f"/routes/{route_id}/source", "checked-not-relevant route requires a real check-only open")
 
     prohibited = set(access.get("forbidden_paths", [])) | set(access.get("prior_answer_paths", []))
     forbidden_route_paths = {
@@ -415,62 +530,71 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
                     "forbidden or prior-answer file cannot be opened or converted to check-only access",
                 )
 
-    # XOR selection is exclusive and cannot be made without an outcome-supporting fact.
-    route_to_xor: dict[str, str] = {}
-    for index, branch_set in enumerate(plan.get("xor_branch_sets", [])):
-        set_id = branch_set.get("id")
-        path = f"/xor_branch_sets/{index}"
-        route_ids = branch_set.get("route_ids", [])
-        selected = branch_set.get("selected_route_ids", [])
-        deciding = branch_set.get("deciding_fact_ids", [])
-        reference_ids(route_ids, routes, "XOR_SELECTION", f"{path}/route_ids", collector)
-        reference_ids(selected, routes, "XOR_SELECTION", f"{path}/selected_route_ids", collector)
+    # A route may participate in several independent relationship sets.  Its
+    # verdict is derived from the union of selected memberships, so an unresolved
+    # set cannot contradict a separate selected prerequisite/sequence membership.
+    route_memberships: dict[str, set[str]] = {route_id: set() for route_id in routes}
+    selected_routes: set[str] = set()
+    unresolved_routes: set[str] = set()
+    seen_set_ids: set[str] = set()
+    for index, relationship_set in enumerate(plan.get("route_relationship_sets", [])):
+        set_id = relationship_set.get("id")
+        path = f"/route_relationship_sets/{index}"
+        kind = relationship_set.get("kind")
+        route_ids = relationship_set.get("route_ids", [])
+        selected = relationship_set.get("selected_route_ids", [])
+        deciding = relationship_set.get("deciding_fact_ids", [])
+        if set_id in seen_set_ids:
+            collector.add("RELATIONSHIP_SELECTION", f"{path}/id", f"duplicate relationship-set id {set_id!r}")
+        seen_set_ids.add(set_id)
+        reference_ids(route_ids, routes, "RELATIONSHIP_SELECTION", f"{path}/route_ids", collector)
+        reference_ids(selected, routes, "RELATIONSHIP_SELECTION", f"{path}/selected_route_ids", collector)
         reference_ids(deciding, facts, "BRANCH_DECIDING_FACT", f"{path}/deciding_fact_ids", collector)
+        if not route_ids:
+            collector.add("RELATIONSHIP_SELECTION", f"{path}/route_ids", "relationship set cannot be empty")
         for route_id in route_ids:
-            if route_id in route_to_xor and route_to_xor[route_id] != set_id:
-                collector.add("XOR_SELECTION", path, f"route {route_id!r} belongs to more than one XOR set")
-            route_to_xor[route_id] = set_id
-            if route_id in routes and routes[route_id].get("xor_set_id") != set_id:
-                collector.add("XOR_SELECTION", f"/routes/{route_id}/xor_set_id", "route does not point back to its XOR set")
+            route_memberships.setdefault(route_id, set()).add(set_id)
         if not set(selected).issubset(route_ids):
-            collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "selected route is outside XOR set")
-        state = branch_set.get("selection_state")
+            collector.add("RELATIONSHIP_SELECTION", f"{path}/selected_route_ids", "selected route is outside relationship set")
+        state = relationship_set.get("selection_state")
         if state == "selected":
-            if len(selected) != 1:
-                collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "selected XOR set must contain exactly one selected route")
+            valid_shape = (
+                (kind == "XOR" and len(selected) == 1)
+                or (kind == "AND prerequisite" and set(selected) == set(route_ids))
+                or (kind == "SEQUENCE" and selected == route_ids)
+                or (kind == "OPTIONAL overlay" and bool(selected) and set(selected).issubset(route_ids))
+            )
+            if not valid_shape:
+                collector.add("RELATIONSHIP_SELECTION", f"{path}/selected_route_ids", f"selected routes do not satisfy {kind} semantics")
             if not deciding:
-                collector.add("BRANCH_DECIDING_FACT", f"{path}/deciding_fact_ids", "selected branch lacks a deciding fact")
+                collector.add("BRANCH_DECIDING_FACT", f"{path}/deciding_fact_ids", "selected relationship set lacks a deciding fact")
             for fact_id in deciding:
                 if fact_id in facts and facts[fact_id].get("disposition") not in SUCCESS_DISPOSITIONS:
-                    collector.add("BRANCH_DECIDING_FACT", path, f"branch relies on non-deciding fact {fact_id!r}")
-            for route_id in selected:
-                if route_id in routes and routes[route_id].get("verdict") != "incorporated":
-                    collector.add("XOR_SELECTION", f"/routes/{route_id}/verdict", "selected XOR route must be incorporated")
-            incorporated = {
-                route_id for route_id in route_ids
-                if route_id in routes and routes[route_id].get("verdict") == "incorporated"
-            }
-            if incorporated != set(selected):
-                collector.add(
-                    "XOR_SELECTION",
-                    f"{path}/selected_route_ids",
-                    f"incorporated XOR routes must equal the one selected route: incorporated={sorted(incorporated)}",
-                )
+                    collector.add("BRANCH_DECIDING_FACT", path, f"relationship set relies on non-deciding fact {fact_id!r}")
+            selected_routes.update(selected)
         elif state == "unresolved":
             if selected:
-                collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "unresolved XOR set cannot hard-select a route")
-            for route_id in route_ids:
-                if route_id in routes and routes[route_id].get("verdict") != "conditional":
-                    collector.add("XOR_SELECTION", f"/routes/{route_id}/verdict", "unresolved XOR branches must remain conditional")
+                collector.add("RELATIONSHIP_SELECTION", f"{path}/selected_route_ids", "unresolved relationship set cannot select routes")
+            unresolved_routes.update(route_ids)
         elif state == "not_applicable" and selected:
-            collector.add("XOR_SELECTION", f"{path}/selected_route_ids", "not-applicable XOR set cannot select a route")
+            collector.add("RELATIONSHIP_SELECTION", f"{path}/selected_route_ids", "not-applicable relationship set cannot select routes")
+
     for route_id, route in routes.items():
-        if route.get("xor_set_id") is not None and route_id not in route_to_xor:
+        declared = set(route.get("relationship_set_ids", []))
+        actual = route_memberships.get(route_id, set())
+        if declared != actual:
             collector.add(
-                "XOR_SELECTION",
-                f"/routes/{route_id}/xor_set_id",
-                "route names an XOR set but is absent from every declared branch set",
+                "RELATIONSHIP_SELECTION",
+                f"/routes/{route_id}/relationship_set_ids",
+                f"route/set membership mismatch: declared={sorted(declared)}, actual={sorted(actual)}",
             )
+        verdict = route.get("verdict")
+        if route_id in selected_routes and verdict != "incorporated":
+            collector.add("RELATIONSHIP_SELECTION", f"/routes/{route_id}/verdict", "route selected by a relationship set must be incorporated")
+        if route_id in unresolved_routes and route_id not in selected_routes and verdict != "conditional":
+            collector.add("RELATIONSHIP_SELECTION", f"/routes/{route_id}/verdict", "route found only in unresolved sets must remain conditional")
+        if declared and verdict == "incorporated" and route_id not in selected_routes:
+            collector.add("RELATIONSHIP_SELECTION", f"/routes/{route_id}/verdict", "incorporated route needs at least one selected relationship-set basis")
 
     # Document chain: actor authority, counts, embedded notice business and
     # complex trust/foundation bundles.
@@ -489,15 +613,18 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
         actor_id = instrument.get("actor_id")
         if actor_id not in entities:
             collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/actor_id", f"unknown actor {actor_id!r}")
-        signatory = instrument.get("signatory", {})
-        if signatory.get("human") is not True:
-            collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatory", "operative instrument requires a human signatory")
+        actor = entities.get(actor_id, {})
+        if actor.get("entity_type") in {"trust", "purpose_trust"} or bool(set(actor.get("capacities", [])) & {"trust", "purpose_trust"}):
+            collector.add("ENTITY_CAPACITY", f"/requested_document_chain/instruments/{instrument_id}/actor_id", "a trust or purpose trust is not a legal instrument actor; identify its trustee")
+        signatories = instrument.get("signatories", [])
+        if not signatories or any(signatory.get("human") is not True for signatory in signatories):
+            collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatories", "operative instrument requires one or more human signatories")
         upstream_id = instrument.get("upstream_authority_instrument_id")
-        signatory_authority_id = signatory.get("authority_instrument_id")
-        for field_name, authority_id in (
-            ("upstream_authority_instrument_id", upstream_id),
-            ("signatory/authority_instrument_id", signatory_authority_id),
-        ):
+        authority_refs = [("upstream_authority_instrument_id", upstream_id)] + [
+            (f"signatories/{index}/authority_instrument_id", signatory.get("authority_instrument_id"))
+            for index, signatory in enumerate(signatories)
+        ]
+        for field_name, authority_id in authority_refs:
             if authority_id is None:
                 continue
             authority_path = f"/requested_document_chain/instruments/{instrument_id}/{field_name}"
@@ -507,7 +634,6 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
                 collector.add("CORPORATE_ACTOR_AUTHORITY", authority_path, f"authority reference points to unknown instrument {authority_id!r}")
             elif instruments[authority_id].get("sequence", 0) >= instrument.get("sequence", 0):
                 collector.add("CORPORATE_ACTOR_AUTHORITY", authority_path, "authority instrument must precede the instrument that relies on it")
-        actor = entities.get(actor_id, {})
         corporate_target_actor = actor.get("entity_type") == "corporate" and bool(
             CORPORATE_UPSTREAM_CAPACITIES & set(actor.get("capacities", []))
         ) and instrument.get("target_act") is True
@@ -520,8 +646,8 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
                     collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{upstream_id}", "upstream authority must belong to the same corporate actor and precede the target act")
                 if upstream.get("sequence", 0) >= instrument.get("sequence", 0):
                     collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/sequence", "upstream authority must precede the target instrument")
-                if signatory.get("authority_instrument_id") != upstream_id:
-                    collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatory/authority_instrument_id", "human signatory must derive authority from the distinct upstream instrument")
+                if any(signatory.get("authority_instrument_id") != upstream_id for signatory in signatories):
+                    collector.add("CORPORATE_ACTOR_AUTHORITY", f"/requested_document_chain/instruments/{instrument_id}/signatories", "each human signatory must derive authority from the distinct upstream instrument")
 
         for component in instrument.get("operative_components", []):
             component_id = component.get("id")
@@ -547,6 +673,15 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
             collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}/execution", f"duplicate execution id {execution_id!r}")
         execution_ids.add(execution_id)
         validate_gap_backing(execution, f"/requested_document_chain/instruments/{instrument_id}/execution", gaps, collector)
+
+        if chain.get("required"):
+            has_content = (
+                any(item.get("status") in INCLUDED_STATUSES for item in instrument.get("operative_components", []))
+                or any(item.get("status") in INCLUDED_STATUSES for item in instrument.get("attachments", []))
+                or any(item.get("status") in INCLUDED_STATUSES for item in instrument.get("records_filings", []))
+            )
+            if not has_content:
+                collector.add("DOCUMENT_COUNT_RECONCILIATION", f"/requested_document_chain/instruments/{instrument_id}", "requested instrument has no produced or placeholder-backed content")
 
         if instrument.get("kind") == "notice" and instrument.get("action_business"):
             selected_components = set(instrument.get("selected_action_component_ids", []))
@@ -669,6 +804,34 @@ def validate_invariants(plan: dict[str, Any], collector: Collector) -> None:
         elif entries[0].get("contribution") != route_item.get("unique_contribution"):
             collector.add("FINAL_ROUTE_TRACE", f"/final_trace/{entries[0].get('id')}/contribution", "trace must retain the route's unique contribution verbatim")
 
+    authorization = plan.get("render_authorization", {})
+    decision = authorization.get("decision")
+    input_complete = authorization.get("input_complete")
+    outcome = authorization.get("materials_outcome")
+    has_input_gap = any(fact.get("disposition") == "input gap" for fact in facts.values())
+    has_placeholders = bool(gaps) or any(
+        item.get("status") in {"placeholder", "conditional"}
+        for instrument in instruments.values()
+        for collection in ("operative_components", "attachments", "records_filings")
+        for item in instrument.get(collection, [])
+    )
+    if input_complete is False and decision != "do_not_render":
+        collector.add("RENDER_GATE", "/render_authorization/decision", "incomplete input cannot authorize rendering")
+    if input_complete is False and not has_input_gap:
+        collector.add("RENDER_GATE", "/render_authorization/input_complete", "incomplete input must be represented by an input-gap fact")
+    if has_input_gap and (input_complete is not False or decision != "do_not_render"):
+        collector.add("RENDER_GATE", "/render_authorization", "input-gap disposition requires incomplete input and do-not-render")
+    if outcome == "materials do not resolve" and decision != "do_not_render":
+        collector.add("RENDER_GATE", "/render_authorization/decision", "unresolved materials cannot authorize rendering")
+    if decision == "render" and (not input_complete or has_placeholders or outcome != "answerable"):
+        collector.add("RENDER_GATE", "/render_authorization", "render requires complete input, answerable materials and no gaps/placeholders")
+    if decision == "render_with_placeholders" and (
+        not input_complete or not has_placeholders or outcome not in {"answerable with placeholders", "conditional answer", "partial course coverage"}
+    ):
+        collector.add("RENDER_GATE", "/render_authorization", "placeholder rendering requires complete input and an identified placeholder/conditional materials gap")
+    if decision == "do_not_render" and input_complete and not has_input_gap and outcome != "materials do not resolve":
+        collector.add("RENDER_GATE", "/render_authorization", "do-not-render requires an input gap or materials-do-not-resolve outcome")
+
     render_gate = plan.get("render_gate", {})
     if render_gate != {"status": "not_rendered", "validation_report": None}:
         collector.add("RENDER_GATE", "/render_gate", "RoutePlan must be validated before any answer is rendered")
@@ -707,6 +870,7 @@ def build_report(
         "exit_code": exit_code,
         "schema_sha256": canonical_sha256(schema) if schema is not None else None,
         "plan_sha256": canonical_sha256(plan) if plan is not None else None,
+        "render_authorization": plan.get("render_authorization") if isinstance(plan, dict) else None,
         "summary": {
             "critical_count": len(issues),
             "warning_count": 0,
@@ -719,11 +883,11 @@ def build_report(
     return report
 
 
-def validate(plan: dict[str, Any], schema: dict[str, Any]) -> tuple[dict[str, Any], int]:
+def validate(plan: dict[str, Any], schema: dict[str, Any], source_root: Path = ROOT) -> tuple[dict[str, Any], int]:
     collector = Collector()
     schema_walk(plan, schema, schema, "", collector)
     if not collector.issues:
-        validate_invariants(plan, collector)
+        validate_invariants(plan, collector, source_root)
     exit_code = 0 if not collector.issues else 1
     return build_report(plan, schema, collector, exit_code), exit_code
 
@@ -732,6 +896,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("plan", type=Path, help="RoutePlan JSON to validate")
     parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
+    parser.add_argument("--source-root", type=Path, default=ROOT, help="root containing opened sources and SOURCE-MANIFEST.json")
     parser.add_argument("--output", type=Path, help="also write the deterministic report to this path")
     parser.add_argument("--compact", action="store_true", help="emit one-line JSON")
     args = parser.parse_args()
@@ -744,7 +909,7 @@ def main() -> int:
         plan = json.loads(args.plan.read_text(encoding="utf-8"))
         if not isinstance(schema, dict) or not isinstance(plan, dict):
             raise ValueError("schema and RoutePlan roots must be JSON objects")
-        report, exit_code = validate(plan, schema)
+        report, exit_code = validate(plan, schema, args.source_root.resolve())
     except (OSError, UnicodeError, json.JSONDecodeError, KeyError, ValueError) as error:
         exit_code = 2
         report = build_report(plan, schema, collector, exit_code, f"{type(error).__name__}: {error}")
