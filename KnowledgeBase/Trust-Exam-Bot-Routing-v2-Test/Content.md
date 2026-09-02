@@ -1,54 +1,14 @@
-# Content Index — STEP Advanced Certificate in Trusts - Law and Practice
+# Content Index - Authoritative Section A and Section B Source Map
 
-Routing map for the exam assistant. Use the quick topic map and the additive map
-below to find the right module and appendices for a question, then open and cite the
-named files. The complete module filenames and appendix filenames are listed below.
-
-## Quick topic map (topic → where to look)
-
-- **definition of a trust, three certainties (intention, subject matter/trust fund and objects/beneficiaries), capacity of settlor, legal vs equitable ownership, transfer of legal title, separate fund, trustee's core duties, beneficiaries' in personam and in rem rights, tracing, Hague Convention, trust compared with company / contract / will / foundation, civil law systems** → Module 1 (Review of the Trust Concept), plus Module 3 §§3.1 and 3.3 for subject matter/trust fund and objects/beneficiaries; —
-- **marketing trust services, marketing the jurisdiction, remuneration and the remuneration rule, charging clause, negotiating fees, appointment of first trustee, removal / retirement / appointment of trustees, duties on accepting existing trust business, acquainting with trust terms and property, review of trust accounts, investment review, compliance** → Module 2 (Marketing Trust Services and Accepting New Business); Appendix 2, Appendix 3, Appendix 4, Appendix 5
-- **trust instrument preliminary provisions, formal parts, recitals, definitions clause, the trust fund, the trust period, definition of beneficiaries, the trustees, the protector, the proper law, trust for sale, trusts of original and additional property** → Module 3 (The Trust Instrument - Part 1: Preliminary Provisions); Appendix 7
-- **discretionary trust, dispositive provisions over income and capital, power of appointment, power of re-settlement, ultimate default trust, duties owed under a dispositive power, factors in the decision-making process, letter / statement / memorandum of wishes, sham trust, distribution procedure and checklist, releases and receipts, settlor-directed (reserved powers) trust, reserved powers legislation, life interest trust, determinable life interest** → Module 4 (The Trust Instrument - Part 2: Dispositive Provisions); Appendix 1, Appendix 6, Appendix 8, Appendix 9, Appendix 10, Appendix 11A, Appendix 11B, Appendix 12, Appendix 13, Appendix 14B, Appendix 15, Appendix 16A, Appendix 16B, Appendix 17, Appendix 18, Appendix 20A, Appendix 20B, Appendix 21
-- **administrative provisions, power to invest, prudent investor rule, power to lend and give guarantees, real estate and chattels, power to operate a business, power to insure, powers in relation to companies, anti-Bartlett clause, power to delegate, power to sue and compromise claims, appropriation and distribution in specie, power to vary administrative provisions, payment of foreign taxes, Government of India v Taylor, trustee indemnity, exoneration and restriction of liability, charging clause, power to revoke, execution** → Module 5 (The Trust Instrument - Part 3: Administrative Provisions); Appendix 14A, Appendix 19, Appendix 22, Appendix 23, Appendix 24A, Appendix 24B, Appendix 25, Appendix 26
-- **choice of law, conflict of laws, characterisation, renvoi, forum, governing law of the trust, selecting and changing the governing law, matters determined by the governing law, validity of the trust and of the disposition into trust, firewall provisions, exclusion of foreign law and its exceptions, foreign real estate, testamentary trusts, express choice of law clause, flee clauses** → Module 6 (Choice of Law to Govern the Trust); Appendix 27, Appendix 28
-- **protector, appointment of a protector, dispositive and administrative powers of a protector, power to appoint or remove trustees, power to approve remuneration or self-dealing, veto powers, whether a protector's powers are fiduciary, duty of reasonable care and skill, exoneration of protectors, rights of protectors, position of the trustee where a protector is appointed, binding directions, position of the beneficiaries** → Module 7 (The Role and Status of a Protector); Appendix 29
-- **estate planning, forced heirship, freedom of disposition, forced heirship on death and over inter vivos gifts, domicile, nationality, habitual residence, clawback, attack in the forum of the foreign state, jurisdiction over offshore trustees, enforcement of foreign judgments, defence of the trust** → Module 8 (Estate Planning and Forced Heirship Avoidance); —
-- **asset protection trusts, Statute of Elizabeth, fraudulent dispositions, intent to defraud, creditor, limitation period, burden of proof, survivability of the trust, structuring an asset protection trust, bankruptcy, transaction at an undervalue, recognition of a foreign trustee in bankruptcy, divorce, nuptial settlement, treating trust assets as a resource, setting the trust aside** → Module 9 (Asset Protection Trusts); —
-- **purpose trusts, human beneficiary principle, trusts of imperfect obligation, charitable trusts, offshore purpose trust legislation, Bermuda second generation, STAR trusts (Cayman), enforcer, private trust company, employee benefit trusts, subordination trusts, project and asset financing** → Module 10 (Purpose Trusts); Appendix 30
-- **private foundations, definition and characteristics, formation and registration, separate legal entity, charter (foundation deed), regulations / by-laws, founder's reserved rights, the council and councillors' duties, guardian or supervisory body, beneficiaries of a foundation, capacity, termination, trusts versus foundations compared** → Module 11 (Private Foundations); Appendix 31, with Appendix 32 only for its council distribution/property-acquisition actions
+This file is the single authoritative legal routing map for both exam sections. It identifies sources to inspect; it does not state law. Open every selected passage before answering. Do not copy legal mapping into `routing-core.md`, `section-a.md`, `section-b.md` or `CLAUDE.md`.
 
 ## Map contract
 
-This file is the single authoritative legal routing map for Section A and Section B.
-It identifies the passages and precedent files to inspect; it is not a substitute for
-opening those sources and it does not itself state a complete rule of law.
-
-- The 11 course manuals and 37 course-appendix files (covering 32 numbered
-  appendices) in this folder are the only substantive sources. Examination attachments
-  have a separate namespace from course appendices.
-- Routes are additive candidates. A topic match is not permission to stop at the first
-  module, and it is not permission to include related background that cannot change the
-  answer.
-- Conditional overlays activate only on their stated facts, such as a foreign element,
-  a protector or enforcer, a reserved power, a life interest, an underlying company,
-  bankruptcy, a divorce, or a foundation jurisdiction.
-- Source warnings preserve gaps, editorial artefacts and tensions in the course files.
-  They never authorise outside law, an invented statute, an invented clause or a
-  reconstructed missing precedent.
-- For a drafting task, the exact named or implied appendix is opened before drafting.
-  Preserve the selected precedent's actors, operative parts, alternatives, schedules,
-  execution and records/filings. For prose and MCQs, use an appendix as a source only
-  when its unique contribution affects the requested answer.
-- Ownership below identifies the starting module only. The additive issue map, the
-  decision map and the lifecycle notes control the final source union.
-
-Tag each incorporated source by role. A **primary** source supplies the governing rule
-for the requested issue; a **supporting** source contributes a triggered distinction,
-exception or stage; a **drafting** source supplies the selected instrument architecture;
-and a **reference/check** source is used privately or comparatively without being
-treated as operative wording. One source may change role between answer units, but its
-role must be explicit and justified by the requested deliverable.
+- Course manuals and appendices are the only substantive course-law sources.
+- Routes are additive candidates until final route selection is completed.
+- Conditional overlays activate only on their stated facts.
+- Examination attachments use a separate namespace from course appendices.
+- Source warnings preserve internal gaps or conflicts; they do not authorize outside law.
 
 ## Module ownership
 
@@ -66,13 +26,14 @@ role must be explicit and justified by the requested deliverable.
 | 10 | purpose trusts, common-law limits, offshore purpose-trust models, Bermuda, Cayman STAR, enforcers and financing uses |
 | 11 | private foundations, formation, registration, charter, regulations, founder, council, protector/guardian, beneficiaries, capacity, termination and comparison with trusts |
 
+Ownership identifies the starting module only. The additive issue map controls every
+required cross-module overlay.
+
 ## Additive issue map
 
-Use the base route for the central issue and add every conditional overlay whose
-activation fact is present. A source is incorporated only after the hard relevance gate:
-identify the fact or deliverable that triggers it, state its unique contribution, and
-discard it if removing it would not change the answer, confidence or requested
-instrument.
+Each entry supplies a base route and conditional overlays. Inspect all conditions that
+fit the question; do not read a conditional overlay into the answer when its condition
+is absent.
 
 ### A. Trust identity, creation and client intake
 
@@ -544,87 +505,88 @@ instrument.
 
 ## Appendix decision map
 
-The appendix register below is a decision aid, not a list of documents to reproduce
-automatically. Classify each selected appendix before opening it:
+The appendix list is not a list of documents that can all be reproduced. Use the
+classification below:
 
-- **Precedent**: preserve the operative architecture, actors, conditions, schedules and
-  execution after applying the question's facts and governing instrument.
-- **Reference or explanatory memorandum**: use to analyse or reword; do not present it
-  as an operative deed or resolution unless the question expressly asks for that form.
-- **Template or branching specimen**: reconstruct only the selected branch and replace
-  sample facts; do not make bracketed alternatives cumulative.
-- **Extract or incomplete source**: never invent omitted clauses, attachments,
-  execution blocks or schedules. State the materials gap.
+- **Model instrument** - use only if it governs or the question asks for it; the actual
+  trust instrument or foundation constitution prevails.
+- **Reference** - use to analyse/reword; never reproduce it as a drafted document.
+- **Template** - a memorandum, terms document or branching specimen requiring
+  reconstruction, fact replacement and governing-instrument checking.
+- **Precedent** - preserve its applicable structure and operative effect after the
+  question, governing instrument, law and facts have been applied.
+- **Extract/incomplete** - never invent the omitted provisions, attachments, execution
+  blocks or schedules.
 
-For every drafting request check: actor and legal capacity; decision-maker; required
-consent; trust instrument clause; jurisdiction and governing law; transaction stage;
-operative parts and their count; alternatives; schedules and attachments; execution;
-payment, vesting, notices, records and any external filing. A document mentioned in an
-appendix is not supplied merely because the appendix says it is attached.
+For every drafting request verify: actor and capacity; document type; decision-maker;
+required consent; transaction stage; jurisdiction/governing law; governing-instrument
+power; operative parts; alternatives; attachments; execution block; and any payment,
+vesting, notice, record or filing step. A mismatch requires reconsideration of the
+appendix.
 
 ### Appendices 1-8: trust instrument, onboarding and trustee changes
 
 | Appendix | Exact filename | Class and correct use | Combination / guardrail |
 |---|---|---|---|
-| **1** Alternative Reserved Powers | Appendix-1-Alternative-Reserved-Powers.md | Branching specimen trust deed covering reserved powers, dispositive and administrative clauses | Select the bracketed alternative for the supplied settlor/protector/trustee structure. It is not a universal trust form and its schedules contain optional clauses. |
-| **2** Sample remuneration terms | Appendix-2-Sample-Terms-and-Conditions-relating-to-Remuneration-of.md | Reference/template for acceptance, annual, additional and exit fees, expenses and group services | Pair with Module 2 §2 and the actual charging clause in Module 5 §3. Replace fee examples and do not assume the sample is the agreed contract. |
-| **3** Deed of Disclaimer | Appendix-3-Deed-of-Disclaimer.md | Precedent for a proposed trustee declining a testamentary appointment before acceptance | Alternative to acceptance, not a removal, retirement or DORA. Keep the Will/testator facts and the Proposed Trustee actor. |
-| **4** Memorandum: Specimen Summary of Trust | Appendix-4-Memorandum-Specimen-Summary-of-Trust.md | Explanatory client memorandum/reference for a proposed discretionary trust | Use for client explanation and issue identification. It is not the constitutive trust deed or an independent source of external AML, FATCA/CRS or tax law. |
-| **5** Deed of Removal and Appointment of Trustee (DORA) | Appendix-5-Deed-of-Removal-and-Appointment-of-Trustee-DORA.md | Precedent for removal/retirement, appointment, vesting, outgoing release and indemnity | Check the trust's power, parties, continuing trustee and asset-specific vesting. Do not assume one clause completes every transfer of legal title. |
-| **6** Deed of Addition to Class of Beneficiaries | Appendix-6-Deed-of-Addition-to-Class-of-Beneficiaries.md | Precedent for the Settlor exercising a deed power to add named persons in the Schedule | Use only where the trust gives that actor the power. It adds beneficiaries; it does not distribute capital or exclude a person. |
-| **7** Deed/Memorandum of Addition to Trust Fund | Appendix-7-Deed-Memorandum-of-Addition-to-Trust-Fund.md | Branching deed or alternative trustee written resolution to accept additional property | Choose one branch. The schedule identifies the property, but the source does not supply every asset-specific conveyance, assignment, stock transfer or registry step. |
-| **8** Trustee's Resolution: to Distribute Income | Appendix-8-Trustees-Resolution-to-Distribute-Income.md | Precedent for a trustee-company written resolution paying specified income to beneficiaries | Use for income, not capital appointment. The optional underlying-company transfer clause is selected only if that structure and authority are supplied. |
+| **1** Alternative Reserved Powers | `Appendix-1-Alternative-Reserved-Powers.md` | Branching specimen trust deed covering reserved powers, dispositive and administrative clauses | Select the bracketed alternative for the supplied settlor/protector/trustee structure. It is not a universal trust form and its schedules contain optional clauses. |
+| **2** Sample remuneration terms | `Appendix-2-Sample-Terms-and-Conditions-relating-to-Remuneration-of.md` | Reference/template for acceptance, annual, additional and exit fees, expenses and group services | Pair with Module 2 §2 and the actual charging clause in Module 5 §3. Replace fee examples and do not assume the sample is the agreed contract. |
+| **3** Deed of Disclaimer | `Appendix-3-Deed-of-Disclaimer.md` | Precedent for a proposed trustee declining a testamentary appointment before acceptance | Alternative to acceptance, not a removal, retirement or DORA. Keep the Will/testator facts and the Proposed Trustee actor. |
+| **4** Memorandum: Specimen Summary of Trust | `Appendix-4-Memorandum-Specimen-Summary-of-Trust.md` | Explanatory client memorandum/reference for a proposed discretionary trust | Use for client explanation and issue identification. It is not the constitutive trust deed or an independent source of external AML, FATCA/CRS or tax law. |
+| **5** Deed of Removal and Appointment of Trustee (DORA) | `Appendix-5-Deed-of-Removal-and-Appointment-of-Trustee-DORA.md` | Precedent for removal/retirement, appointment, vesting, outgoing release and indemnity | Check the trust's power, parties, continuing trustee and asset-specific vesting. Do not assume one clause completes every transfer of legal title. |
+| **6** Deed of Addition to Class of Beneficiaries | `Appendix-6-Deed-of-Addition-to-Class-of-Beneficiaries.md` | Precedent for the Settlor exercising a deed power to add named persons in the Schedule | Use only where the trust gives that actor the power. It adds beneficiaries; it does not distribute capital or exclude a person. |
+| **7** Deed/Memorandum of Addition to Trust Fund | `Appendix-7-Deed-Memorandum-of-Addition-to-Trust-Fund.md` | Branching deed or alternative trustee written resolution to accept additional property | Choose one branch. The schedule identifies the property, but the source does not supply every asset-specific conveyance, assignment, stock transfer or registry step. |
+| **8** Trustee's Resolution: to Distribute Income | `Appendix-8-Trustees-Resolution-to-Distribute-Income.md` | Precedent for a trustee-company written resolution paying specified income to beneficiaries | Use for income, not capital appointment. The optional underlying-company transfer clause is selected only if that structure and authority are supplied. |
 
 ### Appendices 9-16: appointments, wishes, instructions and reserved powers
 
 | Appendix | Exact filename | Class and correct use | Combination / guardrail |
 |---|---|---|---|
-| **9** Deed of Appointment of an Absolute Interest | Appendix-9-Deed-of-Appointment-of-an-Absolute-Interest.md | Precedent for Trustee-to-Beneficiary absolute appointment of an Appointed Fund | Reproduce the trust power in the recital, select the release/indemnity branch, preserve lien, tax, schedule and execution. It is not the trustee-resolution route in 11A or 11B. |
-| **10** Deed of Appointment upon New Trusts | Appendix-10-Deed-of-Appointment-upon-New-Trusts.md | Precedent for an appointed fund held on new life-interest/remainder trusts | Use when the requested act creates new trusts over the fund. Do not substitute it for resettlement into a named Transferee Trust. |
-| **11A** Trustees' Resolutions to Exercise a Power of Appointment | Appendix-11A-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md | Precedent for a direct Trustee written resolution making an absolute appointment | Alternative to 11B when no attached deed is being approved. Preserve the relevant-considerations recital and Schedule; the source footnote is commentary, not an extra operative clause. |
-| **11B** Trustees' Resolutions to Exercise a Power of Appointment | Appendix-11B-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md | Precedent for approving an attached Deed, authorising execution and optionally procuring an underlying-company transfer | Alternative to 11A. It is the upstream authority/document chain for the attached deed, not a reason to reproduce both resolutions. |
-| **12** Deed of Resettlement | Appendix-12-Deed-of-Resettlement.md | Precedent for transferring a Re-Settled Fund to trustees of a Transferee Trust | Base form is a trustee-only declaration. Join Settlor/Protector, beneficiaries or Transferee Trustee only when the trust terms or requested release/indemnity require them, as the source note explains. |
-| **13** Statement of Wishes | Appendix-13-Statement-of-Wishes.md | Precedent/reference for non-binding guidance about distributions, family provisions and investments | Keep one selected alternative. It does not replace a trustee decision, appointment deed or binding direction, and its modification block must remain distinct. |
-| **14A** Power of Attorney | Appendix-14A-Power-of-Attorney.md | Precedent for a Beneficiary appointing an Attorney to receive distributions for a stated period | Limited receipt authority only. It is not the Trustee's flee-clause power of attorney and is not an irrevocable payment instruction. |
-| **14B** Irrevocable Instruction | Appendix-14B-Irrevocable-Instruction.md | Precedent for a Beneficiary's written instruction directing payment of a distribution to a named bank account | Use only after the Trustee's distribution power and decision are established. It is not the dispositive appointment or a bank mandate for all trust assets. |
-| **15** Deed of Release (and indemnity) | Appendix-15-Deed-of-Release-and-indemnity.md | Precedent for beneficiary acknowledgment, release and optional indemnity after distribution | Pair with the completed distribution route. Preserve the optional indemnity, tax/expense and lien provisions; do not use it as the source of the distribution decision. |
-| **16A** Deed of Appointment (from a settlor-directed trust) | Appendix-16A-Deed-of-Appointment-from-a-settlor-directed-trust.md | Precedent where the Trustee acts in accordance with a Settlor's written Instruction | Requires the Settlor/Beneficiary/Trustee actor chain and the quoted reserved direction. Alternative to 16B and to generic 9/11 routes. |
-| **16B** Deed of Appointment where power of appointment conferred upon the Settlor | Appendix-16B-Deed-of-Appointment-where-power-of-appointment-conferred.md | Precedent where the Settlor/Appointor exercises the reserved power and the Trustee acknowledges it | Requires the Appointor, Trustee and Beneficiary. Alternative to 16A; adapt the source's party numbering and any release/indemnity wording to the facts. |
+| **9** Deed of Appointment of an Absolute Interest | `Appendix-9-Deed-of-Appointment-of-an-Absolute-Interest.md` | Precedent for Trustee-to-Beneficiary absolute appointment of an Appointed Fund | Reproduce the trust power in the recital, select the release/indemnity branch, preserve lien, tax, schedule and execution. It is not the trustee-resolution route in 11A or 11B. |
+| **10** Deed of Appointment upon New Trusts | `Appendix-10-Deed-of-Appointment-upon-New-Trusts.md` | Precedent for an appointed fund held on new life-interest/remainder trusts | Use when the requested act creates new trusts over the fund. Do not substitute it for resettlement into a named Transferee Trust. |
+| **11A** Trustees' Resolutions to Exercise a Power of Appointment | `Appendix-11A-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md` | Precedent for a direct Trustee written resolution making an absolute appointment | Alternative to 11B when no attached deed is being approved. Preserve the relevant-considerations recital and Schedule; the source footnote is commentary, not an extra operative clause. |
+| **11B** Trustees' Resolutions to Exercise a Power of Appointment | `Appendix-11B-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md` | Precedent for approving an attached Deed, authorising execution and optionally procuring an underlying-company transfer | Alternative to 11A. It is the upstream authority/document chain for the attached deed, not a reason to reproduce both resolutions. |
+| **12** Deed of Resettlement | `Appendix-12-Deed-of-Resettlement.md` | Precedent for transferring a Re-Settled Fund to trustees of a Transferee Trust | Base form is a trustee-only declaration. Join Settlor/Protector, beneficiaries or Transferee Trustee only when the trust terms or requested release/indemnity require them, as the source note explains. |
+| **13** Statement of Wishes | `Appendix-13-Statement-of-Wishes.md` | Precedent/reference for non-binding guidance about distributions, family provisions and investments | Keep one selected alternative. It does not replace a trustee decision, appointment deed or binding direction, and its modification block must remain distinct. |
+| **14A** Power of Attorney | `Appendix-14A-Power-of-Attorney.md` | Precedent for a Beneficiary appointing an Attorney to receive distributions for a stated period | Limited receipt authority only. It is not the Trustee's flee-clause power of attorney and is not an irrevocable payment instruction. |
+| **14B** Irrevocable Instruction | `Appendix-14B-Irrevocable-Instruction.md` | Precedent for a Beneficiary's written instruction directing payment of a distribution to a named bank account | Use only after the Trustee's distribution power and decision are established. It is not the dispositive appointment or a bank mandate for all trust assets. |
+| **15** Deed of Release (and indemnity) | `Appendix-15-Deed-of-Release-and-indemnity.md` | Precedent for beneficiary acknowledgment, release and optional indemnity after distribution | Pair with the completed distribution route. Preserve the optional indemnity, tax/expense and lien provisions; do not use it as the source of the distribution decision. |
+| **16A** Deed of Appointment (from a settlor-directed trust) | `Appendix-16A-Deed-of-Appointment-from-a-settlor-directed-trust.md` | Precedent where the Trustee acts in accordance with a Settlor's written Instruction | Requires the Settlor/Beneficiary/Trustee actor chain and the quoted reserved direction. Alternative to 16B and to generic 9/11 routes. |
+| **16B** Deed of Appointment where power of appointment conferred upon the Settlor | `Appendix-16B-Deed-of-Appointment-where-power-of-appointment-conferred.md` | Precedent where the Settlor/Appointor exercises the reserved power and the Trustee acknowledges it | Requires the Appointor, Trustee and Beneficiary. Alternative to 16A; adapt the source's party numbering and any release/indemnity wording to the facts. |
 
 ### Appendices 17-24: life interests and administration
 
 | Appendix | Exact filename | Class and correct use | Combination / guardrail |
 |---|---|---|---|
-| **17** Deed of Release of Life Interest | Appendix-17-Deed-of-Release-of-Life-Interest.md | Precedent for a Life Tenant releasing the income interest | Alternative to assignment in 18. It changes the life-interest position but does not itself distribute the trust fund or transfer legal title. |
-| **18** Deed of Assignment of Life Interest | Appendix-18-Deed-of-Assignment-of-Life-Interest.md | Precedent for Assignor-to-Assignee assignment acknowledged by the Trustee | Alternative to release in 17. Preserve the evidence-of-life provision and the Trustee's acknowledgment. |
-| **19** Trustees' Resolution Permitting a Beneficiary to Occupy Real Estate | Appendix-19-Trustees-Resolution-Permitting-a-Beneficiary-to-Occupy-Real.md | Precedent for a Trustee granting a Life Tenant occupation on scheduled terms | Occupation is not conveyance or an absolute appointment. The Schedule must contain the fact-specific tax, insurance, utility, maintenance and repair terms. |
-| **20A** Trustees' Resolution to Pay Income to Life Tenant | Appendix-20A-Trustees-Resolution-to-Pay-Income-to-Life-Tenant.md | Precedent for a periodic or annual income payment to a Life Tenant | Select the applicable trust/company accounts and payment-authority alternative. It does not end or assign the life interest. |
-| **20B** Trustees' Resolution to Close the Trust upon the Death of Life Tenant | Appendix-20B-Trustees-Resolution-to-Close-the-Trust-upon-the-Death-of.md | Precedent for death-based closure, accounts, release/indemnity and transfer to the Remainderman | Alternative to early termination in 21. Use the death, accounts and remainder facts; add the separate release deed and asset-specific transfer instruments only if requested and supported. |
-| **21** Trustees' Resolution to Exercise a Discretionary Power to Terminate a Life Interest | Appendix-21-Trustees-Resolution-to-Exercise-a-Discretionary-Power-to.md | Precedent for non-death discretionary termination of a Life Tenant's interest | Alternative to 20B. Preserve service on the Life Tenant and the optional underlying-company share declaration only where applicable. |
-| **22** Trustees' Resolution to Lend Money to a Beneficiary | Appendix-22-Trustees-Resolution-to-Lend-Money-to-a-Beneficiary.md | Precedent for a Trustee loan resolution with an attached Promissory Note and optional security documents | Loan is not an outright distribution. If the question asks for security, the source refers to a Loan Agreement/Mortgage Deed but does not supply those instruments. |
-| **23** Trustees' Resolution to Appoint an Investment Manager | Appendix-23-Trustees-Resolution-to-Appoint-an-Investment-Manager.md | Precedent for discretionary investment-manager appointment, agreement approval and implementation authority | Preserve the agreement attachment, signatory and asset-transfer authority. Investment advice, discretionary management and protector direction are different routes. |
-| **24A** Trustees' Resolution to Bring, Defend Legal Proceedings | Appendix-24A-Trustees-Resolution-to-Bring-Defend-Legal-Proceedings.md | Precedent for pursuing a Claim, instructing attorneys, negotiating and ratifying prior acts | Alternative stage to compromise in 24B. The claim, defendant, advice and fee arrangement must be supplied or remain placeholders. |
-| **24B** Trustees' Resolution to Compromise Legal Proceedings | Appendix-24B-Trustees-Resolution-to-Compromise-Legal-Proceedings.md | Precedent for accepting a Proposed Settlement and approving an attached Deed of Compromise and Mutual Release | Use for an existing litigation/settlement stage, not merely to commence proceedings. The attachment is referenced but not reproduced in this file. |
+| **17** Deed of Release of Life Interest | `Appendix-17-Deed-of-Release-of-Life-Interest.md` | Precedent for a Life Tenant releasing the income interest | Alternative to assignment in 18. It changes the life-interest position but does not itself distribute the trust fund or transfer legal title. |
+| **18** Deed of Assignment of Life Interest | `Appendix-18-Deed-of-Assignment-of-Life-Interest.md` | Precedent for Assignor-to-Assignee assignment acknowledged by the Trustee | Alternative to release in 17. Preserve the evidence-of-life provision and the Trustee's acknowledgment. |
+| **19** Trustees' Resolution Permitting a Beneficiary to Occupy Real Estate | `Appendix-19-Trustees-Resolution-Permitting-a-Beneficiary-to-Occupy-Real.md` | Precedent for a Trustee granting a Life Tenant occupation on scheduled terms | Occupation is not conveyance or an absolute appointment. The Schedule must contain the fact-specific tax, insurance, utility, maintenance and repair terms. |
+| **20A** Trustees' Resolution to Pay Income to Life Tenant | `Appendix-20A-Trustees-Resolution-to-Pay-Income-to-Life-Tenant.md` | Precedent for a periodic or annual income payment to a Life Tenant | Select the applicable trust/company accounts and payment-authority alternative. It does not end or assign the life interest. |
+| **20B** Trustees' Resolution to Close the Trust upon the Death of Life Tenant | `Appendix-20B-Trustees-Resolution-to-Close-the-Trust-upon-the-Death-of.md` | Precedent for death-based closure, accounts, release/indemnity and transfer to the Remainderman | Alternative to early termination in 21. Use the death, accounts and remainder facts; add the separate release deed and asset-specific transfer instruments only if requested and supported. |
+| **21** Trustees' Resolution to Exercise a Discretionary Power to Terminate a Life Interest | `Appendix-21-Trustees-Resolution-to-Exercise-a-Discretionary-Power-to.md` | Precedent for non-death discretionary termination of a Life Tenant's interest | Alternative to 20B. Preserve service on the Life Tenant and the optional underlying-company share declaration only where applicable. |
+| **22** Trustees' Resolution to Lend Money to a Beneficiary | `Appendix-22-Trustees-Resolution-to-Lend-Money-to-a-Beneficiary.md` | Precedent for a Trustee loan resolution with an attached Promissory Note and optional security documents | Loan is not an outright distribution. If the question asks for security, the source refers to a Loan Agreement/Mortgage Deed but does not supply those instruments. |
+| **23** Trustees' Resolution to Appoint an Investment Manager | `Appendix-23-Trustees-Resolution-to-Appoint-an-Investment-Manager.md` | Precedent for discretionary investment-manager appointment, agreement approval and implementation authority | Preserve the agreement attachment, signatory and asset-transfer authority. Investment advice, discretionary management and protector direction are different routes. |
+| **24A** Trustees' Resolution to Bring, Defend Legal Proceedings | `Appendix-24A-Trustees-Resolution-to-Bring-Defend-Legal-Proceedings.md` | Precedent for pursuing a Claim, instructing attorneys, negotiating and ratifying prior acts | Alternative stage to compromise in 24B. The claim, defendant, advice and fee arrangement must be supplied or remain placeholders. |
+| **24B** Trustees' Resolution to Compromise Legal Proceedings | `Appendix-24B-Trustees-Resolution-to-Compromise-Legal-Proceedings.md` | Precedent for accepting a Proposed Settlement and approving an attached Deed of Compromise and Mutual Release | Use for an existing litigation/settlement stage, not merely to commence proceedings. The attachment is referenced but not reproduced in this file. |
 
 ### Appendices 25-29: variation, revocation, governing law, flight and protectors
 
 | Appendix | Exact filename | Class and correct use | Combination / guardrail |
 |---|---|---|---|
-| **25** Deed of Variation of Administrative Provisions | Appendix-25-Deed-of-Variation-of-Administrative-Provisions.md | Precedent for a Trustee exercising a power to add administrative provisions in the Schedule | Administrative variation only. Do not use it to vary dispositive interests or to change governing law without the separate route. |
-| **26** Deed of Revocation of Trust | Appendix-26-Deed-of-Revocation-of-Trust.md | Branching precedent for full or partial settlor revocation under a reserved power | Full and partial revocation are an XOR. Select one, identify the returned assets and preserve continuation of the remaining trust in the partial branch. |
-| **27** Deed of Change of Governing Law | Appendix-27-Deed-of-Change-of-Governing-Law.md | Precedent for Trustees declaring a new governing law under an express power | Requires the power, selected jurisdiction and beneficiary-protection facts. It does not itself transfer trusteeship, assets or underlying-company shares. |
-| **28** Power of Attorney (to supplement a flee clause) | Appendix-28-Power-of-Attorney-to-supplement-a-flee-clause.md | Precedent for Trustees authorising a New Trustee to transfer underlying-company shares after an Emergency Event | Use only where the trust contains the stated flee machinery and the underlying company holds the Trust Fund. It is not a general beneficiary or investment-manager power of attorney. |
-| **29** Deed of Nomination of Successor Protector | Appendix-29-Deed-of-Nomination-of-Successor-Protector.md | Precedent for Appointor/Protector nomination, Successor Protector consent, revocation and Trustee notice | Nomination is not current appointment. Preserve the three-party chain and the trust clause that gives the power. |
+| **25** Deed of Variation of Administrative Provisions | `Appendix-25-Deed-of-Variation-of-Administrative-Provisions.md` | Precedent for a Trustee exercising a power to add administrative provisions in the Schedule | Administrative variation only. Do not use it to vary dispositive interests or to change governing law without the separate route. |
+| **26** Deed of Revocation of Trust | `Appendix-26-Deed-of-Revocation-of-Trust.md` | Branching precedent for full or partial settlor revocation under a reserved power | Full and partial revocation are an XOR. Select one, identify the returned assets and preserve continuation of the remaining trust in the partial branch. |
+| **27** Deed of Change of Governing Law | `Appendix-27-Deed-of-Change-of-Governing-Law.md` | Precedent for Trustees declaring a new governing law under an express power | Requires the power, selected jurisdiction and beneficiary-protection facts. It does not itself transfer trusteeship, assets or underlying-company shares. |
+| **28** Power of Attorney (to supplement a flee clause) | `Appendix-28-Power-of-Attorney-to-supplement-a-flee-clause.md` | Precedent for Trustees authorising a New Trustee to transfer underlying-company shares after an Emergency Event | Use only where the trust contains the stated flee machinery and the underlying company holds the Trust Fund. It is not a general beneficiary or investment-manager power of attorney. |
+| **29** Deed of Nomination of Successor Protector | `Appendix-29-Deed-of-Nomination-of-Successor-Protector.md` | Precedent for Appointor/Protector nomination, Successor Protector consent, revocation and Trustee notice | Nomination is not current appointment. Preserve the three-party chain and the trust clause that gives the power. |
 
 ### Appendices 30-32: STAR trust and foundations
 
 | Appendix | Exact filename | Class and correct use | Combination / guardrail |
 |---|---|---|---|
-| **30** Specimen STAR Trust for Employee Benefit Trust | Appendix-30-Specimen-STAR-Trust-for-Employee-Benefit-Trust.md | Extract/incomplete specimen Cayman STAR declaration with an Enforcer, Controlled Company, Business Plan and employee-benefit purposes | Execution blocks are not reproduced and Schedule 1 administrative provisions are expressly incomplete. Never invent them or generalise the specimen to Bermuda or every STAR trust. |
-| **31** Foundation Charter of the AB Foundation | Appendix-31-Foundation-Charter-of-the-AB-Foundation.md | Composite specimen charter and regulations for a numbered foundation | Use as an example of charter/regulations architecture. Replace sample people, amounts, registration number and jurisdiction; it is not a trust deed or a universal foundation statute. |
-| **32** AB Foundation (Number 12345N) | Appendix-32-AB-Foundation-Number-12345N.md | Composite specimen containing council meeting minutes for a distribution and a separate written-resolution property acquisition | Select the requested branch. The referenced Contract and Conveyance are attachments not reproduced here; do not hide them inside a generic resolution. |
+| **30** Specimen STAR Trust for Employee Benefit Trust | `Appendix-30-Specimen-STAR-Trust-for-Employee-Benefit-Trust.md` | Extract/incomplete specimen Cayman STAR declaration with an Enforcer, Controlled Company, Business Plan and employee-benefit purposes | Execution blocks are not reproduced and Schedule 1 administrative provisions are expressly incomplete. Never invent them or generalise the specimen to Bermuda or every STAR trust. |
+| **31** Foundation Charter of the AB Foundation | `Appendix-31-Foundation-Charter-of-the-AB-Foundation.md` | Composite specimen charter and regulations for a numbered foundation | Use as an example of charter/regulations architecture. Replace sample people, amounts, registration number and jurisdiction; it is not a trust deed or a universal foundation statute. |
+| **32** AB Foundation (Number 12345N) | `Appendix-32-AB-Foundation-Number-12345N.md` | Composite specimen containing council meeting minutes for a distribution and a separate written-resolution property acquisition | Select the requested branch. The referenced Contract and Conveyance are attachments not reproduced here; do not hide them inside a generic resolution. |
 
-## Appendix relationship and combination rules
+### Trust-specific appendix relationship and combination rules
 
 - **XOR - Appendix 7 deed versus written resolution**: choose the instrument that matches the
   requested acceptance act and signatory. They are alternatives, not two required
@@ -702,7 +664,7 @@ appendix is not supplied merely because the appendix says it is attached.
   instrument and no complete asset-specific transfer package. State the gap where the
   question requires one.
 
-## Lifecycle and document-chain notes
+### Trust-specific lifecycle and document-chain checks
 
 Use this sequence as the independent second pass. Mark each stage triggered, not
 triggered, conditional or a materials gap; do not pull every stage into the submitted
@@ -746,103 +708,7 @@ Document-chain rules:
   forbidden and materials-gap routes. The submitted prose must not contain that private
   routing trace.
 
-## Known source and index warnings
-
-These are course-file warnings, not invitations to repair the source with outside law.
-Open the exact source and flag a material warning on Verify.
-
-- The original module/index numbering is not uniform. Module 1 contains the heading
-  “13. Presumption of immediate effect” inside the discussion of trusts compared with
-  other structures; retain the source heading when routing it.
-- Module 3 repeats or misnumbers preliminary definition headings such as 1.1 and 1.3.
-  Use the exact subject heading and passage, not a guessed clause number.
-- Module 6 places “Renvoi” under a repeated 1.1.4 heading after §1.2. Preserve the
-  source's topic and the exact passage rather than correcting the index silently.
-- Appendix 1 contains many bracketed alternatives, including settlor/protector
-  consent, trust-for-sale and additional-property clauses, reserved powers,
-  exoneration, flee/automatic-retirement provisions and revocation. It is a branching
-  specimen, not a completed trust for every question.
-- Appendix 2 contains numbering artefacts before some subclauses and sample percentages,
-  fees and charges. Reconcile the terms with the actual charging clause and agreed
-  terms.
-- Appendix 3 contains an inconsistent parenthetical sequence in the recital and is
-  limited to disclaimer before acceptance of a testamentary appointment.
-- Appendix 4 is a client-facing summary with sample clauses, an explanatory statement
-  about wishes and high-level AML/FATCA/CRS/tax prompts. It is not a complete trust
-  instrument or an external compliance manual.
-- Appendix 5's DORA includes bracketed retirement alternatives and a general vesting
-  clause. Check the trust power, continuing trustee, governing law and property-
-  specific transfer requirements.
-- Appendix 7 contains both a deed/memorandum and an expressly described alternative
-  written resolution. Do not reproduce both unless the question separately requests
-  both stages.
-- Appendix 8 is a trustee-company written resolution with optional underlying-company
-  payment language; the underlying company is not automatically present in every trust.
-- Appendix 9 has bracketed release/indemnity provisions and a footnote explaining the
-  Trustee's lien. The footnote is explanatory and the brackets require a fact-based
-  choice.
-- Appendix 10 includes an optional advancement provision and a source note saying that
-  its “Terms of the Trust to stand” clause may be superfluous. Do not turn that note
-  into a new operative clause.
-- Appendix 11A contains a footnote referring to Re Londonderry's Settlement and the
-  practice of recording relevant considerations. It is not an additional resolution.
-  Appendix 11B instead approves an attached deed and authorises execution; preserve
-  the distinction.
-- Appendix 12's source note expressly changes the parties if consent, release or
-  indemnity is required. Keep those parties conditional rather than assuming the
-  one-party form always controls.
-- Appendix 13 uses “Alternatively” branches and says the wishes are not binding. Do not
-  merge its sample amounts, family priorities and investment wording.
-- Appendix 14A is a beneficiary's limited-period receipt power of attorney. Appendix
-  14B is a payment instruction; neither is a general trust-management mandate.
-- Appendix 15's execution text refers to a “Deed of Appointment” even though the
-  document is a deed of release and indemnity. Flag the mismatch if it matters to a
-  drafting request.
-- Appendix 16A has repeated party numbering and empty release/indemnity headings; do not
-  invent missing operative wording. Appendix 16B contains sample typographical errors
-  and must be reconciled with the actual Appointor/Trustee/Beneficiary facts.
-- Appendices 17 and 18 end with abbreviated “In witness, etc” execution language. Use
-  only the supplied architecture and flag any required execution detail not supplied.
-- Appendix 19 leaves the occupation terms in a placeholder Schedule. Insert only facts
-  supplied by the question; the resolution is not a transfer of the Property.
-- Appendix 20A has optional payment routes through the Trustee, trust account and
-  underlying company. Appendix 20B contains repeated letter labels and refers to a
-  release/indemnity and asset transfers that may require separate documents.
-- Appendix 21 is a discretionary early-termination resolution and includes optional
-  service and underlying-company clauses. It is not the death-based closure route.
-- Appendix 22 refers to optional Loan Agreement and Mortgage Deed security documents
-  that are not reproduced. Appendix 23 refers to a draft Investment Management
-  Agreement and contains a malformed sample name; preserve the missing attachment as
-  a gap.
-- Appendix 24A includes negotiation and ratification wording. Appendix 24B refers to a
-  written Deed of Compromise and Mutual Release that is not reproduced in the appendix.
-- Appendix 25 supplies only a placeholder Schedule of additional administrative power.
-  It does not itself specify the new power.
-- Appendix 26 has full and partial revocation as alternatives. The partial branch
-  requires a precise Schedule of assets.
-- Appendix 27 has formatting breaks around DATE/BY and a sample jurisdiction. Use the
-  governing-law power and insert the facts; do not infer a missing execution format.
-- Appendix 28 is limited to a flee-clause power to transfer shares in an underlying
-  company after an Emergency Event. It is not a general flight or asset-transfer deed.
-- Appendix 29 records nomination, consent, revocation and Trustee notice. It does not
-  appoint the Successor Protector immediately and does not remove a trustee.
-- Appendix 30 expressly says execution blocks are not reproduced and Schedule 1
-  administrative provisions have not been reproduced in full. It also contains
-  numbering artefacts in the Business Plan and is an employee-benefit Cayman STAR
-  specimen, not a complete generic STAR instrument.
-- Appendix 31 is a sample composite charter and regulations document with sample
-  foundation number, named companies, amounts, placeholders and occasional drafting
-  slips. It is not a universal foundation charter.
-- Appendix 32 combines two separate sample council actions: a meeting to distribute
-  income and a written resolution to acquire property. Its referenced Contract and
-  Conveyance are not reproduced. Select the relevant branch and keep those attachments
-  separate.
-- No appendix supplies a complete generic APT deed, generic Bermuda purpose-trust
-  instrument, conventional exclusion deed, foundation dissolution instrument or every
-  asset-specific conveyance/registry form. These are materials gaps when the question
-  expressly asks for them.
-
-## Modules (with section outlines)
+## Module file index and section outlines
 
 ### Module 1: Review of the Trust Concept
 File: `Course-Manual-Module-01-Review-of-the-Trust-Concept.md`
@@ -1227,42 +1093,98 @@ File: `Course-Manual-Module-11-Private-Foundations.md`
 - 11 Termination
 - 12 Trusts or foundations: pros and cons
 
-## Appendices (precedent documents)
+## Known source and index warnings
 
-- **Appendix 1** — Alternative Reserved Powers  ·  `Appendix-1-Alternative-Reserved-Powers.md`
-- **Appendix 2** — Sample Terms and Conditions relating to Remuneration of Trust Company  ·  `Appendix-2-Sample-Terms-and-Conditions-relating-to-Remuneration-of.md`
-- **Appendix 3** — Deed of Disclaimer  ·  `Appendix-3-Deed-of-Disclaimer.md`
-- **Appendix 4** — Memorandum: Specimen Summary of Trust  ·  `Appendix-4-Memorandum-Specimen-Summary-of-Trust.md`
-- **Appendix 5** — Deed of Removal and Appointment of Trustee ('DORA')  ·  `Appendix-5-Deed-of-Removal-and-Appointment-of-Trustee-DORA.md`
-- **Appendix 6** — Deed of Addition to Class of Beneficiaries  ·  `Appendix-6-Deed-of-Addition-to-Class-of-Beneficiaries.md`
-- **Appendix 7** — Deed/Memorandum of Addition to Trust Fund  ·  `Appendix-7-Deed-Memorandum-of-Addition-to-Trust-Fund.md`
-- **Appendix 8** — Trustee's Resolution: to Distribute Income  ·  `Appendix-8-Trustees-Resolution-to-Distribute-Income.md`
-- **Appendix 9** — Deed of Appointment of an Absolute Interest  ·  `Appendix-9-Deed-of-Appointment-of-an-Absolute-Interest.md`
-- **Appendix 10** — Deed of Appointment upon New Trusts  ·  `Appendix-10-Deed-of-Appointment-upon-New-Trusts.md`
-- **Appendix 11A** — Trustees' Resolutions to Exercise a Power of Appointment  ·  `Appendix-11A-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md`
-- **Appendix 11B** — Trustees' Resolutions to Exercise a Power of Appointment  ·  `Appendix-11B-Trustees-Resolutions-to-Exercise-a-Power-of-Appointment.md`
-- **Appendix 12** — Deed of Resettlement  ·  `Appendix-12-Deed-of-Resettlement.md`
-- **Appendix 13** — Statement of Wishes  ·  `Appendix-13-Statement-of-Wishes.md`
-- **Appendix 14A** — Power of Attorney  ·  `Appendix-14A-Power-of-Attorney.md`
-- **Appendix 14B** — Irrevocable Instruction  ·  `Appendix-14B-Irrevocable-Instruction.md`
-- **Appendix 15** — Deed of Release (and indemnity)  ·  `Appendix-15-Deed-of-Release-and-indemnity.md`
-- **Appendix 16A** — Deed of Appointment (from a settlor-directed trust)  ·  `Appendix-16A-Deed-of-Appointment-from-a-settlor-directed-trust.md`
-- **Appendix 16B** — Deed of Appointment [where power of appointment conferred upon the Settlor]  ·  `Appendix-16B-Deed-of-Appointment-where-power-of-appointment-conferred.md`
-- **Appendix 17** — Deed of Release of Life Interest  ·  `Appendix-17-Deed-of-Release-of-Life-Interest.md`
-- **Appendix 18** — Deed of Assignment of Life Interest  ·  `Appendix-18-Deed-of-Assignment-of-Life-Interest.md`
-- **Appendix 19** — Trustees' Resolution Permitting a Beneficiary to Occupy Real Estate  ·  `Appendix-19-Trustees-Resolution-Permitting-a-Beneficiary-to-Occupy-Real.md`
-- **Appendix 20A** — Trustees' Resolution to Pay Income to Life Tenant  ·  `Appendix-20A-Trustees-Resolution-to-Pay-Income-to-Life-Tenant.md`
-- **Appendix 20B** — Trustees' Resolution to Close the Trust upon the Death of Life Tenant  ·  `Appendix-20B-Trustees-Resolution-to-Close-the-Trust-upon-the-Death-of.md`
-- **Appendix 21** — Trustees' Resolution to Exercise a Discretionary Power to Terminate a Life Interest  ·  `Appendix-21-Trustees-Resolution-to-Exercise-a-Discretionary-Power-to.md`
-- **Appendix 22** — Trustees' Resolution to Lend Money to a Beneficiary  ·  `Appendix-22-Trustees-Resolution-to-Lend-Money-to-a-Beneficiary.md`
-- **Appendix 23** — Trustees' Resolution to Appoint an Investment Manager  ·  `Appendix-23-Trustees-Resolution-to-Appoint-an-Investment-Manager.md`
-- **Appendix 24A** — Trustees' Resolution to Bring, Defend Legal Proceedings  ·  `Appendix-24A-Trustees-Resolution-to-Bring-Defend-Legal-Proceedings.md`
-- **Appendix 24B** — Trustees' Resolution to Compromise Legal Proceedings  ·  `Appendix-24B-Trustees-Resolution-to-Compromise-Legal-Proceedings.md`
-- **Appendix 25** — Deed of Variation of Administrative Provisions  ·  `Appendix-25-Deed-of-Variation-of-Administrative-Provisions.md`
-- **Appendix 26** — Deed of Revocation of Trust  ·  `Appendix-26-Deed-of-Revocation-of-Trust.md`
-- **Appendix 27** — Deed of Change of Governing Law  ·  `Appendix-27-Deed-of-Change-of-Governing-Law.md`
-- **Appendix 28** — Power of Attorney (to supplement a flee clause)  ·  `Appendix-28-Power-of-Attorney-to-supplement-a-flee-clause.md`
-- **Appendix 29** — Deed of Nomination of Successor Protector  ·  `Appendix-29-Deed-of-Nomination-of-Successor-Protector.md`
-- **Appendix 30** — Specimen STAR Trust for Employee Benefit Trust  ·  `Appendix-30-Specimen-STAR-Trust-for-Employee-Benefit-Trust.md`
-- **Appendix 31** — Foundation Charter of the AB Foundation  ·  `Appendix-31-Foundation-Charter-of-the-AB-Foundation.md`
-- **Appendix 32** — AB Foundation (Number 12345N)  ·  `Appendix-32-AB-Foundation-Number-12345N.md`
+These are course-file warnings, not invitations to repair the source with outside law.
+Open the exact source and flag a material warning on Verify.
+
+- The original module/index numbering is not uniform. Module 1 contains the heading
+  “13. Presumption of immediate effect” inside the discussion of trusts compared with
+  other structures; retain the source heading when routing it.
+- Module 3 repeats or misnumbers preliminary definition headings such as 1.1 and 1.3.
+  Use the exact subject heading and passage, not a guessed clause number.
+- Module 6 places “Renvoi” under a repeated 1.1.4 heading after §1.2. Preserve the
+  source's topic and the exact passage rather than correcting the index silently.
+- Appendix 1 contains many bracketed alternatives, including settlor/protector
+  consent, trust-for-sale and additional-property clauses, reserved powers,
+  exoneration, flee/automatic-retirement provisions and revocation. It is a branching
+  specimen, not a completed trust for every question.
+- Appendix 2 contains numbering artefacts before some subclauses and sample percentages,
+  fees and charges. Reconcile the terms with the actual charging clause and agreed
+  terms.
+- Appendix 3 contains an inconsistent parenthetical sequence in the recital and is
+  limited to disclaimer before acceptance of a testamentary appointment.
+- Appendix 4 is a client-facing summary with sample clauses, an explanatory statement
+  about wishes and high-level AML/FATCA/CRS/tax prompts. It is not a complete trust
+  instrument or an external compliance manual.
+- Appendix 5's DORA includes bracketed retirement alternatives and a general vesting
+  clause. Check the trust power, continuing trustee, governing law and property-
+  specific transfer requirements.
+- Appendix 7 contains both a deed/memorandum and an expressly described alternative
+  written resolution. Do not reproduce both unless the question separately requests
+  both stages.
+- Appendix 8 is a trustee-company written resolution with optional underlying-company
+  payment language; the underlying company is not automatically present in every trust.
+- Appendix 9 has bracketed release/indemnity provisions and a footnote explaining the
+  Trustee's lien. The footnote is explanatory and the brackets require a fact-based
+  choice.
+- Appendix 10 includes an optional advancement provision and a source note saying that
+  its “Terms of the Trust to stand” clause may be superfluous. Do not turn that note
+  into a new operative clause.
+- Appendix 11A contains a footnote referring to Re Londonderry's Settlement and the
+  practice of recording relevant considerations. It is not an additional resolution.
+  Appendix 11B instead approves an attached deed and authorises execution; preserve
+  the distinction.
+- Appendix 12's source note expressly changes the parties if consent, release or
+  indemnity is required. Keep those parties conditional rather than assuming the
+  one-party form always controls.
+- Appendix 13 uses “Alternatively” branches and says the wishes are not binding. Do not
+  merge its sample amounts, family priorities and investment wording.
+- Appendix 14A is a beneficiary's limited-period receipt power of attorney. Appendix
+  14B is a payment instruction; neither is a general trust-management mandate.
+- Appendix 15's execution text refers to a “Deed of Appointment” even though the
+  document is a deed of release and indemnity. Flag the mismatch if it matters to a
+  drafting request.
+- Appendix 16A has repeated party numbering and empty release/indemnity headings; do not
+  invent missing operative wording. Appendix 16B contains sample typographical errors
+  and must be reconciled with the actual Appointor/Trustee/Beneficiary facts.
+- Appendices 17 and 18 end with abbreviated “In witness, etc” execution language. Use
+  only the supplied architecture and flag any required execution detail not supplied.
+- Appendix 19 leaves the occupation terms in a placeholder Schedule. Insert only facts
+  supplied by the question; the resolution is not a transfer of the Property.
+- Appendix 20A has optional payment routes through the Trustee, trust account and
+  underlying company. Appendix 20B contains repeated letter labels and refers to a
+  release/indemnity and asset transfers that may require separate documents.
+- Appendix 21 is a discretionary early-termination resolution and includes optional
+  service and underlying-company clauses. It is not the death-based closure route.
+- Appendix 22 refers to optional Loan Agreement and Mortgage Deed security documents
+  that are not reproduced. Appendix 23 refers to a draft Investment Management
+  Agreement and contains a malformed sample name; preserve the missing attachment as
+  a gap.
+- Appendix 24A includes negotiation and ratification wording. Appendix 24B refers to a
+  written Deed of Compromise and Mutual Release that is not reproduced in the appendix.
+- Appendix 25 supplies only a placeholder Schedule of additional administrative power.
+  It does not itself specify the new power.
+- Appendix 26 has full and partial revocation as alternatives. The partial branch
+  requires a precise Schedule of assets.
+- Appendix 27 has formatting breaks around DATE/BY and a sample jurisdiction. Use the
+  governing-law power and insert the facts; do not infer a missing execution format.
+- Appendix 28 is limited to a flee-clause power to transfer shares in an underlying
+  company after an Emergency Event. It is not a general flight or asset-transfer deed.
+- Appendix 29 records nomination, consent, revocation and Trustee notice. It does not
+  appoint the Successor Protector immediately and does not remove a trustee.
+- Appendix 30 expressly says execution blocks are not reproduced and Schedule 1
+  administrative provisions have not been reproduced in full. It also contains
+  numbering artefacts in the Business Plan and is an employee-benefit Cayman STAR
+  specimen, not a complete generic STAR instrument.
+- Appendix 31 is a sample composite charter and regulations document with sample
+  foundation number, named companies, amounts, placeholders and occasional drafting
+  slips. It is not a universal foundation charter.
+- Appendix 32 combines two separate sample council actions: a meeting to distribute
+  income and a written resolution to acquire property. Its referenced Contract and
+  Conveyance are not reproduced. Select the relevant branch and keep those attachments
+  separate.
+- No appendix supplies a complete generic APT deed, generic Bermuda purpose-trust
+  instrument, conventional exclusion deed, foundation dissolution instrument or every
+  asset-specific conveyance/registry form. These are materials gaps when the question
+  expressly asks for them.

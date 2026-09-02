@@ -53,11 +53,11 @@
     "submission-checklist.md": "d347623da89f09f14f29bd11adab7397bab6b1b6162c2c93a016d6bc2bf1e30b"
   },
   "schema": "trusts-routing-v2-source-manifest-v2",
-  "workflow_bundle_sha256": "772047fd3f2e8f0541e2a0f23c7307d6794b074edb2ad820ea7e33c93501fa10",
+  "workflow_bundle_sha256": "99797ba81f3c9bdda549268f2fe313fa8276abdf7f2e6b9bb3a75711849d0c72",
   "workflow_files": {
     "AGENTS.md": "2ff17b72280d50a5b64c9be934e979e75c132eccd0d92bc7d64ec9b8392bafad",
     "CLAUDE.md": "12df404fd73f66b33f083c62daf8429ff6cd9da250b018a1dd376df00d299d52",
-    "Content.md": "e5fca51d98a37cd17acc676e6a5fa4daa51d15bf0fa97bfd8eab1a81cf451911",
+    "Content.md": "34298169a33a9c408a6b1d6b3576dc40c7decaabb7a1db3aa74bdfc9b37ab92d",
     "README.md": "9ed0888667d1af5713141a95185e3d713afffe5565639e9fffd30fd04b4820de",
     "routing-core.md": "197b4618f9c82a2207ab4e7905477917ac74574a98a1a5a3cd58e88eb6c78060",
     "routing-v2/schema/route-plan.schema.json": "6f5857cfc0ec0b14b957a7c7546c4a111bb797db732844e063224f5c93c68d0d",
